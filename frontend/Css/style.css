@@ -28,13 +28,12 @@
 .banner {
   position: relative;
   width: 100vw;
-  height: 30vh;
+  height: 50vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
- 
 }
 
 .contenedor-img {
@@ -42,14 +41,12 @@
   height: 100%;
   position: relative;
   z-index: 1;
-
-  
 }
 
 .imagen-responsiva {
   width: 100%;
   height: 100%;
-  object-fit:cover;
+  object-fit: cover;
   display: block;
   border-radius: 15px;
 }
@@ -66,6 +63,11 @@
   left: 1rem;
 }
 
+.arrow-left:hover img, .arrow-right:hover img {
+  filter: invert(100%) brightness(500%) sepia(0%) saturate(100%);
+  transform: scale(1.5); /* Agranda ligeramente la flecha */
+}
+
 .arrow-right {
   right: 1rem;
 }
@@ -74,8 +76,54 @@
   width: 60px;
   height: 60px;
   filter: invert(100%) brightness(1000%) sepia(0%) saturate(0%);
-  
 }
+
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+}
+
+.evento {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 30%;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1rem;
+  box-shadow: 1px 5px 4px var(--color-terciario-alternativo);
+ 
+}
+
+.imagen-evento img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.evento:hover {
+    transform: translateY(5px); /* efecto de levantar un poco */
+}
+
+.imagen-evento:hover img  {
+  scale: 0.95;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+}
+
+.detalle-imagen {
+  padding: 1rem;
+
+}
+
+
 
 
 /*-----------------------------------------*/
