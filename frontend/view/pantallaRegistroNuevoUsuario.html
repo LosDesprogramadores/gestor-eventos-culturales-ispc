@@ -7,7 +7,35 @@
 </head>
 <body>
     <header></header>
-    <main></main>
+    <main>
+        <h1>Crear nueva cuenta</h1>
+
+        <form action="#" method="post" class="form-registro">
+             <div>
+                <label for="correo">Correo electronico:</label>
+                <input type="email" id="correo" name="correo" required />
+            </div>
+            <div>
+                <label for="usuario">Usuario:</label>
+                <input type="text" id="usuario" name="usuario" required />
+            </div>
+
+            <div>
+                <label for="contraseñia">Contraseña:</label>
+                <input type="password" id="contraseñia" name="contraseñia" required />
+            </div>
+
+            <div>
+                <label for="repetir-contraseñia">Repetir contraseña:</label>
+                <input type="password" id="repetir-contraseñia" name="repetir-contrasenia" required />
+            </div>
+
+            <div>
+                <button type="submit">Registrar</button>
+                <button type="reset">Iniciar sesión</button>
+            </div>
+        </form>
+    </main>
     <footer></footer>
 </body>
 </html>
