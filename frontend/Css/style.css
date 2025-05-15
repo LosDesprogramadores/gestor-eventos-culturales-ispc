@@ -386,4 +386,51 @@ main {
   flex: 1;
 }
 
-/*--------------------------------------------*/
+/*--------------panel de datos------------------------------*/
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.tarjeta-dato {
+  background-color: var(--color-secundario);
+  color: #2c3e50;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-dato:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-dato h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-terciario-);
+}
+
+.tarjeta-dato p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.titulo-dashboard {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-terciario-);
+}
+
+@media (max-width: 768px) {
+  .tarjeta-dato {
+    width: 90%;
+  }
+}
