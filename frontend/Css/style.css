@@ -16,22 +16,90 @@
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-  body {
-    background-color: var(--color-secundario-alternativo);
-  }
+body {
+  background-color: var(--color-secundario-alternativo);
+}
 
- 
+/*--------------Quienes somos--------------*/
+section.quienes-somos h2 {
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+section.quienes-somos h2,
+h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/*-----------------------------------------*/
+
 
 /*-----------------------------------------*/
 /*-----------------HEADER------------------*/
 /*-----------------------------------------*/
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.header {
+  background-color: var(--color-terciario-alternativo);
+  padding: 1em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3);
+  position: sticky;
+  z-index: 1000;
+  margin-bottom: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 20rem;
+  height: 5em;
+  width: 5em;
+  border-radius: 50%;
+  background-color: #fff;
+  padding: 0.2em;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.nav-principal ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.nav-principal a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 0.5em 0.8em;
+  border-radius: 0.3em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-principal a:hover {
+  background-color: #ffffff;
+  color:var(--color-primario-alternativo);
+}
 
 /*-----------------------------------------*/
 /*-----------------MAIN--------------------*/
@@ -49,7 +117,7 @@
   margin-left: 1rem;
   padding-right: 2rem;
   padding-left: 2rem;
- 
+
 }
 
 .contenedor-img {
@@ -79,9 +147,10 @@
   left: 2rem;
 }
 
-.arrow-left:hover img, .arrow-right:hover img {
+.arrow-left:hover img,
+.arrow-right:hover img {
   filter: invert(100%) brightness(500%) sepia(0%) saturate(100%);
-  transform: scale(2.8); 
+  transform: scale(2.8);
 }
 
 .arrow-right {
@@ -92,7 +161,7 @@
   width: 60px;
   height: 60px;
   filter: invert(100%) brightness(1000%) sepia(0%) saturate(0%);
-   transform: scale(2.5); 
+  transform: scale(2.5);
 }
 
 
@@ -101,14 +170,15 @@
   justify-content: center;
   padding: 2rem;
   flex-wrap: wrap;
-  gap: 1rem; /* Mejor separación entre elementos */
+  gap: 1rem;
+  /* Mejor separación entre elementos */
 }
 
 .evento {
-  width: 300px; 
+  width: 300px;
   background-color: #f9f9f9;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease;
   display: flex;
@@ -118,14 +188,14 @@
 
 .imagen-evento {
   width: 100%;
-  height: 200px; 
+  height: 200px;
   overflow: hidden;
 }
 
 .imagen-evento img {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
+  object-fit: cover;
   display: block;
 }
 
@@ -166,10 +236,70 @@
   margin-bottom: 0.5rem;
 }
 
+/*PantallaRegistroNuevoUsuario*/
+
+.titulo-nuevo-usuario { 
+text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-terciario-);
+}
+git status
+
+.form-registro {
+  max-width: 500px;
+  margin: auto;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-grupo {
+  margin-bottom: 1.5rem;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-terciario-);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-registro {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-registro:hover {
+  background-color: var(--color-primario-alternativo);
+}
+
+.btn-iniciar {
+  background-color: var(--color-secundario);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-iniciar:hover {
+  background-color: var(--color-secundario-alternativo);
+}
 
 
 
 /*-----------------------------------------*/
 /*-----------------FOOTER------------------*/
 /*-----------------------------------------*/
-
