@@ -330,3 +330,60 @@ h3 {
 /*-----------------------------------------*/
 /*-----------------FOOTER------------------*/
 /*-----------------------------------------*/
+.footer {
+  background-color: var(--color-terciario-);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-texto {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-redes a {
+  color: var(--color-secundario);
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-redes a:hover {
+  color: var(--color-secundario-alternativo);
+}
+
+/* hace que el footer esté siempre abajo aunque la página tenga poco contenido,*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/*--------------------------------------------*/
