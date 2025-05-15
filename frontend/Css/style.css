@@ -164,6 +164,37 @@ h3 {
   transform: scale(2.5);
 }
 
+.banner-carousel {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 12s ease-in-out infinite;
+}
+
+.banner-slides img {
+  width: 100vw;              /* ocupar todo el ancho de la ventana */
+  height: 300px;             /* altura del banner */
+  object-fit: cover;         /* adapta sin deformar */
+  flex-shrink: 0;
+}
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(0%); }
+  36%  { transform: translateX(-100vw); }
+  66%  { transform: translateX(-100vw); }
+  69%  { transform: translateX(-200vw); }
+  99%  { transform: translateX(-200vw); }
+  100% { transform: translateX(0%); }
+}
+
+
 
 .galeria {
   display: flex;
