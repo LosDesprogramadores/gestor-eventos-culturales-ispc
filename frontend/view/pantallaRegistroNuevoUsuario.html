@@ -4,35 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../Css/style.css">
 </head>
 <body>
     <header></header>
     <main>
-        <h1>Crear nueva cuenta</h1>
+        
 
         <form action="#" method="post" class="form-registro">
-             <div>
+
+            <h1 class="titulo-nuevo-usuario">Crear nueva cuenta</h1>
+
+            <div class="form-grupo">
                 <label for="correo">Correo electronico:</label>
-                <input type="email" id="correo" name="correo" required />
+                <input type="email" id="correo" name="correo" class="form-input" required />
             </div>
-            <div>
+            <div class="form-grupo">
                 <label for="usuario">Usuario:</label>
-                <input type="text" id="usuario" name="usuario" required />
+                <input type="text" id="usuario" name="usuario" class="form-input" required />
             </div>
 
-            <div>
+            <div class="form-grupo">
                 <label for="contraseñia">Contraseña:</label>
-                <input type="password" id="contraseñia" name="contraseñia" required />
+                <input type="password" id="contraseñia" name="contraseñia" class="form-input" required />
             </div>
 
-            <div>
+            <div class="form-grupo">
                 <label for="repetir-contraseñia">Repetir contraseña:</label>
-                <input type="password" id="repetir-contraseñia" name="repetir-contrasenia" required />
+                <input type="password" id="repetir-contraseñia" name="repetir-contrasenia" class="form-input" required />
             </div>
 
-            <div>
-                <button type="submit">Registrar</button>
-                <button type="reset">Iniciar sesión</button>
+            <div class="form-grupo">
+                <button type="submit" class="btn-registro">Registrar</button>
+                <button type="reset" class="btn-iniciar">Iniciar sesión</button>
             </div>
         </form>
     </main>
