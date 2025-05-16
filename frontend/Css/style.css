@@ -411,6 +411,13 @@ h3 {
     background-color: #005cbf;
 }
 
+.formulario-contacto label i {
+    margin-right: 8px;
+    color: #1e90ff;
+    min-width: 18px;
+    text-align: center;
+}
+
 /*-----------------------------------------*/
 /*-----------------FOOTER------------------*/
 /*-----------------------------------------*/
