@@ -27,9 +27,11 @@ body {
 }
 
 /*--------------Quienes somos--------------*/
-section.quienes-somos h2 {
-  margin-bottom: 15px;
-  color: #004080;
+.quienes-somos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem;
 }
 
 section.quienes-somos h2,
@@ -38,6 +40,31 @@ h3 {
   margin-bottom: 10px;
   margin-top: 10px;
 }
+
+.equipo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 2rem;
+  text-align: center;
+
+}
+
+.miembro p {
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-secundario);
+
+}
+
+.miembro img {
+  border-radius: 50%;
+  width: 15rem;
+}
+
+
 
 /*-----------------------------------------*/
 
@@ -98,7 +125,7 @@ h3 {
 
 .nav-principal a:hover {
   background-color: #ffffff;
-  color:var(--color-primario-alternativo);
+  color: var(--color-primario-alternativo);
 }
 
 /*-----------------------------------------*/
@@ -163,6 +190,37 @@ h3 {
   filter: invert(100%) brightness(1000%) sepia(0%) saturate(0%);
   transform: scale(2.5);
 }
+
+.banner-carousel {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 12s ease-in-out infinite;
+}
+
+.banner-slides img {
+  width: 100vw;              /* ocupar todo el ancho de la ventana */
+  height: 300px;             /* altura del banner */
+  object-fit: cover;         /* adapta sin deformar */
+  flex-shrink: 0;
+}
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(0%); }
+  36%  { transform: translateX(-100vw); }
+  66%  { transform: translateX(-100vw); }
+  69%  { transform: translateX(-200vw); }
+  99%  { transform: translateX(-200vw); }
+  100% { transform: translateX(0%); }
+}
+
 
 
 .galeria {
@@ -236,6 +294,67 @@ h3 {
   margin-bottom: 0.5rem;
 }
 
+/*PantallaRegistroNuevoUsuario*/
+
+.titulo-nuevo-usuario {
+  text-align: center;
+  color: var(--color-terciario-);
+}
+
+
+.form-registro {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-grupo {
+  margin-bottom: 1.5rem;
+}
+
+.form-grupo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--color-terciario-);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-registro {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btn-registro:hover {
+  background-color: var(--color-primario-alternativo);
+}
+
+.btn-iniciar {
+  background-color: var(--color-secundario);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-iniciar:hover {
+  background-color: var(--color-secundario-alternativo);
+}
 
 
 
@@ -258,7 +377,13 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+.login{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center; 
 }
 
 .login-card {
@@ -304,4 +429,108 @@ h3 {
 .login-form button:hover {
   background-color: white;
   color: var(--color-primario);
+}
+.footer {
+  background-color: var(--color-terciario-);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-texto {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-redes a {
+  color: var(--color-secundario);
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-redes a:hover {
+  color: var(--color-secundario-alternativo);
+}
+
+/* hace que el footer esté siempre abajo aunque la página tenga poco contenido,*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/*--------------panel de datos------------------------------*/
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.tarjeta-dato {
+  background-color: var(--color-secundario);
+  color: #2c3e50;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-dato:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-dato h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-terciario-);
+}
+
+.tarjeta-dato p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.titulo-dashboard {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-terciario-);
+}
+
+@media (max-width: 768px) {
+  .tarjeta-dato {
+    width: 90%;
+  }
 }
