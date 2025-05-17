@@ -398,7 +398,7 @@ h3 {
 
 .formulario-contacto button {
     padding: 10px 20px;
-    background-color: #1e90ff;
+    background-color:#14435A;
     color: white;
     border: none;
     border-radius: 6px;
@@ -406,14 +406,14 @@ h3 {
     font-size: 1rem;
     transition: background-color 0.3s;
 }
-
+  
 .formulario-contacto button:hover {
-    background-color: #005cbf;
+    background-color: #0A2E4D;
 }
 
 .formulario-contacto label i {
     margin-right: 8px;
-    color: #1e90ff;
+    color: #BC5E3C;
     min-width: 18px;
     text-align: center;
 }
