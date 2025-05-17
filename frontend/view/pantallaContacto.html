@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Contacto</title>
       <link rel="icon" href="../img/logo.ico" type="image/x-icon">
      <link rel="stylesheet" href="../Css/style.css">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -24,20 +24,38 @@
             </ul>
         </nav>
     </header>
-    <main class="login">
-     <section class="login-section">
-        <article class="login-card">
-            <h2>Bienvenido</h2>
-            <form action="login.php" method="POST" class="login-form">
-                <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
-                
-                <input type="password" id="password" name="password" placeholder="Contraseña" required>
+    <main>
+        <section class="contacto">
+            <h1>Contacto</h1>
+            <p>¿Tenes alguna consulta? ¡Escribenos!</p>
 
-                <button type="submit">Ingresar</button>
-                
+            <form action="#" method="post" class="formulario-contacto">
+                <div class="campo-formulario">
+                    <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
+                    <input type="text" id="nombre" name="nombre"  required minlength="3" maxlength="50" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electronico:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="asunto"><i class="fa-solid fa-tag"></i> Asunto:</label>
+                    <input type="text" id="asunto" name="asunto" required>
+                </div>
+
+                <div class="campo-formulario">
+                    <label for="mensaje"><i class="fa-solid fa-message"></i> Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+
+                <div class="campo-formulario">
+                    <button type="submit">Enviar</button>
+                </div>
+
             </form>
-        </article>
-     </section>
+        </section>
     </main>
    <footer class="footer">
         <div class="footer-contenido">
