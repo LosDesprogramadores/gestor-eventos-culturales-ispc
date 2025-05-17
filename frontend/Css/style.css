@@ -73,7 +73,7 @@ h3 {
 /*-----------------HEADER------------------*/
 /*-----------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 
 .header {
   background-color: var(--color-terciario-alternativo);
@@ -191,6 +191,37 @@ h3 {
   transform: scale(2.5);
 }
 
+.banner-carousel {
+  width: 100%;
+  max-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.banner-slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  animation: slide 12s ease-in-out infinite;
+}
+
+.banner-slides img {
+  width: 100vw;              /* ocupar todo el ancho de la ventana */
+  height: 300px;             /* altura del banner */
+  object-fit: cover;         /* adapta sin deformar */
+  flex-shrink: 0;
+}
+@keyframes slide {
+  0%   { transform: translateX(0%); }
+  33%  { transform: translateX(0%); }
+  36%  { transform: translateX(-100vw); }
+  66%  { transform: translateX(-100vw); }
+  69%  { transform: translateX(-200vw); }
+  99%  { transform: translateX(-200vw); }
+  100% { transform: translateX(0%); }
+}
+
+
 
 .galeria {
   display: flex;
@@ -267,7 +298,6 @@ h3 {
 
 .titulo-nuevo-usuario {
   text-align: center;
-  margin-bottom: 2rem;
   color: var(--color-terciario-);
 }
 
@@ -275,7 +305,8 @@ h3 {
 .form-registro {
   max-width: 500px;
   margin: auto;
-  padding: 2rem;
+  margin-top: 1rem;
+  padding: 1rem;
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -325,8 +356,241 @@ h3 {
   background-color: var(--color-secundario-alternativo);
 }
 
+/*PantallaContacto*/
 
+.contacto {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contacto h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formulario-contacto .campo-formulario {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-contacto label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.formulario-contacto button {
+    padding: 10px 20px;
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.formulario-contacto button:hover {
+    background-color: #005cbf;
+}
+
+.formulario-contacto label i {
+    margin-right: 8px;
+    color: #1e90ff;
+    min-width: 18px;
+    text-align: center;
+}
 
 /*-----------------------------------------*/
 /*-----------------FOOTER------------------*/
 /*-----------------------------------------*/
+
+
+
+
+
+
+
+/*-----------------------------------------*/
+/*-----------------LOGIN-------------------*/
+/*-----------------------------------------*/
+
+.login-section {
+  margin: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center; 
+}
+
+.login-card {
+  background-color: var(--color-terciario-alternativo);
+  padding: 2rem 3rem;
+  border-radius: 2rem;
+  box-shadow: 1em 1em 1rem rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 30rem;
+}
+
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+}
+
+.login-form button {
+  padding: 0.75rem;
+  background-color: var(--color-secundario);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+  background-color: white;
+  color: var(--color-primario);
+}
+.footer {
+  background-color: var(--color-terciario-);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-texto {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  margin-top: 1rem;
+}
+
+.footer-links a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-redes a {
+  color: var(--color-secundario);
+  margin: 0 10px;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.footer-redes a:hover {
+  color: var(--color-secundario-alternativo);
+}
+
+/* hace que el footer esté siempre abajo aunque la página tenga poco contenido,*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/*--------------panel de datos------------------------------*/
+
+.dashboard-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.tarjeta-dato {
+  background-color: var(--color-secundario);
+  color: #2c3e50;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-dato:hover {
+  transform: scale(1.05);
+}
+
+.tarjeta-dato h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-terciario-);
+}
+
+.tarjeta-dato p {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.titulo-dashboard {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--color-terciario-);
+}
+
+@media (max-width: 768px) {
+  .tarjeta-dato {
+    width: 90%;
+  }
+}
