@@ -72,7 +72,7 @@ Los organizadores de eventos culturales carecen de una herramienta centralizada 
 
 ## 🧩 Tecnologías Utilizadas
 
-- **Frontend:** HTML5, CSS3 (con diseño responsive)
+- **Frontend:** HTML5, CSS3 (con diseño estatico)
 - **Backend:** En desarrollo 
 - **Base de Datos:** En desarrollo
 - **Control de versiones:** Git / GitHub
