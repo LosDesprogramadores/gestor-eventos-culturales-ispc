@@ -97,7 +97,7 @@ Los organizadores de eventos culturales carecen de una herramienta centralizada 
 ## 🔁 Avance SPRINT 1
 
 Cada miembro del equipo aportó desde su rol a:
-- Maquetado de páginas (Login, Registro, Quienes somos, Detalle de evento)
+- Maquetado de páginas (Login, Registro, Quienes somos, Detalle de evento, Dashboard de usuario y Formulario de contacto)
 - Construcción de base de datos (tablas, relaciones, atributos)
 - Organización del repositorio y estandarización de commits
 - Gestión del tablero Kanban e historias de usuario
