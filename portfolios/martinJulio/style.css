@@ -1,0 +1,42 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  background-image: url('images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Capa negra semitransparente para mejorar contraste */
+  z-index: 1;
+}
+
+.hero-texto {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(0, 30, 0, 0.5); /* Verde muy oscuro semitransparente */
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 90vw;
+}
+
+.hero-texto h1 {
+  color: #E0F8E0; /* blanco verdoso claro */
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+  margin: 0;
+  text-shadow:
+    1px 1px 2px #003300; /* sombra muy suave verde oscuro */
+}
