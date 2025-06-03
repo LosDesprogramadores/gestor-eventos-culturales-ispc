@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Juan Ignacio Moreno</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Juan Ignacio Moreno</h1>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+    <nav id="navbar">
+      <ul>
+        <li><a href="#presentacion">Presentación</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#formacion">Formación</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="presentacion">
+      <h2>Presentación</h2>
+      <p>Soy una persona proactiva, organizada y responsable con habilidades destacadas en relaciones interpersonales. Con 3 años de experiencia en el rubro y actualmente estudiante de la Tecnicatura Superior en Desarrollo de Software me destaco por el trabajo eficaz en equipo, toma de decisiones ágil y manejo efectivo de la presión.</p>
+    </section>
+
+    <section id="experiencia">
+      <h2>Experiencia Laboral</h2>
+      <article>
+        <h3>Apex América (2022 - 2024)</h3>
+        <p>Soporte Técnico a grandes empresas...</p>
+      </article>
+      <article>
+        <h3>MOMA Software (2024 - presente)</h3>
+        <p>Back End y Front End. Diseño de páginas y apps.</p>
+      </article>
+    </section>
+
+    <section id="formacion">
+      <h2>Formación</h2>
+      <ul>
+        <li>Coderhouse - Full Stack (2021 - 2022)</li>
+        <li>UTN - Programación (2022 - 2023)</li>
+        <li>Alkemy - POO Java (2023 - 2024)</li>
+        <li>ISP Córdoba - Tecnicatura (2024 - presente)</li>
+      </ul>
+    </section>
+
+    <section id="habilidades">
+      <h2>Habilidades</h2>
+      <h3>Lenguajes</h3>
+      <ul>
+        <li>JavaScript / TypeScript</li>
+        <li>HTML / CSS</li>
+        <li>Java, SQL</li>
+      </ul>
+      <h3>Tecnologías</h3>
+      <ul>
+        <li>ReactJS, NodeJS, SASS, Express</li>
+        <li>Spring, Spring Boot</li>
+        <li>MySQL, PostgreSQL, MongoDB</li>
+      </ul>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos</h2>
+      <p>Podés ver mis desarrollos en GitHub:</p>
+      <a href="https://github.com/Monky033?tab=repositories" target="_blank">github.com/Monky033</a>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form id="form">
+        <div class="field">
+          <label for="user_name">Nombre</label>
+          <input type="text" name="user_name" id="user_name">
+        </div>
+        <div class="field">
+          <label for="contact_number">Teléfono</label>
+          <input type="text" name="contact_number" id="contact_number">
+        </div>
+        <div class="field">
+          <label for="user_email">Email</label>
+          <input type="text" name="user_email" id="user_email">
+        </div>
+        <div class="field">
+          <label for="message">Mensaje</label>
+          <textarea name="message" id="message" rows="5"></textarea>
+        </div>
+        <input type="submit" id="button" value="Enviar mensaje">
+        <div id="form-message"></div>
+      </form>
+      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+      <script>
+        emailjs.init('zmzPayw4Fu_p86Zow');
+      </script>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Juan Ignacio Moreno</p>
+  <div>
+  
+    <a href="https://github.com/Monky033" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/juan-ignacio-moreno-64a5b0244/" target="_blank">LinkedIn</a>
+  </div>
+  </footer>
+</body>
+</html>
