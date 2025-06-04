@@ -26,14 +26,15 @@ body {
   background-color: var(--color-secundario-alternativo);
 }
 
-/*--------------Quienes somos--------------*/
+/*--------------quie somos--------------*/
+/*
 .quienes-somos {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 8rem;
 }
-
+*/
 section.quienes-somos h2,
 h3 {
   color: #2c3e50;
@@ -42,11 +43,11 @@ h3 {
 }
 
 .equipo {
-  display: flex;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*flex-wrap: wrap;*/
   justify-content: center;
-  margin-top: 2rem;
-  gap: 2rem;
+  /*margin-top: 2rem;*/
+  /*gap: 2rem;*/
   text-align: center;
 
 }
@@ -60,8 +61,11 @@ h3 {
 }
 
 .miembro img {
-  border-radius: 50%;
-  width: 15rem;
+  max-width: 15rem;
+}
+
+.miembro a {
+  text-decoration: none;
 }
 
 
@@ -135,7 +139,9 @@ h3 {
 }
 
 @media (max-width: 767.98px) {
-  .navbar-collapse, .navbar-nav {
+
+  .navbar-collapse,
+  .navbar-nav {
     background-color: var(--color-terciario-alternativo);
     border-radius: 0.5rem;
     margin-top: 0.5rem;
@@ -239,19 +245,43 @@ h3 {
 }
 
 .banner-slides img {
-  width: 100vw;              /* ocupar todo el ancho de la ventana */
-  height: 300px;             /* altura del banner */
-  object-fit: cover;         /* adapta sin deformar */
+  width: 100vw;
+  /* ocupar todo el ancho de la ventana */
+  height: 300px;
+  /* altura del banner */
+  object-fit: cover;
+  /* adapta sin deformar */
   flex-shrink: 0;
 }
+
 @keyframes slide {
-  0%   { transform: translateX(0%); }
-  33%  { transform: translateX(0%); }
-  36%  { transform: translateX(-100vw); }
-  66%  { transform: translateX(-100vw); }
-  69%  { transform: translateX(-200vw); }
-  99%  { transform: translateX(-200vw); }
-  100% { transform: translateX(0%); }
+  0% {
+    transform: translateX(0%);
+  }
+
+  33% {
+    transform: translateX(0%);
+  }
+
+  36% {
+    transform: translateX(-100vw);
+  }
+
+  66% {
+    transform: translateX(-100vw);
+  }
+
+  69% {
+    transform: translateX(-200vw);
+  }
+
+  99% {
+    transform: translateX(-200vw);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 
@@ -392,63 +422,63 @@ h3 {
 /*PantallaContacto*/
 
 .contacto {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .contacto h1 {
-    text-align: center;
-    margin-bottom: 10px;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 .contacto p {
-    text-align: center;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .formulario-contacto .campo-formulario {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .formulario-contacto label {
-    margin-bottom: 5px;
-    font-weight: bold;
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .formulario-contacto input,
 .formulario-contacto textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
 }
 
 .formulario-contacto button {
-    padding: 10px 20px;
-    background-color:#14435A;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+  padding: 10px 20px;
+  background-color: #14435A;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
 }
-  
+
 .formulario-contacto button:hover {
-    background-color: #0A2E4D;
+  background-color: #0A2E4D;
 }
 
 .formulario-contacto label i {
-    margin-right: 8px;
-    color: #BC5E3C;
-    min-width: 18px;
-    text-align: center;
+  margin-right: 8px;
+  color: #BC5E3C;
+  min-width: 18px;
+  text-align: center;
 }
 
 /* pantallaDetalleEvento */
@@ -461,7 +491,7 @@ h3 {
 .tarjeta-evento {
   background-color: var(--color-secundario);
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
   padding: 2rem;
 }
 
@@ -605,7 +635,7 @@ main.login {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-left: 0;  
+  margin-left: 0;
   margin-right: 0;
 }
 
@@ -695,7 +725,7 @@ main.login {
 @media (max-width: 480px) {
   .login-card {
     padding: 1.5rem 2rem;
-    max-width: 90vw; 
+    max-width: 90vw;
   }
 
   .login-card h2 {
@@ -731,7 +761,7 @@ main.login {
   background-color: var(--color-secundario);
   color: #2c3e50;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 1.5rem;
   width: 300px;
   text-align: center;
@@ -785,7 +815,7 @@ main.login {
   background-color: #fff;
   padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .busqueda-agregar {
