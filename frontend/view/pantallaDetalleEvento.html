@@ -1,35 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Imagen</title>
-      <link rel="icon" href="../img/logo.ico" type="image/x-icon">
-     <link rel="stylesheet" href="../Css/style.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Detalle de Evento</title>
+  <link rel="icon" href="../img/logo.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="../Css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../Css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo-titulo">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <nav class="navbar navbar-expand-md nav-principal p-0">
+        <div class="container-fluid d-flex justify-content-between align-items-center p-0">
+          <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../img/logo.ico" alt="Logo del Gestor" class="logo" />
+          </a>
+
+          <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú de navegación">
+            <span class="fas fa-bars fa-lg" aria-hidden="true"></span>
+          </button>
         </div>
-        <nav class="nav-principal">
-            <ul>
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="panelUsuario.html">PANEL USUARIO</a></li>
-            <li><a href="pantallaRegistroNuevoUsuario.html">REGISTRO</a></li>
-            <li><a href="pantallaInicioSesion.html">LOGIN</a></li>
-            <li><a href="pantallaQuienesSomos.html">QUIENES SOMOS</a></li>
-            <li><a href="pantallaContacto.html">CONTACTOS</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <article>
+
+        <div class="collapse navbar-collapse justify-content-end mt-2 mt-md-0" id="menuNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="panelUsuario.html">Panel Usuario</a></li>
+            <li class="nav-item"><a class="nav-link" href="pantallaRegistroNuevoUsuario.html">Registro</a></li>
+            <li class="nav-item"><a class="nav-link" href="pantallaInicioSesion.html">Login</a></li>
+            <li class="nav-item"><a class="nav-link" href="pantallaQuienesSomos.html">Quiénes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="pantallaContacto.html">Contacto</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+    <main class="detalle-evento">
+
+        <article class="tarjeta-evento">
             
             <h1 id="titulo-evento">Título del Evento</h1>
 
-            <img src="#" alt="Imagen del evento" id="imagen-evento" />
+            <img src="#" alt="Imagen del evento" id="imagen-evento" class="img-evento"/>
 
             <section>
                 <h2>Descripción</h2>
@@ -42,12 +58,43 @@
             </section>
 
             <section>
+                <h2>Capacidad</h2>
+                <p id="capacidad-evento">Total de personas</p>
+            </section>
+
+            <section>
                 <h2>Fecha y Hora</h2>
                 <p id="fecha-hora-evento">DD/MM/AAAA - HH:MM hs</p>
             </section>
 
+            <section class="compartir">
+                <h3>Compartir:</h3>
+                <a href="#"><i class="fas fa-calendar-alt"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fas fa-share-alt"></i></a>
+            </section>
+
+            <a href="index.html" class="btn-volver-evento">← Volver al Inicio</a>
+
         </article>
     </main>
-    <footer></footer>
+    <footer class="footer">
+        <div class="footer-contenido">
+            <p class="footer-texto">© 2025 Los Desprogramadores - Proyecto Gestión de Eventos Culturales</p>
+            <div class="footer-links">
+                <a href="pantallaQuienesSomos.html">QUIENES SOMOS</a>
+                <a href="pantallaContacto.html">CONTACTOS</a>
+            </div>
+            <div class="footer-redes">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
