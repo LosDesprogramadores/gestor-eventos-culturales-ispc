@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="bootstrap.min.css">
+   <link rel="stylesheet" href="./css/bootstrap.min.css">
+   <link rel="stylesheet" href="./css/style.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <title>Portfolio Julio Martín</title>
 </head>
 <body>
 <header>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
+  <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-transparent fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="#">Mi Portfolio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"
@@ -20,16 +22,19 @@
       <div class="collapse navbar-collapse justify-content-center" id="menuNavbar">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link menu-link active" href="#">Inicio</a>
+            <a class="nav-link menu-link active" href="#inicio">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">Quién Soy</a>
+            <a class="nav-link menu-link" href="#about">Quién Soy</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">Proyectos</a>
+            <a class="nav-link menu-link" href="#proyectos">Proyectos</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link menu-link" href="#herramientas">Herramientas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">Contacto</a>
+            <a class="nav-link menu-link" href="#contacto">Contacto</a>
           </li>
         </ul>
       </div>
@@ -37,12 +42,246 @@
   </nav>
 </header>
 
-<section class="hero">
+<section id="inicio" class="hero">
   <div class="hero-texto me-5">
     <h1>Bienvenidos</h1>
   </div>
 </section>
 
-    <script src="bootstrap.min.js"></script>
+<section id="about" class="about-section py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Imagen -->
+      <div class="col-md-5 text-center mb-4 mb-md-0">
+        <img src="./images/about.jpg" alt="Foto de Julio Martín" class="img-fluid rounded shadow about-img" data-aos="zoom-in" data-aos-duration="1000">
+      </div>
+      
+      <!-- Texto -->
+      <div class="col-md-7">
+        <h2 class="section-title mb-4 text-md-start text-center">Acerca de mí</h2>
+        <p class="about-text">
+          ¡Hola! Soy <strong>Julio Martín</strong>, estudiante de tercer año de <strong>Ingeniería en Sistemas de Información</strong> en la 
+          <strong>Universidad Tecnológica Nacional - Córdoba</strong>, y segundo año en el <strong>ISPC</strong>, donde curso la carrera 
+          <strong>Técnico Superior en Desarrollo de Software</strong>.
+        </p>
+        <p class="about-text">
+          Me especializo como <strong>desarrollador full stack</strong> y <strong>pentester</strong>, combinando habilidades de programación con prácticas de ciberseguridad.
+        </p>
+        <p class="about-text">
+          Me interesa crear soluciones robustas, seguras y escalables, y busco oportunidades que me permitan crecer profesionalmente dentro del mundo IT.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="proyectos" class="projects-section py-5 bg-light">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Proyectos</h2>
+    <div class="row">
+
+      <!-- Proyecto 1 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="images/mindhub.jpg" class="card-img-top" alt="Proyecto 1">
+          <div class="card-body">
+            <h5 class="card-title">Home Banking</h5>
+            <p class="card-text">Proyecto para controlar las transacciones de las tarjetas de crédito y/o débito del cliente de un banco.</p>
+            <a href="https://github.com/JulioMartin12/homeBanking.git " class="btn btn-outline-dark btn-sm" target="_blank">Código</a>
+           
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="./images/landing.jpeg" class="card-img-top" alt="Proyecto 2">
+          <div class="card-body">
+            <h5 class="card-title">Incubadora del NOC</h5>
+            <p class="card-text">Sistema web que permite crear cursos para que los clientes pueden acceder.</p>
+            <a href="https://github.com/The-Undefined-Santex/The_Undefined.git" class="btn btn-outline-dark btn-sm" target="_blank">Código</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="./images/santex.JPG" class="card-img-top" alt="Proyecto 2">
+          <div class="card-body">
+            <h5 class="card-title">Copia de la pagina de santex academy</h5>
+            <p class="card-text">Un trabajo en el cual había que simular la landing page de la academia de santex.</p>
+            <a href="https://github.com/JulioMartin12/SantexAcademy.git" class="btn btn-outline-dark btn-sm" target="_blank">Código</a>
+            
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto 4 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="./images/Sismografo.jpeg" class="card-img-top" alt="Proyecto 2">
+          <div class="card-body">
+            <h5 class="card-title">Sismografo</h5>
+            <p class="card-text">Es una repesentación de una parte de un sistema sismográfico para un trabajo de la facultad.</p>
+            <a href="https://github.com/JulioMartin12/SantexAcademy.git" class="btn btn-outline-dark btn-sm" target="_blank">Código</a>
+           
+          </div>
+        </div>
+      </div>
+
+       <!-- Proyecto 5 -->
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card h-100 shadow-sm project-card">
+          <img src="./images/eventosCulturales.JPG" class="card-img-top" alt="Proyecto 2">
+          <div class="card-body">
+            <h5 class="card-title">Gestor de Eventos Culturales</h5>
+            <p class="card-text">Sistema web que permite a usuarios inscribirse y visualizar eventos. </p>
+            <a href="https://github.com/JulioMartin12/SantexAcademy.git" class="btn btn-outline-dark btn-sm" target="_blank">Código</a>
+            
+          </div>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+</section>
+
+<section id="herramientas" id="tools" class="tools-section py-5">
+  <div class="container text-center">
+    <h2 class="mb-4">Herramientas que utilizo</h2>
+    <p class="mb-5">Estas son algunas de las tecnologías y lenguajes que uso en desarrollo y ciberseguridad:</p>
+
+    <div id="herramientas" class="row justify-content-center">
+      <div class="col-4 col-md-2 mb-4">
+        <img src="./images/html5.png" alt="HTML5" class="tool-icon">
+        <p>HTML5</p>
+      </div>
+      <div class="col-4 col-md-2 mb-4">
+        <img src="./images/css3.png" alt="CSS3" class="tool-icon">
+        <p>CSS3</p>
+      </div>
+      <div class="col-4 col-md-2 mb-4">
+        <img src="./images/javascript.png" alt="JavaScript" class="tool-icon">
+        <p>JavaScript</p>
+      </div>
+
+       <div class="col-4 col-md-2 mb-4">
+          <img src="./images/typescript.png" alt="Typescript" class="tool-icon">
+          <p>Typescript</p>
+        </div>
+      <div class="col-4 col-md-2 mb-4">
+        <img src="./images/python.png" alt="Python" class="tool-icon">
+        <p>Python</p>
+      </div>
+      <div class="col-4 col-md-2 mb-4">
+        <img src="./images/java.png" alt="Java" class="tool-icon">
+        <p>Java</p>
+      </div>
+      <div class="col-4 col-md-2 mb-4">
+      <img src="./images/angular.png" alt="Angular" class="tool-icon">
+        <p>Angular</p>
+      </div>
+      <div class="col-4 col-md-2 mb-4">
+        <img src="./images/spring.png" alt="Spring Boot" class="tool-icon">
+        <p>Spring Boot</p>
+      </div>
+      <div class="col-4 col-md-2 mb-4">
+          <img src="./images/bootstrap.png" alt="Bootstrap" class="tool-icon">
+          <p>Bootstrap</p>
+        </div>
+
+         <div class="col-4 col-md-2 mb-4">
+          <img src="./images/sqlserver.png" alt="Sql Server" class="tool-icon">
+          <p>SQL Server</p>
+        </div>
+
+         <div class="col-4 col-md-2 mb-4">
+          <img src="./images/mysql.png" alt="Mysql" class="tool-icon">
+          <p>Mysql</p>
+        </div>
+
+         <div class="col-4 col-md-2 mb-4">
+          <img src="./images/burpSuite.png" alt="BurpSuite" class="tool-icon">
+          <p>BurpSuite</p>
+        </div>
+
+         <div class="col-4 col-md-2 mb-4">
+          <img src="./images/nmap.png" alt="nmap" class="tool-icon">
+          <p>Nmap</p>
+        </div>
+
+          <div class="col-4 col-md-2 mb-4">
+          <img src="./images/sqlmap.png" alt="Sqlmap" class="tool-icon">
+          <p>Sqlmap</p>
+        </div>
+         <div class="col-4 col-md-2 mb-4">
+          <img src="./images/jmeter.png" alt="Jmeter" class="tool-icon">
+          <p>Jmeter</p>
+        </div>
+        
+         <div class="col-4 col-md-2 mb-4">
+          <img src="./images/uml.png" alt="UML 2.0" class="tool-icon">
+          <p>UML 2.0</p>
+        </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="contacto" class="contact-section py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <p class="text-center mb-4">¿Querés ponerte en contacto conmigo? Completá el formulario.</p>
+    <form action="https://formspree.io/f/mrbkbzdw" method="POST" class="mx-auto" style="max-width: 600px;">
+      <div class="mb-3">
+        <input type="text" class="form-control" name="name" placeholder="Nombre" required>
+      </div>
+      <div class="mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Correo electrónico" required>
+      </div>
+      <div class="mb-3">
+        <textarea class="form-control" name="message" rows="5" placeholder="Mensaje" required></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+<footer class="footer-section">
+  <div class="container text-center py-3 d-flex flex-column flex-md-row justify-content-center align-items-center gap-2">
+    <span>&copy; 2025 - Desarrollado por <strong>Julio Martín</strong></span>
+    <div class="social-icons">
+      <a href="https://github.com/JulioMartin12" target="_blank" class="mx-2">
+        <i class="bi bi-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/julio-martin/" target="_blank" class="mx-2">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="mailto:julio.tuemail@dominio.com" class="mx-2">
+        <i class="bi bi-envelope-fill"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="./js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script src="./js/aos.js"></script>
+<script src="./js/navbar.js"></script>
+ 
+
 </body>
 </html>
