@@ -171,159 +171,62 @@ h3 {
 /*-----------------MAIN--------------------*/
 /*-----------------------------------------*/
 
-.evento {
-  transition: transform 0.3s ease;
-}
-.evento:hover {
-  transform: scale(1.02);
-}
-
-.btn-hover {
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.btn-hover:hover {
-  background-color: #0056b3;
-  transform: scale(1.05);
-  color: #fff;
-}
-
-#miCarrusel {
-  max-height: 300px;
-  overflow: hidden;
-  position: relative;
-}
-
-.banner-slides {
-  display: flex;
-  width: 300%;
-  height: 100%;
-  animation: slide 12s ease-in-out infinite;
-}
-
-.banner-slides img {
-  width: 100vw;
-  /* ocupar todo el ancho de la ventana */
-  height: 300px;
-  /* altura del banner */
-  object-fit: cover;
-  /* adapta sin deformar */
-  flex-shrink: 0;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(0%);
+ .img-banner {
+    height: 300px;
+    object-fit: cover;
   }
 
-  33% {
-    transform: translateX(0%);
+  .custom-btn {
+    transition: all 0.3s ease-in-out;
   }
 
-  36% {
-    transform: translateX(-100vw);
+  .custom-btn:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
   }
 
-  66% {
-    transform: translateX(-100vw);
+  @media (max-width: 768px) {
+    .img-banner {
+      height: 200px;
+    }
   }
 
-  69% {
-    transform: translateX(-200vw);
+  @media (max-width: 576px) {
+    .img-banner {
+      height: 150px;
+    }
   }
 
-  99% {
-    transform: translateX(-200vw);
+  /* Galeria */
+
+   .img-hover-scale {
+    transition: transform 0.3s ease;
   }
 
-  100% {
-    transform: translateX(0%);
+  .img-hover-scale:hover {
+    transform: scale(1.05);
   }
-}
 
+  .object-fit-cover {
+    object-fit: cover;
+    height: 200px;
+  }
 
+  @media (max-width: 576px) {
+    .object-fit-cover {
+      height: 160px;
+    }
+  }
 
-.galeria {
-  display: flex;
-  justify-content: center;
-  padding: 2rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-  /* Mejor separación entre elementos */
-}
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+  }
 
-.evento {
-  width: 300px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--color-secundario);
-}
-
-.imagen-evento {
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-top-left-radius: 0.25rem;
-  border-top-right-radius: 0.25rem;
-  min-height: 180px;
-}
-
-.img-hover-scale {
-  transition: transform 0.3s ease;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.imagen-evento:hover .img-hover-scale {
-  transform: scale(1.05);
-}
-
-.titulo {
-  font-weight: 700;
-  color: #343a40;
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-}
-
-.capacidad, .lugar, .fecha {
-  color: #6c757d;
-  font-size: 0.9rem;
-}
-
-.fecha {
-  font-weight: 600;
-  color: #495057;
-}
-
-.card-body {
-  padding: 1rem;
-}
-
-.botones-card {
-  display: flex;
-  justify-content: space-between;
-}
-
-.botones-card .btn {
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.botones-card .btn:hover {
-  filter: brightness(0.9);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.evento .card:hover {
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: box-shadow 0.3s ease;
-}
-
+  .titulo {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
 
 
 

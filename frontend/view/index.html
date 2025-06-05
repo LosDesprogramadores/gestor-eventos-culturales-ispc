@@ -45,167 +45,73 @@
     <main>
  
 <div id="miCarrusel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" data-bs-pause="hover">
-
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Playa al atardecer">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80"
+        class="d-block w-100 img-banner" alt="Playa al atardecer">
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Ciudad de noche">
+      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80"
+        class="d-block w-100 img-banner" alt="Ciudad de noche">
     </div>
     <div class="carousel-item">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Montañas con nieve">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80"
+        class="d-block w-100 img-banner" alt="Montañas con nieve">
     </div>
   </div>
 
-      <!-- Controles -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-      </button>
+  <!-- Controles personalizados -->
+  <button class="carousel-control-prev custom-btn" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next custom-btn" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
 
-      <!-- Indicadores -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="0" class="active" aria-current="true"
-          aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#miCarrusel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+</div>
+
+<div class="container my-5">
+  <div class="row g-4">
+
+   
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <div class="card h-100 shadow-sm">
+        <div class="imagen-evento">
+          <img src="https://plus.unsplash.com/premium_photo-1701769120039-02b1fedc38bc?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Evento"
+            class="card-img-top img-hover-scale object-fit-cover">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title titulo">Carnavales</h5>
+          <p class="capacidad mb-1"><strong>Capacidad:</strong> 2000 lugares</p>
+          <p class="lugar mb-1">Teatro Real - San Jerónimo 664</p>
+          <p class="fecha mb-0">Mayo - Jueves 22 | 20:30 Hs</p>
+        </div>
+        <div class="botones-card px-3 pb-3 d-flex gap-2">
+          <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+          <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+        </div>
       </div>
     </div>
-
-<div class="container my-4">
-  <div class="row g-4">
-    
-    <div class="evento col-sm-6 col-md-4 col-lg-3">
-      <div class="card h-100 shadow-sm">
-   
-      <div class="imagen-evento">
-      <img src="https://plus.unsplash.com/premium_photo-1701769120039-02b1fedc38bc?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Evento" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
-    </div>
-
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Carnavales</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 2000 lugares</p>
-      <p class="lugar mb-1">Teatro Real - San Jerónimo 664</p>
-      <p class="fecha mb-0">Mayo - Jueves 22 | 20:30 Hs</p>
-    </div>
-
-    <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
-      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-    </div>
-
-  </div>
-</div>
-
-<div class="evento col-sm-6 col-md-4 col-lg-3">
+  
+<div class="col-sm-6 col-md-4 col-lg-3">
   <div class="card h-100 shadow-sm">
     <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Concierto Rock" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
+      <img src="https://images.pexels.com/photos/19630580/pexels-photo-19630580/free-photo-of-ciudad-noche-calle-oscuro.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Carnavales"
+        class="card-img-top img-hover-scale object-fit-cover">
     </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Concierto Rock</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 1500 lugares</p>
-      <p class="lugar mb-1">Estadio Luna Park - Av. Madero 420</p>
-      <p class="fecha mb-0">Junio - Viernes 10 | 21:00 Hs</p>
-    </div>
-    <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
-      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-    </div>
-  </div>
-</div>
-
-<div class="evento col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100 shadow-sm">
-    <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=400&q=80" alt="Feria de Artesanía" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
-    </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Feria de Artesanía</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 500 lugares</p>
-      <p class="lugar mb-1">Plaza Central - Calle 9 de Julio 123</p>
-      <p class="fecha mb-0">Julio - Sábado 18 | 10:00 - 18:00 Hs</p>
-    </div>
-    <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
-      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-    </div>
-  </div>
-</div>
-
-<div class="evento col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100 shadow-sm">
-    <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=400&q=80" alt="Exposición de Pintura" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
-    </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Exposición de Pintura</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 300 lugares</p>
-      <p class="lugar mb-1">Museo de Arte Moderno - Av. Corrientes 500</p>
-      <p class="fecha mb-0">Agosto - Miércoles 5 | 19:00 Hs</p>
-    </div>
-    <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
-      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-    </div>
-  </div>
-</div>
-
-<div class="evento col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100 shadow-sm">
-    <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80" alt="Festival de música" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
-    </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Festival de Música</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 3500 lugares</p>
-      <p class="lugar mb-1">Auditorio Nacional - Calle 45 Nº 12</p>
-      <p class="fecha mb-0">Agosto - Viernes 18 | 19:00 Hs</p>
-    </div>
-    <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
-      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-    </div>
-  </div>
-</div>
-
-
-
-
-<div class="evento col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100 shadow-sm">
-    <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?auto=format&fit=crop&w=400&q=80" alt="Taller de Fotografía" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
-    </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Taller de Fotografía</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 50 lugares</p>
-      <p class="lugar mb-1">Casa de la Cultura - Calle Belgrano 345</p>
-      <p class="fecha mb-0">Abril - Domingo 19 | 15:00 Hs</p>
-    </div>
-    <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
-      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-    </div>
-  </div>
-</div>
-
-
-<div class="evento col-sm-6 col-md-4 col-lg-3">
-  <div class="card h-100 shadow-sm">
-    <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" alt="Conferencia Tecnológica" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
-    </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Conferencia Tecnológica</h5>
+    <div class="card-body">
+      <h5 class="card-title titulo">Comedias</h5>
       <p class="capacidad mb-1"><strong>Capacidad:</strong> 1000 lugares</p>
-      <p class="lugar mb-1">Centro de Convenciones - Av. Córdoba 1234</p>
-      <p class="fecha mb-0">Noviembre - Martes 21 | 09:00 Hs</p>
+      <p class="lugar mb-1">Teatro Comedia - San Juan 664</p>
+      <p class="fecha mb-0">Mayo - Jueves 29 | 22:30 Hs</p>
     </div>
     <div class="botones-card px-3 pb-3 d-flex gap-2">
       <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
@@ -214,68 +120,168 @@
   </div>
 </div>
 
-<div class="evento col-sm-6 col-md-4 col-lg-3">
+
+<div class="col-sm-6 col-md-4 col-lg-3">
   <div class="card h-100 shadow-sm">
     <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=400&q=80" alt="Festival de Cine" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
+      <img src="https://images.unsplash.com/photo-1555685812-4b943f1cb0eb?auto=format&fit=crop&w=1200&q=80" alt="Jazz en Vivo"
+        class="card-img-top img-hover-scale object-fit-cover">
     </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Festival de Cine</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 700 lugares</p>
-      <p class="lugar mb-1">Cine Teatro - Av. Santa Fe 2000</p>
-      <p class="fecha mb-0">Diciembre - Sábado 10 | 19:30 Hs</p>
+    <div class="card-body">
+      <h5 class="card-title titulo">Jazz en Vivo</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> 350 personas</p>
+      <p class="lugar mb-1">Sala del Buen Pastor</p>
+      <p class="fecha mb-0">Junio - Viernes 7 | 21:00 Hs</p>
     </div>
     <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
       <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
     </div>
   </div>
 </div>
 
-<div class="evento col-sm-6 col-md-4 col-lg-3">
+
+<div class="col-sm-6 col-md-4 col-lg-3">
   <div class="card h-100 shadow-sm">
     <div class="imagen-evento">
-      <img src="https://images.pexels.com/photos/1047442/pexels-photo-1047442.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Clases de Yoga" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
+      <img src="https://images.unsplash.com/photo-1525186402429-b4ff38bedec6?auto=format&fit=crop&w=1200&q=80" alt="Obra de Teatro"
+        class="card-img-top img-hover-scale object-fit-cover">
     </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Clases de Yoga</h5>
-      <p class="capacidad mb-1"><strong>Capacidad:</strong> 100 lugares</p>
-      <p class="lugar mb-1">Centro Wellness - Av. Rivadavia 1500</p>
-      <p class="fecha mb-0">Enero - Lunes 6 | 08:00 Hs</p>
+    <div class="card-body">
+      <h5 class="card-title titulo">Obra de Teatro</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> 500 butacas</p>
+      <p class="lugar mb-1">Centro Cultural Córdoba</p>
+      <p class="fecha mb-0">Julio - Sábado 13 | 19:00 Hs</p>
     </div>
     <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
       <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
     </div>
   </div>
 </div>
 
-<div class="evento col-sm-6 col-md-4 col-lg-3">
+
+<div class="col-sm-6 col-md-4 col-lg-3">
   <div class="card h-100 shadow-sm">
     <div class="imagen-evento">
-      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=400&q=80" alt="Mercado Gastronómico" class="card-img-top img-hover-scale w-100 h-100 object-fit-cover">
+      <img src="https://images.pexels.com/photos/16935932/pexels-photo-16935932/free-photo-of-restaurante-fiesta-partido-ramas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Taller de Fotografía"
+        class="card-img-top img-hover-scale object-fit-cover">
     </div>
-    <div class="card-body detalle-imagen">
-      <h5 class="card-title titulo">Mercado Gastronómico</h5>
+    <div class="card-body">
+      <h5 class="card-title titulo">Taller de Fotografía</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> 25 cupos</p>
+      <p class="lugar mb-1">Casa de la Cultura</p>
+      <p class="fecha mb-0">Junio - Miércoles 12 | 18:00 Hs</p>
+    </div>
+    <div class="botones-card px-3 pb-3 d-flex gap-2">
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="card h-100 shadow-sm">
+    <div class="imagen-evento">
+      <img src="https://images.pexels.com/photos/31811013/pexels-photo-31811013/free-photo-of-historico-teatro-municipal-de-sao-paulo-de-noche.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Feria del Libro"
+        class="card-img-top img-hover-scale object-fit-cover">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title titulo">Feria del Libro</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> Libre</p>
+      <p class="lugar mb-1">Plaza San Martín</p>
+      <p class="fecha mb-0">Agosto - Domingo 18 | 10:00 Hs</p>
+    </div>
+    <div class="botones-card px-3 pb-3 d-flex gap-2">
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="card h-100 shadow-sm">
+    <div class="imagen-evento">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1200&q=80" alt="Cine al Aire Libre"
+        class="card-img-top img-hover-scale object-fit-cover">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title titulo">Cine al Aire Libre</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> 400 personas</p>
+      <p class="lugar mb-1">Parque Sarmiento</p>
+      <p class="fecha mb-0">Febrero - Sábado 24 | 21:30 Hs</p>
+    </div>
+    <div class="botones-card px-3 pb-3 d-flex gap-2">
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="card h-100 shadow-sm">
+    <div class="imagen-evento">
+      <img src="https://images.pexels.com/photos/18909758/pexels-photo-18909758/free-photo-of-ciudad-puesta-de-sol-punto-de-referencia-luces.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Exposición de Arte"
+        class="card-img-top img-hover-scale object-fit-cover">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title titulo">Exposición de Arte</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> 100 personas por turno</p>
+      <p class="lugar mb-1">Museo Caraffa</p>
+      <p class="fecha mb-0">Julio - Viernes 5 | 17:00 Hs</p>
+    </div>
+    <div class="botones-card px-3 pb-3 d-flex gap-2">
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="card h-100 shadow-sm">
+    <div class="imagen-evento">
+      <img src="https://images.unsplash.com/photo-1505245208761-ba872912fac0?auto=format&fit=crop&w=1200&q=80" alt="Festival de Comida"
+        class="card-img-top img-hover-scale object-fit-cover">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title titulo">Festival de Comida</h5>
+      <p class="capacidad mb-1"><strong>Capacidad:</strong> 1000 asistentes</p>
+      <p class="lugar mb-1">Paseo del Buen Pastor</p>
+      <p class="fecha mb-0">Septiembre - Domingo 15 | 12:00 Hs</p>
+    </div>
+    <div class="botones-card px-3 pb-3 d-flex gap-2">
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-sm-6 col-md-4 col-lg-3">
+  <div class="card h-100 shadow-sm">
+    <div class="imagen-evento">
+      <img src="https://images.pexels.com/photos/7991298/pexels-photo-7991298.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Charla TEDx"
+        class="card-img-top img-hover-scale object-fit-cover">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title titulo">Charla TEDx</h5>
       <p class="capacidad mb-1"><strong>Capacidad:</strong> 600 lugares</p>
-      <p class="lugar mb-1">Parque Central - Av. Libertad 100</p>
-      <p class="fecha mb-0">Febrero - Domingo 25 | 12:00 - 20:00 Hs</p>
+      <p class="lugar mb-1">Auditorio Universidad</p>
+      <p class="fecha mb-0">Octubre - Martes 10 | 18:30 Hs</p>
     </div>
     <div class="botones-card px-3 pb-3 d-flex gap-2">
-      <a href="pantallaDetalleEvento.html" class="btn btn-primary btn-sm flex-fill">Ver más</a>
+      <a href="#" class="btn btn-primary btn-sm flex-fill">Ver más</a>
       <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
     </div>
   </div>
 </div>
 
   </div>
-  </div>
-
-
-
- 
-
-
+</div>
 
     </main>
     <footer class="footer">
