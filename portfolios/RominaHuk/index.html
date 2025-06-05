@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Romina Vanesa Huk</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container-fluid">
+      <h1 class="logo">
+        <a href="#" aria-current="page">
+          <img src="img/huk.jpeg" alt="Romina Vanesa Huk" class="profile-pic">Huk Romina Vanesa
+        </a>
+      </h1>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="#perfil-policial-full">Perfil Policial</a></li>
+          <li><a href="#perfil-tecnico-full">Perfil Técnico</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container-main" role="main">
+    <section class="side side-left" aria-labelledby="tituloPolicial">
+      <div class="icon-large" aria-hidden="true"><i class="fas fa-user-shield"></i></div>
+      <h2 id="tituloPolicial">Vocación Policial</h2>
+      <p>Soy Policía y Técnico Superior en Actuaciones Policiales. Disciplina, compromiso y ética forman la base de mi trabajo.</p>
+      <a href="#perfil-policial-full" class="btn btn-primary">Ver Perfil Policial</a>
+    </section>
+
+    <div class="circle-center" role="img" aria-label="Imágenes rotativas representando perfiles policial y técnico">
+      <div id="carouselCircle" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/pol-logo.jpg" class="d-block w-100 h-100" alt="A" />
+          </div>
+          <div class="carousel-item active">
+            <img src="img/progra.jpg" class="d-block w-100 h-100" alt="B" />
+          </div>
+          <div class="carousel-item active">
+            <img src="img/pol-logo1.jpg" class="d-block w-100 h-100" alt="C" />
+          </div>
+          <div class="carousel-item">
+            <img src="img/tec1.jpeg" class="d-block w-100 h-100" alt="D" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="side side-right" aria-labelledby="tituloTecnico">
+      <div class="icon-large" aria-hidden="true"><i class="fas fa-laptop-code"></i></div>
+      <h2 id="tituloTecnico">Pasión Tecnológica</h2>
+      <p>Estudiante de Desarrollo de Software y Telecomunicaciones. Apasionado por innovación, lógica y conexión tecnológica.</p>
+      <a href="#perfil-tecnico-full" class="btn btn-secondary">Ver Perfil Técnico</a>
+    </section>
+  </main>
+
+  <section class="container py-5" id="perfil-policial-full">
+    <h2 class="text-center text-primary mb-4">Perfil Policial</h2>
+    <p class="lead text-center mb-5">Más sobre mi formación en seguridad pública, habilidades interpersonales, gestión de crisis y ética profesional.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+        <div class="profile-details police-profile">
+            <h3>Capacidades Clave:</h3>
+            <ul>
+                <li><strong>Seguridad Pública y Ciudadana:</strong> Amplio conocimiento en estrategias de prevención del delito, patrullaje y respuesta rápida a emergencias.</li>
+                <li><strong>Habilidades Interpersonales y Comunicación:</strong> Destreza en el manejo de situaciones conflictivas, negociación y establecimiento de relaciones de confianza con la comunidad.</li>
+                <li><strong>Gestión de Crisis y Resolución de Problemas:</strong> Capacidad para actuar bajo presión, tomar decisiones efectivas y coordinar acciones en escenarios complejos.</li>
+                <li><strong>Marco Legal y Ética Profesional:</strong> Estricto apego a la normativa vigente y un compromiso inquebrantable con los principios de honestidad, integridad y justicia.</li>
+                <li><strong>Primeros Auxilios y Asistencia a Víctimas:</strong> Formación en atención básica de emergencias y apoyo a personas en situaciones vulnerables.</li>
+                <li><strong>Análisis de Situaciones y Elaboración de Informes:</strong> Habilidad para evaluar contextos, recolectar información relevante y documentar eventos de manera precisa.</li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5" id="perfil-tecnico-full">
+    <h2 class="text-center text-success mb-4">Perfil Técnico</h2>
+    <p class="lead text-center mb-5">Experiencia y proyectos en desarrollo de software, redes y telecomunicaciones. Enfoque lógico y analítico para la resolución de problemas.</p>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+        <div class="profile-details tech-profile">
+            <h3>Conocimientos Técnicos:</h3>
+            <ul>
+                <li><strong>Desarrollo Frontend:</strong> HTML5, CSS3 (Bootstrap), JavaScript.</li>
+                <li><strong>Desarrollo Backend:</strong> Python, PHP, C++, C#.</li>
+                <li><strong>Bases de Datos:</strong> SQL (MySQL).</li>
+                <li><strong>Redes y Telecomunicaciones: </strong> Conceptos de red (TCP/IP), configuración de routers/switches, seguridad de red, fundamentos de ciberseguridad.</li>
+                <li><strong>Control de Versiones:</strong> Git y GitHub/GitLab.</li>
+                <li><strong>Metodologías Ágiles:</strong> Scrum, Kanban.</li>
+            </ul>
+
+            <h3>Proyectos Destacados:</h3>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 project-cards-container">
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="img/gec.png" class="card-img-top" alt="GEC"> <div class="card-body">
+                            <h5 class="card-title">GEC - Gestor de Eventos Culturales</h5>
+                            <p class="card-text">Gestor de Eventos Culturales es una aplicación web destinada a facilitar la organización, difusión e 
+                              inscripción a eventos culturales. Este sistema permite a usuarios de distintas categorías interactuar con la agenda cultural 
+                              local mediante una interfaz intuitiva y responsive.</p>
+                            <a href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc.git" target="_blank" class="btn btn-sm btn-outline-light project-link">
+                                <i class="fab fa-github me-2"></i> Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="img/logo.png" class="card-img-top" alt="Proyecto Hidroponico"> <div class="card-body">
+                            <h5 class="card-title">Proyecto Hidroponico</h5>
+                            <p class="card-text">ISPC Hydroponics es un proyecto IoT colaborativo desarrollado por estudiantes del Instituto Superior Politecnico Cordoba, correspondientes a la 
+                              materia Proyecto Integrador 2 de la Tecnicatura Superior en Telecomunicaciones. En el mismo se busca aplicar tecnología para monitorear y automatizar un sistema 
+                              de cultivo hidropónico. El objetivo es construir una solución inteligente, ecológica y accesible que combine sensores, microcontroladores y visualización en tiempo real.</p>
+                            <a href="https://github.com/ISPC-PI-II-2024/Proyecto_hidroponico.git" target="_blank" class="btn btn-sm btn-outline-light project-link">
+                                <i class="fab fa-github me-2"></i> Ver Repositorio
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 project-card">
+                        <img src="img/estacion.png" class="card-img-top" alt="Mini estacion Meteorologica"> <div class="card-body">
+                            <h5 class="card-title">Mini Estacion Meteorologicat</h5>
+                            <p class="card-text">Simulacion en Wokwi del funcionamiento de los sensores con el esp32 para tomer medidas de temperatura y humedad.</p>
+                            <a href="https://wokwi.com/projects/409827047087345665" target="_blank" class="btn btn-sm btn-outline-light project-link">
+                                <i class="fab fa-link"></i> Ver Enlace
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                </div> </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="main-footer text-center">
+    <div class="container-fluid">
+      <p>&copy; 2025 - Huk Romina Vanesa. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

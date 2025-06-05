@@ -1,0 +1,453 @@
+/* ----------------------- General Styles & Variables ------------------------ */
+:root {
+  /* Paleta General */
+  --color-dark-bg: #121212;
+  --color-header-bg: #1f1f1f;
+  --color-light-text: #ffffff;
+  --color-accent-primary: #ffffff; /* Blanco: para acentos, links */
+  --color-carousel-circle: #808080; /* Nuevo color para la circunferencia del carrusel (gris) */
+
+  /* Lado Policial: Colores de texto y elementos de acento */
+  --color-police-text: #ffffff; /* Blanco para títulos policiales */
+  --color-police-paragraph: #ffffff; /* Blanco para párrafos policiales */
+  --color-police-dark-text-button: #001e3c; /* Color oscuro para texto de botón al hover */
+
+  /* Lado Técnico: Colores de texto y elementos de acento */
+  --color-tech-text: #ffffff; /* Blanco para títulos técnicos */
+  --color-tech-paragraph: #ffffff; /* Blanco para párrafos técnicos */
+  --color-tech-accent-button: #ffffff; /* Blanco para botones y sombras */
+ --color-card-bg: #ffffff; /* ¡CAMBIO CLAVE! Fondo blanco para las cards */
+    --color-card-text: #333333; /* Nuevo: color de texto oscuro para las cards */
+    --color-card-link: #007bff; /* Nuevo: un azul vibrante para los links de la card */
+    --color-card-link-hover: #0056b3; /* Nuevo: un azul más oscuro para el hover del link */
+    --color-card-border: #e0e0e0
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-dark-bg);
+}
+
+/* ----------------------- Header ------------------------ */
+.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-header-bg);
+  color: var(--color-light-text);
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 255, 195, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Styles for the logo and profile picture */
+.main-header .logo a {
+  display: flex; /* Makes the image and text align side-by-side */
+  align-items: center; /* Vertically aligns them in the middle */
+  gap: 0.75rem; /* Adds space between the image and the name */
+  text-decoration: none; /* Keeps link styles clean */
+  color: var(--color-light-text); /* Ensures the text remains white */
+  transition: color 0.3s ease;
+}
+
+.main-header .logo a:hover {
+  color: var(--color-accent-primary); /* Keeps hover effect for text */
+}
+
+.main-header .profile-pic {
+  width: 45px; /* Adjust size as needed, e.g., 45px */
+  height: 45px; /* Same as width for a perfect circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the area without distortion */
+  border: 2px solid var(--color-accent-primary); /* Optional: add a border with your accent color (which is white now) */
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Optional: subtle white glow */
+}
+
+.main-header .logo {
+  font-size: 1.5rem; /* Keep your existing font-size */
+  margin: 0;
+}
+
+.main-header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.main-header nav li {
+  margin-left: 1.5rem;
+}
+
+.main-header nav a {
+  color: var(--color-accent-primary); /* Links are white */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.main-header nav a:hover {
+  color: var(--color-light-text); /* Keep hover effect for nav links */
+}
+
+/* ----------------------- Main Content Container (Split View) ----------------------------- */
+.container-main {
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 100px); /* Ajusta según altura de header/footer */
+  width: 100vw;
+  align-items: stretch;
+}
+
+.side {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centra los ítems hijos horizontalmente */
+  color: var(--color-light-text);
+  padding: 3rem 2rem;
+  user-select: none;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease; /* Transición para el fondo también */
+  text-align: center; /* Asegura el centrado del texto dentro de los elementos */
+  /* Propiedades comunes de fondo para imágenes */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Efecto Hover General para las Secciones Laterales */
+.side:hover {
+  transform: translateY(-5px); /* Pequeño efecto de levantamiento */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al hacer hover */
+  z-index: 5; /* Asegura que la sección en hover esté por encima */
+}
+
+/* Estilos de Contenido Comunes en las Secciones Laterales */
+.side h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.side p {
+  font-size: 1.2rem;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+}
+
+.side .btn {
+  background: none;
+  border: 2px solid; /* El color del borde se definirá por cada lado */
+  padding: 0.7rem 2rem;
+  font-weight: 600;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-top: 1.5rem; /* Give some space above the button */
+}
+
+/* Lado Policial (Izquierda) */
+.side-left {
+  padding-right: 200px; /* Separación del círculo central */
+  /* Imagen de fondo con overlay menos oscuro (0.4 opacidad) */
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/pollwall.avif') center/cover no-repeat;
+}
+
+.side-left:hover {
+  /* Al hover, el overlay se vuelve aún más claro (0.2 opacidad) para revelar más la imagen */
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../img/pollwall.avif') center/cover no-repeat;
+  box-shadow: inset 0 0 40px #0066ccdd; /* Mantiene el brillo interno azul */
+}
+
+.side-left h2 {
+  color: var(--color-police-text);
+  text-shadow: 0 0 8px #91a7c8;
+}
+
+.side-left p {
+  color: var(--color-police-paragraph);
+}
+
+.side-left .btn {
+  border-color: var(--color-police-paragraph);
+  color: var(--color-police-paragraph);
+}
+
+.side-left .btn:hover {
+  background: var(--color-police-paragraph);
+  color: var(--color-police-dark-text-button); /* Usa el color oscuro de la policía */
+}
+
+/* Lado Técnico (Derecha) */
+.side-right {
+  padding-left: 200px; /* Separación del círculo central */
+  /* Imagen de fondo con overlay a 0.5 opacidad para que sea más visible */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/tecwall.jpg') center/cover no-repeat;
+}
+
+/* Nuevo Hover para Lado Técnico: el overlay se vuelve un poco más claro (0.3) */
+.side-right:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../img/tecwall.jpg') center/cover no-repeat; /* Fondo ligeramente más visible al hover */
+  box-shadow: 0 0 60px var(--color-tech-accent-button), inset 0 0 20px var(--color-tech-accent-button); /* Sombra externa más difusa y un brillo interno neón */
+  color: var(--color-tech-text); /* Mantiene el color de texto neón */
+}
+
+.side-right h2 {
+  color: var(--color-tech-text);
+  text-shadow: 0 0 15px var(--color-tech-accent-button);
+}
+
+.side-right p {
+  color: var(--color-tech-paragraph);
+}
+
+.side-right .btn {
+  border-color: var(--color-tech-accent-button); /* Usa el blanco */
+  color: var(--color-tech-accent-button); /* Usa el blanco */
+}
+
+.side-right .btn:hover {
+  background: var(--color-tech-accent-button); /* Fondo blanco */
+  color: #111; /* Texto oscuro */
+  box-shadow: 0 0 10px var(--color-tech-accent-button);
+}
+
+/* Círculo Central */
+.circle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  margin: -160px 0 0 -160px; /* Simplificación de margin */
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--color-carousel-circle) 15%, transparent 85%); /* Cambiado a color gris */
+  backdrop-filter: blur(8px);
+  box-shadow:
+    0 0 30px var(--color-carousel-circle), /* Cambiado a color gris */
+    0 0 50px var(--color-carousel-circle); /* Cambiado a color gris */
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: box-shadow 0.4s ease, transform 0.3s ease;
+  cursor: default;
+  user-select: none;
+  overflow: hidden;
+}
+
+.circle-center:hover {
+  box-shadow:
+    0 0 50px var(--color-carousel-circle), /* Cambiado a color gris */
+    0 0 70px var(--color-carousel-circle), /* Cambiado a color gris */
+    0 0 100px var(--color-carousel-circle); /* Cambiado a color gris */
+  transform: scale(1.05);
+}
+
+.circle-center .carousel-item img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Iconos Grandes */
+.icon-large {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-light-text); /* Cambiado a color blanco */
+  text-align: center;
+  width: 100%;
+}
+
+/* ------------------------ Detailed Profile Sections ------------------------ */
+/* General styles for the new profile-details sections */
+.profile-details {
+    width: 100%; /* Ensure it takes full width of its parent */
+    margin-top: 2rem;
+    text-align: left; /* Align text within these sections to the left */
+    color: var(--color-light-text); /* Ensure text is white in these sections */
+}
+
+.profile-details h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.profile-details ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.profile-details ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+    display: flex; /* For custom list item styling */
+    align-items: flex-start;
+}
+
+/* Custom bullet points using pseudo-elements */
+.profile-details ul li::before {
+    content: '\2022'; /* Unicode for a bullet point */
+    font-size: 1.2em; /* Make it slightly larger */
+    margin-right: 0.75em; /* Space between bullet and text */
+    line-height: 1;
+}
+
+/* Specific styles for the Police Profile detailed section */
+#perfil-policial-full {
+    background-color: #1a1a1a; /* A slightly different dark background for distinction */
+    border-top: 2px solid #0066cc; /* Police accent border */
+}
+#perfil-policial-full .text-primary {
+    color: #60a5fa !important; /* Bootstrap text-primary overriden for police blue */
+    text-shadow: 0 0 10px #60a5fa;
+}
+.profile-details.police-profile h3 {
+    color: var(--color-police-text); /* Uses white for police text */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle white glow */
+}
+
+.profile-details.police-profile ul li {
+    color: var(--color-police-paragraph); /* Uses white for police paragraph */
+}
+
+.profile-details.police-profile ul li::before {
+    color: #60a5fa; /* A subtle blue for the police bullet points */
+}
+
+/* Specific styles for the Technical Profile detailed section */
+#perfil-tecnico-full {
+    background-color: #1a1a1a; /* A slightly different dark background for distinction */
+    border-top: 2px solid #39ff14; /* Tech accent border */
+}
+#perfil-tecnico-full .text-success {
+    color: #34d399 !important; /* Bootstrap text-success overriden for tech green */
+    text-shadow: 0 0 10px #34d399;
+}
+.profile-details.tech-profile h3 {
+    color: var(--color-tech-text); /* Uses white for tech text */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Subtle white glow */
+}
+
+.profile-details.tech-profile ul li {
+    color: var(--color-tech-paragraph); /* Uses white for tech paragraph */
+}
+
+.profile-details.tech-profile ul li::before {
+    color: #34d399; /* A subtle green for the tech bullet points */
+}
+
+/* New styles for Project Cards */
+.project-cards-container {
+    margin-top: 2rem; /* Space above the cards */
+}
+
+.project-card {
+    background-color: var(--color-card-bg); /* Usamos el nuevo fondo blanco */
+    border: 1px solid var(--color-card-border); /* Un borde más claro */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra más suave para fondo claro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    /* Ajusta la sombra al hover para que se vea bien con un fondo claro. */
+    /* Puedes usar un color sutil o el acento de tu tema tecnológico. */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15), 0 0 15px rgba(52, 211, 153, 0.4); /* Ejemplo con un toque de verde de tu tema técnico */
+}
+
+.project-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    /* El borde inferior puede ser más claro o quitarlo si no se ve bien */
+    border-bottom: 1px solid var(--color-card-border);
+}
+
+.project-card .card-body {
+    padding: 1.5rem;
+    color: var(--color-card-text); /* ¡CAMBIO CLAVE! Texto oscuro para el cuerpo de la card */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card .card-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-card-text); /* ¡CAMBIO CLAVE! Título oscuro */
+    margin-bottom: 0.75rem;
+    text-shadow: none; /* Elimina la sombra del texto para mejor legibilidad en fondo claro */
+}
+
+.project-card .card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--color-card-text); /* ¡CAMBIO CLAVE! Texto de párrafo oscuro */
+    margin-bottom: 1rem;
+}
+
+.project-card .project-link {
+    width: 100%;
+    text-align: center;
+    /* ¡CAMBIO CLAVE! Estilo del link */
+    border-color: var(--color-card-link); /* Borde con el color del link */
+    color: var(--color-card-link); /* Color de texto del link */
+    background-color: transparent; /* Asegura que el fondo sea transparente por defecto */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card .project-link:hover {
+    /* ¡CAMBIO CLAVE! Estilo del link al hacer hover */
+    background-color: var(--color-card-link); /* Fondo del color del link al hover */
+    color: #ffffff !important; /* Texto blanco al hover para contraste */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6); /* Sombra suave para el hover del link */
+    border-color: var(--color-card-link-hover); /* Borde más oscuro al hover */
+}
+
+/* ------------------------ Footer ----------------------------------------- */
+.main-footer {
+  background-color: var(--color-dark-bg);
+  color: #999;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+  border-top: 1px solid #333;
+  text-align: center; /* Asegura que el texto del footer est\u00E9 centrado */
+}
+
+.main-footer .container-fluid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-footer p {
+  margin: 0;
+}
+
