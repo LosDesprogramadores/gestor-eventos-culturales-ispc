@@ -468,7 +468,7 @@ h3 {
   color: var(--color-secundario-alternativo);
 }
 
-/* hace que el footer esté siempre abajo aunque la página tenga poco contenido,*/
+/* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
 
 body {
   display: flex;
