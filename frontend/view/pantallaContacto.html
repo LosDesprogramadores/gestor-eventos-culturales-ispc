@@ -45,23 +45,23 @@
 
             <form action="#" method="post" class="formulario-contacto">
               <div class="campo-formulario">
-                <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="50">
+                <label for="nombre" class="visually-hidden"> Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Apellido y Nombre" required minlength="3" maxlength="50">
               </div>
 
               <div class="campo-formulario">
-                <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email" class="visually-hidden"> Correo Electrónico:</label>
+                <input type="email" id="email" name="email" placeholder="Email:"  required>
               </div>
                 
               <div class="campo-formulario">
-                <label for="asunto"><i class="fa-solid fa-tag"></i> Asunto:</label>
-                <input type="text" id="asunto" name="asunto" required>
+                <label for="asunto" class="visually-hidden"> Asunto:</label>
+                <input type="text" id="asunto" name="asunto" placeholder="Asunto:" required>
               </div>
                   
               <div class="campo-formulario">
-                <label for="mensaje"><i class="fa-solid fa-message"></i> Mensaje:</label>
-                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                <label for="mensaje" class="visually-hidden">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Mensaje:" required></textarea>
               </div>
                     
               <div class="campo-formulario">
@@ -73,17 +73,22 @@
       </div>
     </main>
     <footer class="footer">
-      <div class="footer-contenido">
-          <p class="footer-texto">© 2025 Los Desprogramadores - Proyecto Gestión de Eventos Culturales</p>
-          <div class="footer-links">
-            <a href="pantallaQuienesSomos.html">QUIENES SOMOS</a>
-            <a href="pantallaContacto.html">CONTACTOS</a>
-          </div>
-          <div class="footer-redes">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-          </div>
+        <div class="footer-contenido container py-3">
+            <div class="row text-center justify-content-between align-items-center">
+    
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                    <p class="footer-texto mb-0">© 2025 Los Desprogramadores - Proyecto Gestión de Eventos Culturales</p>
+                </div>
+    
+                <div class="col-12 col-md-6 footer-links-redes">
+                    <a href="pantallaQuienesSomos.html">QUIENES SOMOS</a>
+                    <a href="pantallaContacto.html">CONTACTOS</a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+    
+            </div>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
