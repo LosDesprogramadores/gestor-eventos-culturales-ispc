@@ -1,13 +1,15 @@
-# gestor-eventos-culturales-ispc
-Este proyecto es una plataforma de gestión de eventos culturales desarrollada en el marco del ISPC, cuyo objetivo principal es organizar actividades culturales y gestionar la inscripción de participantes de forma eficiente y centralizada.
+# 🎭 Plataforma de Gestion de Eventos culturales - GEC
 
-Este Proyecto cuenta con una estructura de carpetas las cuales las dividiremos en 3 secciones:
+Este proyecto fue desarrollado en el marco de la **Tecnicatura Superior en Desarrollo de Software** del ISPC (Instituto Superior Politécnico Córdoba), como parte de la evaluacion del módulo **Full Stack I**.
 
--Maquetado: la cual tendremos un esquema visual de como se tendrá que ver el sitio web en todo su entrono visual.
+Los espacios participantes fueron:
 
--Front: la cual vamos a tener toda la programación de   la parte visual del proyecto.
+- **Programación II**  
+- **Modelado y Arquitectura de Software**  
+- **Práctica Profesionalizante**
+---
 
--Back: la cual vamos a tener toda la programación de la persistencia de dato.
+## 📌 Descripción
 
 **Gestor de Eventos Culturales** es una aplicación web destinada a facilitar la **organización, difusión e inscripción** a eventos culturales. Este sistema permite a usuarios de distintas categorías interactuar con la agenda cultural local mediante una interfaz intuitiva y responsive.
 
@@ -70,7 +72,11 @@ Los organizadores de eventos culturales carecen de una herramienta centralizada 
 
 ## 🧩 Tecnologías Utilizadas
 
+<<<<<<< HEAD
 - **Frontend:** HTML5, CSS3 (con diseño responsive)
+=======
+- **Frontend:** HTML5, CSS3 (con diseño estatico)
+>>>>>>> bf0b08e670c1b8656d13d74d955d7ad908f8280d
 - **Backend:** En desarrollo 
 - **Base de Datos:** En desarrollo
 - **Control de versiones:** Git / GitHub
