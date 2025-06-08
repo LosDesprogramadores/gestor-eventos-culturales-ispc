@@ -103,3 +103,10 @@ Cada miembro del equipo aportó desde su rol a:
 - Gestión del tablero Kanban e historias de usuario
 
 ---
+
+## 🔁 Avance SPRINT 2 
+Durante este Sprint 2, el equipo trabajó colaborativamente en el maquetado estático responsive de las páginas principales del proyecto, utilizando HTML, CSS y Bootstrap. Se logró cumplir con los objetivos planteados y se registraron los cambios en la rama principal (main).
+
+- Cada integrante creó su portafolio web estático responsive, el portafolio se encuentra en la carpeta portfolio/ y los nombres de cada integrante.
+- Actualización del Kanban y seguimiento del progreso de tareas asignadas.
+- Se actualizo la documentación correspondiente de ser necesaria.
