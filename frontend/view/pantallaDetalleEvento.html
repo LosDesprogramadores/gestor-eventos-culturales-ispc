@@ -1,84 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de Imagen</title>
-    <link rel="icon" href="../img/logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../Css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Detalle de Evento</title>
+  <link rel="icon" href="../img/logo.ico" type="image/x-icon" />
+  
+  <link rel="stylesheet" href="../Css/bootstrap.min.css" />
+  <link rel="stylesheet" href="../Css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="logo-titulo">
+
+  <!-- HEADER -->
+  <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-md nav-principal">
+          <a class="navbar-brand d-flex align-items-center" href="#">
             <img src="../img/logo.ico" alt="Logo del Gestor" class="logo" />
-        </div>
-        <nav class="nav-principal">
-            <ul>
-            <li><a href="index.html">INICIO</a></li>
-            <li><a href="panelUsuario.html">PANEL USUARIO</a></li>
-            <li><a href="pantallaRegistroNuevoUsuario.html">REGISTRO</a></li>
-            <li><a href="pantallaInicioSesion.html">LOGIN</a></li>
-            <li><a href="pantallaQuienesSomos.html">QUIENES SOMOS</a></li>
-            <li><a href="pantallaContacto.html">CONTACTOS</a></li>
+          </a>
+          
+          <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Menú de navegación">
+            <span class="fas fa-bars fa-lg" aria-hidden="true"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+              <li class="nav-item"><a class="nav-link" href="panelUsuario.html">Panel Usuario</a></li>
+              <li class="nav-item"><a class="nav-link" href="pantallaRegistroNuevoUsuario.html">Registro</a></li>
+              <li class="nav-item"><a class="nav-link" href="pantallaInicioSesion.html">Inicio de Sesion</a></li>
+              <li class="nav-item"><a class="nav-link" href="pantallaQuienesSomos.html">Quiénes Somos</a></li>
+              <li class="nav-item"><a class="nav-link" href="pantallaContacto.html">Contacto</a></li>
             </ul>
+          </div>
         </nav>
+      </div>
     </header>
-    <main class="detalle-evento">
+    <main>
+        <div class="detalle-evento container pt-5">
+          <article class="tarjeta-evento">
+            <h1 id="titulo-evento" class="text-center mb-5">Título del Evento</h1>
+        
+            <div class="row align-items-center">
+              <div class="col-md-6 mb-4 mb-md-0">
+                <img src="https://images.unsplash.com/photo-1496767000195-3841ae3f97f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Imagen del evento" id="imagen-evento" class="img-fluid rounded shadow" />
+              </div>
 
-        <article class="tarjeta-evento">
-            
-            <h1 id="titulo-evento">Título del Evento</h1>
-
-            <img src="#" alt="Imagen del evento" id="imagen-evento" class="img-evento"/>
-
-            <section>
-                <h2>Descripción</h2>
-                <p id="descripcion-evento">Aquí irá la descripción del evento.</p>
+              <div class="col-md-6">
+                <section class="mb-4">
+                  <h2>Descripción</h2>
+                  <p id="descripcion-evento">Aquí irá la descripción del evento.</p>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Ubicación</h2>
+                  <p id="ubicacion-evento">Ciudad, Provincia, Lugar específico</p>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Capacidad</h2>
+                  <p id="capacidad-evento">Total de personas</p>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Fecha y Hora</h2>
+                  <p id="fecha-hora-evento">DD/MM/AAAA - HH:MM hs</p>
+                </section>
+              </div>
+            </div>
+        
+            <section class="compartir d-flex justify-content-center gap-3 flex-wrap mt-4">
+              <a href="#"><i class="fas fa-calendar-alt"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
             </section>
+        
+            <div class="text-center">
+              <a href="index.html" class="btn-volver-evento mt-4">← Volver al Inicio</a>
+            </div>
+          </article>
+        </div>
 
-            <section>
-                <h2>Ubicación</h2>
-                <p id="ubicacion-evento">Ciudad, Provincia, Lugar específico</p>
-            </section>
-
-            <section>
-                <h2>Capacidad</h2>
-                <p id="capacidad-evento">Total de personas</p>
-            </section>
-
-            <section>
-                <h2>Fecha y Hora</h2>
-                <p id="fecha-hora-evento">DD/MM/AAAA - HH:MM hs</p>
-            </section>
-
-            <section class="compartir">
-                <h3>Compartir:</h3>
-                <a href="#"><i class="fas fa-calendar-alt"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-whatsapp"></i></a>
-                <a href="#"><i class="fas fa-share-alt"></i></a>
-            </section>
-
-            <a href="index.html" class="btn-volver-evento">← Volver al Inicio</a>
-
-        </article>
     </main>
-    <footer class="footer">
-        <div class="footer-contenido">
-            <p class="footer-texto">© 2025 Los Desprogramadores - Proyecto Gestión de Eventos Culturales</p>
-            <div class="footer-links">
-                <a href="pantallaQuienesSomos.html">QUIENES SOMOS</a>
-                <a href="pantallaContacto.html">CONTACTOS</a>
-            </div>
-            <div class="footer-redes">
-                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
 
+    <footer class="footer">
+        <div class="footer-contenido container py-3">
+            <div class="row text-center justify-content-between align-items-center">
+    
+                <div class="col-12 col-md-6 mb-2 mb-md-0">
+                    <p class="footer-texto mb-0">© 2025 Los Desprogramadores - Proyecto Gestión de Eventos Culturales</p>
+                </div>
+    
+                <div class="col-12 col-md-6 footer-links-redes">
+                    <a href="pantallaQuienesSomos.html">QUIENES SOMOS</a>
+                    <a href="pantallaContacto.html">CONTACTOS</a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+    
+            </div>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

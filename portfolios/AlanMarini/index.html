@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Alan Marini</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="Css/style.css" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-dark bg-dark d-md-none">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Alan Marini</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-controls="mobileNav" aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="mobileNav">
+        <div class="bg-dark p-3 menu-lateral"> 
+        <a class="nav-link text-white" href="#sobre-mi">Sobre mí</a>
+        <a class="nav-link text-white" href="#proyectos">Proyectos</a>
+        <a class="nav-link text-white" href="#habilidades">Habilidades</a>
+        <a class="nav-link text-white" href="#experiencia">Experiencia</a>
+        <a class="nav-link text-white" href="#contacto">Contacto</a>
+        </div>
+    </div>
+    </nav>
+
+
+  <div class="container-fluid">
+    <div class="row">
+
+    <aside class="col-md-3 bg-dark text-white p-4 d-none d-md-block sticky-top">
+    <h2 class="mb-4">Alan Marini</h2>
+    <nav class="nav flex-column menu-lateral" aria-label="Menú principal"> 
+        <a class="nav-link text-white" href="#sobre-mi">Sobre mí</a>
+        <a class="nav-link text-white" href="#proyectos">Proyectos</a>
+        <a class="nav-link text-white" href="#habilidades">Habilidades</a>
+        <a class="nav-link text-white" href="#experiencia">Experiencia</a>
+        <a class="nav-link text-white" href="#contacto">Contacto</a>
+    </nav>
+    </aside>
+
+      <main class="col-md-9 p-4">
+
+        <section id="sobre-mi">
+          <h1>Sobre mí</h1>
+          <p>Soy un profesional con experiencia en desarrollo web, testing, análisis de datos y métricas. He trabajado con CRM Wordpress, realizado pruebas funcionales y no funcionales, y colaborado con empresas como Claro Argentina y Apex América. Me destaco por mi enfoque en la calidad, la organización y el aprendizaje continuo.</p>
+        </section>
+
+        <section id="proyectos">
+          <h2>Proyectos</h2>
+          <div class="row g-4">
+            <div class="col-sm-6 col-lg-4">
+              <a href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc" target="_blank" rel="noopener noreferrer" class="proyecto-link" aria-label="Ver proyecto Gestor de Eventos Culturales en GitHub">
+                <img src="img/eventos-culturales.jpg" alt="Proyecto Gestor de Eventos Culturales" class="img-fluid proyecto-img" />
+                <div class="overlay">Gestor de Eventos Culturales</div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <a href="https://github.com/MassiveCashGuys/proyecto-final-tsds-ispc" target="_blank" rel="noopener noreferrer" class="proyecto-link" aria-label="Ver proyecto ISPC Broker en GitHub">
+                <img src="img/argbroker.jpg" alt="Proyecto ISPC Broker" class="img-fluid proyecto-img" />
+                <div class="overlay">ISPC Broker</div>
+              </a>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <a href="https://wokwi.com/projects/410874071167261697" target="_blank" rel="noopener noreferrer" class="proyecto-link" aria-label="Ver proyecto ESP 32 - Control de Riego Automático">
+                <img src="img/esp32-riego-automatico.jpg" alt="Proyecto ESP 32 - Control de Riego Automático" class="img-fluid proyecto-img" />
+                <div class="overlay">ESP 32 - Control de Riego Automático</div>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section id="habilidades">
+          <h2>Habilidades y tecnologías</h2>
+          <div class="row g-3">
+            <div class="col-md-6"><strong>Frontend:</strong> HTML5, CSS, JavaScript, WordPress</div>
+            <div class="col-md-6"><strong>Backend:</strong> Java, SQL, MySQL, Python</div>
+            <div class="col-md-6"><strong>Testing:</strong> Postman, Jira, Selenium IDE, Jmeter, Zephyr</div>
+            <div class="col-md-6"><strong>Visualización:</strong> Excel, Power BI</div>
+            <div class="col-md-6"><strong>Herramientas:</strong> Git, GitHub, JSON, Charles</div>
+            <div class="col-md-6"><strong>Formación:</strong> ISPC - Tecnicatura en Desarrollo de Software (en curso), Java Full Stack en Argentina Programa, Analista de Base de Datos en Coderhouse, QA Automation Tester en Educacion IT</div>
+          </div>
+        </section>
+
+        <section id="experiencia">
+          <h2>Experiencia laboral</h2>
+          <ul>
+            <li><strong>Claro Argentina (2022 - Actualidad)</strong><br>Ingeniero de Aseguramiento de servicio en red móvil para Argentina, Uruguay y Paraguay.</li>
+            <li><strong>BEART Marketing Digital (2019 - 2022)</strong><br>Desarrollador Wordpress, QA Web y Analista de Datos.</li>
+            <li><strong>Apex América (2013 - 2017)</strong><br>QA Tester de apps para Claro (video, música, cloud).</li>
+          </ul>
+        </section>
+
+        <section id="contacto">
+          <h2>Contacto</h2>
+          <form>
+            <div class="mb-3">
+              <label for="nombre" class="form-label visually-hidden">Tu nombre</label>
+              <input type="text" id="nombre" class="form-control" placeholder="Tu nombre" required />
+            </div>
+            <div class="mb-3">
+              <label for="correo" class="form-label visually-hidden">Tu correo</label>
+              <input type="email" id="correo" class="form-control" placeholder="Tu correo" required />
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label visually-hidden">Tu mensaje</label>
+              <textarea id="mensaje" class="form-control" rows="4" placeholder="Tu mensaje" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </section>
+    <footer class="footer">
+        <small>© 2025 Alan Marini. Todos los derechos reservados.</small>
+    </footer>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
