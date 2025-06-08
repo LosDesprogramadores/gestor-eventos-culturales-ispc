@@ -230,67 +230,88 @@ h3 {
 
 
 
-/*PantallaRegistroNuevoUsuario*/
+  /*PantallaRegistroNuevoUsuario*/
 
-.titulo-nuevo-usuario {
-  text-align: center;
-  color: var(--color-terciario-);
-}
-
-
-.form-registro {
-  max-width: 500px;
+.registro-card {
   margin: auto;
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding: 1rem 1.5rem; 
+  background-color: white;
+  border-radius: 1rem; 
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2); 
+  max-width: 35rem; 
+  border: 4px solid var(--color-terciario-alternativo); 
+  color: var(--color-principal);
 }
 
-.form-grupo {
-  margin-bottom: 1.5rem;
+.registro-titulo {
+  text-align: center;
+  margin-bottom: 0.8rem; 
+  font-size: 1.7rem; 
+  font-weight: 600;
+  color: var(--color-terciario-alternativo);
 }
 
-.form-grupo label {
+.registro-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem; 
+}
+
+.registro-campo label {
+  margin-bottom: 0.2rem; 
+  color: var(--color-principal);
+  font-weight: 500;
   display: block;
-  margin-bottom: 0.5rem;
-  color: var(--color-terciario-);
+  font-size: 0.95rem; 
 }
 
-.form-input {
-  width: 100%;
-  padding: 0.6rem;
+.registro-input {
+  padding: 0.6rem 0.8rem; 
+  border-radius: 0.8rem; 
   border: 1px solid #ccc;
-  border-radius: 5px;
+  font-size: 0.9rem; 
+  outline: none;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.btn-registro {
-  background-color: var(--color-primario);
-  color: white;
-  padding: 0.6rem 1.2rem;
+.registro-input:focus {
+  border-color: var(--color-terciario-alternativo);
+  box-shadow: 0 0 0 0.15rem rgba(52, 152, 219, 0.2); 
+}
+
+.registro-feedback {
+  color: red;
+  font-size: 0.8rem; 
+  margin-top: 0.15rem; 
+}
+
+.registro-botones {
+  display: flex;
+  gap: 0.8rem; 
+  justify-content: space-between;
+  margin-top: 0.6rem; 
+}
+
+.registro-btn {
+  width: 100%;
+  padding: 0.6rem 0.8rem; 
+  border-radius: 0.8rem; 
   border: none;
-  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem; 
   cursor: pointer;
-  margin-right: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-registro:hover {
-  background-color: var(--color-primario-alternativo);
-}
-
-.btn-iniciar {
+.registro-btn:hover {
   background-color: var(--color-secundario);
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
-.btn-iniciar:hover {
-  background-color: var(--color-secundario-alternativo);
-}
 
 /*Pantalla Formulario de Contacto*/
 
@@ -378,6 +399,7 @@ h3 {
   color: var(--color-terciario-alternativo); 
 }
 
+
 /* pantallaDetalleEvento */
 .detalle-evento {
   max-width: 800px;
@@ -396,6 +418,7 @@ h3 {
   text-align: center;
   color: var(--color-terciario-);
   margin-bottom: 1rem;
+  font-size: clamp(1.6rem, 5vw, 2.4rem);
 }
 
 .img-evento {
@@ -413,6 +436,13 @@ h3 {
 .tarjeta-evento section h2 {
   color: var(--color-primario);
   margin-bottom: 0.5rem;
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-weight: 600;
+}
+
+.tarjeta-evento section p {
+  font-size: clamp(0.95rem, 3vw, 1.2rem);
+  line-height: 1.6;
 }
 
 .compartir {
@@ -422,7 +452,7 @@ h3 {
 .compartir a {
   margin-right: 10px;
   color: var(--color-terciario-alternativo);
-  font-size: 1.3rem;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
   text-decoration: none;
 }
 
@@ -438,6 +468,7 @@ h3 {
   padding: 0.6rem 1.2rem;
   text-decoration: none;
   border-radius: 6px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .btn-volver-evento:hover {

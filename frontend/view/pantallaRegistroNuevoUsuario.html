@@ -40,49 +40,41 @@
     <main>
         
         <div class="container mt-5">
-            <div class="registro">
-                <form action="#" method="post" class="form-registro needs-validation" novalidate>
+            <div class="registro-card">
+                <form action="#" method="post" class="registro-formulario needs-validation" novalidate>
         
-                    <h1 class="titulo-nuevo-usuario">Crear nueva cuenta</h1>
+                    <h1 class="registro-titulo">Crear nueva cuenta</h1>
         
-                    <div class="form-grupo">
+                    <div class="registro-campo">
                         <label for="correo">Correo electrónico:</label>
-                        <input type="email" id="correo" name="correo" class="form-input" required />
-                        <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+                        <input type="email" id="correo" name="correo" class="registro-input" required />
+                        <div class="registro-feedback">Por favor ingresa un correo válido.</div>
                     </div>
         
-                    <div class="form-grupo">
-                        <label for="usuario">Usuario:</label>
-                        <input type="text" id="usuario" name="usuario" class="form-input" required />
-                        <div class="invalid-feedback">Por favor ingresa un nombre de usuario.</div>
-                    </div>
-        
-                    <div class="form-grupo">
+                    <div class="registro-campo">
                         <label for="contraseñia">Contraseña:</label>
-                        <input type="password" id="contraseñia" name="contraseñia" class="form-input" required minlength="6" />
-                        <div class="invalid-feedback">Ingresa una contraseña de al menos 6 caracteres.</div>
+                        <input type="password" id="contraseñia" name="contraseñia" class="registro-input" required
+                            minlength="6" />
+                        <div class="registro-feedback">Ingresa una contraseña de al menos 6 caracteres.</div>
                     </div>
         
-                    <div class="form-grupo">
+                    <div class="registro-campo">
                         <label for="repetir-contraseñia">Repetir contraseña:</label>
-                        <input type="password" id="repetir-contraseñia" name="repetir-contrasenia" class="form-input"
+                        <input type="password" id="repetir-contraseñia" name="repetir-contraseñia" class="registro-input"
                             required />
-                        <div class="invalid-feedback">Repite la contraseña.</div>
                     </div>
         
-                    <div class="form-grupo row">
-                        <div class="col-12 col-md-6 mb-2">
-                            <button type="submit" class="btn-registro w-100">Registrar</button>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <button type="reset" class="btn-iniciar w-100">Iniciar sesión</button>
-                        </div>
+                    <div class="registro-botones">
+                        <button type="submit" class="registro-btn">Registrar</button>
+                        <button type="reset" class="registro-btn">Iniciar sesión</button>
                     </div>
-        
         
                 </form>
             </div>
         </div>
+
+
+
 
     </main>
     <footer class="footer">
