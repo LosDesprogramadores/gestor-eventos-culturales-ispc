@@ -198,19 +198,6 @@ body {
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Sombra blanca sutil */
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   overflow: hidden;
-
-  display: flex; /* Flex para distribuir contenido */
-  flex-direction: column; /* Vertical */
-}
-
-.project-card .card-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1; /* Ocupa todo el espacio disponible */
-}
-
-.project-card .card-body .d-flex {
-  margin-top: auto; /* Empuja los botones hacia abajo */
 }
 
 .project-card:hover {
@@ -240,7 +227,6 @@ body {
 }
 
 
-
 /* --- Sección Habilidades --- */
 .skill-item {
   position: relative;
@@ -255,19 +241,23 @@ body {
 .skill-item:hover {
   transform: translateY(-8px);
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.4);
-  
 }
 
-
-.skill-icon-img {
-  width: 3.5rem;
-  height: 3.5rem;
+.skill-icon {
+  font-size: 3.5rem;
   margin-bottom: 10px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
-  transition: transform 0.3s, filter 0.3s;
+  color: #FFFFFF; /* Iconos también blancos */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
-
+/* Excepción para iconos con colores intrínsecos de la marca (ej. HTML, CSS, JS, React) */
+.bi-filetype-html { color: #E34F26 !important; } /* Mantener si quieres el color original del HTML */
+.bi-filetype-css { color: #1572B6 !important; } /* Mantener si quieres el color original del CSS */
+.bi-filetype-js { color: #F7DF1E !important; } /* Mantener si quieres el color original del JS */
+.bi-bootstrap { color: #7952B3 !important; } /* Mantener si quieres el color original de Bootstrap */
+.bi-github { color: #FFFFFF !important; } /* Siempre blanco para GitHub */
+.bi-git { color: #F05032 !important; } /* Mantener si quieres el color original de Git */
+.bi-react { fill: #61DAFB !important; } /* Mantener si quieres el color original de React */
+/* Si deseas que *TODOS* los iconos sean blancos, elimina o comenta las líneas !important de color específicas. */
 
 .skill-name {
   color: #FFFFFF;
