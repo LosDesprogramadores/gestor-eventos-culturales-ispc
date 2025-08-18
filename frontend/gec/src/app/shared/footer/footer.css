@@ -1,0 +1,70 @@
+/*-----------------------------------------*/
+/*-----------------FOOTER------------------*/
+/*-----------------------------------------*/
+.footer {
+  background-color: var(--color-terciario-);
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.footer-texto {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-links-redes {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem; /* Espaciado entre elementos */
+  justify-content: center; /* Centrado por defecto */
+}
+
+@media (min-width: 768px) {
+  .footer-links-redes {
+    justify-content: flex-end; /* Alineación a la derecha en pantallas md+ */
+  }
+}
+
+.footer-links-redes a {
+  color: var(--color-secundario);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.footer-links-redes a i {
+  font-size: 1.2rem; /* íconos un poco más grandes */
+  margin-left: 8px;  /* Espaciado leve si querés entre íconos y texto */
+}
+
+.footer-links-redes a:hover {
+  text-decoration: underline;
+}
+
+.footer-links-redes a:hover i {
+  color: var(--color-secundario-alternativo);
+}
+
+/* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+
+
