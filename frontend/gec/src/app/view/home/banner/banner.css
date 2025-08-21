@@ -1,0 +1,25 @@
+.img-banner {
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .custom-btn {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .custom-btn:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+
+  @media (max-width: 768px) {
+    .img-banner {
+      height: 200px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .img-banner {
+      height: 150px;
+    }
+  }

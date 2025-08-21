@@ -1,0 +1,43 @@
+
+  /* Galeria */
+
+  .container{
+    max-width: 90vw;
+   
+  }
+
+  .card-title, .fecha{
+    text-align: center;
+  }
+ 
+    
+  
+  
+   .img-hover-scale {
+    transition: transform 0.3s ease;
+  }
+
+  .img-hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  .object-fit-cover {
+    object-fit: cover;
+    height: 200px;
+  }
+
+  @media (max-width: 576px) {
+    .object-fit-cover {
+      height: 160px;
+    }
+  }
+
+  .card {
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .titulo {
+    font-weight: bold;
+    font-size: 1.1rem;
+  }

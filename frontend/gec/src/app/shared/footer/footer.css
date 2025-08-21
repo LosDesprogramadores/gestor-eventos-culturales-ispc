@@ -10,7 +10,7 @@
 }
 
 .footer-contenido {
-  max-width: 1000px;
+  max-width: 95vw;
   margin: 0 auto;
 }
 
@@ -54,17 +54,7 @@
   color: var(--color-secundario-alternativo);
 }
 
-/* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
 
 
 

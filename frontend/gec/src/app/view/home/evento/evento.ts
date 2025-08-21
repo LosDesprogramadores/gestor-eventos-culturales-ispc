@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { Banner } from '../banner/banner';
 
 @Component({
   selector: 'app-evento',
-  imports: [],
+  imports: [Banner],
   templateUrl: './evento.html',
   styleUrl: './evento.css'
 })
