@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { Header } from '../../shared/header/header';
+import { Footer } from '../../shared/footer/footer';
+import { NavHome } from '../home/nav-home/nav-home';
 
-@Component({
+@Component( {
   selector: 'app-quienes-somos',
-  imports: [],
+  imports: [ Header, Footer, NavHome ],
   templateUrl: './quienes-somos.html',
   styleUrl: './quienes-somos.css'
-})
+} )
 export class QuienesSomos {
 
 }
