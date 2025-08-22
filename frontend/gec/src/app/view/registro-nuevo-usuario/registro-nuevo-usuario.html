@@ -3,23 +3,66 @@
 <main class="registro-main">
     <div class="container">
         <div class="registro-card">
-            <form action="#" method="post" class="registro-formulario needs-validation" novalidate>
+            <form [formGroup]="form" action="#" method="post" class="registro-formulario needs-validation" novalidate>
 
                 <h1 class="registro-titulo">Crear nueva cuenta</h1>
 
                 <div class="registro-campo">
-                    <input type="email" id="correo" name="correo" class="registro-input" required
+                    <input type="email" formControlName="email" id="correo" name="correo" class="registro-input" required
                         placeholder="Correo electrónico" />
+
+                        @if (email?.errors && email?.touched) {
+                        
+                            @if (email?.hasError('required'))
+                            
+                            {
+                                <p class="text-danger">
+                                    El email es obligatorio.
+                                </p>
+                            }
+                            @else if (email?.hasError('email'))
+                            {
+                                <p class="text-danger">
+                                    Formato de email inválido.
+                                </p>
+                            }
+                        }
                 </div>
 
                 <div class="registro-campo">
-                    <input type="password" id="contraseñia" name="contraseñia" class="registro-input" required
-                        placeholder="Contraseña" minlength="6" />
+                    <input type="password" formControlName="password" id="contraseñia" name="contraseñia" class="registro-input" required
+                        placeholder="Contraseña" minlength="8" />
+                        @if(password?.errors && password?.touched){
+
+                            @if(password?.hasError('required'))
+                            {
+                                <p class="text-danger">
+                                La contraseña es requerida.
+                                </p>
+                            }
+                            @else if (password?.hasError('minlength') )
+                            {
+                                <p class="text-danger">
+                                La contraseña requiere como mínimo 8 caracteres.
+                                </p>
+                            }
+                        }
                 </div>
 
                 <div class="registro-campo">
-                    <input type="password" id="repetir-contraseñia" name="repetir-contraseñia" class="registro-input"
+                    <input type="password" formControlName="confirmPassword" id="repetir-contraseñia" name="repetir-contraseñia" class="registro-input"
                         required placeholder="Repetir contraseña" />
+                    @if(confirmPassword?.errors && confirmPassword?.touched) {
+
+                        @if(confirmPassword?.hasError('required')) {
+                            
+                            <p class="text-danger">Repetir la contraseña es requerido.</p>
+                        } 
+                        @else if(confirmPassword?.hasError('passwordMismatch')) {
+                            
+                            <p class="text-danger">Las contraseñas no coinciden.</p>
+                        }
+                    }
                 </div>
 
                 <div class="registro-botones">
