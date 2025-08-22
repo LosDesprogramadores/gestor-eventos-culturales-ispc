@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NavHome } from './nav-home/nav-home'; 
 import { Header } from '../../shared/header/header';
 import { Footer } from '../../shared/footer/footer';
 import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,7 @@ import { RouterModule } from '@angular/router';
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
-export class Home {
+export class Home  {
 
+ 
 }

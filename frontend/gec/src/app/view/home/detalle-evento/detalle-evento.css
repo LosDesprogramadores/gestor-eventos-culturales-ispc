@@ -1,77 +1,72 @@
+/* Contenedor principal del detalle del evento */
 .detalle-evento {
-  max-width: 80vw;
-  margin: auto;
-  padding: 2rem;
+  padding: 2rem 1rem;
 }
 
+/* Tarjeta del evento */
 .tarjeta-evento {
   background-color: var(--color-secundario);
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   padding: 2rem;
 }
 
+/* Título principal del evento */
 .tarjeta-evento h1 {
   text-align: center;
-  color: var(--color-terciario-);
-  margin-bottom: 1rem;
-  font-size: clamp(1.6rem, 5vw, 2.4rem);
+  color: var(--color-terciario);
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
 }
 
-.img-evento {
-  width: 100vw;
-  height: 30vh;
+/* Estilo de la imagen del evento */
+#imagen-evento {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; /* Mantiene la relación de aspecto de la imagen */
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-  border-color: brown;
-
+  border-radius: 0.5rem;
+  border: 2px solid brown; /* Propiedad que tenías */
 }
 
-.tarjeta-evento section {
-  margin-bottom: 1.5rem;
-}
-
-.tarjeta-evento section h2 {
+/* Títulos de las secciones */
+.tarjeta-evento h2 {
   color: var(--color-primario);
   margin-bottom: 0.5rem;
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
   font-weight: 600;
 }
 
-.tarjeta-evento section p {
-  font-size: clamp(0.95rem, 3vw, 1.2rem);
+/* Párrafos de las secciones */
+.tarjeta-evento p {
+  font-size: clamp(1rem, 3vw, 1.1rem);
   line-height: 1.6;
 }
 
-.compartir {
-  margin-top: 1rem;
-}
-
+/* Botones de compartir */
 .compartir a {
-  margin-right: 10px;
   color: var(--color-terciario-alternativo);
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-size: clamp(1.5rem, 3vw, 2rem);
   text-decoration: none;
 }
 
 .compartir a:hover {
-  color: var(--color-secundario-alternativo);
+  color: var(--color-primario);
 }
 
+/* Botón de volver */
 .btn-volver-evento {
   display: inline-block;
   margin-top: 2rem;
-  background-color: var(--color-terciario-);
+  background-color: var(--color-terciario);
   color: white;
-  padding: 0.6rem 1.2rem;
+  padding: 0.8rem 1.5rem;
   text-decoration: none;
   border-radius: 6px;
   font-size: clamp(0.9rem, 2.5vw, 1rem);
+  transition: background-color 0.3s ease;
 }
 
 .btn-volver-evento:hover {
   background-color: var(--color-terciario-alternativo);
 }
-
-

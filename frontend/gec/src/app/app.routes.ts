@@ -5,11 +5,11 @@ import { Evento } from './view/home/evento/evento';
 
 export const routes: Routes = [
     {
-        path: "gec", 
+        path: "home", 
         component:Home,
     children:[{path:'',component:Evento},
-              {path:"detalle-evento",component:DetalleEvento}
+              {path:"detalle-evento/:id",component:DetalleEvento}
             ]},
-    {path:"", redirectTo: "/gec", pathMatch:"full" }
+    {path:"", redirectTo: "/home", pathMatch:"full" }
 
 ];
