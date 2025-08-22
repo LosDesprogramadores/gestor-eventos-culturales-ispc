@@ -1,0 +1,25 @@
+<app-header></app-header>
+<app-nav-home></app-nav-home> 
+<main class="login">
+    <div class="container">
+      <div class="row justify-content-center">
+        <section class="col-12 col-sm-10 col-md-6 col-lg-4 login-card">
+          <h2>Bienvenido</h2>
+          <form action="login.php" method="POST" class="login-form">
+            <label for="email" class="visually-hidden">Correo Electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Correo Electrónico" required />
+
+            <label for="password" class="visually-hidden">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña" required />
+
+            <button type="submit">Ingresar</button>
+            <div class="login-actions">
+              <a href="#" class="forgot-password">¿Olvidó su contraseña?</a>
+              <a href="pantallaRegistroNuevoUsuario.html" class="create-account">Crear nueva cuenta</a>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+<app-footer></app-footer>

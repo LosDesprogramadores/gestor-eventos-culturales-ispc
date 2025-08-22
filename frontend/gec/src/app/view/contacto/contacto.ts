@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
-  selector: 'app-nav-home',
+  selector: 'app-contacto',
   imports: [RouterModule],
-  templateUrl: './nav-home.html',
-  styleUrl: './nav-home.css'
+  templateUrl: './contacto.html',
+  styleUrl: './contacto.css'
 })
-export class NavHome {
+export class Contacto {
 
 }
