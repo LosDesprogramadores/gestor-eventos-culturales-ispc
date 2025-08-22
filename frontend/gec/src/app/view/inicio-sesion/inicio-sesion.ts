@@ -6,7 +6,7 @@ import { Header } from '../../shared/header/header';
 
 @Component({
   selector: 'app-inicio-sesion',
-  imports: [RouterModule, NavHome,Footer,Header],
+  imports: [RouterModule],
   templateUrl: './inicio-sesion.html',
   styleUrl: './inicio-sesion.css'
 })
