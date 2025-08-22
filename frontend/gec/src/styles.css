@@ -23,7 +23,7 @@
   font-family: 'Poppins', sans-serif;
   
 }
-
+/*------------Footer-------------*/
 /* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
 
 body {
@@ -35,6 +35,8 @@ body {
 main {
   flex: 1;
 }
+
+/*------------------------*/
 
 .fondo{
   background-color: var(--color-secundario-alternativo);
