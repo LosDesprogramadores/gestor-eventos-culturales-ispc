@@ -1,4 +1,4 @@
-/* Fuentes personalizadas */
+/* Fuente */
 @font-face {
   font-family: 'Poppins';
   src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
@@ -23,7 +23,7 @@
 /* General */
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
+  background-color: #fde7a1;
   margin: 0;
   padding: 0;
 }
@@ -50,83 +50,130 @@ header .logo {
 
 /* Sección Contacto */
 .contacto {
-  max-width: 600px;
-  margin: 50px auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .contacto h1 {
-  text-align: center;
-  margin-bottom: 10px;
+    text-align: center;
+    color: #14435A;
+    margin-bottom: 10px;
 }
 
 .contacto p {
-  text-align: center;
-  margin-bottom: 30px;
+    text-align: center;
+    color: #f39c12;
+    margin-bottom: 20px;
 }
 
 .formulario-contacto .campo-formulario {
-  margin-bottom: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .formulario-contacto label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .formulario-contacto input,
 .formulario-contacto textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
-  outline: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
 }
 
 .formulario-contacto button {
-  background-color: #343a40;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  font-size: 16px;
+    padding: 10px 20px;
+    background-color:#14435A;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
-
+  
 .formulario-contacto button:hover {
-  background-color: #f39c12;
+    background-color: #0A2E4D;
 }
 
-/* Footer */
-.footer {
-  background-color: #343a40;
-  color: #fff;
+.formulario-contacto label i {
+    margin-right: 8px;
+    color: #BC5E3C;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* pantallaDetalleEvento */
+.detalle-evento {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.tarjeta-evento {
+  background-color: var(--color-secundario);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  padding: 2rem;
+}
+
+.tarjeta-evento h1 {
   text-align: center;
-  padding: 20px 0;
-  margin-top: 50px;
+  color: var(--color-terciario-);
+  margin-bottom: 1rem;
 }
 
-.footer-links a {
-  color: #f39c12;
-  margin: 0 10px;
+.img-evento {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.tarjeta-evento section {
+  margin-bottom: 1.5rem;
+}
+
+.tarjeta-evento section h2 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+}
+
+.compartir {
+  margin-top: 1rem;
+}
+
+.compartir a {
+  margin-right: 10px;
+  color: var(--color-terciario-alternativo);
+  font-size: 1.3rem;
   text-decoration: none;
 }
 
-.footer-links a:hover {
-  text-decoration: underline;
+.compartir a:hover {
+  color: var(--color-secundario-alternativo);
 }
 
-.footer-redes a {
-  color: #fff;
-  margin: 0 8px;
-  font-size: 18px;
+.btn-volver-evento {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: var(--color-terciario-);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  border-radius: 6px;
 }
 
-.footer-redes a:hover {
-  color: #f39c12;
+.btn-volver-evento:hover {
+  background-color: var(--color-terciario-alternativo);
 }
+
