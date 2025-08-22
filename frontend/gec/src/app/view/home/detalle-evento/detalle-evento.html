@@ -1,0 +1,45 @@
+ <div class="detalle-evento container pt-5">
+          <article class="tarjeta-evento">
+            <h1 id="titulo-evento" class="text-center mb-5">{{evento?.titulo}}</h1>
+        
+            <div class="row align-items-center">
+              <div class="col-md-6 mb-4 mb-md-0 img-evento">
+                <img src= {{evento?.imagenUrl}} alt="Imagen del evento" id="imagen-evento" class="img-fluid rounded shadow" />
+              </div>
+
+              <div class="col-md-6">
+                <section class="mb-4">
+                  <h2>Descripción</h2>
+                  <p id="descripcion-evento">Aquí irá la descripción del evento.</p>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Ubicación</h2>
+                  <p id="ubicacion-evento">{{evento?.lugar}}</p>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Capacidad</h2>
+                  <p id="capacidad-evento">{{evento?.capacidad}}</p>
+                </section>
+        
+                <section class="mb-4">
+                  <h2>Fecha y Hora</h2>
+                  <p id="fecha-hora-evento">{{evento?.fecha}}</p>
+                </section>
+              </div>
+            </div>
+        
+            <section class="compartir d-flex justify-content-center gap-3 flex-wrap mt-4">
+              <a href="#"><i class="fas fa-calendar-alt"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-whatsapp"></i></a>
+              <a href="#"><i class="fas fa-share-alt"></i></a>
+            </section>
+        
+            <div class="text-center">
+              <a [routerLink]="['/home']" class="btn-volver-evento mt-4">← Volver al Inicio</a>
+            </div>
+          </article>
+        </div>
