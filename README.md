@@ -89,7 +89,6 @@ Los organizadores de eventos culturales carecen de una herramienta centralizada 
 | Julio Martín      | [@JulioMartin12](https://github.com/JulioMartin12) | Developer |
 | Marcelo Portillo  | [@mapolab](https://github.com/mapolab)             | Developer |
 | Juan I. Moreno    | [@Monky033](https://github.com/Monky033)           | Developer |
-| Romina Huk        | [@RoHu17](https://github.com/RoHu17)               | Developer |
 | TMonton           | [@TMonton](https://github.com/TMonton)             | Developer |
 
 ---
@@ -110,5 +109,21 @@ Durante este Sprint 2, el equipo trabajó colaborativamente en el maquetado est�
 - Actualización del Kanban y seguimiento del progreso de tareas asignadas.
 - Se actualizo la documentación correspondiente de ser necesaria.
 
+---
+## 🔁 Avance SPRINT 3
+Durante el Sprint 3, el equipo avanzó en la transformación del proyecto en una Aplicación de una Sola Página (SPA) utilizando Angular. Nos enfocamos en el desarrollo de componentes clave y en la implementación de un sistema de ruteo eficiente, así como en la integración de funcionalidades de formularios reactivos con validaciones.
+
+Objetivos logrados
+Creación de componentes: Se desarrollaron componentes para páginas esenciales como la landing page inicio(Home), Dashboard (panel usuario), Registro de Usuario, inicio sesión, Quiénes Somos y contacto.
+
+-Sistema de ruteo: Se implementó un sistema de routing para permitir la navegación entre las diferentes vistas de la aplicación, garantizando que el usuario pueda moverse sin recargar la página.
+
+-Formularios reactivos: Se crearon formularios reactivos con validaciones en los componentes de Login y Registro de Usuario, mejorando la experiencia del usuario y asegurando la integridad de los datos.
+
+-Gestión de contenido (CRUD): Se inició el CRUD (Crear, Leer, Actualizar, Borrar) con la funcionalidad de alta de contenido, en línea con la perspectiva del modelo de negocio.
+
+-Gestión de ramas: Se trabajó con la nueva rama Release (v0.1.0-alpha), siguiendo el sistema de branching definido, lo que permitió un control de versiones más organizado.
+
+-Actualización del Kanban: Se mantuvo el Kanban actualizado para el seguimiento y gestión de las tareas asignadas.
 
 
