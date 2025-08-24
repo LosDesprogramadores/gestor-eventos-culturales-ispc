@@ -3,34 +3,62 @@
 <app-nav-home></app-nav-home>
 <nav></nav>  
 <section class="contacto">
-    <h1>Contacto</h1>
-    <p>¿Tenes alguna consulta? ¡Escribenos!</p>
+  <h1>Contacto</h1>
+  <p>¿Tenes alguna consulta? ¡Escribinos!</p>
 
-    <form class="formulario-contacto">
-      <div class="campo-formulario">
-        <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="50">
-      </div>
+  <form class="formulario-contacto">
+    <!-- Nombre -->
+    <div class="campo-formulario">
+      <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
+      <input 
+        type="text" 
+        id="nombre" 
+        name="nombre" 
+        required 
+        minlength="4" 
+        maxlength="15"
+        placeholder="Tu nombre">
+    </div>
 
-      <div class="campo-formulario">
-        <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
+    <!-- Email -->
+    <div class="campo-formulario">
+      <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required
+        placeholder="tuemail@ejemplo.com">
+    </div>
 
-      <div class="campo-formulario">
-        <label for="asunto"><i class="fa-solid fa-tag"></i> Asunto:</label>
-        <input type="text" id="asunto" name="asunto" required>
-      </div>
+    <!-- Asunto -->
+    <div class="campo-formulario">
+      <label for="asunto"><i class="fa-solid fa-tag"></i> Asunto:</label>
+      <input 
+        type="text" 
+        id="asunto" 
+        name="asunto" 
+        required
+        placeholder="Asunto de tu mensaje">
+    </div>
 
-      <div class="campo-formulario">
-        <label for="mensaje"><i class="fa-solid fa-message"></i> Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-      </div>
+    <!-- Mensaje -->
+    <div class="campo-formulario">
+      <label for="mensaje"><i class="fa-solid fa-message"></i> Mensaje:</label>
+      <textarea 
+        id="mensaje" 
+        name="mensaje" 
+        rows="5" 
+        required 
+        maxlength="250"
+        placeholder="Escribe tu mensaje (máx. 250 caracteres)"></textarea>
+    </div>
 
-      <div class="campo-formulario">
-        <button type="submit">Enviar</button>
-      </div>
-    </form>
-  </section>
+    <!-- Botón -->
+    <div class="campo-formulario">
+      <button type="submit">Enviar</button>
+    </div>
+  </form>
+</section>
 <app-footer></app-footer>
 
