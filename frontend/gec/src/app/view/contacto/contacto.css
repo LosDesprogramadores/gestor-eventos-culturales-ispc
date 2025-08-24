@@ -1,0 +1,69 @@
+
+
+/* Sección Contacto */
+
+
+.contacto {
+    max-width: 600px;
+    min-height: calc(100vh - 80px); /* 80px = altura del footer */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.contacto h1 {
+    text-align: center;
+    color: #14435A;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    text-align: center;
+    color: #f39c12;
+    margin-bottom: 20px;
+}
+
+.formulario-contacto .campo-formulario {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-contacto label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.formulario-contacto button {
+    padding: 10px 20px;
+    background-color:#14435A;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+  
+.formulario-contacto button:hover {
+    background-color: #0A2E4D;
+}
+
+.formulario-contacto label i {
+    margin-right: 8px;
+    color: #BC5E3C;
+    min-width: 18px;
+    text-align: center;
+}
+

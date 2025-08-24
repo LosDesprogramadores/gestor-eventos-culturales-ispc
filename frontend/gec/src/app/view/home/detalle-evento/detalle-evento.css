@@ -1,0 +1,73 @@
+
+.detalle-evento {
+  padding: 2rem 1rem;
+}
+
+
+.tarjeta-evento {
+  background-color: var(--color-secundario);
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  padding: 2rem;
+  margin-bottom: 0.9rem;
+}
+
+
+.tarjeta-evento h1 {
+  text-align: center;
+  color: var(--color-terciario);
+  margin-bottom: 2rem;
+  font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+
+#imagen-evento {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9; 
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid var(--color-primario); 
+}
+
+
+.tarjeta-evento h2 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  font-weight: 600;
+}
+
+
+.tarjeta-evento p {
+  font-size: clamp(1rem, 3vw, 1.1rem);
+  line-height: 1.6;
+}
+
+
+.compartir a {
+  color: var(--color-terciario-alternativo);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  text-decoration: none;
+}
+
+.compartir a:hover {
+  color: var(--color-primario);
+}
+
+
+.btn-volver-evento {
+  display: inline-block;
+  margin-top: 2rem;
+  background-color: var(--color-terciario);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  transition: background-color 0.3s ease;
+}
+
+.btn-volver-evento:hover {
+  background-color: var(--color-terciario-alternativo);
+}
