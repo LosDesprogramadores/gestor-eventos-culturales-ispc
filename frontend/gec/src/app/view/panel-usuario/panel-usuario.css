@@ -22,7 +22,7 @@
 
 
 .panel-de-usuario{
-  min-height: calc(84vh - 80px); /* 80px = altura del footer */
+  min-height: calc(100vh - 80px); /* 80px = altura del footer */
   justify-content: center;
   align-items: center;
   padding: 1rem;

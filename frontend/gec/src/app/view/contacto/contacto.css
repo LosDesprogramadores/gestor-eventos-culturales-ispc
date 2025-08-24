@@ -1,61 +1,17 @@
-/* Fuente */
-@font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* General */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #fde7a1;
-  margin: 0;
-  padding: 0;
-}
-
-/* Encabezado */
-header.header {
-  background-color: #343a40;
-  padding: 1rem 0;
-}
-
-header .logo {
-  width: 40px;
-  height: 40px;
-}
-
-.nav-principal .nav-link {
-  color: #fff !important;
-  margin-left: 15px;
-}
-
-.nav-principal .nav-link:hover {
-  color: #f39c12 !important;
-}
 
 /* Sección Contacto */
+
+
 .contacto {
     max-width: 600px;
+    min-height: calc(100vh - 80px); /* 80px = altura del footer */
     margin: 40px auto;
     padding: 20px;
     background-color: #f4f4f4;
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .contacto h1 {
@@ -109,71 +65,5 @@ header .logo {
     color: #BC5E3C;
     min-width: 18px;
     text-align: center;
-}
-
-/* pantallaDetalleEvento */
-.detalle-evento {
-  max-width: 800px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.tarjeta-evento {
-  background-color: var(--color-secundario);
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
-  padding: 2rem;
-}
-
-.tarjeta-evento h1 {
-  text-align: center;
-  color: var(--color-terciario-);
-  margin-bottom: 1rem;
-}
-
-.img-evento {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1.5rem;
-}
-
-.tarjeta-evento section {
-  margin-bottom: 1.5rem;
-}
-
-.tarjeta-evento section h2 {
-  color: var(--color-primario);
-  margin-bottom: 0.5rem;
-}
-
-.compartir {
-  margin-top: 1rem;
-}
-
-.compartir a {
-  margin-right: 10px;
-  color: var(--color-terciario-alternativo);
-  font-size: 1.3rem;
-  text-decoration: none;
-}
-
-.compartir a:hover {
-  color: var(--color-secundario-alternativo);
-}
-
-.btn-volver-evento {
-  display: inline-block;
-  margin-top: 2rem;
-  background-color: var(--color-terciario-);
-  color: white;
-  padding: 0.6rem 1.2rem;
-  text-decoration: none;
-  border-radius: 6px;
-}
-
-.btn-volver-evento:hover {
-  background-color: var(--color-terciario-alternativo);
 }
 
