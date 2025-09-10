@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Header } from '../../shared/header/header';
-import { Footer } from '../../shared/footer/footer';
-import { NavHome } from '../home/nav-home/nav-home';
+import { Header } from '../../../shared/header/header';
+import { Footer } from '../../../shared/footer/footer';
+import { NavHome } from '../nav-home/nav-home';
 
 @Component({
   selector: 'app-contacto',
