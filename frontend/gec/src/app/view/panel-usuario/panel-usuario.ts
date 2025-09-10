@@ -38,7 +38,7 @@ export class PanelUsuarioComponent implements OnInit {
         id_evento: this.eventos.length + 1,
         titulo: this.nuevoTitulo,
         descripcion: this.nuevaDescripcion,
-        hora_evento: "00:00",   // por ahora fijo
+        hora_evento: "00:00",   
         fecha_desde: this.nuevaFecha,
         fecha_hasta: this.nuevaFecha,
         capacidad: 100,
