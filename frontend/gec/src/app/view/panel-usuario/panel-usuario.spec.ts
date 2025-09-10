@@ -7,7 +7,7 @@ describe('PanelUsuarioComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [PanelUsuarioComponent] // standalone, se importa directo
+      imports: [PanelUsuarioComponent] 
     })
     .compileComponents();
 
