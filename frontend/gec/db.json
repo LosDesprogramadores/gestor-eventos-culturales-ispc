@@ -1,0 +1,127 @@
+{
+  "usuarios": [
+    {
+      "id_usuario": 1,
+      "email": "juan@test.com",
+      "password": "123456",
+      "fechaRegistro": "2025-01-10",
+      "cuentaActiva": true,
+      "id_rol": 2,
+      "id_datos": 1,
+      "id": "bb2a"
+    }
+  ],
+  "datos": [
+    {
+      "id_datos": 1,
+      "nombre": "Juan",
+      "apellido": "Moreno",
+      "direccion": "Córdoba Capital",
+      "celular": "3511234567",
+      "id": "b2de"
+    }
+  ],
+  "roles": [
+    {
+      "id_rol": 1,
+      "nombre": "admin",
+      "descripcion": "Administrador",
+      "id": "5825"
+    },
+    {
+      "id_rol": 2,
+      "nombre": "usuario",
+      "descripcion": "Usuario normal",
+      "id": "0eb2"
+    }
+  ],
+  "eventos": [
+    {
+      "id_evento": 1,
+      "titulo": "Festival de Jazz",
+      "descripcion": "Música en vivo",
+      "hora_evento": "20",
+      "fecha_desde": "2025-10-15",
+      "fecha_hasta": "2025-10-15",
+      "capacidad": 100,
+      "lugar": "Parque Sarmiento",
+      "imagen": "jazz.jpg",
+      "id_categoria_evento": 1,
+      "id_estado": 1,
+      "id_gestor": 1,
+      "id": "776a"
+    },
+    {
+      "id": "7574",
+      "id_evento": 2,
+      "titulo": "sfdjgasd",
+      "descripcion": "asdsada",
+      "hora_evento": "00:00",
+      "fecha_desde": "5114-12-15",
+      "fecha_hasta": "5114-12-15",
+      "capacidad": 100,
+      "lugar": "Sin definir",
+      "imagen": "default.jpg",
+      "id_categoria_evento": 1,
+      "id_estado": 1,
+      "id_gestor": 1
+    },
+    {
+      "id": "e819",
+      "id_evento": 3,
+      "titulo": "admiracion a juani",
+      "descripcion": "somo  todos seguidores de juani porque el es re lindo",
+      "hora_evento": "00:00",
+      "fecha_desde": "0455-06-05",
+      "fecha_hasta": "0455-06-05",
+      "capacidad": 100,
+      "lugar": "Sin definir",
+      "imagen": "default.jpg",
+      "id_categoria_evento": 1,
+      "id_estado": 1,
+      "id_gestor": 1
+    }
+  ],
+  "categorias_evento": [
+    {
+      "id_categoria_evento": 1,
+      "nombre": "Música",
+      "id": "94a0"
+    }
+  ],
+  "estados": [
+    {
+      "id_estado": 1,
+      "nombre": "Activo",
+      "descripcion": "Evento activo",
+      "ambito": "evento",
+      "id": "0130"
+    },
+    {
+      "id_estado": 2,
+      "nombre": "Inactivo",
+      "descripcion": "Evento cancelado",
+      "ambito": "evento",
+      "id": "3775"
+    }
+  ],
+  "inscripciones": [
+    {
+      "id_inscripcion": 1,
+      "id_usuario": 1,
+      "id_evento": 1,
+      "fecha_inscripcion": "2025-09-09",
+      "id_estado": 1,
+      "id": "a6dc"
+    }
+  ],
+  "notificaciones": [
+    {
+      "id_notificacion": 1,
+      "fecha": "2025-09-09",
+      "mensaje": "Tu inscripción fue confirmada",
+      "id_usuario": 1,
+      "id": "f543"
+    }
+  ]
+}
