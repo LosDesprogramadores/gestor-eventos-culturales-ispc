@@ -1,29 +1,74 @@
-/* Fuentes personalizadas */
-@font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+.main-usuario {
+  padding: 2rem;
+  text-align: center;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+.titulo-usuario {
+  color: var(--color-terciario-);
+  margin-bottom: 1.5rem;
 }
 
-@font-face {
-  font-family: 'Poppins';
-  src: url('/assets/fonts/Poppins-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
+.seccion-favoritos {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.busqueda-agregar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
 
-.panel-de-usuario{
-  min-height: calc(100vh - 80px); /* 80px = altura del footer */
-  justify-content: center;
-  align-items: center;
+.lista-eventos {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-eventos li {
+  background-color: var(--color-secundario);
   padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.lista-eventos li strong {
+  color: var(--color-terciario-alternativo);
+}
+
+.btn-danger {
+  border: none;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+}
+
+.card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-title {
+  color: #14435A;
+  font-weight: bold;
+}
+
+.card-body p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  background: #f8f9fa;
 }
