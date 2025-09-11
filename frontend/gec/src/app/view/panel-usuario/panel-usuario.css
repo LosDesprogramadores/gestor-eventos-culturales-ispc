@@ -5,70 +5,80 @@
 
 .titulo-usuario {
   color: var(--color-terciario-);
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
-.seccion-favoritos {
-  max-width: 700px;
+.seccion-eventos {
+  max-width: 900px;
   margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
-.busqueda-agregar {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-}
-
-.lista-eventos {
-  list-style: none;
-  padding: 0;
-}
-
-.lista-eventos li {
-  background-color: var(--color-secundario);
-  padding: 1rem;
-  margin-bottom: 0.75rem;
-  border-radius: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.lista-eventos li strong {
+.seccion-eventos h2 {
   color: var(--color-terciario-alternativo);
+  margin-bottom: 1rem;
 }
 
-.btn-danger {
-  border: none;
-  border-radius: 6px;
-  padding: 0.4rem 0.8rem;
+.lista-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
-.card {
+.card-evento {
+  background: #fff;
+  border: 2px solid var(--color-secundario);
   border-radius: 12px;
-  overflow: hidden;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.card-img-top {
-  height: 180px;
-  object-fit: cover;
-}
-
-.card-title {
-  color: #14435A;
-  font-weight: bold;
-}
-
-.card-body p {
+.card-evento h3 {
   margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+  color: var(--color-primario);
 }
 
-.card-footer {
-  background: #f8f9fa;
+.card-evento p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-evento small {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+
+.btn-agregar {
+  background-color: var(--color-primario);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-agregar:hover {
+  background-color: var(--color-secundario);
+}
+
+.btn-eliminar {
+  background-color: crimson;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: darkred;
+}
+
+.alerta {
+  text-align: center;
+  padding: 1rem;
+  background: #fde7a8;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
