@@ -2,28 +2,36 @@
 <div class="container my-5 ">
   <div class="row g-2">
 
-    @for (evento of galeria; track $index) {
-      <div class="col-sm-6 col-md-4 col-lg-3" >
-      <div class="card h-100 shadow-sm">
-        <div class="imagen-evento">
-          <img src={{evento.imagenUrl}} alt="Evento"
-            class="card-img-top img-hover-scale object-fit-cover">
+    @if (eventos$ | async; as eventos) {
+      @for (evento of eventos; track evento.$id_evento) {
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <div class="imagen-evento">
+              <img src="{{ evento.$imagen }}" alt="Evento"
+                class="card-img-top img-hover-scale object-fit-cover">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title titulo">{{ evento.$nombre }}</h5>
+              <p class="capacidad mb-1"><strong>{{ evento.$capacidad }}:</strong> lugares</p>
+              <p class="lugar mb-1">{{ evento.$ubicacion }} </p>
+              <p class="fecha mb-0">{{ evento.$fechaHoraEvento }} </p>
+            </div>
+            <div class="botones-card px-3 pb-3 d-flex gap-2">
+              <a class="btn btn-primary btn-sm flex-fill" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
+              <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
+            </div>
+          </div>
+        </div> 
+      } @empty {
+        <div class="col-12">
+          <p>No hay eventos disponibles en este momento.</p>
         </div>
-        <div class="card-body">
-          <h5 class="card-title titulo">{{evento.titulo}}</h5>
-          <p class="capacidad mb-1"><strong>{{evento.capacidad}}:</strong> 2000 lugares</p>
-          <p class="lugar mb-1">{{evento.lugar}} </p>
-          <p class="fecha mb-0">{{evento.fecha}} </p>
-        </div>
-        <div class="botones-card px-3 pb-3 d-flex gap-2">
-          <a  class="btn btn-primary btn-sm flex-fill" [routerLink]="['/home/evento/detalle-evento', $index]" [state]={evento:evento}>Ver más</a>
-          <a href="#" class="btn btn-success btn-sm flex-fill">Inscribirse</a>
-        </div>
+      }
+    } @else {
+      <div class="col-12">
+        <p>Cargando eventos...</p>
       </div>
-    </div> 
-
     }
+
   </div>
 </div>
-
-  
