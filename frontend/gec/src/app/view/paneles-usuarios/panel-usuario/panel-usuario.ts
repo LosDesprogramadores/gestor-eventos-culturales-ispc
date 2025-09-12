@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Header } from '../../shared/header/header';
-import { Footer } from '../../shared/footer/footer';
-import { NavHome } from '../home/nav-home/nav-home';
-import { EventoService, Evento } from '../../services/evento.service';
+import { Header } from '../../../shared/header/header';
+import { Footer } from '../../../shared/footer/footer';
+import { NavHome } from '../../home/nav-home/nav-home';
+
 
 @Component({
   selector: 'app-panel-usuario',
@@ -14,25 +14,26 @@ import { EventoService, Evento } from '../../services/evento.service';
   styleUrl: './panel-usuario.css'
 })
 export class PanelUsuarioComponent implements OnInit {
-  eventos: Evento[] = [];
+/*   eventos: Evento[] = []; */
   nuevoTitulo: string = '';
   nuevaDescripcion: string = '';
   nuevaFecha: string = '';
 
-  constructor(private eventoService: EventoService) {}
+  constructor(/* private eventoService: EventoService */) {}
 
   ngOnInit(): void {
     this.cargarEventos();
   }
 
+  agregarEvento(): void {}
   cargarEventos(): void {
-    this.eventoService.getEventos().subscribe({
+   /*  this.eventoService.getEventos().subscribe({
       next: (data) => (this.eventos = data),
       error: (err) => console.error('Error al cargar eventos', err)
-    });
+    }); */
   }
 
-  agregarEvento(): void {
+ /*  agregarEvento(): void {
     if (this.nuevoTitulo && this.nuevaDescripcion && this.nuevaFecha) {
       const nuevo: Evento = {
         id_evento: this.eventos.length + 1,
@@ -66,5 +67,5 @@ export class PanelUsuarioComponent implements OnInit {
       next: () => this.cargarEventos(),
       error: (err) => console.error('Error al eliminar evento', err)
     });
-  }
+  } */
 }

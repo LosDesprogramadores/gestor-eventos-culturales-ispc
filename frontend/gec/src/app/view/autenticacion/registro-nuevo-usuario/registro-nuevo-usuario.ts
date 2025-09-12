@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NavHome } from '../home/nav-home/nav-home';
-import { Header } from '../../shared/header/header';
-import { Footer } from '../../shared/footer/footer';
 import { RouterModule } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, ValidationErrors } from '@angular/forms';
+import { Header } from '../../../shared/header/header';
+import { NavHome } from '../../home/nav-home/nav-home';
+import { Footer } from '../../../shared/footer/footer';
 
 @Component({
   selector: 'app-registro-nuevo-usuario',
