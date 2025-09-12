@@ -3,18 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Evento {
-  id_evento: number;
-  titulo: string;
-  descripcion: string;
-  hora_evento: string;
-  fecha_desde: string;
-  fecha_hasta: string;
+id_evento: number;
+  nombre: string;             
+  fechaHoraEvento: string;    
   capacidad: number;
-  lugar: string;
   imagen: string;
-  id_categoria_evento: number;
-  id_estado: number;
-  id_gestor: number;
+  ubicacion: string;          
+  estado: number;
+  gestor: number;
+  categoria: number;
 }
 
 @Injectable({

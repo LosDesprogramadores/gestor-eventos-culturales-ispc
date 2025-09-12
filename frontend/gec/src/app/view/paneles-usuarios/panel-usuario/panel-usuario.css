@@ -1,84 +1,28 @@
-.main-usuario {
-  padding: 2rem;
-  text-align: center;
-}
-
-.titulo-usuario {
-  color: var(--color-terciario-);
-  margin-bottom: 2rem;
-}
-
-.seccion-eventos {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.seccion-eventos h2 {
-  color: var(--color-terciario-alternativo);
-  margin-bottom: 1rem;
-}
-
-.lista-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-}
-
-.card-evento {
-  background: #fff;
-  border: 2px solid var(--color-secundario);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.card-evento h3 {
-  margin-bottom: 0.5rem;
-  color: var(--color-primario);
-}
-
-.card-evento p {
+/* Cards más compactas */
+.card-recomendado {
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
+  max-height: 280px;
 }
 
-.card-evento small {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: gray;
+.card-recomendado img {
+  height: 120px;
+  object-fit: cover;
 }
 
-.btn-agregar {
-  background-color: var(--color-primario);
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
+/* Texto truncado para que no rompa la card */
+.card-recomendado .card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.btn-agregar:hover {
-  background-color: var(--color-secundario);
+/* Lista de agendados más simple */
+.list-group-item {
+  font-size: 1rem;
 }
-
-.btn-eliminar {
-  background-color: crimson;
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn-eliminar:hover {
-  background-color: darkred;
-}
-
-.alerta {
-  text-align: center;
-  padding: 1rem;
-  background: #fde7a8;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+.list-group-item button {
+  font-size: 0.8rem;
+  padding: 0.2rem 0.5rem;
 }
