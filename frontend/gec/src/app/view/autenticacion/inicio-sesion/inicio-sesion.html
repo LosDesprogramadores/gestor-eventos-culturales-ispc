@@ -89,10 +89,10 @@
             {{ loading() ? 'Ingresando…' : 'Ingresar Ahora' }}
           </button>
 
-          <div class="login-actions">
-            <a routerLink="/recuperar" class="forgot-password">¿Olvidó su contraseña?</a>
-            <a routerLink="/registro" class="create-account">Crear nueva cuenta</a>
-          </div>
+            <div class="login-actions">
+              <a routerLink="/recuperar" class="forgot-password">¿Olvidó su contraseña?</a>
+              <a routerLink="/registro-nuevo-usuario" class="create-account">Crear nueva cuenta</a>
+            </div>
 
           @if (error()) {
             <p id="loginError" class="text-danger" role="alert" aria-live="assertive">

@@ -9,6 +9,16 @@
       "id_rol": 2,
       "id_datos": 1,
       "id": "bb2a"
+    },
+        {
+      "id_usuario": 2,
+      "email": "alan@test.com",
+      "password": "12345678",
+      "fechaRegistro": "2025-01-10",
+      "cuentaActiva": true,
+      "id_rol": 1,
+      "id_datos": 1,
+      "id": "bb2b"
     }
   ],
   "datos": [
@@ -19,6 +29,14 @@
       "direccion": "Córdoba Capital",
       "celular": "3511234567",
       "id": "b2de"
+    },
+    {
+      "id_datos": 2,
+      "nombre": "Alan",
+      "apellido": "Marini",
+      "direccion": "Córdoba Capital",
+      "celular": "xxx321xxx",
+      "id": "b2db"
     }
   ],
   "roles": [

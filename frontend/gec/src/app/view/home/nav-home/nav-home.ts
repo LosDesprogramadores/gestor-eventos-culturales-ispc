@@ -1,13 +1,20 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-
+import { Component, inject } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
+import { Auth } from '../../../services/service-autenticacion/auth.service';
 
 @Component({
   selector: 'app-nav-home',
-  imports: [RouterModule],
+  standalone: true,
+  imports: [RouterLink],
   templateUrl: './nav-home.html',
-  styleUrl: './nav-home.css'
+  styleUrls: ['./nav-home.css']  
 })
 export class NavHome {
+  auth = inject(Auth);         
+  private router = inject(Router);
 
+  logout() {
+    this.auth.logout();
+    this.router.navigateByUrl('/home');
+  }
 }

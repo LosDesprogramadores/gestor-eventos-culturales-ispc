@@ -1,12 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Auth } from '../../../services/service-autenticacion/auth.service';
 
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, RouterLink],
   templateUrl: './inicio-sesion.html',
   styleUrls: ['./inicio-sesion.css']
 })
@@ -33,13 +33,18 @@ export class InicioSesionComponent {
       this.form.markAllAsTouched();
       return;
     }
+
     this.loading.set(true);
     const { email, password, remember } = this.form.getRawValue();
 
     try {
       await this.auth.login(email, password);
-      if (remember) localStorage.setItem('gec.remember.email', email);
-      else          localStorage.removeItem('gec.remember.email');
+      if (remember) {
+        localStorage.setItem('gec.remember.email', email);
+      } else {
+        localStorage.removeItem('gec.remember.email');
+      }
+
       this.router.navigateByUrl('/');
     } catch (e: any) {
       this.error.set(e?.message ?? 'No se pudo iniciar sesión.');
@@ -49,7 +54,10 @@ export class InicioSesionComponent {
   }
 
   ngOnInit() {
+
     const remembered = localStorage.getItem('gec.remember.email');
-    if (remembered) this.form.patchValue({ email: remembered, remember: true });
+    if (remembered) {
+      this.form.patchValue({ email: remembered, remember: true });
+    }
   }
 }
