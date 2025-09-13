@@ -5,22 +5,51 @@
     <div class="row justify-content-center">
       <div class="col-12 col-sm-10 col-md-8 col-lg-6">
         
-        <!-- Tarjeta de registro -->
         <div class="registro-card">
           <form [formGroup]="form" action="#" method="post" class="registro-formulario needs-validation" novalidate>
             
-            <!-- Título -->
             <h1 class="registro-titulo">Crear nueva cuenta</h1>
 
-            <!-- Campo Email -->
+            <div class="mb-3">
+              <input type="text"
+                      formControlName="nombre"
+                      id="nombre"
+                      name="nombre"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Nombre" />
+              
+              @if (nombre?.errors && nombre?.touched) {
+                @if (nombre?.hasError('required')) {
+                  <p class="text-danger registro-feedback">El nombre es obligatorio.</p>
+                }
+              }
+            </div>
+
+            <div class="mb-3">
+              <input type="text"
+                      formControlName="apellido"
+                      id="apellido"
+                      name="apellido"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Apellido" />
+              
+              @if (apellido?.errors && apellido?.touched) {
+                @if (apellido?.hasError('required')) {
+                  <p class="text-danger registro-feedback">El apellido es obligatorio.</p>
+                }
+              }
+            </div>
+
             <div class="mb-3">
               <input type="email"
-                     formControlName="email"
-                     id="correo"
-                     name="correo"
-                     class="registro-input form-control"
-                     required
-                     placeholder="Correo electrónico" />
+                      formControlName="email"
+                      id="correo"
+                      name="correo"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Correo electrónico" />
               
               @if (email?.errors && email?.touched) {
                 @if (email?.hasError('required')) {
@@ -32,16 +61,15 @@
               }
             </div>
 
-            <!-- Campo Contraseña -->
             <div class="mb-3">
               <input type="password"
-                     formControlName="password"
-                     id="contraseñia"
-                     name="contraseñia"
-                     class="registro-input form-control"
-                     required
-                     placeholder="Contraseña"
-                     minlength="8" />
+                      formControlName="password"
+                      id="contraseñia"
+                      name="contraseñia"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Contraseña"
+                      minlength="8" />
 
               @if(password?.errors && password?.touched) {
                 @if(password?.hasError('required')) {
@@ -53,15 +81,14 @@
               }
             </div>
 
-            <!-- Campo Confirmar Contraseña -->
             <div class="mb-3">
               <input type="password"
-                     formControlName="confirmPassword"
-                     id="repetir-contraseñia"
-                     name="repetir-contraseñia"
-                     class="registro-input form-control"
-                     required
-                     placeholder="Repetir contraseña" />
+                      formControlName="confirmPassword"
+                      id="repetir-contraseñia"
+                      name="repetir-contraseñia"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Repetir contraseña" />
 
               @if(confirmPassword?.errors && confirmPassword?.touched) {
                 @if(confirmPassword?.hasError('required')) {
@@ -73,10 +100,9 @@
               }
             </div>
 
-            <!-- Botones -->
             <div class="registro-botones d-flex flex-column flex-sm-row justify-content-between mt-3">
               <button type="submit" class="registro-btn btn w-100 w-sm-auto mb-2 mb-sm-0">Registrar</button>
-              <button type="reset" class="registro-btn btn w-100 w-sm-auto">Iniciar sesión</button>
+              <button type="reset" routerLink="/inicio-sesion" class="registro-btn btn w-100 w-sm-auto">Iniciar sesión</button>
             </div>
 
           </form>
