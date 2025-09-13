@@ -7,8 +7,7 @@
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 2,
-      "id_datos": 1,
-      "id": "bb2a"
+      "id_datos": 1
     },
         {
       "id_usuario": 2,
@@ -17,8 +16,7 @@
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 1,
-      "id_datos": 1,
-      "id": "bb2b"
+      "id_datos": 1
     }
   ],
   "datos": [
@@ -27,30 +25,26 @@
       "nombre": "Juan",
       "apellido": "Moreno",
       "direccion": "Córdoba Capital",
-      "celular": "3511234567",
-      "id": "b2de"
+      "celular": "3511234567"
     },
     {
       "id_datos": 2,
       "nombre": "Alan",
       "apellido": "Marini",
       "direccion": "Córdoba Capital",
-      "celular": "xxx321xxx",
-      "id": "b2db"
+      "celular": "xxx321xxx"
     }
   ],
   "roles": [
     {
       "id_rol": 1,
       "nombre": "admin",
-      "descripcion": "Administrador",
-      "id": "5825"
+      "descripcion": "Administrador"
     },
     {
       "id_rol": 2,
       "nombre": "usuario",
-      "descripcion": "Usuario normal",
-      "id": "0eb2"
+      "descripcion": "Usuario normal"
     }
   ],
   "eventos": [
@@ -188,8 +182,7 @@
   "categorias_evento": [
     {
       "id_categoria_evento": 1,
-      "nombre": "Música",
-      "id": "94a0"
+      "nombre": "Música"
     }
   ],
   "estados": [
@@ -197,15 +190,13 @@
       "id_estado": 1,
       "nombre": "Activo",
       "descripcion": "Evento activo",
-      "ambito": "evento",
-      "id": "0130"
+      "ambito": "evento"
     },
     {
       "id_estado": 2,
       "nombre": "Inactivo",
       "descripcion": "Evento cancelado",
-      "ambito": "evento",
-      "id": "3775"
+      "ambito": "evento"
     }
   ],
   "inscripciones": [
@@ -214,8 +205,7 @@
       "id_usuario": 1,
       "id_evento": 1,
       "fecha_inscripcion": "2025-09-09",
-      "id_estado": 1,
-      "id": "a6dc"
+      "id_estado": 1
     }
   ],
   "notificaciones": [
@@ -223,8 +213,7 @@
       "id_notificacion": 1,
       "fecha": "2025-09-09",
       "mensaje": "Tu inscripción fue confirmada",
-      "id_usuario": 1,
-      "id": "f543"
+      "id_usuario": 1
     }
   ]
 }
