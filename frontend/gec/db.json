@@ -3,7 +3,7 @@
     {
       "id_usuario": 1,
       "email": "juan@test.com",
-      "password": "123456",
+      "password": "12345678",
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 2,

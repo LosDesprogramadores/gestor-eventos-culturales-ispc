@@ -1,34 +1,55 @@
-import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, ValidationErrors } from '@angular/forms';
-
-
+import { Component, inject, signal } from '@angular/core';
+import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Auth } from '../../../services/service-autenticacion/auth.service';
 
 @Component({
   selector: 'app-inicio-sesion',
   standalone: true,
-  imports: [RouterModule,ReactiveFormsModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './inicio-sesion.html',
-  styleUrl: './inicio-sesion.css'
+  styleUrls: ['./inicio-sesion.css']
 })
+export class InicioSesionComponent {
+  private fb = inject(FormBuilder);
+  private auth = inject(Auth);
+  private router = inject(Router);
 
-export class InicioSesion {
-  
-  form: FormGroup;
+  loading = signal(false);
+  error = signal<string | null>(null);
 
-  constructor(private formBuilder: FormBuilder) {
-    this.form = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
-    });
+  form = this.fb.nonNullable.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
+    remember: false
+  });
+
+  get email()    { return this.form.get('email'); }
+  get password() { return this.form.get('password'); }
+
+  async onSubmit() {
+    this.error.set(null);
+    if (this.form.invalid) {
+      this.form.markAllAsTouched();
+      return;
+    }
+    this.loading.set(true);
+    const { email, password, remember } = this.form.getRawValue();
+
+    try {
+      await this.auth.login(email, password);
+      if (remember) localStorage.setItem('gec.remember.email', email);
+      else          localStorage.removeItem('gec.remember.email');
+      this.router.navigateByUrl('/');
+    } catch (e: any) {
+      this.error.set(e?.message ?? 'No se pudo iniciar sesión.');
+    } finally {
+      this.loading.set(false);
+    }
   }
 
-  get email() {
-    return this.form.get('email');
-  }
-
-  get password() {
-    return this.form.get('password');
+  ngOnInit() {
+    const remembered = localStorage.getItem('gec.remember.email');
+    if (remembered) this.form.patchValue({ email: remembered, remember: true });
   }
 }
-
