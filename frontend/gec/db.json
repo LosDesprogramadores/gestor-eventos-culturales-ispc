@@ -80,12 +80,8 @@
       "ubicacion": "Teatro Real - San Jerónimo 664",
       "estado": 1,
       "gestor": 2,
-<<<<<<< HEAD
-      "categoria": 3
-=======
       "categoria": 3,
       "id": "2db7"
->>>>>>> dev
     },
     {
       "id_evento": 1,
@@ -98,12 +94,8 @@
       "ubicacion": "Teatro Comedia - San Juan 664",
       "estado": 1,
       "gestor": 101,
-<<<<<<< HEAD
-      "categoria": 1
-=======
       "categoria": 1,
       "id": "c724"
->>>>>>> dev
     },
     {
       "id_evento": 2,
@@ -116,12 +108,8 @@
       "ubicacion": "Sala del Buen Pastor",
       "estado": 1,
       "gestor": 102,
-<<<<<<< HEAD
-      "categoria": 2
-=======
       "categoria": 2,
       "id": "664b"
->>>>>>> dev
     },
     {
       "id_evento": 3,
@@ -134,12 +122,8 @@
       "ubicacion": "Centro Cultural Córdoba",
       "estado": 1,
       "gestor": 103,
-<<<<<<< HEAD
-      "categoria": 1
-=======
       "categoria": 1,
       "id": "6266"
->>>>>>> dev
     },
     {
       "id_evento": 4,
@@ -152,12 +136,8 @@
       "ubicacion": "Casa de la Cultura",
       "estado": 1,
       "gestor": 104,
-<<<<<<< HEAD
-      "categoria": 4
-=======
       "categoria": 4,
       "id": "88f7"
->>>>>>> dev
     },
     {
       "id_evento": 5,
@@ -170,12 +150,8 @@
       "ubicacion": "Plaza San Martín",
       "estado": 1,
       "gestor": 105,
-<<<<<<< HEAD
-      "categoria": 3
-=======
       "categoria": 3,
       "id": "57ed"
->>>>>>> dev
     },
     {
       "id_evento": 6,
@@ -188,12 +164,8 @@
       "ubicacion": "Parque Sarmiento",
       "estado": 1,
       "gestor": 106,
-<<<<<<< HEAD
-      "categoria": 1
-=======
       "categoria": 1,
       "id": "e50c"
->>>>>>> dev
     },
     {
       "id_evento": 7,
@@ -206,12 +178,8 @@
       "ubicacion": "Museo Caraffa",
       "estado": 1,
       "gestor": 107,
-<<<<<<< HEAD
-      "categoria": 5
-=======
       "categoria": 5,
       "id": "acce"
->>>>>>> dev
     },
     {
       "id_evento": 8,
@@ -224,12 +192,8 @@
       "ubicacion": "Paseo del Buen Pastor",
       "estado": 1,
       "gestor": 108,
-<<<<<<< HEAD
-      "categoria": 6
-=======
       "categoria": 6,
       "id": "1a6d"
->>>>>>> dev
     },
     {
       "id_evento": 9,
@@ -242,12 +206,8 @@
       "ubicacion": "Auditorio Universidad",
       "estado": 1,
       "gestor": 109,
-<<<<<<< HEAD
-      "categoria": 7
-=======
       "categoria": 7,
       "id": "bc3a"
->>>>>>> dev
     }
   ],
   "categorias_evento": [
