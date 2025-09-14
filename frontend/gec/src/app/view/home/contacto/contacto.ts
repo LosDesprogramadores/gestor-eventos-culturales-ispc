@@ -1,32 +1,56 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, ValidationErrors } from '@angular/forms';
 import { Header } from '../../../shared/header/header';
 import { Footer } from '../../../shared/footer/footer';
 import { NavHome } from '../nav-home/nav-home';
+import { HttpClientModule } from '@angular/common/http';
 
-@Component({
+@Component( {
   selector: 'app-contacto',
-  imports: [RouterModule, Header, Footer, NavHome],
+  imports: [ HttpClientModule, ReactiveFormsModule, RouterModule, Header, NavHome, Footer ],
   templateUrl: './contacto.html',
   styleUrl: './contacto.css'
-})
+} )
 export class Contacto {
-  contactoForm: FormGroup;
+  form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.contactoForm = this.fb.group({
-      nombre: ['', [Validators.maxLength(15)]], 
-      email: ['', [Validators.required, Validators.email]],
-      mensaje: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(250)]]
-    });
+
+  constructor( private formBuilder: FormBuilder ) {
+
+    this.form = this.formBuilder.group( {
+      nombre: [ '', [ Validators.required ] ],
+      email: [ '', [ Validators.required, Validators.email ] ],
+      asunto: [ '', [ Validators.required ] ],
+      mensaje: [ '', [ Validators.required, Validators.minLength( 10 ), Validators.maxLength( 250 ) ] ]
+    } );
   }
+
+  get nombre() {
+    return this.form.get( 'nombre' );
+  }
+  get email() {
+    return this.form.get( 'email' );
+  }
+  get asunto() {
+    return this.form.get( 'asunto' );
+  }
+  get mensaje() {
+    return this.form.get( 'mensaje' );
+  }
+
 
   onSubmit() {
-    if (this.contactoForm.valid) {
-      console.log('Formulario válido:', this.contactoForm.value);
+    if ( this.form.valid ) {
+      // Primero, datos personales
+      console.log( "form ok" );
+      alert( 'Mensaje enviado con éxito.' );
+      this.form.reset();
+
     } else {
-      console.log('Formulario inválido');
+      console.log( "form error" );
+      this.form.markAllAsTouched();
     }
   }
+
 }
