@@ -1,64 +1,74 @@
-
 <app-header></app-header>
 <app-nav-home></app-nav-home>
-<nav></nav>  
-<section class="contacto">
-  <h1>Contacto</h1>
-  <p>¿Tenes alguna consulta? ¡Escribinos!</p>
+<main class="contacto-main">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
 
-  <form class="formulario-contacto">
-    <!-- Nombre -->
-    <div class="campo-formulario">
-      <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
-      <input 
-        type="text" 
-        id="nombre" 
-        name="nombre" 
-        required 
-        minlength="4" 
-        maxlength="15"
-        placeholder="Tu nombre">
-    </div>
+        <div class="contacto-card">
 
-    <!-- Email -->
-    <div class="campo-formulario">
-      <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
-      <input 
-        type="email" 
-        id="email" 
-        name="email" 
-        required
-        placeholder="tuemail@ejemplo.com">
-    </div>
+          <!--<form class="formulario-contacto">-->
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="contacto-formulario needs-validation" novalidate>
+            <h1 class="contacto-titulo">Contacto</h1>
+            <!-- Nombre -->
+            <div class="mb-3">
+              <label for="nombre"><i class="fa-solid fa-user"></i> Nombre:</label>
+              <input type="text" formControlName="nombre" id="nombre" name="nombre" class="contacto-input form-control"
+                required placeholder="Nombre" />
+              @if (nombre?.errors && nombre?.touched) {
+              @if (nombre?.hasError('required')) {
+              <p class="text-danger contacto-feedback">El nombre es obligatorio.</p>
+              }
+              }
+            </div>
 
-    <!-- Asunto -->
-    <div class="campo-formulario">
-      <label for="asunto"><i class="fa-solid fa-tag"></i> Asunto:</label>
-      <input 
-        type="text" 
-        id="asunto" 
-        name="asunto" 
-        required
-        placeholder="Asunto de tu mensaje">
-    </div>
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="email"><i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
+              <input type="email" formControlName="email" id="email" name="email" class="contacto-input form-control"
+                required placeholder="Email">
+              @if (email?.errors && email?.touched) {
+              @if (email?.hasError('required')) {
+              <p class="text-danger contacto-feedback">El email es obligatorio.</p>
+              }
+              @else if (email?.hasError('email')) {
+              <p class="text-danger contacto-feedback">Formato de email inválido.</p>
+              }
+              }
+            </div>
 
-    <!-- Mensaje -->
-    <div class="campo-formulario">
-      <label for="mensaje"><i class="fa-solid fa-message"></i> Mensaje:</label>
-      <textarea 
-        id="mensaje" 
-        name="mensaje" 
-        rows="5" 
-        required 
-        maxlength="250"
-        placeholder="Escribe tu mensaje (máx. 250 caracteres)"></textarea>
-    </div>
+            <!-- Asunto -->
+            <div class="mb-3">
+              <label for="asunto"><i class="fa-solid fa-tag"></i> Asunto:</label>
+              <input type="text" formControlName="asunto" id="asunto" name="asunto" required placeholder="Asunto"
+                class="contacto-input form-control" />
+              @if (asunto?.errors && asunto?.touched) {
+              @if (asunto?.hasError('required')) {
+              <p class="text-danger contacto-feedback">El Asunto es obligatorio.</p>
+              }
+              }
+            </div>
 
-    <!-- Botón -->
-    <div class="campo-formulario">
-      <button type="submit">Enviar</button>
+            <!-- Mensaje -->
+            <div class="mb-3">
+              <label for="mensaje"><i class="fa-solid fa-message"></i> Mensaje:</label>
+              <textarea formControlName="mensaje" id="mensaje" name="mensaje" rows="5" required maxlength="250"
+                placeholder="Escribe tu mensaje (máx. 250 caracteres)" class="contacto-input form-control"></textarea>
+              @if (mensaje?.errors && mensaje?.touched) {
+              @if (mensaje?.hasError('required')) {
+              <p class="text-danger contacto-feedback">El Mensaje es obligatorio.</p>
+              }
+              }
+            </div>
+
+            <!-- Botón -->
+            <div class="mb-3">
+              <button type="submit" class="contacto-btn btn w-100 w-sm-auto mb-2 mb-sm-0">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-  </form>
-</section>
+  </div>
+</main>
 <app-footer></app-footer>
-

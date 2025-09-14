@@ -38,6 +38,7 @@
       "apellido": "Moreno",
       "direccion": "Córdoba Capital",
       "celular": "3511234567",
+
       "id": "c931"
     },
     {
@@ -238,7 +239,7 @@
   ],
   "inscripciones": [
     {
-      "id_inscripcion": 1,
+      "id": "e395",
       "id_usuario": 1,
       "id_evento": 1,
       "fecha_inscripcion": "2025-09-09",
