@@ -8,7 +8,7 @@
       "cuentaActiva": true,
       "id_rol": 2,
       "id_datos": 1,
-      "id": "7da3"
+      "id": "29c2"
     },
     {
       "id_usuario": 2,
@@ -18,17 +18,23 @@
       "cuentaActiva": true,
       "id_rol": 1,
       "id_datos": 1,
-      "id": "52eb"
+      "id": "6a9d"
     },
     {
-      "id_usuario": 3,
-      "email": "pepe@test.com",
-      "password": "12345678",
-      "fechaRegistro": "2025-01-10",
+      "id": "eec8",
+      "email": "Tomas@gmail.com",
+      "password": "123456789",
+      "fechaRegistro": "2025-09-14",
       "cuentaActiva": true,
-      "id_rol": 1,
-      "id_datos": 2,
-      "id": "0a4e"
+      "id_rol": 2
+    },
+    {
+      "id": 4,
+      "email": "mportillo79@gmail.com",
+      "password": "12345678",
+      "fechaRegistro": "2025-09-14",
+      "cuentaActiva": true,
+      "id_rol": 2
     }
   ],
   "datos": [
@@ -38,8 +44,7 @@
       "apellido": "Moreno",
       "direccion": "Córdoba Capital",
       "celular": "3511234567",
-
-      "id": "c931"
+      "id": "fa76"
     },
     {
       "id_datos": 2,
@@ -47,15 +52,14 @@
       "apellido": "Marini",
       "direccion": "Córdoba Capital",
       "celular": "xxx321xxx",
-      "id": "8435"
+      "id": "6fd7"
     },
     {
-      "id_datos": 3,
-      "nombre": "Pepe",
-      "apellido": "Argento",
-      "direccion": "Córdoba Capital",
-      "celular": "xxx123xxx",
-      "id": "0f5d"
+      "id": "5a48",
+      "nombre": "tomás",
+      "apellido": "Monton",
+      "direccion": "",
+      "celular": ""
     }
   ],
   "roles": [
@@ -63,13 +67,13 @@
       "id_rol": 1,
       "nombre": "admin",
       "descripcion": "Administrador",
-      "id": "1732"
+      "id": "c70d"
     },
     {
       "id_rol": 2,
       "nombre": "usuario",
       "descripcion": "Usuario normal",
-      "id": "20f7"
+      "id": "dc51"
     }
   ],
   "eventos": [
@@ -85,7 +89,7 @@
       "estado": 1,
       "gestor": 2,
       "categoria": 3,
-      "id": "8397"
+      "id": "2db7"
     },
     {
       "id_evento": 1,
@@ -99,7 +103,7 @@
       "estado": 1,
       "gestor": 101,
       "categoria": 1,
-      "id": "9a3b"
+      "id": "c724"
     },
     {
       "id_evento": 2,
@@ -111,9 +115,9 @@
       "fechaFinInscripcion": "Junio - Jueves 6 | 17:00 Hs",
       "ubicacion": "Sala del Buen Pastor",
       "estado": 1,
-      "gestor": 2,
+      "gestor": 102,
       "categoria": 2,
-      "id": "cb66"
+      "id": "664b"
     },
     {
       "id_evento": 3,
@@ -127,7 +131,7 @@
       "estado": 1,
       "gestor": 103,
       "categoria": 1,
-      "id": "932a"
+      "id": "6266"
     },
     {
       "id_evento": 4,
@@ -139,9 +143,9 @@
       "fechaFinInscripcion": "Junio - Martes 11 | 18:00 Hs",
       "ubicacion": "Casa de la Cultura",
       "estado": 1,
-      "gestor": 3,
+      "gestor": 104,
       "categoria": 4,
-      "id": "ed6e"
+      "id": "88f7"
     },
     {
       "id_evento": 5,
@@ -153,9 +157,9 @@
       "fechaFinInscripcion": "Agosto - Sábado 17 | 20:00 Hs",
       "ubicacion": "Plaza San Martín",
       "estado": 1,
-      "gestor": 3,
+      "gestor": 105,
       "categoria": 3,
-      "id": "9ad2"
+      "id": "57ed"
     },
     {
       "id_evento": 6,
@@ -167,9 +171,9 @@
       "fechaFinInscripcion": "Febrero - Viernes 23 | 19:00 Hs",
       "ubicacion": "Parque Sarmiento",
       "estado": 1,
-      "gestor": 2,
+      "gestor": 106,
       "categoria": 1,
-      "id": "6943"
+      "id": "e50c"
     },
     {
       "id_evento": 7,
@@ -181,9 +185,9 @@
       "fechaFinInscripcion": "Julio - Jueves 4 | 16:00 Hs",
       "ubicacion": "Museo Caraffa",
       "estado": 1,
-      "gestor": 3,
+      "gestor": 107,
       "categoria": 5,
-      "id": "43f6"
+      "id": "acce"
     },
     {
       "id_evento": 8,
@@ -197,7 +201,7 @@
       "estado": 1,
       "gestor": 108,
       "categoria": 6,
-      "id": "53ca"
+      "id": "1a6d"
     },
     {
       "id_evento": 9,
@@ -211,14 +215,14 @@
       "estado": 1,
       "gestor": 109,
       "categoria": 7,
-      "id": "ecdc"
+      "id": "bc3a"
     }
   ],
   "categorias_evento": [
     {
       "id_categoria_evento": 1,
       "nombre": "Música",
-      "id": "e2a1"
+      "id": "021e"
     }
   ],
   "estados": [
@@ -227,24 +231,24 @@
       "nombre": "Activo",
       "descripcion": "Evento activo",
       "ambito": "evento",
-      "id": "4fd6"
+      "id": "712e"
     },
     {
       "id_estado": 2,
       "nombre": "Inactivo",
       "descripcion": "Evento cancelado",
       "ambito": "evento",
-      "id": "ea6c"
+      "id": "660e"
     }
   ],
   "inscripciones": [
     {
-      "id": "e395",
+      "id_inscripcion": 1,
       "id_usuario": 1,
       "id_evento": 1,
       "fecha_inscripcion": "2025-09-09",
       "id_estado": 1,
-      "id": "3b64"
+      "id": "afb7"
     }
   ],
   "notificaciones": [
@@ -253,7 +257,63 @@
       "fecha": "2025-09-09",
       "mensaje": "Tu inscripción fue confirmada",
       "id_usuario": 1,
-      "id": "e114"
+      "id": "db00"
+    }
+  ],
+  "miembros": [
+    {
+      "id_miembro": 1,
+      "nombre": "Tomás Monton",
+      "img": "assets/images/miembros/tomas.jpeg",
+      "rol": "Developer",
+      "cargo": "Gestión y Desarrollo",
+      "email": "tomasmonton261@gmail.com",
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton"
+    },
+    {
+      "id_miembro": 2,
+      "nombre": "Julio César Martín",
+      "img": "assets/images/miembros/julio.jpeg",
+      "rol": "Scrum Master",
+      "cargo": "Gestión",
+      "email": "JulioMartin447@gmail.com",
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio"
+    },
+    {
+      "id_miembro": 3,
+      "nombre": "Alan Darel Marini",
+      "img": "assets/images/miembros/alan.jpeg",
+      "rol": "Developer",
+      "cargo": "Testing",
+      "email": "aland.marini@gmail.com",
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini"
+    },
+    {
+      "id_miembro": 4,
+      "nombre": "Juan Ignacio Moreno",
+      "img": "assets/images/miembros/juan.jpeg",
+      "rol": "Developer",
+      "cargo": "Análisis y Desarrollo",
+      "email": "juanimignacio@gmail.com",
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno"
+    },
+    {
+      "id_miembro": 5,
+      "nombre": "Marcelo Portillo",
+      "img": "assets/images/miembros/marcelo.jpeg",
+      "rol": "Developer",
+      "cargo": "Desarrollo",
+      "email": "mportillo79@gmail.com",
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo"
+    },
+    {
+      "id_miembro": 6,
+      "nombre": "Romina Vanesa Huk",
+      "img": "assets/images/miembros/romina.jpeg",
+      "rol": "Developer",
+      "cargo": "Desarrollo",
+      "email": "rominahuk@gmail.com",
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk"
     }
   ]
 }
