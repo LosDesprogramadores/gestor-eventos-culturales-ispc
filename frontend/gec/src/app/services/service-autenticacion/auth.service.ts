@@ -58,4 +58,8 @@ export class Auth {
     try { return JSON.parse(localStorage.getItem(SESSION_KEY) ?? 'null'); }
     catch { return null; }
   }
+
+  usuario(){
+    
+  }
 }

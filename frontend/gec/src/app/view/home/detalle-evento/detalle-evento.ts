@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventosService, IEvento } from '../../../services/galeria';
 import { ActivatedRoute, RouterModule } from '@angular/router';
+import { Auth } from '../../../services/service-autenticacion/auth.service';
 
 
 @Component({
