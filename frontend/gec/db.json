@@ -29,7 +29,7 @@
       "id_rol": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "email": "mportillo79@gmail.com",
       "password": "12345678",
       "fechaRegistro": "2025-09-14",
@@ -243,30 +243,9 @@
   ],
   "inscripciones": [
     {
-      "id": "e395",
-      "id_usuario": 1,
-      "id_evento": 3,
-      "fecha_inscripcion": "2025-09-14",
-      "id_estado": 1
-    },
-    {
-      "id": "e38e",
-      "id_usuario": 1,
-      "id_evento": 2,
-      "fecha_inscripcion": "2025-09-14",
-      "id_estado": 1
-    },
-    {
       "id": "e5ea",
       "id_usuario": 2,
       "id_evento": 3,
-      "fecha_inscripcion": "2025-09-14",
-      "id_estado": 1
-    },
-    {
-      "id": "62d7",
-      "id_usuario": 1,
-      "id_evento": 0,
       "fecha_inscripcion": "2025-09-14",
       "id_estado": 1
     }
@@ -288,7 +267,8 @@
       "rol": "Developer",
       "cargo": "Gestión y Desarrollo",
       "email": "tomasmonton261@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton",
+      "id": "6d7f"
     },
     {
       "id_miembro": 2,
@@ -297,7 +277,8 @@
       "rol": "Scrum Master",
       "cargo": "Gestión",
       "email": "JulioMartin447@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio",
+      "id": "1a5c"
     },
     {
       "id_miembro": 3,
@@ -306,7 +287,8 @@
       "rol": "Developer",
       "cargo": "Testing",
       "email": "aland.marini@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini",
+      "id": "23e4"
     },
     {
       "id_miembro": 4,
@@ -315,7 +297,8 @@
       "rol": "Developer",
       "cargo": "Análisis y Desarrollo",
       "email": "juanimignacio@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno",
+      "id": "9ef5"
     },
     {
       "id_miembro": 5,
@@ -324,7 +307,8 @@
       "rol": "Developer",
       "cargo": "Desarrollo",
       "email": "mportillo79@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo",
+      "id": "dfac"
     },
     {
       "id_miembro": 6,
@@ -333,7 +317,8 @@
       "rol": "Developer",
       "cargo": "Desarrollo",
       "email": "rominahuk@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk",
+      "id": "4945"
     }
   ]
 }
