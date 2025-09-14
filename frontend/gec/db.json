@@ -7,25 +7,28 @@
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 2,
-      "id_datos": 1
+      "id_datos": 1,
+      "id": "7da3"
     },
-        {
+    {
       "id_usuario": 2,
       "email": "alan@test.com",
       "password": "12345678",
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 1,
-      "id_datos": 1
+      "id_datos": 1,
+      "id": "52eb"
     },
-        {
+    {
       "id_usuario": 3,
       "email": "pepe@test.com",
       "password": "12345678",
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 1,
-      "id_datos": 2
+      "id_datos": 2,
+      "id": "0a4e"
     }
   ],
   "datos": [
@@ -34,172 +37,187 @@
       "nombre": "Juan",
       "apellido": "Moreno",
       "direccion": "Córdoba Capital",
-      "celular": "3511234567"
+      "celular": "3511234567",
+      "id": "c931"
     },
     {
       "id_datos": 2,
       "nombre": "Alan",
       "apellido": "Marini",
       "direccion": "Córdoba Capital",
-      "celular": "xxx321xxx"
+      "celular": "xxx321xxx",
+      "id": "8435"
     },
     {
       "id_datos": 3,
       "nombre": "Pepe",
       "apellido": "Argento",
       "direccion": "Córdoba Capital",
-      "celular": "xxx123xxx"
+      "celular": "xxx123xxx",
+      "id": "0f5d"
     }
-
   ],
   "roles": [
     {
       "id_rol": 1,
       "nombre": "admin",
-      "descripcion": "Administrador"
+      "descripcion": "Administrador",
+      "id": "1732"
     },
     {
       "id_rol": 2,
       "nombre": "usuario",
-      "descripcion": "Usuario normal"
+      "descripcion": "Usuario normal",
+      "id": "20f7"
     }
   ],
   "eventos": [
- {
-    "id_evento" : 0,
-    "nombre" : "Carnavales",
-    "fechaHoraEvento" : "Mayo - Jueves 22 | 20:30 Hs",
-    "capacidad" : 2000,
-    "imagen" : "https://images.unsplash.com/photo-1496767000195-3841ae3f97f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion" : "Mayo - Jueves 22 | 20:30 Hs",
-    "fechaFinInscripcion" : "Mayo - Jueves 22 | 20:30 Hs",
-    "ubicacion" : "Teatro Real - San Jerónimo 664",
-    "estado" : 1,
-    "gestor" : 2,
-    "categoria" : 3
- },
-  {
-    "id_evento": 1,
-    "nombre": "Comedias",
-    "fechaHoraEvento": "Mayo - Jueves 29 | 22:30 Hs",
-    "capacidad": 1000,
-    "imagen": "https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Mayo - Martes 20 | 10:00 Hs",
-    "fechaFinInscripcion": "Mayo - Miércoles 28 | 18:00 Hs",
-    "ubicacion": "Teatro Comedia - San Juan 664",
-    "estado": 1,
-    "gestor": 101,
-    "categoria": 1
-  },
-  {
-    "id_evento": 2,
-    "nombre": "Jazz en Vivo",
-    "fechaHoraEvento": "Junio - Viernes 7 | 21:00 Hs",
-    "capacidad": 350 ,
-    "imagen": "https://images.unsplash.com/photo-1715139718837-f9efc78cddc0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Junio - Lunes 3 | 09:00 Hs",
-    "fechaFinInscripcion": "Junio - Jueves 6 | 17:00 Hs",
-    "ubicacion": "Sala del Buen Pastor",
-    "estado": 1,
-    "gestor": 2,
-    "categoria": 2
-  },
-  {
-    "id_evento": 3,
-    "nombre": "Obra de Teatro",
-    "fechaHoraEvento": "Julio - Sábado 13 | 19:00 Hs",
-    "capacidad": 500,
-    "imagen": "https://images.unsplash.com/photo-1576724196706-3f23f51ea351?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Julio - Lunes 8 | 11:00 Hs",
-    "fechaFinInscripcion": "Julio - Viernes 12 | 18:00 Hs",
-    "ubicacion": "Centro Cultural Córdoba",
-    "estado": 1,
-    "gestor": 103,
-    "categoria": 1
-  },
-  {
-    "id_evento": 4,
-    "nombre": "Taller de Fotografía",
-    "fechaHoraEvento": "Junio - Miércoles 12 | 18:00 Hs",
-    "capacidad": 25,
-    "imagen": "https://images.pexels.com/photos/16935932/pexels-photo-16935932/free-photo-of-restaurante-fiesta-partido-ramas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "fechaInicioInscripcion": "Junio - Lunes 10 | 09:00 Hs",
-    "fechaFinInscripcion": "Junio - Martes 11 | 18:00 Hs",
-    "ubicacion": "Casa de la Cultura",
-    "estado": 1,
-    "gestor": 3,
-    "categoria": 4
-  },
-  {
-    "id_evento": 5,
-    "nombre": "Feria del Libro",
-    "fechaHoraEvento": "Agosto - Domingo 18 | 10:00 Hs",
-    "capacidad": 99999,
-    "imagen": "https://images.unsplash.com/photo-1631888722728-1578b7ba6dee?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Agosto - Lunes 12 | 08:00 Hs",
-    "fechaFinInscripcion": "Agosto - Sábado 17 | 20:00 Hs",
-    "ubicacion": "Plaza San Martín",
-    "estado": 1,
-    "gestor": 3,
-    "categoria": 3
-  },
-  {
-    "id_evento": 6,
-    "nombre": "Cine al Aire Libre",
-    "fechaHoraEvento": "Febrero - Sábado 24 | 21:30 Hs",
-    "capacidad": 400 ,
-    "imagen": "https://images.unsplash.com/photo-1665833380686-8b0e41e99dc7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Febrero - Lunes 19 | 10:00 Hs",
-    "fechaFinInscripcion": "Febrero - Viernes 23 | 19:00 Hs",
-    "ubicacion": "Parque Sarmiento",
-    "estado": 1,
-    "gestor": 2,
-    "categoria": 1
-  },
-  {
-    "id_evento": 7,
-    "nombre": "Exposición de Arte",
-    "fechaHoraEvento": "Julio - Viernes 5 | 17:00 Hs",
-    "capacidad": 100,
-    "imagen": "https://images.unsplash.com/photo-1743119626105-8119fde654d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Julio - Lunes 1 | 08:00 Hs",
-    "fechaFinInscripcion": "Julio - Jueves 4 | 16:00 Hs",
-    "ubicacion": "Museo Caraffa",
-    "estado": 1,
-    "gestor": 3,
-    "categoria": 5
-  },
-  {
-    "id_evento": 8,
-    "nombre": "Festival de Comida",
-    "fechaHoraEvento": "Septiembre - Domingo 15 | 12:00 Hs",
-    "capacidad": 1000 ,
-    "imagen": "https://images.unsplash.com/photo-1470858831619-ca02d796b2a5?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Septiembre - Lunes 9 | 10:00 Hs",
-    "fechaFinInscripcion": "Septiembre - Sábado 14 | 22:00 Hs",
-    "ubicacion": "Paseo del Buen Pastor",
-    "estado": 1,
-    "gestor": 108,
-    "categoria": 6
-  },
-  {
-    "id_evento": 9,
-    "nombre": "Charla TEDx",
-    "fechaHoraEvento": "Octubre - Martes 10 | 18:30 Hs",
-    "capacidad": 600,
-    "imagen": "https://images.unsplash.com/photo-1733222814719-9c756a54ad92?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "fechaInicioInscripcion": "Octubre - Jueves 5 | 10:00 Hs",
-    "fechaFinInscripcion": "Octubre - Lunes 9 | 17:00 Hs",
-    "ubicacion": "Auditorio Universidad",
-    "estado": 1,
-    "gestor": 109,
-    "categoria": 7
-  }
-],
+    {
+      "id_evento": 0,
+      "nombre": "Carnavales",
+      "fechaHoraEvento": "Mayo - Jueves 22 | 20:30 Hs",
+      "capacidad": 2000,
+      "imagen": "https://images.unsplash.com/photo-1496767000195-3841ae3f97f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Mayo - Jueves 22 | 20:30 Hs",
+      "fechaFinInscripcion": "Mayo - Jueves 22 | 20:30 Hs",
+      "ubicacion": "Teatro Real - San Jerónimo 664",
+      "estado": 1,
+      "gestor": 2,
+      "categoria": 3,
+      "id": "8397"
+    },
+    {
+      "id_evento": 1,
+      "nombre": "Comedias",
+      "fechaHoraEvento": "Mayo - Jueves 29 | 22:30 Hs",
+      "capacidad": 1000,
+      "imagen": "https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Mayo - Martes 20 | 10:00 Hs",
+      "fechaFinInscripcion": "Mayo - Miércoles 28 | 18:00 Hs",
+      "ubicacion": "Teatro Comedia - San Juan 664",
+      "estado": 1,
+      "gestor": 101,
+      "categoria": 1,
+      "id": "9a3b"
+    },
+    {
+      "id_evento": 2,
+      "nombre": "Jazz en Vivo",
+      "fechaHoraEvento": "Junio - Viernes 7 | 21:00 Hs",
+      "capacidad": 350,
+      "imagen": "https://images.unsplash.com/photo-1715139718837-f9efc78cddc0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Junio - Lunes 3 | 09:00 Hs",
+      "fechaFinInscripcion": "Junio - Jueves 6 | 17:00 Hs",
+      "ubicacion": "Sala del Buen Pastor",
+      "estado": 1,
+      "gestor": 2,
+      "categoria": 2,
+      "id": "cb66"
+    },
+    {
+      "id_evento": 3,
+      "nombre": "Obra de Teatro",
+      "fechaHoraEvento": "Julio - Sábado 13 | 19:00 Hs",
+      "capacidad": 500,
+      "imagen": "https://images.unsplash.com/photo-1576724196706-3f23f51ea351?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Julio - Lunes 8 | 11:00 Hs",
+      "fechaFinInscripcion": "Julio - Viernes 12 | 18:00 Hs",
+      "ubicacion": "Centro Cultural Córdoba",
+      "estado": 1,
+      "gestor": 103,
+      "categoria": 1,
+      "id": "932a"
+    },
+    {
+      "id_evento": 4,
+      "nombre": "Taller de Fotografía",
+      "fechaHoraEvento": "Junio - Miércoles 12 | 18:00 Hs",
+      "capacidad": 25,
+      "imagen": "https://images.pexels.com/photos/16935932/pexels-photo-16935932/free-photo-of-restaurante-fiesta-partido-ramas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "fechaInicioInscripcion": "Junio - Lunes 10 | 09:00 Hs",
+      "fechaFinInscripcion": "Junio - Martes 11 | 18:00 Hs",
+      "ubicacion": "Casa de la Cultura",
+      "estado": 1,
+      "gestor": 3,
+      "categoria": 4,
+      "id": "ed6e"
+    },
+    {
+      "id_evento": 5,
+      "nombre": "Feria del Libro",
+      "fechaHoraEvento": "Agosto - Domingo 18 | 10:00 Hs",
+      "capacidad": 99999,
+      "imagen": "https://images.unsplash.com/photo-1631888722728-1578b7ba6dee?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Agosto - Lunes 12 | 08:00 Hs",
+      "fechaFinInscripcion": "Agosto - Sábado 17 | 20:00 Hs",
+      "ubicacion": "Plaza San Martín",
+      "estado": 1,
+      "gestor": 3,
+      "categoria": 3,
+      "id": "9ad2"
+    },
+    {
+      "id_evento": 6,
+      "nombre": "Cine al Aire Libre",
+      "fechaHoraEvento": "Febrero - Sábado 24 | 21:30 Hs",
+      "capacidad": 400,
+      "imagen": "https://images.unsplash.com/photo-1665833380686-8b0e41e99dc7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Febrero - Lunes 19 | 10:00 Hs",
+      "fechaFinInscripcion": "Febrero - Viernes 23 | 19:00 Hs",
+      "ubicacion": "Parque Sarmiento",
+      "estado": 1,
+      "gestor": 2,
+      "categoria": 1,
+      "id": "6943"
+    },
+    {
+      "id_evento": 7,
+      "nombre": "Exposición de Arte",
+      "fechaHoraEvento": "Julio - Viernes 5 | 17:00 Hs",
+      "capacidad": 100,
+      "imagen": "https://images.unsplash.com/photo-1743119626105-8119fde654d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Julio - Lunes 1 | 08:00 Hs",
+      "fechaFinInscripcion": "Julio - Jueves 4 | 16:00 Hs",
+      "ubicacion": "Museo Caraffa",
+      "estado": 1,
+      "gestor": 3,
+      "categoria": 5,
+      "id": "43f6"
+    },
+    {
+      "id_evento": 8,
+      "nombre": "Festival de Comida",
+      "fechaHoraEvento": "Septiembre - Domingo 15 | 12:00 Hs",
+      "capacidad": 1000,
+      "imagen": "https://images.unsplash.com/photo-1470858831619-ca02d796b2a5?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Septiembre - Lunes 9 | 10:00 Hs",
+      "fechaFinInscripcion": "Septiembre - Sábado 14 | 22:00 Hs",
+      "ubicacion": "Paseo del Buen Pastor",
+      "estado": 1,
+      "gestor": 108,
+      "categoria": 6,
+      "id": "53ca"
+    },
+    {
+      "id_evento": 9,
+      "nombre": "Charla TEDx",
+      "fechaHoraEvento": "Octubre - Martes 10 | 18:30 Hs",
+      "capacidad": 600,
+      "imagen": "https://images.unsplash.com/photo-1733222814719-9c756a54ad92?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "fechaInicioInscripcion": "Octubre - Jueves 5 | 10:00 Hs",
+      "fechaFinInscripcion": "Octubre - Lunes 9 | 17:00 Hs",
+      "ubicacion": "Auditorio Universidad",
+      "estado": 1,
+      "gestor": 109,
+      "categoria": 7,
+      "id": "ecdc"
+    }
+  ],
   "categorias_evento": [
     {
       "id_categoria_evento": 1,
-      "nombre": "Música"
+      "nombre": "Música",
+      "id": "e2a1"
     }
   ],
   "estados": [
@@ -207,13 +225,15 @@
       "id_estado": 1,
       "nombre": "Activo",
       "descripcion": "Evento activo",
-      "ambito": "evento"
+      "ambito": "evento",
+      "id": "4fd6"
     },
     {
       "id_estado": 2,
       "nombre": "Inactivo",
       "descripcion": "Evento cancelado",
-      "ambito": "evento"
+      "ambito": "evento",
+      "id": "ea6c"
     }
   ],
   "inscripciones": [
@@ -222,7 +242,8 @@
       "id_usuario": 1,
       "id_evento": 1,
       "fecha_inscripcion": "2025-09-09",
-      "id_estado": 1
+      "id_estado": 1,
+      "id": "3b64"
     }
   ],
   "notificaciones": [
@@ -230,7 +251,8 @@
       "id_notificacion": 1,
       "fecha": "2025-09-09",
       "mensaje": "Tu inscripción fue confirmada",
-      "id_usuario": 1
+      "id_usuario": 1,
+      "id": "e114"
     }
   ]
 }
