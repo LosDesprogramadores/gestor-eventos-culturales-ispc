@@ -1,4 +1,4 @@
-:root {
+/*-:root {
   --color-primario: #BC5E3C;
   --color-primario-alternativo: #A16546;
   --color-secundario: #FBB668;
@@ -24,7 +24,7 @@
 
 body {
   background-color: var(--color-secundario-alternativo);
-    display: flex;
+  display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -131,6 +131,7 @@ main {
   padding: 8rem;
 }
 */
+/*----
 section.quienes-somos h2,
 h3 {
   color: #2c3e50;
@@ -141,11 +142,11 @@ h3 {
 .equipo {
   /*display: flex;*/
   /*flex-wrap: wrap;*/
-  justify-content: center;
+  /*justify-content: center;
   /*margin-top: 2rem;*/
   /*gap: 2rem;*/
-  text-align: center;
-
+  /*text-align: center;
+/*--
 }
 
 .miembro p {
@@ -163,3 +164,5 @@ h3 {
 .miembro a {
   text-decoration: none;
 }
+---*/
+
