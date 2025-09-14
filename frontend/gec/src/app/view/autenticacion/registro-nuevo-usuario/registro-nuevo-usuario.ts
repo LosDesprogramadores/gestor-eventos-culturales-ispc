@@ -4,11 +4,13 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, ValidationErro
 import { Header } from '../../../shared/header/header';
 import { NavHome } from '../../home/nav-home/nav-home';
 import { Footer } from '../../../shared/footer/footer';
+import { HttpClientModule } from '@angular/common/http';
+import { SRegistro } from '../../../services/service-registro/s-registro';
 
 @Component({
   selector: 'app-registro-nuevo-usuario',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule, Header, NavHome, Footer],
+  imports: [HttpClientModule,ReactiveFormsModule, RouterModule, Header, NavHome, Footer],
   templateUrl: './registro-nuevo-usuario.html',
   styleUrl: './registro-nuevo-usuario.css'
 })
@@ -17,7 +19,10 @@ export class RegistroNuevoUsuario {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private registroService: SRegistro
+  ) {
     this.form = this.formBuilder.group({
       // Nuevos campos para nombre y apellido
       nombre: ['', [Validators.required]],
@@ -67,4 +72,48 @@ export class RegistroNuevoUsuario {
       return null;
     }
   }
+
+  onSubmit() {
+  if (this.form.valid) {
+    // Primero, datos personales
+    const datos = {
+      nombre: this.nombre?.value,
+      apellido: this.apellido?.value,
+      direccion: '', // si querés permitir editar esto luego
+      celular: ''
+    };
+
+    this.registroService.registrarDatos(datos).subscribe({
+      next: (resDatos) => {
+        // Luego, usuario con el id_datos recibido
+        const nuevoUsuario = {
+          email: this.email?.value,
+          password: this.password?.value,
+          fechaRegistro: new Date().toISOString().split('T')[0], // formato yyyy-mm-dd
+          cuentaActiva: true,
+          id_rol: 2, // usuario normal
+          id_datos: resDatos.id_datos
+        };
+
+        this.registroService.registrarUsuario(nuevoUsuario).subscribe({
+          next: (resUsuario) => {
+            alert('Usuario registrado con éxito.');
+            this.form.reset();
+          },
+          error: (err) => {
+            console.error('Error registrando usuario', err);
+            alert('Error al registrar usuario.');
+          }
+        });
+      },
+      error: (err) => {
+        console.error('Error registrando datos', err);
+        alert('Error al registrar datos personales.');
+      }
+    });
+  } else {
+    this.form.markAllAsTouched();
+  }
+}
+
 }
