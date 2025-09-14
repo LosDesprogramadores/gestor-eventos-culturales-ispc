@@ -7,6 +7,7 @@ import { QuienesSomos } from './view/home/quienes-somos/quienes-somos';
 import { InicioSesionComponent  } from './view/autenticacion/inicio-sesion/inicio-sesion';
 import { RegistroNuevoUsuario } from './view/autenticacion/registro-nuevo-usuario/registro-nuevo-usuario';
 import { PanelUsuarioComponent } from './view/paneles-usuarios/panel-usuario/panel-usuario';
+import { PanelGestor } from './view/paneles-usuarios/panel-gestor/panel-gestor';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: "registro-nuevo-usuario", component: RegistroNuevoUsuario },
 
   { path: "panel-usuario", component: PanelUsuarioComponent }, 
+  { path: "panel-gestor", component: PanelGestor},
 
   { path: "", redirectTo: "/home", pathMatch: "full" }
 ];
