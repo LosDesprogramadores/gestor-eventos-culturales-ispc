@@ -17,6 +17,15 @@
       "cuentaActiva": true,
       "id_rol": 1,
       "id_datos": 1
+    },
+        {
+      "id_usuario": 3,
+      "email": "pepe@test.com",
+      "password": "12345678",
+      "fechaRegistro": "2025-01-10",
+      "cuentaActiva": true,
+      "id_rol": 1,
+      "id_datos": 2
     }
   ],
   "datos": [
@@ -33,7 +42,15 @@
       "apellido": "Marini",
       "direccion": "Córdoba Capital",
       "celular": "xxx321xxx"
+    },
+    {
+      "id_datos": 3,
+      "nombre": "Pepe",
+      "apellido": "Argento",
+      "direccion": "Córdoba Capital",
+      "celular": "xxx123xxx"
     }
+
   ],
   "roles": [
     {
@@ -84,7 +101,7 @@
     "fechaFinInscripcion": "Junio - Jueves 6 | 17:00 Hs",
     "ubicacion": "Sala del Buen Pastor",
     "estado": 1,
-    "gestor": 102,
+    "gestor": 2,
     "categoria": 2
   },
   {
@@ -110,7 +127,7 @@
     "fechaFinInscripcion": "Junio - Martes 11 | 18:00 Hs",
     "ubicacion": "Casa de la Cultura",
     "estado": 1,
-    "gestor": 104,
+    "gestor": 3,
     "categoria": 4
   },
   {
@@ -123,7 +140,7 @@
     "fechaFinInscripcion": "Agosto - Sábado 17 | 20:00 Hs",
     "ubicacion": "Plaza San Martín",
     "estado": 1,
-    "gestor": 105,
+    "gestor": 3,
     "categoria": 3
   },
   {
@@ -136,7 +153,7 @@
     "fechaFinInscripcion": "Febrero - Viernes 23 | 19:00 Hs",
     "ubicacion": "Parque Sarmiento",
     "estado": 1,
-    "gestor": 106,
+    "gestor": 2,
     "categoria": 1
   },
   {
@@ -149,7 +166,7 @@
     "fechaFinInscripcion": "Julio - Jueves 4 | 16:00 Hs",
     "ubicacion": "Museo Caraffa",
     "estado": 1,
-    "gestor": 107,
+    "gestor": 3,
     "categoria": 5
   },
   {

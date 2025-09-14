@@ -17,4 +17,11 @@ export class SEvento {
       map(data => data.map((item: any) => new ClassEvento(item)))
     );
   }
+ obtenerEventosDelGestor(): Observable<ClassEvento[]> {
+    return this.http.get<ClassEvento[]>(this.URL+"eventos").pipe(
+      map(data => data.map((item: any) => new ClassEvento(item)))
+    );
+  }
+
+
 }

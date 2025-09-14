@@ -5,11 +5,11 @@ export class ClassEvento {
   private fechaHoraEvento: Date;
   private capacidad : number;
   private imagen : string;
-  private fechaInicioInscripcion:  Date
-  private fechaFinInscripcion: Date
-  private estado?: any
-  private gestor?: any
-  private categoria?: any
+  private fechaInicioInscripcion : Date;
+  private fechaFinInscripcion: Date;
+  private estado?: any;
+  private gestor: number;
+  private categoria?: any;
   
   constructor(data: any) {
     this.id_evento = data.id_evento;
@@ -24,6 +24,7 @@ export class ClassEvento {
     this.gestor = data.gestor;
     this.categoria = data.categoria;
   }
+    
 
     /**
      * Getter $id_evento
@@ -31,6 +32,14 @@ export class ClassEvento {
      */
 	public get $id_evento(): number {
 		return this.id_evento;
+	}
+
+     /**
+     * Getter $gestor
+     * @return {number}
+     */
+	public get $gestor(): number {
+		return this.gestor;
 	}
 
     /**
@@ -71,6 +80,22 @@ export class ClassEvento {
      */
 	public get $imagen(): string {
 		return this.imagen;
+	}
+
+    /**
+     * Getter $fechaInicioInscripcion
+     * @return {Date}
+     */
+	public get $fechaInicioInscripcion(): Date {
+		return this.fechaInicioInscripcion;
+	}
+
+    /**
+     * Getter $fechaFinInscripcion
+     * @return {Date}
+     */
+	public get $fechaFinInscripcion(): Date {
+		return this.fechaFinInscripcion;
 	}
 
     /**
@@ -120,6 +145,23 @@ export class ClassEvento {
 	public set $imagen(value: string) {
 		this.imagen = value;
 	}
+
+    /**
+     * Setter $fechaInicioInscripcion
+     * @param {Date} value
+     */
+	public set $fechaInicioInscripcion(value: Date) {
+		this.fechaInicioInscripcion = value;
+	}
+
+    /**
+     * Setter $fechaFinInscripcion
+     * @param {Date} value
+     */
+	public set $fechaFinInscripcion(value: Date) {
+		this.fechaFinInscripcion = value;
+	}
+       
      
 
 
