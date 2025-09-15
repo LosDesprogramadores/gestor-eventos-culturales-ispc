@@ -59,7 +59,7 @@ export class Auth {
     catch { return null; }
   }
 
-  usuario(){
-    
+  usuarioLogueadoId(): number | null {
+    return this.session.user?.id ?? null;
   }
 }
