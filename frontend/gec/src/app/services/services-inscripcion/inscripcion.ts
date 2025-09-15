@@ -17,7 +17,7 @@ export interface Inscripcion {
   providedIn: 'root'
 })
 export class InscripcionService {
-  private apiUrl = `${environment.apiUrl}/inscripciones`;
+  private apiUrl = 'http://localhost:3000/inscripciones';
 
   constructor(private http: HttpClient, private auth: Auth) {}
 
