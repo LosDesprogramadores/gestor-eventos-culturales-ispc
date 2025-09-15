@@ -1,0 +1,41 @@
+<app-header></app-header>
+<app-nav-home></app-nav-home>
+
+<main class="container my-5">
+  <h1 class="text-center mb-4">Panel de Usuario</h1>
+
+ 
+  <section class="mb-5">
+    <h2 class="mb-3">Eventos Recomendados</h2>
+    <div class="row">
+      <div class="col-md-3 mb-4" *ngFor="let evento of recomendados">
+        <div class="card h-100 shadow-sm small-card">
+          <img [src]="evento.imagen" class="card-img-top" alt="{{evento.nombre}}" 
+               onerror="this.src='/assets/images/default.jpg'">
+          <div class="card-body">
+            <h6 class="card-title">{{evento.nombre}}</h6>
+            <p class="card-text"><small>{{evento.fechaHoraEvento}}</small></p>
+            <button class="btn btn-primary btn-sm" (click)="agregar(evento)">Agregar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section>
+    <h2 class="mb-3">Mis inscripciones</h2>
+    <div *ngIf="agendados.length === 0" class="alert alert-warning">
+      Aún no has agendado ningún evento.
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center"
+          *ngFor="let evento of agendados">
+        {{evento.nombre}}
+        <button class="btn btn-danger btn-sm" (click)="eliminar(evento)">Eliminar</button>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<app-footer></app-footer>

@@ -1,0 +1,43 @@
+<app-header></app-header>
+<app-nav-home></app-nav-home>
+<nav></nav>
+<main class="container my-4">
+  <section class="row-12 quienes-somos">
+    <h2>Quienes Somos</h2>
+    <article class="col-lg-12">
+      <p>Somos <strong>Los Desprogramadores</strong>, un equipo formado en la Tecnicatura Superior en Desarrollo de
+        Software del ISPC. Desarrollamos soluciones digitales enfocadas en el usuario, aplicando metodologías ágiles y
+        buenas prácticas de ingeniería de software.</p>
+
+      <p>Desde 2024. Hemos crecido gracias a la confianza de
+        nuestros clientes y la dedicación de nuestro equipo.</p>
+
+      <h3>Nuestra Misión</h3>
+      <p>Facilitar el acceso a la cultura mediante una plataforma intuitiva, segura y accesible desde cualquier
+        dispositivo, que permita a los usuarios participar activamente en eventos culturales de una manera muy
+        intuitiva.</p>
+
+      <h3>Visión</h3>
+      <p>Convertirnos en una herramienta clave para la difusión y organización de actividades culturales en entornos
+        digitales.</p>
+    </article>
+  </section>
+  <section class="row p-2 equipo">
+    @for (item of memberList; track item.id_miembro) {
+    <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
+      <img class="rounded-circle img-fluid " src="{{item.img}}" alt="foto de {{item.nombre}}">
+      <h3>{{item.nombre}}</h3>
+      <p><strong>Rol:</strong> {{item.rol}}<br>
+        <strong>Cargo:</strong> {{item.cargo}}<br>
+        <strong>Email:</strong> {{item.email}}<br>
+        <strong>Portfolio: </strong> <a href="{{item.portfolio}}" target="_blank">Github</a>
+      </p>
+    </article>
+    }
+    @empty {
+    <p>Sin registros</p>
+    }
+
+  </section>
+</main>
+<app-footer></app-footer>

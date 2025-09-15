@@ -1,0 +1,121 @@
+<app-header></app-header>
+<app-nav-home></app-nav-home> 
+<main class="registro-main">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+        
+        <div class="registro-card">
+          <!-- FORMULARIO CONECTADO A onSubmit() -->
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="registro-formulario needs-validation" novalidate>
+            
+            <h1 class="registro-titulo">Crear nueva cuenta</h1>
+
+            <!-- NOMBRE -->
+            <div class="mb-3">
+              <input type="text"
+                      formControlName="nombre"
+                      id="nombre"
+                      name="nombre"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Nombre" />
+              
+              @if (nombre?.errors && nombre?.touched) {
+                @if (nombre?.hasError('required')) {
+                  <p class="text-danger registro-feedback">El nombre es obligatorio.</p>
+                }
+              }
+            </div>
+
+            <!-- APELLIDO -->
+            <div class="mb-3">
+              <input type="text"
+                      formControlName="apellido"
+                      id="apellido"
+                      name="apellido"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Apellido" />
+              
+              @if (apellido?.errors && apellido?.touched) {
+                @if (apellido?.hasError('required')) {
+                  <p class="text-danger registro-feedback">El apellido es obligatorio.</p>
+                }
+              }
+            </div>
+
+            <!-- EMAIL -->
+            <div class="mb-3">
+              <input type="email"
+                      formControlName="email"
+                      id="correo"
+                      name="correo"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Correo electrónico" />
+              
+              @if (email?.errors && email?.touched) {
+                @if (email?.hasError('required')) {
+                  <p class="text-danger registro-feedback">El email es obligatorio.</p>
+                }
+                @else if (email?.hasError('email')) {
+                  <p class="text-danger registro-feedback">Formato de email inválido.</p>
+                }
+              }
+            </div>
+
+            <!-- CONTRASEÑA -->
+            <div class="mb-3">
+              <input type="password"
+                      formControlName="password"
+                      id="contraseñia"
+                      name="contraseñia"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Contraseña"
+                      minlength="8" />
+
+              @if(password?.errors && password?.touched) {
+                @if(password?.hasError('required')) {
+                  <p class="text-danger registro-feedback">La contraseña es requerida.</p>
+                }
+                @else if (password?.hasError('minlength')) {
+                  <p class="text-danger registro-feedback">La contraseña requiere como mínimo 8 caracteres.</p>
+                }
+              }
+            </div>
+
+            <!-- CONFIRMAR CONTRASEÑA -->
+            <div class="mb-3">
+              <input type="password"
+                      formControlName="confirmPassword"
+                      id="repetir-contraseñia"
+                      name="repetir-contraseñia"
+                      class="registro-input form-control"
+                      required
+                      placeholder="Repetir contraseña" />
+
+              @if(confirmPassword?.errors && confirmPassword?.touched) {
+                @if(confirmPassword?.hasError('required')) {
+                  <p class="text-danger registro-feedback">Repetir la contraseña es requerido.</p>
+                }
+                @else if(confirmPassword?.hasError('passwordMismatch')) {
+                  <p class="text-danger registro-feedback">Las contraseñas no coinciden.</p>
+                }
+              }
+            </div>
+
+            <!-- BOTONES -->
+            <div class="registro-botones d-flex flex-column flex-sm-row justify-content-between mt-3">
+              <button type="submit" class="registro-btn btn w-100 w-sm-auto mb-2 mb-sm-0">Registrar</button>
+              <button type="reset" routerLink="/inicio-sesion" class="registro-btn btn w-100 w-sm-auto">Iniciar sesión</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<app-footer></app-footer>

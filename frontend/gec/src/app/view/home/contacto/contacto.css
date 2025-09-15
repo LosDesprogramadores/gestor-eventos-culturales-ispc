@@ -1,0 +1,113 @@
+.contacto-main {
+  min-height: calc(87.5vh - 80px);
+  /* 80px = altura del footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+
+/* --- Contenedor principal de la tarjeta de registro --- */
+
+.contacto-card {
+  background-color: var(--color-terciario-alternativo);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+  max-width: 35rem;
+  margin: auto;
+  margin-top: 2rem;
+  color: white;
+  border: none;
+}
+
+/* --- Título del formulario --- */
+.contacto-titulo {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* --- Formulario --- */
+.contacto-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contacto-formulario label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* --- Inputs --- */
+.contacto-input {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.8rem;
+  border: none;
+  font-size: 0.9rem;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contacto-input:focus {
+  border-color: var(--color-primario);
+  box-shadow: 0 0 0 0.3rem rgba(188, 94, 60, 0.4);
+}
+
+/* --- Mensajes de feedback --- */
+.contacto-feedback {
+  font-size: 0.8rem;
+  margin-top: 0.15rem;
+  color: #dfe6e9;
+  /* gris claro para resaltar sobre el fondo */
+}
+
+/* --- Botones --- */
+.contacto-botones {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+.contacto-btn {
+  padding: 0.75rem;
+  border-radius: 2rem;
+  border: none;
+  background: linear-gradient(45deg, var(--color-terciario-alternativo), var(--color-primario));
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.contacto-btn:hover {
+  background: linear-gradient(45deg, var(--color-primario-alternativo), var(--color-primario));
+  transform: scale(1.05);
+}
+
+
+/* --- Responsive --- */
+@media (max-width: 480px) {
+  .contacto-card {
+    padding: 1.5rem 2rem;
+    max-width: 90vw;
+  }
+
+  .contacto-titulo {
+    font-size: 1.5rem;
+  }
+
+  .contacto-botones {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+}
