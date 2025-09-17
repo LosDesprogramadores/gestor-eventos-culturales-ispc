@@ -46,9 +46,9 @@ export class Evento implements OnInit {
 
     if (this.auth.role === 'ANON') {
       this.alertas.showAlert(new Mensaje("Usuario no logueado", 1000, "danger"));
-      setTimeout(() => {
+    /*   setTimeout(() => {
         this.router.navigateByUrl('/inicio-sesion');
-      }, 1000);
+      }, 1000); */
 
     }
     console.log(evento)
