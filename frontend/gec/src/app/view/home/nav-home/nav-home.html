@@ -1,8 +1,11 @@
 <div class="header">
   <nav class="navbar navbar-expand-md nav-principal">
+    <div class="imagen-logo">
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="assets/images/logos/logo.ico" alt="Logotipo" class="logo" />
-    </a>
+
+        <img src="assets/images/logos/logo.ico" alt="Logotipo" class="logo" />
+      </a>
+    </div>
 
     <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
       aria-controls="menuNav" aria-expanded="false" aria-label="Menú de navegación">
@@ -19,7 +22,7 @@
             }
 
             @if (auth.role === 'USER' || auth.role === 'GESTOR') {
-              <li class="nav-item"><a class="nav-link" routerLink="/panel-usuario">Panel Usuario</a></li>
+              <li class="nav-item"><a class="nav-link" routerLink="/panel-usuario">Panel de Usuario</a></li>
             }
 
 

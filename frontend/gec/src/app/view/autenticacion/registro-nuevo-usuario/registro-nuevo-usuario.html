@@ -6,10 +6,12 @@
       <div class="col-12 col-sm-10 col-md-8 col-lg-6">
         
         <div class="registro-card">
-          <form [formGroup]="form" action="#" method="post" class="registro-formulario needs-validation" novalidate>
+          <!-- FORMULARIO CONECTADO A onSubmit() -->
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="registro-formulario needs-validation" novalidate>
             
             <h1 class="registro-titulo">Crear nueva cuenta</h1>
 
+            <!-- NOMBRE -->
             <div class="mb-3">
               <input type="text"
                       formControlName="nombre"
@@ -26,6 +28,7 @@
               }
             </div>
 
+            <!-- APELLIDO -->
             <div class="mb-3">
               <input type="text"
                       formControlName="apellido"
@@ -42,6 +45,7 @@
               }
             </div>
 
+            <!-- EMAIL -->
             <div class="mb-3">
               <input type="email"
                       formControlName="email"
@@ -61,6 +65,7 @@
               }
             </div>
 
+            <!-- CONTRASEÑA -->
             <div class="mb-3">
               <input type="password"
                       formControlName="password"
@@ -81,6 +86,7 @@
               }
             </div>
 
+            <!-- CONFIRMAR CONTRASEÑA -->
             <div class="mb-3">
               <input type="password"
                       formControlName="confirmPassword"
@@ -100,6 +106,7 @@
               }
             </div>
 
+            <!-- BOTONES -->
             <div class="registro-botones d-flex flex-column flex-sm-row justify-content-between mt-3">
               <button type="submit" class="registro-btn btn w-100 w-sm-auto mb-2 mb-sm-0">Registrar</button>
               <button type="reset" routerLink="/inicio-sesion" class="registro-btn btn w-100 w-sm-auto">Iniciar sesión</button>

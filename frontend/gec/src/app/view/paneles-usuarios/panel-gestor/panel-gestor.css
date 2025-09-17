@@ -1,19 +1,4 @@
-/* Encabezado */
-h1 {
-  color: var(--color-primario);
-}
 
-/* Botón principal */
-.btn-success {
-  background-color: var(--color-acento);
-  border-color: var(--color-acento);
-}
-.btn-success:hover {
-  background-color: #a14e32;
-  border-color: #a14e32;
-}
-
-/* Tabla */
 .table thead {
   background-color: var(--color-primario);
 }
@@ -49,7 +34,6 @@ h1 {
 
   .img-container:hover .img-hover {
     display: block;
-    /* Ubicación respecto al mouse */
   }
 
   .evento-img {

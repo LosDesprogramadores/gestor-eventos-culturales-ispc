@@ -1,0 +1,8 @@
+
+.header {
+  background-color: var(--color-terciario-alternativo);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3);
+}

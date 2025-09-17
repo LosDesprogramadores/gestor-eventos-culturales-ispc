@@ -1,7 +1,8 @@
+<body class="fondo">
+<div class="page-container">
 <app-header></app-header>
 <app-nav-home></app-nav-home>
-<nav></nav>
-<main class="container my-4">
+<main class="container my-4 content-wrap">
   <section class="row-12 quienes-somos">
     <h2>Quienes Somos</h2>
     <article class="col-lg-12">
@@ -23,78 +24,23 @@
     </article>
   </section>
   <section class="row p-2 equipo">
+    @for (item of memberList; track item.id_miembro) {
     <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
-      <img class="rounded-circle img-fluid " src="assets/images/miembros/juan.jpeg" alt="Juan Ignacio Moreno">
-      <h3>Juan Ignacio Moreno</h3>
-      <p><strong>Rol:</strong> Developer<br>
-        <strong>Cargo:</strong> Análisis y Desarrollo<br>
-        <strong>Email:</strong> juanimignacio@gmail.com<br>
-        <strong>Portfolio: </strong> <a
-          href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno"
-          target="_blank">Github</a>
+      <img class="rounded-circle img-fluid " src="{{item.img}}" alt="foto de {{item.nombre}}">
+      <h3>{{item.nombre}}</h3>
+      <p><strong>Rol:</strong> {{item.rol}}<br>
+        <strong>Cargo:</strong> {{item.cargo}}<br>
+        <strong>Email:</strong> {{item.email}}<br>
+        <strong>Portfolio: </strong> <a href="{{item.portfolio}}" target="_blank">Github</a>
       </p>
     </article>
-
-    <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
-      <img class="rounded-circle img-fluid" src="assets/images/miembros/julio.jpeg" alt="Julio César Martín">
-      <h3>Julio César Martín</h3>
-      <p><strong>Rol:</strong> Scrum Master<br>
-        <strong>Cargo:</strong> Gestión<br>
-        <strong>Email:</strong> JulioMartin447@gmail.com<br>
-        <strong>Portfolio: </strong> <a
-          href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio"
-          target="_blank">Github</a>
-
-      </p>
-    </article>
-
-    <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
-      <img class="rounded-circle img-fluid" src="assets/images/miembros/alan.jpeg" alt="Alan Darel Marini">
-      <h3>Alan Darel Marini</h3>
-      <p><strong>Rol:</strong> Developer<br>
-        <strong>Cargo:</strong> Testing<br>
-        <strong>Email:</strong> aland.marini@gmail.com<br>
-        <strong>Portfolio: </strong> <a
-          href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini"
-          target="_blank">Github</a>
-      </p>
-    </article>
-
-    <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
-      <img class="rounded-circle img-fluid" src="assets/images/miembros/tomas.jpeg" alt="Tomás Monton">
-      <h3>Tomás Monton</h3>
-      <p><strong>Rol:</strong> Developer<br>
-        <strong>Cargo:</strong> Gestión y Desarrollo<br>
-        <strong>Email:</strong> tomasmonton261@gmail.com<br>
-        <strong>Portfolio: </strong> <a
-          href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton"
-          target="_blank">Github</a>
-      </p>
-    </article>
-    <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
-      <img class="rounded-circle img-fluid" src="assets/images/miembros/marcelo.jpeg" alt="Marcelo Portillo">
-      <h3>Marcelo Portillo</h3>
-      <p><strong>Rol:</strong> Developer<br>
-        <strong>Cargo:</strong> Desarrollo<br>
-        <strong>Email:</strong> mportillo79@gmail.com<br>
-        <strong>Portfolio: </strong> <a
-          href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo"
-          target="_blank">Github</a>
-      </p>
-    </article>
-
-    <article class="col-12 col-sm-6 col-lg-4 mb-4 miembro">
-      <img class="rounded-circle img-fluid" src="assets/images/miembros/romina.jpeg" alt="Romina Vanesa Huk">
-      <h3>Romina Vanesa Huk</h3>
-      <p><strong>Rol:</strong> Developer<br>
-        <strong>Cargo:</strong> Desarrollo<br>
-        <strong>Email:</strong> rominahuk@gmail.com<br>
-        <strong>Portfolio: </strong> <a
-          href="https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk"
-          target="_blank">Github</a>
-      </p>
-    </article>
+    }
+    @empty {
+    <p>Sin registros</p>
+    }
 
   </section>
 </main>
 <app-footer></app-footer>
+</div>
+</body>
