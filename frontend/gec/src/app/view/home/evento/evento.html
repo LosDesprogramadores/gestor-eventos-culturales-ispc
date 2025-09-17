@@ -1,6 +1,6 @@
 <app-banner></app-banner>
 <div class="container my-5 ">
-  <div class="row g-2">
+  <div class="row g-2 ">
 
     @if (eventos$ | async; as eventos) {
       @for (evento of eventos; track evento.$id_evento) {
@@ -23,14 +23,30 @@
           </div>
         </div> 
       } @empty {
-        <div class="col-12">
-          <p>No hay eventos disponibles en este momento.</p>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="imagen-evento">
+              <img src="../../../../assets/images/no-hay-eventos.png" alt="No hay Eventos">
+            </div>
         </div>
       }
     } @else {
-      <div class="col-12">
-        <p>Cargando eventos...</p>
+
+
+
+  
+  
+    <div class="row d-flex justify-content-center align-self-center ">
+      <div class="col-md-3 mb-4 " >
+        <div class="card h-100 shadow-sm small-card ">
+           <img src="../../../../assets/images/no-hay-eventos.png" alt="No hay Eventos"         >
+           </div>
       </div>
+    </div>
+   
+
+    
     }
       @if (mostrarMensaje) {
     <div class="alert" [ngClass]="'alert-' + tipoMensaje" role="alert">

@@ -10,7 +10,7 @@
       "id_datos": 1,
       "id": "29c2"
     },
-        {
+    {
       "id_usuario": 2,
       "email": "alan@test.com",
       "password": "12345678",
@@ -20,7 +20,6 @@
       "id_datos": 1,
       "id": "6a9d"
     },
-       
     {
       "id": "eec8",
       "email": "Tomas@gmail.com",
@@ -30,14 +29,14 @@
       "id_rol": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "email": "mportillo79@gmail.com",
       "password": "12345678",
       "fechaRegistro": "2025-09-14",
       "cuentaActiva": true,
       "id_rol": 1,
       "id_datos": 2
-     }
+    }
   ],
   "datos": [
     {
@@ -58,17 +57,12 @@
     },
     {
       "id_datos": 3,
-      "nombre": "Pepe",
-      "apellido": "Argento",
-      "direccion": "Córdoba Capital",
-      "celular": "xxx123xxx",
-      "id": "5a48",
       "nombre": "tomás",
       "apellido": "Monton",
       "direccion": "",
-      "celular": ""
+      "celular": "",
+      "id": "5a48"
     }
-
   ],
   "roles": [
     {
@@ -80,7 +74,7 @@
     {
       "id_rol": 2,
       "nombre": "usuario",
-       "descripcion": "Usuario normal",
+      "descripcion": "Usuario normal",
       "id": "dc51"
     }
   ],
@@ -265,17 +259,8 @@
       "id_estado": 1
     },
     {
-      "id": "e5ea",
-      "id_usuario": 2,
-      "id_evento": 3,
-      "fecha_inscripcion": "2025-09-14",
-      "id_estado": 1
-    },
-    {
       "id": "62d7",
       "id_usuario": 1,
-      "id_evento": 1,
-      "fecha_inscripcion": "2025-09-09",
       "id_evento": 0,
       "fecha_inscripcion": "2025-09-14",
       "id_estado": 1
@@ -286,7 +271,7 @@
       "id_notificacion": 1,
       "fecha": "2025-09-09",
       "mensaje": "Tu inscripción fue confirmada",
-     "id_usuario": 1,
+      "id_usuario": 1,
       "id": "db00"
     }
   ],
@@ -298,7 +283,8 @@
       "rol": "Developer",
       "cargo": "Gestión y Desarrollo",
       "email": "tomasmonton261@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton",
+      "id": "75eb"
     },
     {
       "id_miembro": 2,
@@ -307,7 +293,8 @@
       "rol": "Scrum Master",
       "cargo": "Gestión",
       "email": "JulioMartin447@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio",
+      "id": "e736"
     },
     {
       "id_miembro": 3,
@@ -316,7 +303,8 @@
       "rol": "Developer",
       "cargo": "Testing",
       "email": "aland.marini@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini",
+      "id": "53b1"
     },
     {
       "id_miembro": 4,
@@ -325,7 +313,8 @@
       "rol": "Developer",
       "cargo": "Análisis y Desarrollo",
       "email": "juanimignacio@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno",
+      "id": "b1a3"
     },
     {
       "id_miembro": 5,
@@ -334,7 +323,8 @@
       "rol": "Developer",
       "cargo": "Desarrollo",
       "email": "mportillo79@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo",
+      "id": "675f"
     },
     {
       "id_miembro": 6,
@@ -343,7 +333,8 @@
       "rol": "Developer",
       "cargo": "Desarrollo",
       "email": "rominahuk@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk",
+      "id": "8926"
     }
   ]
 }

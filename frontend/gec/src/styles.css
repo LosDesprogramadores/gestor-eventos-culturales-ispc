@@ -72,3 +72,11 @@ app-root {
   min-height: 100vh; 
 }
 
+
+.alerta {
+  display: flex;
+  align-items : center;
+  width: 25rem;
+  height: 3rem;
+
+}
