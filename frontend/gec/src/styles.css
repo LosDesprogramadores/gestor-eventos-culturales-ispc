@@ -80,3 +80,52 @@ app-root {
   height: 3rem;
 
 }
+
+.boton {
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+/* Hover compartido con pulse */
+.boton:hover {
+  animation: pulse-color 0.6s forwards;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes con variables CSS para los colores */
+@keyframes pulse-color {
+  0% {
+    transform: scale(1);
+    background-color: var(--btn-base);
+  }
+  50% {
+    transform: scale(1.15);
+    background-color: var(--btn-mid);
+  }
+  100% {
+    transform: scale(1.1);
+    background-color: var(--btn-hover);
+  }
+}
+
+.btn-ver-mas {
+  --btn-base: #007bff;
+  --btn-mid: #0056b3;
+  --btn-hover: #0A2E4D;
+  background-color: var(--btn-base);
+}
+
+.btn-inscribir  {
+  --btn-base: #28a745;
+  --btn-mid: #1e7e34;
+  --btn-hover: #145c23;
+  background-color: var(--btn-base);
+}

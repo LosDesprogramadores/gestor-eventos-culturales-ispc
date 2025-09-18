@@ -1,25 +1,24 @@
 export class Mensaje{
 
-    private mesagge:string;
+    private message:string;
     private time: number;
     private tipoAlerta : string;
+    private showMessage : boolean;
 
-
-	constructor($mesagge: string, $time: number , $tipoAlerta : string) {
-		this.mesagge = $mesagge;
-		this.time = $time;
-        this.tipoAlerta = $tipoAlerta;
-        
-	}
+     constructor(message?: string, time?: number, tipoAlerta?: string, showMessage? :boolean) {
+     this.message = message ?? '';           
+     this.time = time ?? 0;               
+    this.tipoAlerta = tipoAlerta ?? '';   
+    this.showMessage = showMessage ?? false ;
+     }
     
 
-
     /**
-     * Getter $mesagge
+     * Getter $message
      * @return {string}
      */
-	public get $mesagge(): string {
-		return this.mesagge;
+	public get $message(): string {
+		return this.message;
 	}
 
     /**
@@ -39,11 +38,19 @@ export class Mensaje{
 	}
 
     /**
-     * Setter $mesagge
+     * Getter $showMessage
+     * @return {boolean}
+     */
+	public get $showMessage(): boolean {
+		return this.showMessage;
+	}
+
+    /**
+     * Setter $message
      * @param {string} value
      */
-	public set $mesagge(value: string) {
-		this.mesagge = value;
+	public set $message(value: string) {
+		this.message = value;
 	}
 
     /**
@@ -61,7 +68,15 @@ export class Mensaje{
 	public set $tipoAlerta(value: string) {
 		this.tipoAlerta = value;
 	}
-   
+
+    /**
+     * Setter $showMessage
+     * @param {boolean} value
+     */
+	public set $showMessage(value: boolean) {
+		this.showMessage = value;
+	}
+  
 
 
 

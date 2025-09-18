@@ -20,6 +20,9 @@ export interface Inscripcion {
   styleUrl: './detalle-evento.css'
 })
 export class DetalleEvento implements OnInit{
+inscribirse(arg0: number|undefined) {
+throw new Error('Method not implemented.');
+}
 
   evento : IEvento | undefined;
 

@@ -11,7 +11,7 @@
   <h1 class="text-center mb-4">Panel de Usuario</h1>
 
  
-  <section class="mb-5">
+ <!--  <section class="mb-5">
     <h2 class="mb-3">Eventos Recomendados</h2>
     <div class="row">
       <div class="col-md-3 mb-4" *ngFor="let evento of recomendados">
@@ -26,10 +26,10 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
  
-  <section>
+ <!--  <section>
     <h2 class="mb-3">Mis inscripciones</h2>
     <div *ngIf="agendados.length === 0" class="alert alert-warning">
       Aún no has agendado ningún evento.
@@ -37,11 +37,11 @@
     <ul class="list-group">
       <li class="list-group-item d-flex justify-content-between align-items-center"
           *ngFor="let evento of agendados">
-        {{evento.nombre}}
+        {{evento.$nombre}}
         <button class="btn btn-danger btn-sm" (click)="eliminar(evento)">Eliminar</button>
       </li>
     </ul>
-  </section>
+  </section> -->
    </div>
 </main>
 <app-footer></app-footer>

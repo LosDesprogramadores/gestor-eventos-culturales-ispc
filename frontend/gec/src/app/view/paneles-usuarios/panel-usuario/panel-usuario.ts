@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EventoService, Evento } from '../../../services/evento.service';
-import { InscripcionService, Inscripcion } from '../../../services/services-inscripcion/inscripcion';
+import { InscripcionService } from '../../../services/services-inscripcion/inscripcion';
 import { Header } from '../../../shared/header/header';
 import { Footer } from '../../../shared/footer/footer';
 import { NavHome } from '../../home/nav-home/nav-home';
 import { Auth } from '../../../services/service-autenticacion/auth.service';
+import { ClassEvento } from '../../../model/evento';
+import { Inscripcion } from '../../../model/inscripcion';
 
 @Component({
   selector: 'app-panel-usuario',
@@ -15,29 +17,30 @@ import { Auth } from '../../../services/service-autenticacion/auth.service';
   styleUrl: './panel-usuario.css'
 })
 export class PanelUsuarioComponent implements OnInit {
-  recomendados: Evento[] = []; 
-  agendados: Evento[] = [];    
+  recomendados: ClassEvento[] = [];
+  agendados: ClassEvento[] = [];
+  inscripciones : Inscripcion [] = [];
 
   constructor(
     private eventoService: EventoService,
     private inscripcionService: InscripcionService,
-    private auth: Auth 
-  ) {}
+    private auth: Auth
+  ) { }
 
   ngOnInit(): void {
-    this.cargarRecomendados();
+    //this.cargarRecomendados();
     this.cargarAgendados();
   }
 
-  
-  cargarRecomendados(): void {
+
+ /*  cargarRecomendados(): void {
     this.eventoService.getEventos().subscribe({
       next: (data) => (this.recomendados = data.slice(0, 4)),
       error: (err) => console.error('Error cargando eventos recomendados', err)
     });
-  }
+  } */
 
-  
+
   cargarAgendados(): void {
     const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
@@ -46,8 +49,8 @@ export class PanelUsuarioComponent implements OnInit {
       next: (inscripciones) => {
         this.eventoService.getEventos().subscribe({
           next: (eventos) => {
-            const ids = inscripciones.map(i => i.id_evento);
-            this.agendados = eventos.filter(e => ids.includes(e.id_evento));
+            const ids = inscripciones.map(i => i.$id_evento);
+           // this.agendados = eventos.filter(e => ids.includes(e.id_evento));
           },
           error: (err) => console.error('Error cargando eventos para agendados', err)
         });
@@ -56,34 +59,33 @@ export class PanelUsuarioComponent implements OnInit {
     });
   }
 
-  
-  agregar(evento: Evento): void {
+
+  agregar(evento: ClassEvento): void {
     const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
 
-    if (this.agendados.some(e => e.id_evento === evento.id_evento)) return;
+    //if (this.agendados.some(e => e.id_evento === evento.$id_evento)) return;
 
-    const nueva: Inscripcion = {
-      id_usuario: uid,
-      id_evento: evento.id_evento,
-      fecha_inscripcion: new Date().toISOString().split('T')[0],
-      id_estado: 1
-    };
+    //const nueva = new Inscripcion(uid,evento.id_evento,new Date().toISOString().split('T')[0],1)
 
-    this.inscripcionService.addInscripcion(nueva).subscribe({
+
+    this.inscripcionService.registrarInscripcion(evento);
+   /*  addInscripcion(nueva).subscribe({
       next: () => this.cargarAgendados(),
       error: (err) => console.error('Error agregando inscripcion', err)
     });
+  } */
+
   }
 
-  
+
   eliminar(evento: Evento): void {
     const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
 
     this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({
       next: (inscripciones) => {
-        const insc = inscripciones.find(i => i.id_evento === evento.id_evento);
+        const insc = inscripciones.find(i => i.$id_evento === evento.id_evento);
         if (!insc?.id) {
           console.warn('No se encontró inscripción para eliminar', insc);
           return;

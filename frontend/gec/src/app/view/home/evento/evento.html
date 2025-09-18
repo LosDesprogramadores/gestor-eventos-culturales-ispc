@@ -17,8 +17,8 @@
               <p class="fecha mb-0">{{ evento.$fechaHoraEvento }} </p>
             </div>
             <div class="botones-card px-3 pb-3 d-flex gap-2">
-              <a class="btn btn-primary btn-sm flex-fill" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
-              <a class="btn btn-success btn-sm flex-fill" (click)="agregar(evento)">Inscribirse</a>
+              <a class="btn btn-primary btn-sm flex-fill boton btn-ver-mas" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
+              <a class="btn btn-success btn-sm flex-fill boton btn-inscribir" (click)="agregar(evento)">Inscribirse</a>
             </div>
           </div>
         </div> 
@@ -44,15 +44,22 @@
            </div>
       </div>
     </div>
-   
+   }
 
     
-    }
-      @if (mostrarMensaje) {
-    <div class="alert" [ngClass]="'alert-' + tipoMensaje" role="alert">
-      {{ mensaje }}
-    </div>
-    }
+<!--     
+     @if (showAlert) {
+  <div
+    class="alert alerta position-absolute top-50 start-100 translate-middle z-10"
+    [ngClass]="{
+      'alert-success': tipoAlerta === 'success',
+      'alert-danger': tipoAlerta === 'danger'
+    }"
+    role="alert"
+  >
+    {{ message }}
+  </div>
+}
 
   </div>
-</div>
+</div> -->

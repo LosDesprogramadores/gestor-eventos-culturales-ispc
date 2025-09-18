@@ -71,3 +71,23 @@
 .btn-volver-evento:hover {
   background-color: var(--color-terciario-alternativo);
 }
+
+
+@keyframes fadeZoom {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.efecto-profesional {
+  transition: transform 0.4s ease, box-shadow 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* Efecto al pasar el mouse */
+.efecto-profesional:hover {
+  transform: scale(1.08) translateY(-5px); /* zoom + ligero levantamiento */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* sombra más profunda */
+  filter: brightness(1.05); /* leve brillo */
+}

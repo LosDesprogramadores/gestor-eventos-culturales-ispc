@@ -264,6 +264,160 @@
       "id_evento": 0,
       "fecha_inscripcion": "2025-09-14",
       "id_estado": 1
+    },
+    {
+      "id": "d089",
+      "id_usuario": 2,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "4004",
+      "id_usuario": 2,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "4d98",
+      "id_usuario": 2,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "ff19",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "9a26",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "030f",
+      "id_usuario": 2,
+      "id_evento": 4,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "c55c",
+      "id_usuario": 2,
+      "id_evento": 4,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "24b6",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "899e",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "c83c",
+      "id_usuario": 2,
+      "id_evento": 6,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "3e4b",
+      "id_usuario": 2,
+      "id_evento": 6,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "358c",
+      "id_usuario": 2,
+      "id_evento": 1,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "1005",
+      "id_usuario": 2,
+      "id_evento": 1,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "fb67",
+      "id_usuario": 2,
+      "id_evento": 1,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "1776",
+      "id_usuario": 2,
+      "id_evento": 1,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "39e4",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "d6a9",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "17ea",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "af1a",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "0339",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "29b7",
+      "id_usuario": 2,
+      "id_evento": 3,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
+    },
+    {
+      "id": "7956",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-18",
+      "id_estado": 1
     }
   ],
   "notificaciones": [

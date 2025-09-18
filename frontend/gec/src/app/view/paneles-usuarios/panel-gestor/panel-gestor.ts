@@ -8,6 +8,7 @@ import { ClassEvento } from '../../../model/evento';
 import { firstValueFrom, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SAlert } from '../../../services/service-alert/s-alert';
 
 @Component({ 
     selector: 'app-panel-gestor',
@@ -46,7 +47,7 @@ export class PanelGestor implements OnInit {
   tipoMensaje: 'success' | 'danger' = 'success';
   mostrarMensaje: boolean = false;
 
-  constructor(private sesion: Auth, private eventosService: SEvento) {}
+  constructor(private sesion: Auth, private eventosService: SEvento, private alerta : SAlert) {}
 
   ngOnInit(): void {
     this.cargarEventos();
