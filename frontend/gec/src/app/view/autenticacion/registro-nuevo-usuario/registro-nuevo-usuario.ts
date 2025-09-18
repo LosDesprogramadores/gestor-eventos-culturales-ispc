@@ -24,7 +24,6 @@ export class RegistroNuevoUsuario {
     private registroService: SRegistro
   ) {
     this.form = this.formBuilder.group({
-      // Nuevos campos para nombre y apellido
       nombre: ['', [Validators.required]],
       apellido: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
@@ -35,7 +34,6 @@ export class RegistroNuevoUsuario {
     });
   }
 
-  // Getters para los nuevos campos
   get nombre() {
     return this.form.get('nombre');
   }
@@ -79,7 +77,7 @@ export class RegistroNuevoUsuario {
     const datos = {
       nombre: this.nombre?.value,
       apellido: this.apellido?.value,
-      direccion: '', // si querés permitir editar esto luego
+      direccion: '', 
       celular: ''
     };
 
@@ -91,7 +89,7 @@ export class RegistroNuevoUsuario {
           password: this.password?.value,
           fechaRegistro: new Date().toISOString().split('T')[0], // formato yyyy-mm-dd
           cuentaActiva: true,
-          id_rol: 2, // usuario normal
+          id_rol: 2, 
           id_datos: resDatos.id_datos
         };
 
