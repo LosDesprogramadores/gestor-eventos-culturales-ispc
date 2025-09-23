@@ -11,7 +11,6 @@ export class ClassEvento {
   private estado?: any;
   private gestor: number;
   private categoria?: any;
-
   constructor(data: any) {
         this.id = data.id;  
     this.id_evento = data.id_evento;
@@ -26,6 +25,7 @@ export class ClassEvento {
     this.gestor = data.gestor;
     this.categoria = data.categoria;
   }
+    
 
   public get $id_evento(): number { return this.id_evento; }
   public get $nombre(): string { return this.nombre; }

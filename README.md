@@ -126,4 +126,32 @@ Creación de componentes: Se desarrollaron componentes para páginas esenciales 
 
 -Actualización del Kanban: Se mantuvo el Kanban actualizado para el seguimiento y gestión de las tareas asignadas.
 
+---
+## 🔁 Avance SPRINT 4
+
+En este sprint, el equipo se enfocó en el desarrollo de una Aplicación de una Sola Página (SPA) con Angular, logrando un frontend dinámico y avanzando en el diseño de la base de datos. La principal meta fue implementar la integración de servicios que consumen APIs de prueba para evitar el uso de datos "hardcodeados" en las vistas.
+
+Gestión de la Base de Datos:
+
+Se trabajó en la creación del Diagrama de Entidad-Relación (DER), el modelo relacional y el script de la base de datos. También se implementó el dinamismo de la aplicación utilizando una base de datos simulada en formato JSON (db.json).
+
+Desarrollo del Frontend:
+
+Se implementó el dinamismo en la vista de registro de nuevos usuarios y se creó un servicio para gestionar el flujo de registro.
+
+Se desarrollaron los servicios de autenticación para el inicio de sesión y deslogueo, con la sesión guardada en localStorage. Se definieron y mapearon los roles de usuario (ANON, USER, GESTOR).
+
+El Navbar se hizo dinámico para que cambie según el rol del usuario, mostrando opciones personalizadas.
+
+Se dio dinamismo al panel de gestor y panel de usuario, permitiendo la creación y eliminación de eventos a través de formularios.
+
+Se actualizaron los estilos de formularios, como el de la sección de contacto, y se agregó validación lógica para mejorar la experiencia de usuario.
+
+Se creó un servicio para consumir de manera dinámica la lista de miembros del equipo en la sección "Quiénes Somos".
+
+Objetivos del Sprint Cumplidos
+App SPA (frontend dinámico - Angular): Se desarrollaron y dinamizaron las páginas de Registro, Inicio de Sesión, Dashboards, Gestión de Contenido (CRUD) y Quiénes Somos. Se implementaron servicios que consumen APIs de prueba para los datos de la aplicación, eliminando el uso de datos estáticos.
+
+Diseño de Base de Datos: Se completó el diseño de la base de datos en sus modelos conceptual (DER), lógico (modelo relacional) y físico (definición de tipos de datos), además de generar el script de creación de la base de datos.
+
 

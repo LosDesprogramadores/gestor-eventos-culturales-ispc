@@ -29,10 +29,6 @@ export class PanelUsuarioComponent implements OnInit {
     this.cargarAgendados();
   }
 
-  private get usuarioLogueadoId(): number | null {
-    return this.auth.session.user?.id ?? null;
-  }
-
   
   cargarRecomendados(): void {
     this.eventoService.getEventos().subscribe({
@@ -43,7 +39,7 @@ export class PanelUsuarioComponent implements OnInit {
 
   
   cargarAgendados(): void {
-    const uid = this.usuarioLogueadoId;
+    const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
 
     this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({
@@ -62,7 +58,7 @@ export class PanelUsuarioComponent implements OnInit {
 
   
   agregar(evento: Evento): void {
-    const uid = this.usuarioLogueadoId;
+    const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
 
     if (this.agendados.some(e => e.id_evento === evento.id_evento)) return;
@@ -82,7 +78,7 @@ export class PanelUsuarioComponent implements OnInit {
 
   
   eliminar(evento: Evento): void {
-    const uid = this.usuarioLogueadoId;
+    const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
 
     this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({

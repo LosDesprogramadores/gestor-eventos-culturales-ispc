@@ -29,12 +29,13 @@
       "id_rol": 2
     },
     {
-      "id": 4,
+      "id": "4",
       "email": "mportillo79@gmail.com",
       "password": "12345678",
       "fechaRegistro": "2025-09-14",
       "cuentaActiva": true,
-      "id_rol": 2
+      "id_rol": 1,
+      "id_datos": 2
     }
   ],
   "datos": [
@@ -55,11 +56,12 @@
       "id": "6fd7"
     },
     {
-      "id": "5a48",
+      "id_datos": 3,
       "nombre": "tomás",
       "apellido": "Monton",
       "direccion": "",
-      "celular": ""
+      "celular": "",
+      "id": "5a48"
     }
   ],
   "roles": [
@@ -243,12 +245,200 @@
   ],
   "inscripciones": [
     {
-      "id_inscripcion": 1,
+      "id": "e395",
       "id_usuario": 1,
+      "id_evento": 3,
+      "fecha_inscripcion": "2025-09-14",
+      "id_estado": 1
+    },
+    {
+      "id": "e38e",
+      "id_usuario": 1,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-14",
+      "id_estado": 1
+    },
+    {
+      "id": "62d7",
+      "id_usuario": 1,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-14",
+      "id_estado": 1
+    },
+    {
+      "id": "352b",
+      "id_usuario": 2,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "a22b",
+      "id_usuario": 2,
       "id_evento": 1,
-      "fecha_inscripcion": "2025-09-09",
-      "id_estado": 1,
-      "id": "afb7"
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "bbee",
+      "id_usuario": 2,
+      "id_evento": 2,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "5994",
+      "id_usuario": 2,
+      "id_evento": 3,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "f9c6",
+      "id_usuario": 2,
+      "id_evento": 6,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "9aac",
+      "id_usuario": 2,
+      "id_evento": 6,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "6455",
+      "id_usuario": 2,
+      "id_evento": 6,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "84ed",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "ea2e",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "1c99",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "7d55",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "807f",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "5049",
+      "id_usuario": 2,
+      "id_evento": 8,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "c0a2",
+      "id_usuario": 2,
+      "id_evento": 4,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "d026",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "d921",
+      "id_usuario": 2,
+      "id_evento": 6,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "0c70",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "e5de",
+      "id_usuario": 2,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "ee4c",
+      "id_usuario": 2,
+      "id_evento": 4,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "d310",
+      "id_usuario": 2,
+      "id_evento": 0,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "ac30",
+      "id_usuario": 2,
+      "id_evento": 4,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "5b12",
+      "id_usuario": 2,
+      "id_evento": 9,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "198f",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "cb9c",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
+    },
+    {
+      "id": "45bf",
+      "id_usuario": 2,
+      "id_evento": 5,
+      "fecha_inscripcion": "2025-09-17",
+      "id_estado": 1
     }
   ],
   "notificaciones": [
@@ -268,7 +458,8 @@
       "rol": "Developer",
       "cargo": "Gestión y Desarrollo",
       "email": "tomasmonton261@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton",
+      "id": "75eb"
     },
     {
       "id_miembro": 2,
@@ -277,7 +468,8 @@
       "rol": "Scrum Master",
       "cargo": "Gestión",
       "email": "JulioMartin447@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio",
+      "id": "e736"
     },
     {
       "id_miembro": 3,
@@ -286,7 +478,8 @@
       "rol": "Developer",
       "cargo": "Testing",
       "email": "aland.marini@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini",
+      "id": "53b1"
     },
     {
       "id_miembro": 4,
@@ -295,7 +488,8 @@
       "rol": "Developer",
       "cargo": "Análisis y Desarrollo",
       "email": "juanimignacio@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno",
+      "id": "b1a3"
     },
     {
       "id_miembro": 5,
@@ -304,7 +498,8 @@
       "rol": "Developer",
       "cargo": "Desarrollo",
       "email": "mportillo79@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo",
+      "id": "675f"
     },
     {
       "id_miembro": 6,
@@ -313,7 +508,8 @@
       "rol": "Developer",
       "cargo": "Desarrollo",
       "email": "rominahuk@gmail.com",
-      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk"
+      "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk",
+      "id": "8926"
     }
   ]
 }
