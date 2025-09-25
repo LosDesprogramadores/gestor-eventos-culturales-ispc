@@ -1,9 +1,15 @@
+
+<body class="fondo">
+  <div class="page-container">
+
 <app-header></app-header>
 <app-nav-home></app-nav-home>
 
 <main class="container my-5 flex-grow-1">
+  
+  <h1 class="text-center mb-4">Panel de gestor</h1>
 
-  <h1 class="fw-bold text-center mb-4">Mis Eventos</h1>
+  <h2 class="fw-bold text-center mb-4">Mis Eventos</h2>
 
 
   <div class="table-responsive shadow-sm rounded mb-4" (mouseleave)="hoverVisible = false">
@@ -22,7 +28,7 @@
         @for (evento of eventos; track evento.$id_evento) {
         <tr>
           <td class="align-middle text-center">
-            <img src="{{ evento.$imagen }}" alt="{{ evento.$nombre }}" class="evento-img">
+            <img src="{{ evento.$imagen }}" alt="{{evento.$nombre }}" class="evento-img">
           </td>
           <td class="fw-semibold">{{ evento.$nombre }}</td>
           <td>{{ evento.$fechaHoraEvento }}</td>
@@ -147,3 +153,5 @@
 </main>
 
 <app-footer></app-footer>
+</div>
+</body>

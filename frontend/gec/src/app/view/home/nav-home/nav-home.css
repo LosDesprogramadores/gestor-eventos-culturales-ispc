@@ -9,8 +9,13 @@
   cursor: pointer;
 }
 
+.imagen-logo{
+  padding-left: 1rem;
+}
+
 .logo:hover {
   transform: scale(1.1) rotate(5deg);
+ 
 }
 
 .nav-principal {
@@ -76,5 +81,6 @@
   .logo-titulo {
     display: flex;
     align-items: center;
+ 
   }
 }

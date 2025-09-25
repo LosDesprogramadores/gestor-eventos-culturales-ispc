@@ -26,30 +26,29 @@
 /*------------Footer-------------*/
 /* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
 
-body,html {
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-secundario-alternativo);
+}
+
+.page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-main {
-  flex: 1;
+.content-wrap {
+  flex-grow: 1; /* Esto empuja al footer hacia abajo */
+  padding-bottom: 1x;
 }
-
 /*------------------------*/
 
 .fondo{
   background-color: var(--color-secundario-alternativo);
 }
 
-
-.header {
-  background-color: var(--color-terciario-alternativo);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3);
-}
 
 
 /*----FORMULARIOS------*/
@@ -64,6 +63,8 @@ main {
 
 
 
+
+
 /* app-root se estira a toda la ventana y organiza header/main/footer */
 app-root {
   display: flex;
@@ -71,3 +72,12 @@ app-root {
   min-height: 100vh; 
 }
 
+
+.alerta {
+  position: fixed; 
+  display: flex;
+  align-items : center;
+  width: 25rem;
+  height: 3rem;
+
+}
