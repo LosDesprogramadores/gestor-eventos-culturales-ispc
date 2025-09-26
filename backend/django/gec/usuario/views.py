@@ -7,11 +7,18 @@ from .serializers import UsuarioSerializer
 from rest_framework import status, permissions
 from django.http import HttpResponse
 
+# Librerias de auth
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
+from django.contrib.auth import authenticate, login
+
 
 def saludo(request):
     return HttpResponse("A codeaar peerrooos...")
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class UsuarioView(APIView):
     permission_classes = (permissions.AllowAny,)
 
@@ -31,3 +38,28 @@ class UsuarioView(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+# desactivando proteccion
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class LoginView(APIView):
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+
+        user = authenticate(request, username=email, password=password)
+
+        if user is not None:
+            # login(request, user)
+            return Response(
+                {"message": "Inicio de sesión exitoso", "user_id": user.id},
+                status=status.HTTP_200_OK
+            )
+        else:
+            return Response(
+                {"detail": "Email o contraseña incorrectos"},
+                status=status.HTTP_401_UNAUTHORIZED
+            )
