@@ -14,7 +14,6 @@ migrations/
 
 #db
 db.sqlite3
-db.sqlite3/
-gec/db.sqlite3
-/gec/db.sqlite3
-../gec/db.sqlite3
+*.sqlite3
+**/db.sqlite3
+**/*.sqlite3
