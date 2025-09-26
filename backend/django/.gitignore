@@ -7,3 +7,14 @@ __pycache__/
 # Archivos de IDE
 .vscode/
 .idea/
+
+
+#Migraciones
+migrations/
+
+#db
+db.sqlite3
+db.sqlite3/
+gec/db.sqlite3
+/gec/db.sqlite3
+../gec/db.sqlite3
