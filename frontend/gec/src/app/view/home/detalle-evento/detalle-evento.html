@@ -1,11 +1,11 @@
 <div class="detalle-evento container pt-5">
   <article class="tarjeta-evento mb-0 pb-1">
-    <h1 id="titulo-evento" class="text-center mb-5">{{evento?.titulo}}</h1>
+    <h1 id="titulo-evento" class="text-center mb-5"></h1>
 
     <div class="row align-items-center">
       <div class="col-md-6 mb-4 mb-md-0 img-evento">
         <img
-          src="{{evento?.imagenUrl}}"
+          src=""
           alt="Imagen del evento"
           id="imagen-evento"
           class="img-fluid rounded shadow efecto-profesional"
@@ -20,17 +20,17 @@
 
         <section class="mb-4">
           <h2>Ubicación</h2>
-          <p id="ubicacion-evento">{{evento?.lugar}}</p>
+          <p id="ubicacion-evento"></p>
         </section>
 
         <section class="mb-4">
           <h2>Capacidad</h2>
-          <p id="capacidad-evento">{{evento?.capacidad}}</p>
+          <p id="capacidad-evento"></p>
         </section>
 
         <section class="mb-4">
           <h2>Fecha y Hora</h2>
-          <p id="fecha-hora-evento">{{evento?.fecha}}</p>
+          <p id="fecha-hora-evento"></p>
         </section>
       </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="text-center my-4 ">
       <button
         class="btn btn-success px-4 boton btn-inscribir"
-        (click)="inscribirse(evento?.id)"
+        
       >
         Inscribirme
       </button>
