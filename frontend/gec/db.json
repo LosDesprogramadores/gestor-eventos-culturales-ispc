@@ -7,18 +7,16 @@
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 2,
-      "id_datos": 1,
-      "id": "29c2"
+      "id_datos": 1
     },
-    {
+        {
       "id_usuario": 2,
       "email": "alan@test.com",
       "password": "12345678",
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 1,
-      "id_datos": 1,
-      "id": "6a9d"
+      "id_datos": 1
     },
     {
       "id_usuario": 3,
@@ -52,16 +50,14 @@
       "nombre": "Juan",
       "apellido": "Moreno",
       "direccion": "Córdoba Capital",
-      "celular": "3511234567",
-      "id": "fa76"
+      "celular": "3511234567"
     },
     {
       "id_datos": 2,
       "nombre": "Alan",
       "apellido": "Marini",
       "direccion": "Córdoba Capital",
-      "celular": "xxx321xxx",
-      "id": "6fd7"
+      "celular": "xxx321xxx"
     },
     {
       "id": "5a48",
@@ -77,19 +73,18 @@
       "direccion": "",
       "celular": ""
     }
+
   ],
   "roles": [
     {
       "id_rol": 1,
       "nombre": "admin",
-      "descripcion": "Administrador",
-      "id": "c70d"
+      "descripcion": "Administrador"
     },
     {
       "id_rol": 2,
       "nombre": "usuario",
-      "descripcion": "Usuario normal",
-      "id": "dc51"
+      "descripcion": "Usuario normal"
     }
   ],
   "eventos": [
@@ -237,8 +232,7 @@
   "categorias_evento": [
     {
       "id_categoria_evento": 1,
-      "nombre": "Música",
-      "id": "021e"
+      "nombre": "Música"
     }
   ],
   "estados": [
@@ -246,15 +240,13 @@
       "id_estado": 1,
       "nombre": "Activo",
       "descripcion": "Evento activo",
-      "ambito": "evento",
-      "id": "712e"
+      "ambito": "evento"
     },
     {
       "id_estado": 2,
       "nombre": "Inactivo",
       "descripcion": "Evento cancelado",
-      "ambito": "evento",
-      "id": "660e"
+      "ambito": "evento"
     }
   ],
   "inscripciones": [],

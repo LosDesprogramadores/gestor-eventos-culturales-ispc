@@ -6,15 +6,18 @@
 <app-nav-home></app-nav-home>
 
 <main class="container my-5 flex-grow-1">
-  
-  <h1 class="text-center mb-4">Panel de gestor</h1>
+  <div class="contenedorPrincipal">
+  <div class="contenedorSecundario">
 
-  <h2 class="fw-bold text-center mb-4">Mis Eventos</h2>
+ 
+  <h1 class="text-center mb-4  titulo">Panel de gestor</h1>
 
+  <h2 class="fw-bold text-center mb-4 titulo-h2">Mis Eventos</h2>
+</div>
 
-  <div class="table-responsive shadow-sm rounded mb-4" (mouseleave)="hoverVisible = false">
-    <table class="table table-hover align-middle mb-0">
-      <thead class="table-dark">
+  <div class="table-responsive shadow-sm rounded mb-4 p-3" (mouseleave)="hoverVisible = false">
+    <table class="table table-hover align-middle mb-0 ">
+      <thead class="table-dark ">
         <tr>
           <th>Imagen</th>
           <th>Título</th>
@@ -25,22 +28,25 @@
       </thead>
       <tbody>
         @if (eventos$ | async; as eventos) {
-        @for (evento of eventos; track evento.$id_evento) {
+        @for (evento of eventos; track evento.id_evento) {
         <tr>
           <td class="align-middle text-center">
-            <img src="{{ evento.$imagen }}" alt="{{evento.$nombre }}" class="evento-img">
+            <img src="{{ evento.imagen }}" alt="{{evento.nombre }}" class="evento-img">
           </td>
-          <td class="fw-semibold">{{ evento.$nombre }}</td>
-          <td>{{ evento.$fechaHoraEvento }}</td>
-          <td>{{ evento.$ubicacion }}</td>
-          <td class="text-center">
-            <button class="btn btn-sm btn-warning me-2" (click)="editarEvento(evento)">
-              <i class="bi bi-pencil-square"></i> Editar
-            </button>
-            <button class="btn btn-sm btn-danger" (click)="abrirModalEliminar(evento)">
-              <i class="bi bi-trash"></i> Eliminar
-            </button>
-          </td>
+          <td class="fw-semibold">{{ evento.nombre }}</td>
+          <td>{{ evento.fechaHoraEvento }}</td>
+          <td>{{ evento.ubicacion }}</td>
+ <td class="text-center align-middle">
+  <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
+    <button class="btn btn-sm btn-warning" (click)="editarEvento(evento)">
+      <i class="bi bi-pencil-square"></i> Editar
+    </button>
+    
+    <button class="btn btn-sm btn-danger" (click)="abrirModalEliminar(evento)">
+      <i class="bi bi-trash"></i> Eliminar
+    </button>
+  </div>
+</td>
         </tr>
         }
         @empty {
@@ -56,7 +62,7 @@
       </tbody>
     </table>
   </div>
-
+ 
 
   @if (!mostrarFormulario) {
   <div class="text-center mb-4">
@@ -73,41 +79,41 @@
 
       <div class="mb-3">
         <label for="nombre" class="form-label">Nombre del Evento</label>
-        <input id="nombre" class="form-control" [(ngModel)]="nuevoEvento.$nombre" name="nombre" required>
+        <input id="nombre" class="form-control" [(ngModel)]="nuevoEvento.nombre" name="nombre" required>
       </div>
 
       <div class="mb-3">
         <label for="fechaHoraEvento" class="form-label">Fecha y Hora del Evento</label>
         <input id="fechaHoraEvento" type="datetime-local" class="form-control"
-          [(ngModel)]="nuevoEvento.$fechaHoraEvento" name="fechaHoraEvento" required>
+          [(ngModel)]="nuevoEvento.fechaHoraEvento" name="fechaHoraEvento" required>
       </div>
 
       <div class="mb-3">
         <label for="capacidad" class="form-label">Capacidad</label>
-        <input id="capacidad" type="number" class="form-control" [(ngModel)]="nuevoEvento.$capacidad" name="capacidad"
+        <input id="capacidad" type="number" class="form-control" [(ngModel)]="nuevoEvento.capacidad" name="capacidad"
           min="1" required>
       </div>
 
       <div class="mb-3">
         <label for="imagen" class="form-label">Imagen (URL)</label>
-        <input id="imagen" type="url" class="form-control" [(ngModel)]="nuevoEvento.$imagen" name="imagen" required>
+        <input id="imagen" type="url" class="form-control" [(ngModel)]="nuevoEvento.imagen" name="imagen" required>
       </div>
 
       <div class="mb-3">
         <label for="fechaInicioInscripcion" class="form-label">Fecha de Inicio de Inscripción</label>
         <input id="fechaInicioInscripcion" type="date" class="form-control"
-          [(ngModel)]="nuevoEvento.$fechaInicioInscripcion" name="fechaInicioInscripcion" required>
+          [(ngModel)]="nuevoEvento.fechaInicioInscripcion" name="fechaInicioInscripcion" required>
       </div>
 
       <div class="mb-3">
         <label for="fechaFinInscripcion" class="form-label">Fecha de Fin de Inscripción</label>
-        <input id="fechaFinInscripcion" type="date" class="form-control" [(ngModel)]="nuevoEvento.$fechaFinInscripcion"
+        <input id="fechaFinInscripcion" type="date" class="form-control" [(ngModel)]="nuevoEvento.fechaFinInscripcion"
           name="fechaFinInscripcion" required>
       </div>
 
       <div class="mb-3">
         <label for="ubicacion" class="form-label">Ubicación</label>
-        <input id="ubicacion" class="form-control" [(ngModel)]="nuevoEvento.$ubicacion" name="ubicacion" required>
+        <input id="ubicacion" class="form-control" [(ngModel)]="nuevoEvento.ubicacion" name="ubicacion" required>
       </div>
 
       <div class="d-flex justify-content-end">
@@ -121,6 +127,9 @@
     </form>
   </div>
   }
+
+
+</div>
 
 
   @if (mostrarMensaje) {
@@ -139,7 +148,7 @@
           <button type="button" class="btn-close" (click)="cerrarModalEliminar()"></button>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro de eliminar el evento "{{ eventoAEliminar?.$nombre }}"?</p>
+          <p>¿Estás seguro de eliminar el evento "{{ eventoAEliminar?.nombre }}"?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="cerrarModalEliminar()">Cancelar</button>
