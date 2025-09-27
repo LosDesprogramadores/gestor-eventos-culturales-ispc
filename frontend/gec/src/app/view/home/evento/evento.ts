@@ -37,18 +37,14 @@ export class Evento implements OnInit {
     if (this.auth.role === 'ANON') {
         this.alertas.mensajeUsuario(this.auth.usuarioLogueadoId() ?? 0);
   
-    /*   setTimeout(() => {
-        this.router.navigateByUrl('/inicio-sesion');
-      }, 1000); */
-
     }
-    console.log(evento)
     const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
     
      
-     this.inscripciones.registrarInscripcion(evento);
-     this.alertas.mensajeInscripcion();
+     this.inscripciones.registrarInscripcion(evento, uid);
+   
+    
   
 
   }
