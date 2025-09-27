@@ -25,12 +25,43 @@
 }
 /*------------Footer-------------*/
 /* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
+.contenedorPrincipal{
+   background-color: var(--color-secundario);
+  margin: 0%  ;
+  padding-bottom: 2rem;
+  border-radius: 3rem;
+ 
+  
+}
+.contenedorSecundario{  
+  background-color: var(--color-terciario-alternativo);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+
+  
+}
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: var(--color-secundario-alternativo);
+  background-color: var(--color-terciario-);
+}
+
+.titulo{
+  color: white;
+   font-weight: 600; 
+    font-size: 2.5rem; 
+   text-transform: capitalize; 
+    letter-spacing: 1px; 
+}
+
+.titulo-h2 {
+     color: white;
+    font-weight: 300; 
+    margin-top: 0.5rem; 
 }
 
 .page-container {
@@ -129,3 +160,22 @@ app-root {
   --btn-hover: #145c23;
   background-color: var(--btn-base);
 }
+
+
+/* Imagenes de la tabla */
+.evento-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.evento-img:hover {
+  transform: scale(1.5);  
+  z-index: 2;              
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
