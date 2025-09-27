@@ -371,26 +371,6 @@
       "_id_estado": 1
     },
     {
-      "id": "373e",
-      "_id_usuario": 2,
-      "_evento": {
-        "id": "e110",
-        "_id_evento": 19,
-        "_nombre": "Exposición de Arte Moderno",
-        "_ubicacion": "Museo de Arte Contemporáneo",
-        "_fechaHoraEvento": "Febrero - Sábado 8 | 16:00 Hs",
-        "_capacidad": 1200,
-        "_imagen": "https://images.unsplash.com/photo-1535909339361-9b47a5f66b6d",
-        "_fechaInicioInscripcion": "Febrero - Lunes 3 | 10:00 Hs",
-        "_fechaFinInscripcion": "Febrero - Viernes 7 | 19:00 Hs",
-        "_estado": 1,
-        "_gestor": 4,
-        "_categoria": 2
-      },
-      "_fecha_inscripcion": "2025-09-27",
-      "_id_estado": 1
-    },
-    {
       "id": "14d1",
       "_id_usuario": 2,
       "_evento": {
@@ -426,6 +406,26 @@
         "_estado": 1,
         "_gestor": 2,
         "_categoria": 5
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "c503",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e110",
+        "_id_evento": 19,
+        "_nombre": "Exposición de Arte Moderno",
+        "_ubicacion": "Museo de Arte Contemporáneo",
+        "_fechaHoraEvento": "Febrero - Sábado 8 | 16:00 Hs",
+        "_capacidad": 1200,
+        "_imagen": "https://images.unsplash.com/photo-1535909339361-9b47a5f66b6d",
+        "_fechaInicioInscripcion": "Febrero - Lunes 3 | 10:00 Hs",
+        "_fechaFinInscripcion": "Febrero - Viernes 7 | 19:00 Hs",
+        "_estado": 1,
+        "_gestor": 4,
+        "_categoria": 2
       },
       "_fecha_inscripcion": "2025-09-27",
       "_id_estado": 1
