@@ -1,83 +1,56 @@
+import { ClassEvento } from "./evento";
+
 export class Inscripcion {
 
-     id?: number;             
-  private id_usuario: number;
-  private id_evento: number;
-  private fecha_inscripcion: string;
-  private id_estado: number;
+     id?: string;
+     private _id_usuario: number;
+     private _evento: ClassEvento;
+     private _fecha_inscripcion: string;
+     private _id_estado: number;
+    
+
+     constructor(data : any
+       
+     ) {  this.id = data.id;
+          this._id_usuario = data._id_usuario;
+          this._evento = data._evento;
+          this._fecha_inscripcion = data._fecha_inscripcion;
+          this._id_estado = data._id_estado;
+        
+     }
+
+    // Getters
+     public get id_usuario(): number {
+          return this._id_usuario;
+     }
+
+     public get evento(): ClassEvento {
+          return this._evento;
+     }
+
+     public get fecha_inscripcion(): string {
+          return this._fecha_inscripcion;
+     }
+
+     public get id_estado(): number {
+          return this._id_estado;
+     }
+
+    // Setters
+     public set id_usuario(value: number) {
+          this._id_usuario = value;
+     }
+
+     public set evento(value: ClassEvento) {
+          this._evento = value;
+     }
+
+     public set fecha_inscripcion(value: string) {
+          this._fecha_inscripcion = value;
+     }
 
 
-	constructor($id_usuario: number, $id_evento: number, $fecha_inscripcion: string, $id_estado: number) {
-		this.id_usuario = $id_usuario;
-		this.id_evento = $id_evento;
-		this.fecha_inscripcion = $fecha_inscripcion;
-		this.id_estado = $id_estado;
-	}
-  
-
-    /**
-     * Getter $id_usuario
-     * @return {number}
-     */
-	public get $id_usuario(): number {
-		return this.id_usuario;
-	}
-
-    /**
-     * Getter $id_evento
-     * @return {number}
-     */
-	public get $id_evento(): number {
-		return this.id_evento;
-	}
-
-    /**
-     * Getter $fecha_inscripcion
-     * @return {string}
-     */
-	public get $fecha_inscripcion(): string {
-		return this.fecha_inscripcion;
-	}
-
-    /**
-     * Getter $id_estado
-     * @return {number}
-     */
-	public get $id_estado(): number {
-		return this.id_estado;
-	}
-
-    /**
-     * Setter $id_usuario
-     * @param {number} value
-     */
-	public set $id_usuario(value: number) {
-		this.id_usuario = value;
-	}
-
-    /**
-     * Setter $id_evento
-     * @param {number} value
-     */
-	public set $id_evento(value: number) {
-		this.id_evento = value;
-	}
-
-    /**
-     * Setter $fecha_inscripcion
-     * @param {string} value
-     */
-	public set $fecha_inscripcion(value: string) {
-		this.fecha_inscripcion = value;
-	}
-
-    /**
-     * Setter $id_estado
-     * @param {number} value
-     */
-	public set $id_estado(value: number) {
-		this.id_estado = value;
-	}
-
-
+     public set id_estado(value: number) {
+          this._id_estado = value;
+     }
 }
