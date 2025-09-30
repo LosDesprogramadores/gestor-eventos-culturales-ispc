@@ -8,6 +8,7 @@ import { ClassEvento } from '../../../model/evento';
 import { firstValueFrom, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { SAlert } from '../../../services/service-alert/s-alert';
 
 @Component({ 
     selector: 'app-panel-gestor',
@@ -28,17 +29,17 @@ export class PanelGestor implements OnInit {
   hoverImg = '';
 
   nuevoEvento: ClassEvento = new ClassEvento({
-    $id_evento: 0,
-    $nombre: '',
-    $fechaHoraEvento: '',
-    $capacidad: 0,
-    $imagen: '',
-    $fechaInicioInscripcion: '',
-    $fechaFinInscripcion: '',
-    $ubicacion: '',
-    $estado: 1,
-    $gestor: 0,
-    $categoria: 0
+    _id_evento: 0,
+    _nombre: '',
+    _fechaHoraEvento: '',
+    _capacidad: 0,
+    _imagen: '',
+    _fechaInicioInscripcion: '',
+    _fechaFinInscripcion: '',
+    _ubicacion: '',
+    _estado: 1,
+    _gestor: 0,
+    _categoria: 0
   });
 
   creando = false;
@@ -46,7 +47,7 @@ export class PanelGestor implements OnInit {
   tipoMensaje: 'success' | 'danger' = 'success';
   mostrarMensaje: boolean = false;
 
-  constructor(private sesion: Auth, private eventosService: SEvento) {}
+  constructor(private sesion: Auth, private eventosService: SEvento, private alerta : SAlert) {}
 
   ngOnInit(): void {
     this.cargarEventos();
@@ -68,9 +69,9 @@ export class PanelGestor implements OnInit {
   }
 
   async crearEvento(): Promise<void> {
-    if (!this.nuevoEvento.$nombre || !this.nuevoEvento.$fechaHoraEvento || !this.nuevoEvento.$capacidad ||
-        !this.nuevoEvento.$imagen || !this.nuevoEvento.$fechaInicioInscripcion || !this.nuevoEvento.$fechaFinInscripcion ||
-        !this.nuevoEvento.$ubicacion) {
+    if (!this.nuevoEvento.nombre || !this.nuevoEvento.fechaHoraEvento || !this.nuevoEvento.capacidad ||
+        !this.nuevoEvento.imagen || !this.nuevoEvento.fechaInicioInscripcion || !this.nuevoEvento.fechaFinInscripcion ||
+        !this.nuevoEvento.ubicacion) {
       this.tipoMensaje = 'danger';
       this.mensaje = 'Error: Por favor completa todos los campos del formulario.';
       this.mostrarMensaje = true;
@@ -78,26 +79,26 @@ export class PanelGestor implements OnInit {
       return;
     }
 
-    this.nuevoEvento.$gestor = this.sesion.session.user?.id ?? 0;
+    this.nuevoEvento.gestor = this.sesion.session.user?.id ?? 0;
 
     try {
       const creado = await firstValueFrom(this.eventosService.crearEvento(this.nuevoEvento));
       this.tipoMensaje = 'success';
-      this.mensaje = `Evento "${creado.$nombre}" creado exitosamente!`;
+      this.mensaje = `Evento "${creado.nombre}" creado exitosamente!`;
       this.mostrarMensaje = true;
 
       this.nuevoEvento = new ClassEvento({
-        $id_evento: 0,
-        $nombre: '',
-        $fechaHoraEvento: '',
-        $capacidad: 0,
-        $imagen: '',
-        $fechaInicioInscripcion: '',
-        $fechaFinInscripcion: '',
-        $ubicacion: '',
-        $estado: 1,
-        $gestor: 0,
-        $categoria: 0
+        _id_evento: 0,
+        _nombre: '',
+        _fechaHoraEvento: '',
+        _capacidad: 0,
+        _imagen: '',
+        _fechaInicioInscripcion: '',
+        _fechaFinInscripcion: '',
+        _ubicacion: '',
+        _estado: 1,
+        _gestor: 0,
+        _categoria: 0
       });
 
       this.mostrarFormulario = false;
@@ -130,10 +131,10 @@ export class PanelGestor implements OnInit {
   eliminarEventoConfirmado() {
     if (!this.eventoAEliminar) return;
 
-    this.eventosService.eliminarEventoPorIdEvento(this.eventoAEliminar.$id_evento!).subscribe({
+    this.eventosService.eliminarEventoPorIdEvento(this.eventoAEliminar.id_evento!).subscribe({
       next: () => {
         this.tipoMensaje = 'success';
-        this.mensaje = `Evento "${this.eventoAEliminar?.$nombre}" eliminado correctamente`;
+        this.mensaje = `Evento "${this.eventoAEliminar?.nombre}" eliminado correctamente`;
         this.mostrarMensaje = true;
 
         this.cargarEventos();

@@ -7,18 +7,16 @@
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 2,
-      "id_datos": 1,
-      "id": "29c2"
+      "id_datos": 1
     },
-    {
+        {
       "id_usuario": 2,
       "email": "alan@test.com",
       "password": "12345678",
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 1,
-      "id_datos": 1,
-      "id": "6a9d"
+      "id_datos": 1
     },
     {
       "id_usuario": 3,
@@ -72,6 +70,7 @@
       "id_rol": 2
     }
   ],
+  
   "datos": [
     {
       "id_datos": 1,
@@ -92,6 +91,7 @@
     },
     {
       "id_datos": 3,
+<<<<<<< HEAD
       "nombre": "Pepe",
       "apellido": "Argento",
       "direccion": "Córdoba Capital",
@@ -105,17 +105,13 @@
       "direccion": "",
       "celular": ""
       "id": "5a48",
+=======
+>>>>>>> dev
       "nombre": "tomás",
       "apellido": "Monton",
       "direccion": "",
-      "celular": ""
-    },
-    {
-      "id": "1178",
-      "nombre": "prueba",
-      "apellido": "pruebita",
-      "direccion": "",
-      "celular": ""
+      "celular": "",
+      "id": "5a48"
     }
   ],
   "roles": [
@@ -134,144 +130,130 @@
   ],
   "eventos": [
     {
-      "id_evento": 0,
-      "nombre": "Carnavales",
-      "fechaHoraEvento": "Mayo - Jueves 22 | 20:30 Hs",
-      "capacidad": 2000,
-      "imagen": "https://images.unsplash.com/photo-1496767000195-3841ae3f97f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Mayo - Jueves 22 | 20:30 Hs",
-      "fechaFinInscripcion": "Mayo - Jueves 22 | 20:30 Hs",
-      "ubicacion": "Teatro Real - San Jerónimo 664",
-      "estado": 1,
-      "gestor": "eec8",
-      "categoria": 3,
-      "id": "2db7"
+      "id": "e101",
+      "_id_evento": 10,
+      "_nombre": "Festival de Jazz",
+      "_fechaHoraEvento": "Noviembre - Viernes 15 | 21:00 Hs",
+      "_capacidad": 1200,
+      "_imagen": "https://images.unsplash.com/photo-1520523839897-bd0b52a4e64b",
+      "_fechaInicioInscripcion": "Noviembre - Lunes 11 | 09:00 Hs",
+      "_fechaFinInscripcion": "Noviembre - Jueves 14 | 18:00 Hs",
+      "_ubicacion": "Teatro Municipal",
+      "_estado": 1,
+      "_gestor": 3,
+      "_categoria": 4
     },
     {
-      "id_evento": 1,
-      "nombre": "Comedias",
-      "fechaHoraEvento": "Mayo - Jueves 29 | 22:30 Hs",
-      "capacidad": 1000,
-      "imagen": "https://images.unsplash.com/photo-1513106580091-1d82408b8cd6?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Mayo - Martes 20 | 10:00 Hs",
-      "fechaFinInscripcion": "Mayo - Miércoles 28 | 18:00 Hs",
-      "ubicacion": "Teatro Comedia - San Juan 664",
-      "estado": 1,
-      "gestor": 101,
-      "categoria": 1,
-      "id": "c724"
+      "id": "e102",
+      "_id_evento": 11,
+      "_nombre": "Expo Tecnología 2025",
+      "_fechaHoraEvento": "Diciembre - Sábado 7 | 10:00 Hs",
+      "_capacidad": 3000,
+      "_imagen": "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+      "_fechaInicioInscripcion": "Diciembre - Lunes 2 | 08:00 Hs",
+      "_fechaFinInscripcion": "Diciembre - Viernes 6 | 20:00 Hs",
+      "_ubicacion": "Centro de Convenciones",
+      "_estado": 1,
+      "_gestor": 2,
+      "_categoria": 6
     },
     {
-      "id_evento": 2,
-      "nombre": "Jazz en Vivo",
-      "fechaHoraEvento": "Junio - Viernes 7 | 21:00 Hs",
-      "capacidad": 350,
-      "imagen": "https://images.unsplash.com/photo-1715139718837-f9efc78cddc0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Junio - Lunes 3 | 09:00 Hs",
-      "fechaFinInscripcion": "Junio - Jueves 6 | 17:00 Hs",
-      "ubicacion": "Sala del Buen Pastor",
-      "estado": 1,
-      "gestor": 102,
-      "categoria": 2,
-      "id": "664b"
+      "id": "e103",
+      "_id_evento": 12,
+      "_nombre": "Maratón Ciudad",
+      "_fechaHoraEvento": "Septiembre - Domingo 29 | 07:00 Hs",
+      "_capacidad": 5000,
+      "_imagen": "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf",
+      "_fechaInicioInscripcion": "Septiembre - Lunes 2 | 09:00 Hs",
+      "_fechaFinInscripcion": "Septiembre - Viernes 27 | 18:00 Hs",
+      "_ubicacion": "Parque Central",
+      "_estado": 2,
+      "_gestor": 1,
+      "_categoria": 3
     },
     {
-      "id_evento": 3,
-      "nombre": "Obra de Teatro",
-      "fechaHoraEvento": "Julio - Sábado 13 | 19:00 Hs",
-      "capacidad": 500,
-      "imagen": "https://images.unsplash.com/photo-1576724196706-3f23f51ea351?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Julio - Lunes 8 | 11:00 Hs",
-      "fechaFinInscripcion": "Julio - Viernes 12 | 18:00 Hs",
-      "ubicacion": "Centro Cultural Córdoba",
-      "estado": 1,
-      "gestor": 103,
-      "categoria": 1,
-      "id": "6266"
+      "id": "e104",
+      "_id_evento": 13,
+      "_nombre": "Concierto Sinfónico",
+      "_fechaHoraEvento": "Agosto - Sábado 24 | 20:30 Hs",
+      "_capacidad": 900,
+      "_imagen": "https://images.unsplash.com/photo-1504805572947-34fad45aed93",
+      "_fechaInicioInscripcion": "Agosto - Lunes 19 | 10:00 Hs",
+      "_fechaFinInscripcion": "Agosto - Viernes 23 | 18:00 Hs",
+      "_ubicacion": "Sala Filarmónica",
+      "_estado": 1,
+      "_gestor": 2,
+      "_categoria": 5
     },
     {
-      "id_evento": 4,
-      "nombre": "Taller de Fotografía",
-      "fechaHoraEvento": "Junio - Miércoles 12 | 18:00 Hs",
-      "capacidad": 25,
-      "imagen": "https://images.pexels.com/photos/16935932/pexels-photo-16935932/free-photo-of-restaurante-fiesta-partido-ramas.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "fechaInicioInscripcion": "Junio - Lunes 10 | 09:00 Hs",
-      "fechaFinInscripcion": "Junio - Martes 11 | 18:00 Hs",
-      "ubicacion": "Casa de la Cultura",
-      "estado": 1,
-      "gestor": 104,
-      "categoria": 4,
-      "id": "88f7"
+      "id": "e105",
+      "_id_evento": 14,
+      "_nombre": "Feria del Libro",
+      "_fechaHoraEvento": "Julio - Miércoles 17 | 11:00 Hs",
+      "_capacidad": 2000,
+      "_imagen": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+      "_fechaInicioInscripcion": "Julio - Viernes 12 | 09:00 Hs",
+      "_fechaFinInscripcion": "Julio - Martes 16 | 19:00 Hs",
+      "_ubicacion": "Predio Ferial",
+      "_estado": 1,
+      "_gestor": 2,
+      "_categoria": 2
     },
     {
-      "id_evento": 5,
-      "nombre": "Feria del Libro",
-      "fechaHoraEvento": "Agosto - Domingo 18 | 10:00 Hs",
-      "capacidad": 99999,
-      "imagen": "https://images.unsplash.com/photo-1631888722728-1578b7ba6dee?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Agosto - Lunes 12 | 08:00 Hs",
-      "fechaFinInscripcion": "Agosto - Sábado 17 | 20:00 Hs",
-      "ubicacion": "Plaza San Martín",
-      "estado": 1,
-      "gestor": 105,
-      "categoria": 3,
-      "id": "57ed"
+      "id": "e107",
+      "_id_evento": 16,
+      "_nombre": "Competencia de Robótica",
+      "_fechaHoraEvento": "Mayo - Sábado 18 | 10:30 Hs",
+      "_capacidad": 700,
+      "_imagen": "https://images.unsplash.com/photo-1604079626827-d1184f91f0f3",
+      "_fechaInicioInscripcion": "Mayo - Lunes 6 | 09:00 Hs",
+      "_fechaFinInscripcion": "Mayo - Viernes 17 | 17:00 Hs",
+      "_ubicacion": "Polideportivo Central",
+      "_estado": 1,
+      "_gestor": 7,
+      "_categoria": 6
     },
     {
-      "id_evento": 6,
-      "nombre": "Cine al Aire Libre",
-      "fechaHoraEvento": "Febrero - Sábado 24 | 21:30 Hs",
-      "capacidad": 400,
-      "imagen": "https://images.unsplash.com/photo-1665833380686-8b0e41e99dc7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Febrero - Lunes 19 | 10:00 Hs",
-      "fechaFinInscripcion": "Febrero - Viernes 23 | 19:00 Hs",
-      "ubicacion": "Parque Sarmiento",
-      "estado": 1,
-      "gestor": 106,
-      "categoria": 1,
-      "id": "e50c"
+      "id": "e108",
+      "_id_evento": 17,
+      "_nombre": "Obra de Teatro Clásico",
+      "_fechaHoraEvento": "Abril - Viernes 12 | 20:00 Hs",
+      "_capacidad": 650,
+      "_imagen": "https://images.unsplash.com/photo-1533000456124-5b17f40b9c9c",
+      "_fechaInicioInscripcion": "Abril - Lunes 8 | 09:00 Hs",
+      "_fechaFinInscripcion": "Abril - Jueves 11 | 18:00 Hs",
+      "_ubicacion": "Teatro Colón",
+      "_estado": 1,
+      "_gestor": 5,
+      "_categoria": 5
     },
     {
-      "id_evento": 7,
-      "nombre": "Exposición de Arte",
-      "fechaHoraEvento": "Julio - Viernes 5 | 17:00 Hs",
-      "capacidad": 100,
-      "imagen": "https://images.unsplash.com/photo-1743119626105-8119fde654d8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Julio - Lunes 1 | 08:00 Hs",
-      "fechaFinInscripcion": "Julio - Jueves 4 | 16:00 Hs",
-      "ubicacion": "Museo Caraffa",
-      "estado": 1,
-      "gestor": 107,
-      "categoria": 5,
-      "id": "acce"
+      "id": "e109",
+      "_id_evento": 18,
+      "_nombre": "Encuentro de Startups",
+      "_fechaHoraEvento": "Marzo - Miércoles 20 | 14:00 Hs",
+      "_capacidad": 1000,
+      "_imagen": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+      "_fechaInicioInscripcion": "Marzo - Lunes 11 | 09:00 Hs",
+      "_fechaFinInscripcion": "Marzo - Lunes 18 | 18:00 Hs",
+      "_ubicacion": "Cowork Central",
+      "_estado": 2,
+      "_gestor": 3,
+      "_categoria": 7
     },
     {
-      "id_evento": 8,
-      "nombre": "Festival de Comida",
-      "fechaHoraEvento": "Septiembre - Domingo 15 | 12:00 Hs",
-      "capacidad": 1000,
-      "imagen": "https://images.unsplash.com/photo-1470858831619-ca02d796b2a5?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Septiembre - Lunes 9 | 10:00 Hs",
-      "fechaFinInscripcion": "Septiembre - Sábado 14 | 22:00 Hs",
-      "ubicacion": "Paseo del Buen Pastor",
-      "estado": 1,
-      "gestor": 108,
-      "categoria": 6,
-      "id": "1a6d"
-    },
-    {
-      "id_evento": 9,
-      "nombre": "Charla TEDx",
-      "fechaHoraEvento": "Octubre - Martes 10 | 18:30 Hs",
-      "capacidad": 600,
-      "imagen": "https://images.unsplash.com/photo-1733222814719-9c756a54ad92?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "fechaInicioInscripcion": "Octubre - Jueves 5 | 10:00 Hs",
-      "fechaFinInscripcion": "Octubre - Lunes 9 | 17:00 Hs",
-      "ubicacion": "Auditorio Universidad",
-      "estado": 1,
-      "gestor": 109,
-      "categoria": 7,
-      "id": "bc3a"
+      "id": "e110",
+      "_id_evento": 19,
+      "_nombre": "Exposición de Arte Moderno",
+      "_fechaHoraEvento": "Febrero - Sábado 8 | 16:00 Hs",
+      "_capacidad": 1200,
+      "_imagen": "https://images.unsplash.com/photo-1535909339361-9b47a5f66b6d",
+      "_fechaInicioInscripcion": "Febrero - Lunes 3 | 10:00 Hs",
+      "_fechaFinInscripcion": "Febrero - Viernes 7 | 19:00 Hs",
+      "_ubicacion": "Museo de Arte Contemporáneo",
+      "_estado": 1,
+      "_gestor": 4,
+      "_categoria": 2
     }
   ],
   "categorias_evento": [
@@ -298,6 +280,7 @@
     }
   ],
 <<<<<<< HEAD
+<<<<<<< HEAD
   "inscripciones": [
     {
       "id": "723d",
@@ -314,6 +297,210 @@
   ],
 =======
   "inscripciones": [],
+>>>>>>> dev
+=======
+  "inscripciones": [
+    {
+      "id": "e7b3",
+      "_id_usuario": 1,
+      "_evento": {
+        "id": "e102",
+        "_id_evento": 11,
+        "_nombre": "Expo Tecnología 2025",
+        "_ubicacion": "Centro de Convenciones",
+        "_fechaHoraEvento": "Diciembre - Sábado 7 | 10:00 Hs",
+        "_capacidad": 3000,
+        "_imagen": "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+        "_fechaInicioInscripcion": "Diciembre - Lunes 2 | 08:00 Hs",
+        "_fechaFinInscripcion": "Diciembre - Viernes 6 | 20:00 Hs",
+        "_estado": 1,
+        "_gestor": 2,
+        "_categoria": 6
+      },
+      "_fecha_inscripcion": "2025-09-23",
+      "_id_estado": 1
+    },
+    {
+      "id": "fa95",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e102",
+        "_id_evento": 11,
+        "_nombre": "Expo Tecnología 2025",
+        "_ubicacion": "Centro de Convenciones",
+        "_fechaHoraEvento": "Diciembre - Sábado 7 | 10:00 Hs",
+        "_capacidad": 3000,
+        "_imagen": "https://images.unsplash.com/photo-1531297484001-80022131f5a1",
+        "_fechaInicioInscripcion": "Diciembre - Lunes 2 | 08:00 Hs",
+        "_fechaFinInscripcion": "Diciembre - Viernes 6 | 20:00 Hs",
+        "_estado": 1,
+        "_gestor": 2,
+        "_categoria": 6
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "0e3f",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e103",
+        "_id_evento": 12,
+        "_nombre": "Maratón Ciudad",
+        "_ubicacion": "Parque Central",
+        "_fechaHoraEvento": "Septiembre - Domingo 29 | 07:00 Hs",
+        "_capacidad": 5000,
+        "_imagen": "https://images.unsplash.com/photo-1508609349937-5ec4ae374ebf",
+        "_fechaInicioInscripcion": "Septiembre - Lunes 2 | 09:00 Hs",
+        "_fechaFinInscripcion": "Septiembre - Viernes 27 | 18:00 Hs",
+        "_estado": 2,
+        "_gestor": 1,
+        "_categoria": 3
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "1ffd",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e109",
+        "_id_evento": 18,
+        "_nombre": "Encuentro de Startups",
+        "_ubicacion": "Cowork Central",
+        "_fechaHoraEvento": "Marzo - Miércoles 20 | 14:00 Hs",
+        "_capacidad": 1000,
+        "_imagen": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+        "_fechaInicioInscripcion": "Marzo - Lunes 11 | 09:00 Hs",
+        "_fechaFinInscripcion": "Marzo - Lunes 18 | 18:00 Hs",
+        "_estado": 2,
+        "_gestor": 3,
+        "_categoria": 7
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "4980",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e108",
+        "_id_evento": 17,
+        "_nombre": "Obra de Teatro Clásico",
+        "_ubicacion": "Teatro Colón",
+        "_fechaHoraEvento": "Abril - Viernes 12 | 20:00 Hs",
+        "_capacidad": 650,
+        "_imagen": "https://images.unsplash.com/photo-1533000456124-5b17f40b9c9c",
+        "_fechaInicioInscripcion": "Abril - Lunes 8 | 09:00 Hs",
+        "_fechaFinInscripcion": "Abril - Jueves 11 | 18:00 Hs",
+        "_estado": 1,
+        "_gestor": 5,
+        "_categoria": 5
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "6326",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e107",
+        "_id_evento": 16,
+        "_nombre": "Competencia de Robótica",
+        "_ubicacion": "Polideportivo Central",
+        "_fechaHoraEvento": "Mayo - Sábado 18 | 10:30 Hs",
+        "_capacidad": 700,
+        "_imagen": "https://images.unsplash.com/photo-1604079626827-d1184f91f0f3",
+        "_fechaInicioInscripcion": "Mayo - Lunes 6 | 09:00 Hs",
+        "_fechaFinInscripcion": "Mayo - Viernes 17 | 17:00 Hs",
+        "_estado": 1,
+        "_gestor": 7,
+        "_categoria": 6
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "3029",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e105",
+        "_id_evento": 14,
+        "_nombre": "Feria del Libro",
+        "_ubicacion": "Predio Ferial",
+        "_fechaHoraEvento": "Julio - Miércoles 17 | 11:00 Hs",
+        "_capacidad": 2000,
+        "_imagen": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f",
+        "_fechaInicioInscripcion": "Julio - Viernes 12 | 09:00 Hs",
+        "_fechaFinInscripcion": "Julio - Martes 16 | 19:00 Hs",
+        "_estado": 1,
+        "_gestor": 2,
+        "_categoria": 2
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "373e",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e110",
+        "_id_evento": 19,
+        "_nombre": "Exposición de Arte Moderno",
+        "_ubicacion": "Museo de Arte Contemporáneo",
+        "_fechaHoraEvento": "Febrero - Sábado 8 | 16:00 Hs",
+        "_capacidad": 1200,
+        "_imagen": "https://images.unsplash.com/photo-1535909339361-9b47a5f66b6d",
+        "_fechaInicioInscripcion": "Febrero - Lunes 3 | 10:00 Hs",
+        "_fechaFinInscripcion": "Febrero - Viernes 7 | 19:00 Hs",
+        "_estado": 1,
+        "_gestor": 4,
+        "_categoria": 2
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "14d1",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e101",
+        "_id_evento": 10,
+        "_nombre": "Festival de Jazz",
+        "_ubicacion": "Teatro Municipal",
+        "_fechaHoraEvento": "Noviembre - Viernes 15 | 21:00 Hs",
+        "_capacidad": 1200,
+        "_imagen": "https://images.unsplash.com/photo-1520523839897-bd0b52a4e64b",
+        "_fechaInicioInscripcion": "Noviembre - Lunes 11 | 09:00 Hs",
+        "_fechaFinInscripcion": "Noviembre - Jueves 14 | 18:00 Hs",
+        "_estado": 1,
+        "_gestor": 3,
+        "_categoria": 4
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    },
+    {
+      "id": "19ec",
+      "_id_usuario": 2,
+      "_evento": {
+        "id": "e104",
+        "_id_evento": 13,
+        "_nombre": "Concierto Sinfónico",
+        "_ubicacion": "Sala Filarmónica",
+        "_fechaHoraEvento": "Agosto - Sábado 24 | 20:30 Hs",
+        "_capacidad": 900,
+        "_imagen": "https://images.unsplash.com/photo-1504805572947-34fad45aed93",
+        "_fechaInicioInscripcion": "Agosto - Lunes 19 | 10:00 Hs",
+        "_fechaFinInscripcion": "Agosto - Viernes 23 | 18:00 Hs",
+        "_estado": 1,
+        "_gestor": 2,
+        "_categoria": 5
+      },
+      "_fecha_inscripcion": "2025-09-27",
+      "_id_estado": 1
+    }
+  ],
 >>>>>>> dev
   "notificaciones": [
     {
@@ -333,6 +520,7 @@
       "cargo": "Gestión y Desarrollo",
       "email": "tomasmonton261@gmail.com",
       "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/tomasMonton",
+<<<<<<< HEAD
 <<<<<<< HEAD
       "id": "6d7f"
     },
@@ -400,6 +588,9 @@
 =======
       "id": "c10a"
 >>>>>>> dev
+=======
+      "id": "75eb"
+>>>>>>> dev
     },
     {
       "id_miembro": 2,
@@ -409,7 +600,7 @@
       "cargo": "Gestión",
       "email": "JulioMartin447@gmail.com",
       "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/martinJulio",
-      "id": "3cc2"
+      "id": "e736"
     },
     {
       "id_miembro": 3,
@@ -419,7 +610,7 @@
       "cargo": "Testing",
       "email": "aland.marini@gmail.com",
       "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/AlanMarini",
-      "id": "5fb2"
+      "id": "53b1"
     },
     {
       "id_miembro": 4,
@@ -429,7 +620,7 @@
       "cargo": "Análisis y Desarrollo",
       "email": "juanimignacio@gmail.com",
       "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/juanIgnacioMoreno",
-      "id": "90be"
+      "id": "b1a3"
     },
     {
       "id_miembro": 5,
@@ -439,7 +630,7 @@
       "cargo": "Desarrollo",
       "email": "mportillo79@gmail.com",
       "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/marceloportillo",
-      "id": "c25f"
+      "id": "675f"
     },
     {
       "id_miembro": 6,
@@ -449,7 +640,7 @@
       "cargo": "Desarrollo",
       "email": "rominahuk@gmail.com",
       "portfolio": "https://github.com/LosDesprogramadores/gestor-eventos-culturales-ispc/tree/dev/portfolios/RominaHuk",
-      "id": "87a2"
+      "id": "8926"
     }
   ]
 }

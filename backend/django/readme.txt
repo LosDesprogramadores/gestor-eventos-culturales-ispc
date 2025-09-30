@@ -39,3 +39,36 @@ Dentro de la carpeta  django
 ======================================================================
 
   * Es muy importante que se ejecute siempre el paso 3 ya que los requerimientos serian las dependencias del proyecto.
+
+
+** Lo primero que van a tener que hacer es crear su aplicacion (que seria el modulo que se especifico en la evidencia 5) creear el modelo, serializer y views (logica) de los modelos que vayan a 
+   hacer agregarlos a las urls para hacer las pruebas de sus ENDPOINTS.
+
+
+
+ Notas
+==========
+
+Cuando se desmadre todo con su modelo o view con la db, la opcion mas sana es borrar el archivo db.sqlite3 y en la carpeta /migrations todo los archivos que hagan referencia al modelo que esten tocando
+pero no borren _init_.py ni 0001_initial.py de esa carpeta.
+
+Borren tranquilo ya que luego con:
+
+python manage.py makemigrations 
+y luego
+python manage.py migrate
+
+se regeneran las tablas...lo malo si que van a perder la info cargada :P
+
+ 
+
+ENDPOINTS DE USUARIO    (usar postman)
+=======================
+
+http://127.0.0.1:8000/api/usuarios    // con una solicitud GET trae la lista de usuarios
+http://127.0.0.1:8000/api/usuarios/id   // con una solicitud GET trae los datos de un usuario en concreto
+http://127.0.0.1:8000/api/usuarios/   // con una solicitud POST crea el usuario pero hay que enviarle el email y password
+
+http://127.0.0.1:8000/api/usuarios/login/ // para loguearse
+
+

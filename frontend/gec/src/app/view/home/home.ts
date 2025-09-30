@@ -21,24 +21,24 @@ import { CommonModule } from '@angular/common';
 export class Home implements OnInit{
   auth = inject( Auth );
   private router = inject( Router );
-  showAlert = false;
-  message = '';
-  tipoAlerta : string = '';
+  mensaje = new Mensaje();
 
   constructor(private alerta: SAlert){
 
   }
   ngOnInit(): void {
    this.alerta.alert$.subscribe((res:Mensaje)=> {
-    this.message = res.$mesagge;
-    this.showAlert = true;
-    this.tipoAlerta = res.$tipoAlerta;
-      console.log('tipoAlerta:', this.tipoAlerta);
+    this.mensaje.$showMessage = res.$showMessage;
+    this.mensaje.$message = res.$message;
+    this.mensaje.$tipoAlerta = res.$tipoAlerta;
+     const tiempo = res.$time ?? 2000;
+ 
    setTimeout(()=>{ 
-     this.showAlert = false;}, 
-     res.$time)
+     this.mensaje.$showMessage = false;
+    }, 
+     tiempo)
       });
-
+ 
    }
   
 

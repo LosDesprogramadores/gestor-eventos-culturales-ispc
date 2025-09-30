@@ -3,22 +3,23 @@
   <div class="row g-2 ">
 
     @if (eventos$ | async; as eventos) {
-      @for (evento of eventos; track evento.$id_evento) {
+      @for (evento of eventos; track evento.id) {
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm">
             <div class="imagen-evento">
-              <img src="{{ evento.$imagen }}" alt="Evento"
+              <img src="{{ evento.imagen }}" alt="Evento"
+                 onerror="this.src='/assets/images/sin.jpg'"
                 class="card-img-top img-hover-scale object-fit-cover">
             </div>
             <div class="card-body">
-              <h5 class="card-title titulo">{{ evento.$nombre }}</h5>
-              <p class="capacidad mb-1"><strong>{{ evento.$capacidad }}:</strong> lugares</p>
-              <p class="lugar mb-1">{{ evento.$ubicacion }} </p>
-              <p class="fecha mb-0">{{ evento.$fechaHoraEvento }} </p>
+              <h5 class="card-title titulo">{{ evento.nombre }}</h5>
+              <p class="capacidad mb-1"><strong>{{ evento.capacidad }}:</strong> lugares</p>
+              <p class="lugar mb-1">{{ evento.ubicacion }} </p>
+              <p class="fecha mb-0">{{ evento.  fechaHoraEvento }} </p>
             </div>
             <div class="botones-card px-3 pb-3 d-flex gap-2">
-              <a class="btn btn-primary btn-sm flex-fill" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
-              <a class="btn btn-success btn-sm flex-fill" (click)="agregar(evento)">Inscribirse</a>
+              <a class="btn btn-primary btn-sm flex-fill boton btn-ver-mas" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
+              <a class="btn btn-success btn-sm flex-fill boton btn-inscribir" (click)="agregar(evento)">Inscribirse</a>
             </div>
           </div>
         </div> 
@@ -44,15 +45,5 @@
            </div>
       </div>
     </div>
-   
+   }
 
-    
-    }
-      @if (mostrarMensaje) {
-    <div class="alert" [ngClass]="'alert-' + tipoMensaje" role="alert">
-      {{ mensaje }}
-    </div>
-    }
-
-  </div>
-</div>
