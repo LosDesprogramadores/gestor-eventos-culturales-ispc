@@ -1,0 +1,368 @@
+/*
+  Paleta de Colores Ajustada a Blanco y Negro con Fondo de Nebulosa:
+  - Fondo de Contenido: Nebulosa original con desenfoque y opacidad.
+  - Fondo Sólido: Negro (#000000)
+  - Textos Principales: Blanco Puro (#FFFFFF)
+  - Textos Secundarios/Suaves: Gris Claro (#E0E0E0), Gris Oscuro (#333333)
+  - Acentos (muy sutiles si se quieren): Podrían ser un gris azulado muy oscuro o un blanco brillante.
+*/
+
+/* --- Fuentes --- */
+body {
+  font-family: 'Inter', sans-serif; /* Cambiado de 'Orbitron' a 'Inter' */
+  /* Si elegiste Roboto, usa: font-family: 'Roboto', sans-serif; */
+  color: #FFFFFF; /* Blanco Puro para texto principal */
+  background-color: #000000; /* Fondo negro base */
+}
+
+/* --- Fondo Global de Nebulosa con Estrellas --- */
+.main-content-wrapper {
+  position: relative;
+  /* Ruta a tu imagen de nebulosa. ¡Asegúrate de que la imagen esté en la misma carpeta! */
+  background: url('../imagenes/galaxia2.jpg') no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+/* Capa de efecto sobre la imagen de fondo */
+.main-content-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8); /* Mayor opacidad negra para más contraste */
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+/* Animación de Estrellas (Capa SUPERIOR al fondo) - Mantendremos el efecto de estrellas blancas */
+.main-content-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: transparent;
+  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.8),
+              20px 20px 0px 0px rgba(255, 255, 255, 0.6),
+              -15px -15px 0px 0px rgba(255, 255, 255, 0.7),
+              35px -5px 0px 0px rgba(255, 255, 255, 0.9),
+              -25px 30px 0px 0px rgba(255, 255, 255, 0.5);
+  animation: twinkle 15s infinite alternate;
+  z-index: -2;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+    filter: brightness(1);
+  }
+  25% {
+    transform: scale(1.05);
+    opacity: 0.9;
+    filter: brightness(1.2);
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.7;
+    filter: brightness(0.9);
+  }
+  75% {
+    transform: scale(1.02);
+    opacity: 0.85;
+    filter: brightness(1.1);
+  }
+}
+
+/* --- Logo de la barra de navegación --- */
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+}
+
+
+/* --- Barra de Navegación --- */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.95); /* Negro muy oscuro, casi opaco */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra blanca muy sutil */
+  transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.navbar.scrolled {
+  background-color: #000000; /* Negro puro al hacer scroll */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Sombra blanca un poco más fuerte */
+}
+
+.navbar-brand {
+  color: #FFFFFF !important; /* Blanco Puro */
+  font-weight: 700;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.3); /* Sombra blanca sutil */
+}
+
+.nav-link {
+  color: #FFFFFF !important; /* Blanco Puro */
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: #E0E0E0 !important; /* Blanco ligeramente más suave al hover para contraste */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* --- Estilos Generales de Secciones --- */
+.section {
+  padding: 100px 0; /* Más padding para espacio */
+  position: relative;
+  z-index: 1; /* Asegura que el contenido esté por encima del fondo y estrellas */
+}
+
+/* Títulos de Sección */
+.section-title {
+  font-size: 3rem; /* Más grande para impacto */
+  color: #FFFFFF; /* Blanco Puro */
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 25px rgba(255, 255, 255, 0.3); /* Sombras blancas */
+  margin-bottom: 3rem;
+  font-weight: 700;
+}
+
+/* --- Botones --- */
+.btn-primary {
+  background-color: rgba(255, 255, 255, 0.1); /* Blanco muy tenue, casi transparente */
+  border: 1px solid #FFFFFF; /* Borde blanco */
+  color: #FFFFFF; /* Texto blanco */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); /* Sombra blanca */
+  transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s, color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #FFFFFF; /* Blanco puro al hover */
+  color: #000000; /* Texto negro para contraste */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05); /* Blanco aún más tenue */
+    border: 1px solid #E0E0E0; /* Borde gris claro */
+    color: #E0E0E0; /* Texto gris claro */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s, color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Blanco ligeramente más visible al hover */
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+/* --- ESTILO PARA RECUADROS DE CONTENIDO TRANSPARENTES --- */
+.content-box {
+  background-color: rgba(0, 0, 0, 0.7); /* Negro semi-transparente */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco sutil */
+  border-radius: 10px; /* Bordes ligeramente redondeados */
+  padding: 40px; /* Espaciado interno */
+  margin-bottom: 30px; /* Margen inferior para separar secciones */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1); /* Sombra sutil */
+}
+
+/* Ajustes para la sección de inicio si el content-box ocupa todo el vh-100 */
+#inicio .content-box {
+    padding-top: 80px; /* Más padding arriba para no chocar con navbar */
+    padding-bottom: 80px;
+    display: inline-block; /* Ajusta el tamaño al contenido */
+    max-width: 800px; /* Limita el ancho del recuadro de inicio */
+    width: 100%; /* Asegura que sea responsivo */
+}
+
+
+/* --- Tarjetas de Proyectos --- */
+.project-card {
+  background-color: rgba(0, 0, 0, 0.7); /* Negro semi-transparente para las cards */
+  color: #FFFFFF; /* Blanco puro */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Borde blanco sutil */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Sombra blanca sutil */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  overflow: hidden;
+
+  display: flex; /* Flex para distribuir contenido */
+  flex-direction: column; /* Vertical */
+}
+
+.project-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Ocupa todo el espacio disponible */
+}
+
+.project-card .card-body .d-flex {
+  margin-top: auto; /* Empuja los botones hacia abajo */
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5), 0 0 35px rgba(255, 255, 255, 0.3); /* Resplandor blanco al hover */
+}
+
+.project-card .card-img-top {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.project-btn {
+    color: #E0E0E0; /* Gris claro */
+    border-color: #E0E0E0;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.project-btn:hover {
+    background-color: #FFFFFF; /* Blanco puro al hover */
+    color: #000000; /* Texto negro */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    border-color: #FFFFFF;
+}
+
+
+
+/* --- Sección Habilidades --- */
+.skill-item {
+  position: relative;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo para cada habilidad */
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skill-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5), 0 0 15px rgba(255, 255, 255, 0.4);
+  
+}
+
+
+.skill-icon-img {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-bottom: 10px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+  transition: transform 0.3s, filter 0.3s;
+}
+
+
+.skill-name {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* --- Sección Contacto --- */
+.form-label {
+    color: #FFFFFF; /* Etiquetas en blanco */
+    font-weight: 700;
+}
+
+.form-control-galaxy {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Borde blanco sutil */
+    color: #FFFFFF; /* Texto de entrada blanco */
+    box-shadow: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-control-galaxy:focus {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-color: #FFFFFF; /* Borde blanco al enfocar */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    color: #FFFFFF;
+}
+
+/* Placeholder color */
+.form-control-galaxy::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* --- Footer --- */
+footer {
+  background-color: #000000; /* Negro puro para el pie de página */
+  color: #E0E0E0; /* Gris claro para el texto del footer */
+  padding: 30px 0;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icons a {
+  color: #FFFFFF; /* Iconos sociales en blanco */
+  margin: 0 15px;
+  font-size: 1.8rem;
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+}
+
+.social-icons a:hover {
+  color: #E0E0E0; /* Ligeramente gris al hover */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+/* --- Estilos para la imagen de perfil (si la usas) --- */
+.profile-img {
+    border: 5px solid #FFFFFF; /* Borde blanco brillante */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  .social-icons a {
+    font-size: 1.5rem;
+  }
+  /* Ajuste para el content-box en móviles */
+  .content-box {
+    padding: 20px;
+  }
+  #inicio .content-box {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 60px 0;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .section-title {
+    font-size: 1.8rem;
+  }
+}
