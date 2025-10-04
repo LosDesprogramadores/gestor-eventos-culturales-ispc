@@ -1,48 +1,51 @@
+export enum EnumRol {
+  USUARIO = 'USUARIO',
+  GESTOR = 'GESTOR',
+  ADMINISTRADOR = 'ADMINISTRADOR'
+}
+
+export const ROLES: { [key: number]: EnumRol } = {
+  1: EnumRol.USUARIO,
+  2: EnumRol.GESTOR,
+  3: EnumRol.ADMINISTRADOR
+};
+
+
 export class ClassRol {
-     id_rol: number;
-    private nombre: string;
+    private id_rol: number;
+    private nombre: EnumRol;
     private descripcion: string;
 
+    constructor(id_rol: number, nombre: EnumRol, descripcion: string) {
+        this.id_rol = id_rol;
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
 
+    // Getters
+    public getId_rol(): number {
+        return this.id_rol;
+    }
 
-	constructor($id_rol: number, $nombre: string, $descripcion: string) {
-		this.id_rol = $id_rol;
-		this.nombre = $nombre;
-		this.descripcion = $descripcion;
-	}
-	
+    public getNombre(): EnumRol {
+        return this.nombre;
+    }
 
-    /**
-     * Getter $nombre
-     * @return {string}
-     */
-	public get $nombre(): string {
-		return this.nombre;
-	}
+    public getDescripcion(): string {
+        return this.descripcion;
+    }
 
-    /**
-     * Getter $descripcion
-     * @return {string}
-     */
-	public get $descripcion(): string {
-		return this.descripcion;
-	}
+    // Setters
+    public setId_rol(id_rol: number): void {
+        this.id_rol = id_rol;
+    }
 
-    /**
-     * Setter $nombre
-     * @param {string} value
-     */
-	public set $nombre(value: string) {
-		this.nombre = value;
-	}
+    public setNombre(nombre: EnumRol): void {
+        this.nombre = nombre;
+    }
 
-    /**
-     * Setter $descripcion
-     * @param {string} value
-     */
-	public set $descripcion(value: string) {
-		this.descripcion = value;
-	}
-
+    public setDescripcion(descripcion: string): void {
+        this.descripcion = descripcion;
+    }
 
 }
