@@ -7,44 +7,10 @@
         
         <div class="registro-card">
           <!-- FORMULARIO CONECTADO A onSubmit() -->
-          <form [formGroup]="form" (ngSubmit)="onSubmit()" class="registro-formulario needs-validation" novalidate>
+          <form [formGroup]="form"  (ngSubmit)="onSubmit()" class="registro-formulario needs-validation" novalidate>
             
             <h1 class="registro-titulo">Crear nueva cuenta</h1>
-
-            <!-- NOMBRE -->
-            <div class="mb-3">
-              <input type="text"
-                      formControlName="nombre"
-                      id="nombre"
-                      name="nombre"
-                      class="registro-input form-control"
-                      required
-                      placeholder="Nombre" />
-              
-              @if (nombre?.errors && nombre?.touched) {
-                @if (nombre?.hasError('required')) {
-                  <p class="text-danger registro-feedback">El nombre es obligatorio.</p>
-                }
-              }
-            </div>
-
-            <!-- APELLIDO -->
-            <div class="mb-3">
-              <input type="text"
-                      formControlName="apellido"
-                      id="apellido"
-                      name="apellido"
-                      class="registro-input form-control"
-                      required
-                      placeholder="Apellido" />
-              
-              @if (apellido?.errors && apellido?.touched) {
-                @if (apellido?.hasError('required')) {
-                  <p class="text-danger registro-feedback">El apellido es obligatorio.</p>
-                }
-              }
-            </div>
-
+            
             <!-- EMAIL -->
             <div class="mb-3">
               <input type="email"
