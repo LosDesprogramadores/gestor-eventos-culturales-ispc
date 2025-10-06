@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { CommonModule } from '@angular/common';
 import { InscripcionService } from '../../../services/services-inscripcion/inscripcion';
 import { Header } from '../../../shared/header/header';
 import { Footer } from '../../../shared/footer/footer';
 import { NavHome } from '../../home/nav-home/nav-home';
-import { Auth } from '../../../services/service-autenticacion/auth.service';
+import { Auth, UiRole } from '../../../services/service-autenticacion/auth.service';
 import { ClassEvento } from '../../../model/evento';
 import { Inscripcion } from '../../../model/inscripcion';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { SAlert } from '../../../services/service-alert/s-alert';
 import { Mensaje } from '../../../model/mensaje';
 
@@ -20,35 +20,38 @@ import { Mensaje } from '../../../model/mensaje';
 })
 export class PanelUsuarioComponent implements OnInit {
 
-editarEvento(_t21: ClassEvento) {
-throw new Error('Method not implemented.');
-}
   recomendados: ClassEvento[] = [];
   agendados: ClassEvento[] = [];
-  inscripciones$ ! : Observable<Inscripcion []>;
-  eventos$ ! : Observable<ClassEvento []>;
+  inscripciones$!: Observable<Inscripcion[]>;
+  eventos$!: Observable<ClassEvento[]>;
   hoverVisible = true;
   mensaje = new Mensaje();
-  mostrarModalEliminar = false
+  mostrarModalEliminar = false;
   inscripcionEliminar: Inscripcion | null = null; 
 
+  // 👉 expongo el rol en una propiedad pública para el template
+  role: UiRole = 'ANON'; 
+
   constructor(
-      private inscripcionService: InscripcionService,
-    private auth: Auth, private mensajeAlert :SAlert 
+    private inscripcionService: InscripcionService,
+    private auth: Auth,
+    private mensajeAlert: SAlert 
   ) { }
 
   ngOnInit(): void {
-    this.mensajeAlert.alert$.subscribe((res:Mensaje)=> {
-    this.mensaje.$showMessage = res.$showMessage;
-    this.mensaje.$message = res.$message;
-    this.mensaje.$tipoAlerta = res.$tipoAlerta;
-    const tiempo = res.$time ?? 2000;
- 
-   setTimeout(()=>{ 
-     this.mensaje.$showMessage = false;
-    }, 
-     tiempo)
-      });
+    // guardo el rol actual
+    this.role = this.auth.role;
+
+    this.mensajeAlert.alert$.subscribe((res: Mensaje) => {
+      this.mensaje.$showMessage = res.$showMessage;
+      this.mensaje.$message = res.$message;
+      this.mensaje.$tipoAlerta = res.$tipoAlerta;
+      const tiempo = res.$time ?? 2000;
+      setTimeout(() => { 
+        this.mensaje.$showMessage = false;
+      }, tiempo)
+    });
+
     this.cargarMisInscriciones();
   }
 
@@ -57,65 +60,53 @@ throw new Error('Method not implemented.');
     this.mostrarModalEliminar = false;
   }
 
- cargarMisInscriciones(): void {
-  const uid = this.auth.usuarioLogueadoId();
-  console.log('Usuario logueado ID:', uid);
-  if (!uid) return;
+  cargarMisInscriciones(): void {
+    const uid = this.auth.usuarioLogueadoId();
+    if (!uid) return;
 
-  this.inscripciones$ = this.inscripcionService.getInscripcionesByUsuario(uid);
-  this.inscripciones$.subscribe({
-    next: data => console.log('Inscripciones recibidas:', data),
-    error: err => console.error('Error en inscripciones$', err)
-  });
-}
+    this.inscripciones$ = this.inscripcionService.getInscripcionesByUsuario(uid);
+  }
 
   agregar(evento: ClassEvento): void {
     const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
-    this.inscripcionService.registrarInscripcion(evento,uid);
-   }
+    this.inscripcionService.registrarInscripcion(evento, uid);
+  }
 
-eliminarInscripcionConfirmada(){
-   if (!this.inscripcionEliminar) return;
-   this.eliminar(this.inscripcionEliminar)
-}
+  eliminarInscripcionConfirmada() {
+    if (!this.inscripcionEliminar) return;
+    this.eliminar(this.inscripcionEliminar)
+  }
 
+  private eliminar(inscrip: Inscripcion): void {
+    this.cerrarModalEliminar()
+    const uid = this.auth.usuarioLogueadoId();
+    if (!uid) return;
 
- private eliminar(inscrip: Inscripcion): void {
-  this.cerrarModalEliminar()
-  const uid = this.auth.usuarioLogueadoId();
-  if (!uid) return;
+    this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({
+      next: (inscripciones) => {
+        const insc = inscripciones.find(i => i.id === inscrip.id);
+        if (!insc?.id) return;
 
-  this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({
-    next: (inscripciones) => {
-      const insc = inscripciones.find(i => i.id === inscrip.id);
-      if (!insc?.id) {
-        console.warn('No se encontró inscripción para eliminar', insc);
-        return;
+        this.inscripcionService.deleteInscripcion(insc.id).subscribe({
+          next: () => {
+            this.mensajeAlert.mensajeEliminacionInscripcion();
+            this.cargarMisInscriciones();
+          }
+        });
       }
-
-      this.inscripcionService.deleteInscripcion(insc.id).subscribe({
-        next: () => {
-           this.mensajeAlert.mensajeEliminacionInscripcion();
-          this.cargarMisInscriciones();
-        },
-        error: (err) => console.error('Error eliminando inscripción', err)
-      });
-    },
-    error: (err) => console.error('Error buscando inscripciones antes de eliminar', err)
-  });
-}
-
+    });
+  }
 
   imagenEvento(img?: string): string {
     return img && img.trim() ? img : '/assets/images/sin.jpg';
   }
 
- trackByIndex(index: number, item: Inscripcion): any {
-  return item.id ?? index;
-}
+  trackByIndex(index: number, item: Inscripcion): any {
+    return item.id ?? index;
+  }
 
-abrirModalEliminar(inscripcion: Inscripcion) {
+  abrirModalEliminar(inscripcion: Inscripcion) {
     this.inscripcionEliminar = inscripcion;
     this.mostrarModalEliminar = true;
   }
