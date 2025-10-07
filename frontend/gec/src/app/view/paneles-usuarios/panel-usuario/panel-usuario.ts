@@ -10,11 +10,12 @@ import { Inscripcion } from '../../../model/inscripcion';
 import { Observable } from 'rxjs';
 import { SAlert } from '../../../services/service-alert/s-alert';
 import { Mensaje } from '../../../model/mensaje';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-panel-usuario',
   standalone: true,
-  imports: [CommonModule, Header, Footer, NavHome],
+  imports: [RouterLink, CommonModule, Header, Footer, NavHome],
   templateUrl: './panel-usuario.html',
   styleUrl: './panel-usuario.css'
 })

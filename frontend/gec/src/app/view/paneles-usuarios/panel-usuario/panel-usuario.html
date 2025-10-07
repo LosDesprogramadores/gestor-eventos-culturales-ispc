@@ -13,11 +13,11 @@
     <h2 class="fw-bold text-center mb-4 titulo-h2" >Mis Inscripciones</h2>
     <div class="boton-edit-info">
       @if (role === 'GESTOR') {
-      <button class="btn btn-warning btn-lg" routerLink="/user/edit">
+      <button class="btn btn-warning btn-lg" routerLink="/edit-datos-rol">
         <i class="fas fa-edit me-2"></i> Editar Datos
       </button>
       } @else if (role === 'USER') {
-      <button class="btn btn-warning btn-lg" routerLink="/user/edit">
+      <button class="btn btn-warning btn-lg" routerLink="/edit-datos-rol">
         <i class="fas fa-edit me-2"></i> Ser Gestor / Editar Datos
       </button>
       }
