@@ -1,5 +1,5 @@
 import { ClassDatos } from "./datos";
-import { ClassRol } from "./rol";
+
 
 export class classUsuario {
     private id_usuario: number;
@@ -7,8 +7,7 @@ export class classUsuario {
     private contrasenia: string;
     private fechaRegistro: Date;
     private cuentaActiva: boolean;
-    private datosPersonales: ClassDatos;
-    private rol: ClassRol;
+    private rol: number;
 
     constructor(
         id_usuario: number,
@@ -16,15 +15,13 @@ export class classUsuario {
         contrasenia: string,
         fechaRegistro: Date,
         cuentaActiva: boolean,
-        datosPersonales: ClassDatos,
-        rol: ClassRol
+        rol: number
     ) {
         this.id_usuario = id_usuario;
         this.email = email;
         this.contrasenia = contrasenia;
         this.fechaRegistro = fechaRegistro;
         this.cuentaActiva = cuentaActiva;
-        this.datosPersonales = datosPersonales;
         this.rol = rol;
     }
 
@@ -49,11 +46,7 @@ export class classUsuario {
         return this.cuentaActiva;
     }
 
-    public getDatosPersonales(): ClassDatos {
-        return this.datosPersonales;
-    }
-
-    public getRol(): ClassRol {
+    public getRol(): number {
         return this.rol;
     }
 
@@ -78,11 +71,7 @@ export class classUsuario {
         this.cuentaActiva = cuentaActiva;
     }
 
-    public setDatosPersonales(datosPersonales: ClassDatos): void {
-        this.datosPersonales = datosPersonales;
-    }
-
-    public setRol(rol: ClassRol): void {
+    public setRol(rol: number): void {
         this.rol = rol;
     }
 }

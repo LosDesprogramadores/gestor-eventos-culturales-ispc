@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators, ValidationErrors, ReactiveFormsModu
 import { SRegistro } from '../../../services/service-registro/s-registro';
 import { classUsuario } from '../../../model/usuario';
 import { ClassDatos } from '../../../model/datos';
-import { ClassRol, EnumRol, ROLES  } from '../../../model/rol';
+import { EnumRol } from '../../../model/rol';
 import { HttpClientModule } from '@angular/common/http';
 import { Header } from '../../../shared/header/header';
 import { NavHome } from '../../home/nav-home/nav-home';
@@ -13,14 +13,13 @@ import { Footer } from '../../../shared/footer/footer';
 @Component({
   selector: 'app-registro-nuevo-usuario',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule, Header, NavHome, Footer],
+  imports: [ReactiveFormsModule, Header, NavHome, Footer],
   templateUrl: './registro-nuevo-usuario.html',
   styleUrl: './registro-nuevo-usuario.css'
 })
 export class RegistroNuevoUsuario {
 
   form: FormGroup;
-  rolesEntries = Object.entries(ROLES); // para el select de roles
 
   constructor(
     private formBuilder: FormBuilder,
@@ -73,8 +72,7 @@ export class RegistroNuevoUsuario {
       formValues.password,
       new Date(),
       true, // cuenta activa por defecto
-      new ClassDatos(0, '', '', '', ''), // sin datos personales todavía
-      new ClassRol(formValues.rol, ROLES[formValues.rol], `Rol asignado: ${ROLES[formValues.rol]}`)
+      EnumRol.USUARIO
     );
 
     // 🔸 Guardar en "db.json"

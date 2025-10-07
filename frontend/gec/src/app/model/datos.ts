@@ -1,22 +1,28 @@
+import { classUsuario } from "./usuario";
+
 export class ClassDatos {
     private id_datos: number;
     private nombre: string;
     private apellido: string;
     private empresa: string;
     private cuil: string;
+    private usuario: classUsuario;
 
     constructor(
         id_datos: number,
         nombre: string,
         apellido: string,
         empresa: string,
-        cuil: string
+        cuil: string,
+        usuario: classUsuario
+        
     ) {
         this.id_datos = id_datos;
         this.nombre = nombre;
         this.apellido = apellido;
         this.empresa = empresa;
         this.cuil = cuil;
+        this.usuario = usuario;
     }
 
     // Getters
@@ -39,12 +45,13 @@ export class ClassDatos {
     public getCuil(): string {
         return this.cuil;
     }
-
-    // Setters
-    public setId_datos(id_datos: number): void {
-        this.id_datos = id_datos;
+  
+    public getUsuario(): classUsuario {
+        return this.usuario;
     }
 
+    // Setters
+    
     public setNombre(nombre: string): void {
         this.nombre = nombre;
     }
@@ -60,4 +67,5 @@ export class ClassDatos {
     public setCuil(cuil: string): void {
         this.cuil = cuil;
     }
+
 }
