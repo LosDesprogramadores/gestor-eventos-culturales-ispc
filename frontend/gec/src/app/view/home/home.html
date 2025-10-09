@@ -1,10 +1,10 @@
 <body class="fondo">
     <div class="page-container">
-    <app-header></app-header>
-    <app-nav-home></app-nav-home>
-    <main class="content-wrap">
-    <router-outlet></router-outlet>
-   @if (mensaje.$showMessage) {
+        <app-header></app-header>
+        <app-nav-home></app-nav-home>
+        <main class="content-wrap">
+            <router-outlet></router-outlet>
+    @if (mensaje.$showMessage) {
   <div
     class="alert position-fixed top-50 end-0 translate-middle-y"
     [ngClass]="{
@@ -27,5 +27,3 @@
     <app-footer></app-footer>
     </div>
 </body>
-
-

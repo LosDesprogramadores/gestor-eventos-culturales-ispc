@@ -7,26 +7,25 @@
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 2,
-      "id_datos": 1,
-      "id": "29c2"
+      "id_datos": 1
     },
-    {
+        {
       "id_usuario": 2,
       "email": "alan@test.com",
       "password": "12345678",
       "fechaRegistro": "2025-01-10",
       "cuentaActiva": true,
       "id_rol": 1,
-      "id_datos": 1,
-      "id": "6a9d"
+      "id_datos": 1
     },
     {
+      "id_usuario": 3,
       "id": "eec8",
       "email": "Tomas@gmail.com",
       "password": "123456789",
       "fechaRegistro": "2025-09-14",
       "cuentaActiva": true,
-      "id_rol": 2
+      "id_rol": 1
     },
     {
       "id": "4",
@@ -34,10 +33,18 @@
       "password": "12345678",
       "fechaRegistro": "2025-09-14",
       "cuentaActiva": true,
-      "id_rol": 1,
-      "id_datos": 2
+      "id_rol": 2
+    },
+    {
+      "id": "4782",
+      "email": "p@c.com",
+      "password": "11111111",
+      "fechaRegistro": "2025-09-14",
+      "cuentaActiva": true,
+      "id_rol": 2
     }
   ],
+  
   "datos": [
     {
       "id_datos": 1,
