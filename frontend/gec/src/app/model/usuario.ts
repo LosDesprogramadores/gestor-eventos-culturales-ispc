@@ -15,14 +15,14 @@ export class classUsuario {
         contrasenia: string,
         fechaRegistro: Date,
         cuentaActiva: boolean,
-        rol: number
+        id_rol: number
     ) {
         this.id_usuario = id_usuario;
         this.email = email;
         this.contrasenia = contrasenia;
         this.fechaRegistro = fechaRegistro;
         this.cuentaActiva = cuentaActiva;
-        this.rol = rol;
+        this.rol = id_rol;
     }
 
     // Getters
