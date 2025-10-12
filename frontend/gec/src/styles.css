@@ -25,31 +25,61 @@
 }
 /*------------Footer-------------*/
 /* hace que el footer esté siempre abajo aunque la página tenga poco contenido */
+.contenedorPrincipal{
+   background-color: var(--color-secundario);
+  margin: 0%  ;
+  padding-bottom: 2rem;
+  border-radius: 3rem;
+ 
+  
+}
+.contenedorSecundario{  
+  background-color: var(--color-terciario-alternativo);
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
 
-body,html {
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--color-terciario-);
+}
+
+.titulo{
+  color: white;
+   font-weight: 600; 
+    font-size: 2.5rem; 
+   text-transform: capitalize; 
+    letter-spacing: 1px; 
+}
+
+.titulo-h2 {
+     color: white;
+    font-weight: 300; 
+    margin-top: 0.5rem; 
+}
+
+.page-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
-main {
-  flex: 1;
+.content-wrap {
+  flex-grow: 1; /* Esto empuja al footer hacia abajo */
+  padding-bottom: 1x;
 }
-
 /*------------------------*/
 
 .fondo{
   background-color: var(--color-secundario-alternativo);
 }
 
-
-.header {
-  background-color: var(--color-terciario-alternativo);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 0.2em 0.5em rgba(0, 0, 0, 0.3);
-}
 
 
 /*----FORMULARIOS------*/
@@ -64,10 +94,89 @@ main {
 
 
 
+
+
 /* app-root se estira a toda la ventana y organiza header/main/footer */
 app-root {
   display: flex;
   flex-direction: column;
   min-height: 100vh; 
 }
+
+
+.alerta {
+  position: fixed; 
+  display: flex;
+  align-items : center;
+  width: 25rem;
+  height: 3rem;
+
+}
+
+.boton {
+  color: white;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+  animation: none;
+}
+
+/* Hover compartido con pulse */
+.boton:hover {
+  animation: pulse-color 0.6s forwards;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes con variables CSS para los colores */
+@keyframes pulse-color {
+  0% {
+    transform: scale(1);
+    background-color: var(--btn-base);
+  }
+  50% {
+    transform: scale(1.15);
+    background-color: var(--btn-mid);
+  }
+  100% {
+    transform: scale(1.1);
+    background-color: var(--btn-hover);
+  }
+}
+
+.btn-ver-mas {
+  --btn-base: #007bff;
+  --btn-mid: #0056b3;
+  --btn-hover: #0A2E4D;
+  background-color: var(--btn-base);
+}
+
+.btn-inscribir  {
+  --btn-base: #28a745;
+  --btn-mid: #1e7e34;
+  --btn-hover: #145c23;
+  background-color: var(--btn-base);
+}
+
+
+/* Imagenes de la tabla */
+.evento-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.evento-img:hover {
+  transform: scale(1.5);  
+  z-index: 2;              
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
 

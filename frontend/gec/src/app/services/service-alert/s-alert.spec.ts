@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
-import { EventosService } from './galeria';
 
+import { SAlert } from './s-alert';
 
-describe('Galeria', () => {
-  let service: EventosService;
+describe('SAlert', () => {
+  let service: SAlert;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EventosService);
+    service = TestBed.inject(SAlert);
   });
 
   it('should be created', () => {

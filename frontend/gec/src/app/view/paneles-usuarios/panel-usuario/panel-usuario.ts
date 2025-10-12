@@ -1,108 +1,115 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'; 
 import { CommonModule } from '@angular/common';
-import { EventoService, Evento } from '../../../services/evento.service';
-import { InscripcionService, Inscripcion } from '../../../services/services-inscripcion/inscripcion';
+import { InscripcionService } from '../../../services/services-inscripcion/inscripcion';
 import { Header } from '../../../shared/header/header';
 import { Footer } from '../../../shared/footer/footer';
 import { NavHome } from '../../home/nav-home/nav-home';
-import { Auth } from '../../../services/service-autenticacion/auth.service';
+import { Auth, UiRole } from '../../../services/service-autenticacion/auth.service';
+import { ClassEvento } from '../../../model/evento';
+import { Inscripcion } from '../../../model/inscripcion';
+import { Observable } from 'rxjs';
+import { SAlert } from '../../../services/service-alert/s-alert';
+import { Mensaje } from '../../../model/mensaje';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-panel-usuario',
   standalone: true,
-  imports: [CommonModule, Header, Footer, NavHome],
+  imports: [RouterLink, CommonModule, Header, Footer, NavHome],
   templateUrl: './panel-usuario.html',
   styleUrl: './panel-usuario.css'
 })
 export class PanelUsuarioComponent implements OnInit {
-  recomendados: Evento[] = []; 
-  agendados: Evento[] = [];    
+
+  recomendados: ClassEvento[] = [];
+  agendados: ClassEvento[] = [];
+  inscripciones$!: Observable<Inscripcion[]>;
+  eventos$!: Observable<ClassEvento[]>;
+  hoverVisible = true;
+  mensaje = new Mensaje();
+  mostrarModalEliminar = false;
+  inscripcionEliminar: Inscripcion | null = null; 
+
+  // 👉 expongo el rol en una propiedad pública para el template
+  role: UiRole = 'ANON'; 
 
   constructor(
-    private eventoService: EventoService,
     private inscripcionService: InscripcionService,
-    private auth: Auth 
-  ) {}
+    private auth: Auth,
+    private mensajeAlert: SAlert 
+  ) { }
 
   ngOnInit(): void {
-    this.cargarRecomendados();
-    this.cargarAgendados();
-  }
+    // guardo el rol actual
+    this.role = this.auth.role;
 
-  private get usuarioLogueadoId(): number | null {
-    return this.auth.session.user?.id ?? null;
-  }
-
-  
-  cargarRecomendados(): void {
-    this.eventoService.getEventos().subscribe({
-      next: (data) => (this.recomendados = data.slice(0, 4)),
-      error: (err) => console.error('Error cargando eventos recomendados', err)
+    this.mensajeAlert.alert$.subscribe((res: Mensaje) => {
+      this.mensaje.$showMessage = res.$showMessage;
+      this.mensaje.$message = res.$message;
+      this.mensaje.$tipoAlerta = res.$tipoAlerta;
+      const tiempo = res.$time ?? 2000;
+      setTimeout(() => { 
+        this.mensaje.$showMessage = false;
+      }, tiempo)
     });
+
+    this.cargarMisInscriciones();
   }
 
-  
-  cargarAgendados(): void {
-    const uid = this.usuarioLogueadoId;
+  cerrarModalEliminar() {
+    this.inscripcionEliminar = null;
+    this.mostrarModalEliminar = false;
+  }
+
+  cargarMisInscriciones(): void {
+    const uid = this.auth.usuarioLogueadoId();
+    if (!uid) return;
+
+    this.inscripciones$ = this.inscripcionService.getInscripcionesByUsuario(uid);
+  }
+
+  agregar(evento: ClassEvento): void {
+    const uid = this.auth.usuarioLogueadoId();
+    if (!uid) return;
+    this.inscripcionService.registrarInscripcion(evento, uid);
+  }
+
+  eliminarInscripcionConfirmada() {
+    if (!this.inscripcionEliminar) return;
+    this.eliminar(this.inscripcionEliminar)
+  }
+
+  private eliminar(inscrip: Inscripcion): void {
+    this.cerrarModalEliminar()
+    const uid = this.auth.usuarioLogueadoId();
     if (!uid) return;
 
     this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({
       next: (inscripciones) => {
-        this.eventoService.getEventos().subscribe({
-          next: (eventos) => {
-            const ids = inscripciones.map(i => i.id_evento);
-            this.agendados = eventos.filter(e => ids.includes(e.id_evento));
-          },
-          error: (err) => console.error('Error cargando eventos para agendados', err)
-        });
-      },
-      error: (err) => console.error('Error cargando inscripciones', err)
-    });
-  }
+        const insc = inscripciones.find(i => i.id === inscrip.id);
+        if (!insc?.id) return;
 
-  
-  agregar(evento: Evento): void {
-    const uid = this.usuarioLogueadoId;
-    if (!uid) return;
-
-    if (this.agendados.some(e => e.id_evento === evento.id_evento)) return;
-
-    const nueva: Inscripcion = {
-      id_usuario: uid,
-      id_evento: evento.id_evento,
-      fecha_inscripcion: new Date().toISOString().split('T')[0],
-      id_estado: 1
-    };
-
-    this.inscripcionService.addInscripcion(nueva).subscribe({
-      next: () => this.cargarAgendados(),
-      error: (err) => console.error('Error agregando inscripcion', err)
-    });
-  }
-
-  
-  eliminar(evento: Evento): void {
-    const uid = this.usuarioLogueadoId;
-    if (!uid) return;
-
-    this.inscripcionService.getInscripcionesByUsuario(uid).subscribe({
-      next: (inscripciones) => {
-        const insc = inscripciones.find(i => i.id_evento === evento.id_evento);
-        if (!insc?.id) {
-          console.warn('No se encontró inscripción para eliminar', insc);
-          return;
-        }
         this.inscripcionService.deleteInscripcion(insc.id).subscribe({
-          next: () => this.cargarAgendados(),
-          error: (err) => console.error('Error eliminando inscripcion', err)
+          next: () => {
+            this.mensajeAlert.mensajeEliminacionInscripcion();
+            this.cargarMisInscriciones();
+          }
         });
-      },
-      error: (err) => console.error('Error buscando inscripciones antes de eliminar', err)
+      }
     });
   }
-
 
   imagenEvento(img?: string): string {
-    return img && img.trim() ? img : '/assets/images/default.jpg';
+    return img && img.trim() ? img : '/assets/images/sin.jpg';
   }
+
+  trackByIndex(index: number, item: Inscripcion): any {
+    return item.id ?? index;
+  }
+
+  abrirModalEliminar(inscripcion: Inscripcion) {
+    this.inscripcionEliminar = inscripcion;
+    this.mostrarModalEliminar = true;
+  }
+
 }

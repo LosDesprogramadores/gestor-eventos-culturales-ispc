@@ -1,37 +1,54 @@
 <app-banner></app-banner>
 <div class="container my-5 ">
-  <div class="row g-2">
+  <div class="row g-2 ">
 
     @if (eventos$ | async; as eventos) {
-      @for (evento of eventos; track evento.$id_evento) {
+      @for (evento of eventos; track evento.id) {
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm">
             <div class="imagen-evento">
-              <img src="{{ evento.$imagen }}" alt="Evento"
+              <img src="{{ evento.imagen }}" alt="Evento"
+                 onerror="this.src='/assets/images/sin.jpg'"
                 class="card-img-top img-hover-scale object-fit-cover">
             </div>
             <div class="card-body">
-              <h5 class="card-title titulo">{{ evento.$nombre }}</h5>
-              <p class="capacidad mb-1"><strong>{{ evento.$capacidad }}:</strong> lugares</p>
-              <p class="lugar mb-1">{{ evento.$ubicacion }} </p>
-              <p class="fecha mb-0">{{ evento.$fechaHoraEvento }} </p>
+              <h5 class="card-title titulo">{{ evento.nombre }}</h5>
+              <p class="capacidad mb-1"><strong>{{ evento.capacidad }}:</strong> lugares</p>
+              <p class="lugar mb-1">{{ evento.ubicacion }} </p>
+              <p class="fecha mb-0">{{ evento.  fechaHoraEvento }} </p>
             </div>
             <div class="botones-card px-3 pb-3 d-flex gap-2">
+<<<<<<< HEAD
               <a class="btn btn-primary btn-sm flex-fill" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
               <a class="btn btn-success btn-sm flex-fill" (click)="existeUsuario()">Inscribirse</a>
+=======
+              <a class="btn btn-primary btn-sm flex-fill boton btn-ver-mas" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
+              <a class="btn btn-success btn-sm flex-fill boton btn-inscribir" (click)="agregar(evento)">Inscribirse</a>
+>>>>>>> 2a94c02e3ed44b2ca6c4262e3473fb8c62d70f29
             </div>
           </div>
         </div> 
       } @empty {
-        <div class="col-12">
-          <p>No hay eventos disponibles en este momento.</p>
+
+
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="imagen-evento">
+              <img src="../../../../assets/images/no-hay-eventos.png" alt="No hay Eventos">
+            </div>
         </div>
       }
     } @else {
-      <div class="col-12">
-        <p>Cargando eventos...</p>
-      </div>
-    }
 
-  </div>
-</div>
+
+
+  
+  
+    <div class="row d-flex justify-content-center align-self-center ">
+      <div class="col-md-3 mb-4 " >
+        <div class="card h-100 shadow-sm small-card ">
+           <img src="../../../../assets/images/no-hay-eventos.png" alt="No hay Eventos"         >
+           </div>
+      </div>
+    </div>
+   }
+

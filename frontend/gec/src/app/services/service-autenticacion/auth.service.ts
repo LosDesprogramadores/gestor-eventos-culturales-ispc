@@ -1,8 +1,9 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom } from 'rxjs';
+import { classUsuario } from '../../model/usuario';
 
-const API = 'http://localhost:3000';
+const API = 'http://127.0.0.1:8000/api';
 const SESSION_KEY = 'gec.session';
 
 export type UiRole = 'ANON' | 'USER' | 'GESTOR';
@@ -11,6 +12,12 @@ export interface Session {
   authenticated: boolean;
   role: UiRole;
   user: { id: number; email: string } | null;
+}
+
+export interface LoginResponse {
+  message: string;
+  user_id: number;
+  id_rol: number;
 }
 
 @Injectable({ providedIn: 'root' })
@@ -27,23 +34,23 @@ export class Auth {
   get role(): UiRole { return this._session.role; }
 
   async login(email: string, password: string): Promise<Session> {
-    const usuarios: any[] = await firstValueFrom(
-      this.http.get<any[]>(`${API}/usuarios`, { params: { email, password, _limit: 1 } })
+     const response: LoginResponse  = await firstValueFrom(
+      this.http.post<LoginResponse>(`${API}/usuarios/login/`, { email, password, _limit: 1 } )
     );
-
-    const u = usuarios?.[0];
-    if (!u) throw new Error('Credenciales inválidas');
-    if (!u.cuentaActiva) throw new Error('Cuenta inactiva');
+     console.log(response)
+   
+    if (!response) throw new Error('Credenciales inválidas');
+   /*  if (!usuarios.cuentaActiva) throw new Error('Cuenta inactiva'); */
 
 
     const uiRole: UiRole =
-      u.id_rol === 1 ? 'GESTOR' :
-      u.id_rol === 2 ? 'USER'   : 'ANON';
+    response.id_rol === 1 ? 'GESTOR' :
+    response.id_rol === 2 ? 'USER'   : 'ANON';
 
     this._session = {
       authenticated: true,
       role: uiRole,
-      user: { id: u.id_usuario, email: u.email }
+      user: { id:  response.user_id, email: email }
     };
     localStorage.setItem(SESSION_KEY, JSON.stringify(this._session));
     return this._session;
@@ -59,7 +66,7 @@ export class Auth {
     catch { return null; }
   }
 
-  usuario(){
-    
+  usuarioLogueadoId(): number | null {
+    return this.session.user?.id ?? null;
   }
 }
