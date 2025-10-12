@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'usuario',
     'evento',
     'corsheaders',
+    'inscripcion'
 ]
 
 MIDDLEWARE = [

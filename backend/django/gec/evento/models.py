@@ -28,7 +28,7 @@ class Evento(models.Model):
     capacidad = models.IntegerField()
     inscriptos = models.IntegerField()
     descripcion = models.TextField()
-    imagen = models.CharField()
+    imagen = models.CharField(max_length=255)
     fecha_inicio_inscripcion = models.DateField()
     fecha_fin_inscripcion = models.DateField()
 

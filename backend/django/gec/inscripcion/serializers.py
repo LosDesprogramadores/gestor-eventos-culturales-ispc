@@ -1,0 +1,9 @@
+
+from rest_framework import serializers
+from inscripcion.models import Inscripcion
+
+
+class InscripcionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Inscripcion
+        fields = '__all__'
