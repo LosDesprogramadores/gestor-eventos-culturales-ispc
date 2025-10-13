@@ -45,12 +45,19 @@ Dentro de la carpeta  django
    hacer agregarlos a las urls para hacer las pruebas de sus ENDPOINTS.
 
 
+Extras: (Para cuando necesitamos actualizar la base de datos y traer los nuevos modelos) 
+==========================================================================================
+
+se borran de la carpeta de migrations los archivos 0001_initial_py si hay
+se borra primero la base de datos sqllite
+se ejecuta el comando por cada modulo:  python manage.py makemigrations usuario y asi sucesivamente para cada uno de los modulos existentes 
+Sucesivamente se ejecuta el comando:  python manage.py migrate
 
  Notas
 ==========
 
 Cuando se desmadre todo con su modelo o view con la db, la opcion mas sana es borrar el archivo db.sqlite3 y en la carpeta /migrations todo los archivos que hagan referencia al modelo que esten tocando
-pero no borren _init_.py ni 0001_initial.py de esa carpeta.
+pero no borren _init_.py de esa carpeta.
 
 Borren tranquilo ya que luego con:
 
@@ -70,5 +77,6 @@ http://127.0.0.1:8000/api/usuarios/id   // con una solicitud GET trae los datos 
 http://127.0.0.1:8000/api/usuarios/   // con una solicitud POST crea el usuario pero hay que enviarle el email y password
 
 http://127.0.0.1:8000/api/usuarios/login/ // para loguearse
+
 
 

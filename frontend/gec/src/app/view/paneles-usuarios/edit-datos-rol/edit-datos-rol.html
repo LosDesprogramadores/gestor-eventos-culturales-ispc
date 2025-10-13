@@ -1,0 +1,47 @@
+<body class="fondo">
+    <div class="page-container">
+        <app-header></app-header>
+        <app-nav-home></app-nav-home>
+        <main class="container my-5 flex-grow-1">
+            <div class="contenedorPrincipal">
+                
+            <div class="contenedorSecundario">
+                <h1 class="text-center mb-4 titulo">Mis Datos</h1>
+                <h2 class="fw-bold text-center mb-4 titulo-h2">Actualizar datos y rol</h2>
+            </div>
+                <div>
+                    <form id="datos-form">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Nombre</span>
+                            <input type="text" class="form-control" placeholder="Ingrese el nombre" aria-label="Nombre" id="inputNombre"
+                                required>
+                        </div>
+                    
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Apellido</span>
+                            <input type="text" class="form-control" placeholder="Ingrese el apellido" aria-label="Apellido"
+                                id="inputApellido" required>
+                        </div>
+                    
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">Empresa</span>
+                            <input type="text" class="form-control" placeholder="Nombre de la empresa" aria-label="Empresa"
+                                id="inputEmpresa">
+                        </div>
+                    
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">CUIL</span>
+                            <input type="text" class="form-control" placeholder="Ej: 20-XXXXXXXX-X" aria-label="CUIL" id="inputCuil">
+                        </div>
+                        
+                    
+                        <button type="submit" class="text-end btn btn-primary">
+                            Guardar Datos
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <app-footer></app-footer>
+    </div>
+</body>
