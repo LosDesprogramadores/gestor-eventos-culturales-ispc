@@ -23,8 +23,8 @@ class Usuario(AbstractBaseUser, PermissionsMixin):
     # De momento queda como entero hasta que este creado el modelo rol con sus endpoint
     id_rol = models.IntegerField(default=1)
     # De momento queda como entero hasta que este creado el modelo dato con sus endpoint
-    id_datos = models.IntegerField(default=1)
-    fecha_registro = models.DateField(null=True, blank=True)
+
+    fecha_registro = models.DateField(auto_now_add=True)
     cuenta_activa = models.BooleanField(default=True)
 
     # atributos interntos de Django para los usuarios
