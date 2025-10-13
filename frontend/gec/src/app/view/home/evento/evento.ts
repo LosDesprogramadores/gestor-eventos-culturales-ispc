@@ -42,7 +42,7 @@ export class Evento implements OnInit {
     if (!uid) return;
     
      
-     this.inscripciones.registrarInscripcion(evento, uid);
+    this.inscripciones.registrarInscripcion(evento, uid);
    
     
   

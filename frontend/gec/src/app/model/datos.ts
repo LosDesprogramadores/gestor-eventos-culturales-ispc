@@ -1,82 +1,71 @@
+import { classUsuario } from "./usuario";
+
 export class ClassDatos {
-     id_datos: number;
+    private id_datos: number;
     private nombre: string;
     private apellido: string;
     private empresa: string;
     private cuil: string;
+    private usuario: classUsuario;
 
+    constructor(
+        id_datos: number,
+        nombre: string,
+        apellido: string,
+        empresa: string,
+        cuil: string,
+        usuario: classUsuario
+        
+    ) {
+        this.id_datos = id_datos;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.empresa = empresa;
+        this.cuil = cuil;
+        this.usuario = usuario;
+    }
 
-	constructor($id_datos: number, $nombre: string, $apellido: string, $empresa: string, $cuil: string) {
-		this.id_datos = $id_datos;
-		this.nombre = $nombre;
-		this.apellido = $apellido;
-		this.empresa = $empresa;
-		this.cuil = $cuil;
-	}
+    // Getters
+    public getId_datos(): number {
+        return this.id_datos;
+    }
+
+    public getNombre(): string {
+        return this.nombre;
+    }
+
+    public getApellido(): string {
+        return this.apellido;
+    }
+
+    public getEmpresa(): string {
+        return this.empresa;
+    }
+
+    public getCuil(): string {
+        return this.cuil;
+    }
+  
+    public getUsuario(): classUsuario {
+        return this.usuario;
+    }
+
+    // Setters
     
+    public setNombre(nombre: string): void {
+        this.nombre = nombre;
+    }
 
-    /**
-     * Getter $nombre
-     * @return {string}
-     */
-	public get $nombre(): string {
-		return this.nombre;
-	}
+    public setApellido(apellido: string): void {
+        this.apellido = apellido;
+    }
 
-    /**
-     * Getter $apellido
-     * @return {string}
-     */
-	public get $apellido(): string {
-		return this.apellido;
-	}
+    public setEmpresa(empresa: string): void {
+        this.empresa = empresa;
+    }
 
-    /**
-     * Getter $empresa
-     * @return {string}
-     */
-	public get $empresa(): string {
-		return this.empresa;
-	}
-
-    /**
-     * Getter $cuil
-     * @return {string}
-     */
-	public get $cuil(): string {
-		return this.cuil;
-	}
-
-    /**
-     * Setter $nombre
-     * @param {string} value
-     */
-	public set $nombre(value: string) {
-		this.nombre = value;
-	}
-
-    /**
-     * Setter $apellido
-     * @param {string} value
-     */
-	public set $apellido(value: string) {
-		this.apellido = value;
-	}
-
-    /**
-     * Setter $empresa
-     * @param {string} value
-     */
-	public set $empresa(value: string) {
-		this.empresa = value;
-	}
-
-    /**
-     * Setter $cuil
-     * @param {string} value
-     */
-	public set $cuil(value: string) {
-		this.cuil = value;
-	}
+    public setCuil(cuil: string): void {
+        this.cuil = cuil;
+    }
 
 }

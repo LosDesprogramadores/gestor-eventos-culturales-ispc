@@ -21,7 +21,7 @@ class UsuarioManager(BaseUserManager):
 class Usuario(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     # De momento queda como entero hasta que este creado el modelo rol con sus endpoint
-    id_rol = models.IntegerField(default=1)
+    id_rol = models.IntegerField(default=2)
     # De momento queda como entero hasta que este creado el modelo dato con sus endpoint
 
     fecha_registro = models.DateField(auto_now_add=True)

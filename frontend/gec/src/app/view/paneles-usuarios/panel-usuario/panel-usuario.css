@@ -14,3 +14,8 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
 }
+.boton-edit-info {
+  margin-top: auto;   
+  text-align: right;    
+  padding: .5rem .5rem;   
+}

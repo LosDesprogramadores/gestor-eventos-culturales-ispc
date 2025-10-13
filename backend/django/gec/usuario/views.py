@@ -12,6 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 from django.contrib.auth import authenticate, login
+from drf_spectacular.openapi import AutoSchema
 
 
 def saludo(request):
@@ -47,15 +48,18 @@ class LoginView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request):
-        email = request.data.get('email')
-        password = request.data.get('password')
+
+        print(f"{request.data} ")
+        email = request.data.get("email")
+        password = request.data.get("password")
+        
 
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
             # login(request, user)
             return Response(
-                {"message": "Inicio de sesión exitoso", "user_id": user.id},
+                {"message": "Inicio de sesión exitoso", "user_id": user.id ,"id_rol":user.id_rol},
                 status=status.HTTP_200_OK
             )
         else:
