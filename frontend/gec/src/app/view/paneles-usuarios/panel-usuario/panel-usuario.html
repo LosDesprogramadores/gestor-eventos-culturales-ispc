@@ -1,116 +1,116 @@
 <body class="fondo">
-  <div class="page-container">
+  <div class="page-container">
 
 <app-header></app-header>
 <app-nav-home></app-nav-home>
 
 <main class="container my-5 flex-grow-1">
 
-   
-  <div class="contenedorPrincipal">
-  <div class="contenedorSecundario">
-    <h1 class="text-center mb-4 titulo">Panel de Usuario</h1>
-    <h2 class="fw-bold text-center mb-4 titulo-h2" >Mis Inscripciones</h2>
-    <div class="boton-edit-info">
-      @if (role === 'GESTOR') {
-      <button class="btn btn-warning btn-lg" routerLink="/edit-datos-rol">
-        <i class="fas fa-edit me-2"></i> Editar Datos
-      </button>
-      } @else if (role === 'USER') {
-      <button class="btn btn-warning btn-lg" routerLink="/edit-datos-rol">
-        <i class="fas fa-edit me-2"></i> Ser Gestor / Editar Datos
-      </button>
-      }
-    </div>
-  </div>
-  <div class="container my-5">
-       
-      <div class="row g-3">
-  @if (inscripciones$ | async; as inscripciones) {
-    @for (inscripcion of inscripciones; track inscripcion.id) {
-      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
-        <div class="card h-100 shadow-sm border-0 rounded-3 subscription-card" style="width: 100%; max-width: 280px;">
-          <div class="position-relative">
-            <img
-              src="{{ inscripcion.evento.getImagen() }}"
-              alt="{{ inscripcion.evento.getNombre() }}"
-              class="card-img-top subscription-img"
-              style="height: 160px; object-fit: cover;"
-              onerror="this.src='/assets/images/sin.jpg'"
-            />
-            <span class="badge bg-primary position-absolute top-0 start-0 m-2" 
-                  style="max-width: 90%; white-space: normal; word-wrap: break-word;">
-              {{ inscripcion.evento.getFechaHoraEvento()}}
-            </span>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title fw-semibold mb-1 text-primary" style="font-size: 1rem;">
-              {{ inscripcion.evento.getNombre()}}
-            </h5>
-            <p class="card-text text-muted mb-3" style="font-size: 0.875rem; word-wrap: break-word; overflow-wrap: break-word;">
-              <i class="bi bi-geo-alt me-1"></i>Nueva Cordoba
-            </p>
-            <div class="mt-auto text-end">
-              <button
-                class="btn btn-outline-danger btn-sm"
-                (click)="abrirModalEliminar(inscripcion)"
-              >
-                <i class="bi bi-trash"></i> Eliminar
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    }
-            @empty {
-              <div class="col-12">
-                <div class="alert alert-warning text-center">
-                  No hay eventos disponibles.
-                </div>
-              </div>
-            }
-          } @else {
-            <div class="col-12 text-center text-muted">Cargando eventos...</div>
-          }
-        </div>
-      
-      </div>
+   
+  <div class="contenedorPrincipal">
+  <div class="contenedorSecundario">
+    <h1 class="text-center mb-4 titulo">Panel de Usuario</h1>
+    <h2 class="fw-bold text-center mb-4 titulo-h2" >Mis Inscripciones</h2>
+    <div class="boton-edit-info">
+      @if (role === 'GESTOR') {
+      <button class="btn btn-warning btn-lg" routerLink="/edit-datos-rol">
+        <i class="fas fa-edit me-2"></i> Editar Datos
+      </button>
+      } @else if (role === 'USER') {
+      <button class="btn btn-warning btn-lg" routerLink="/edit-datos-rol">
+        <i class="fas fa-edit me-2"></i> Ser Gestor / Editar Datos
+      </button>
+      }
+    </div>
+  </div>
+  <div class="container my-5">
+       
+      <div class="row g-3">
+  @if (inscripciones$ | async; as inscripciones) {
+    @for (inscripcion of inscripciones; track inscripcion.id) {
+      <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex justify-content-center">
+        <div class="card h-100 shadow-sm border-0 rounded-3 subscription-card" style="width: 100%; max-width: 280px;">
+          <div class="position-relative">
+            <img
+              src="{{ inscripcion.getEvento().getImagen() }}"
+              alt="{{ inscripcion.getEvento().getNombre() }}"
+              class="card-img-top subscription-img"
+              style="height: 160px; object-fit: cover;"
+              onerror="this.src='/assets/images/sin.jpg'"
+            />
+            <span class="badge bg-primary position-absolute top-0 start-0 m-2" 
+                  style="max-width: 90%; white-space: normal; word-wrap: break-word;">
+              {{ inscripcion.getEvento().getFechaHoraEvento()}}
+            </span>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title fw-semibold mb-1 text-primary" style="font-size: 1rem;">
+              {{ inscripcion.getEvento().getNombre()}}
+            </h5>
+            <p class="card-text text-muted mb-3" style="font-size: 0.875rem; word-wrap: break-word; overflow-wrap: break-word;">
+              <i class="bi bi-geo-alt me-1"></i>Nueva Cordoba
+            </p>
+            <div class="mt-auto text-end">
+              <button
+                class="btn btn-outline-danger btn-sm"
+                (click)="abrirModalEliminar(inscripcion)"
+              >
+                <i class="bi bi-trash"></i> Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+            @empty {
+              <div class="col-12">
+                <div class="alert alert-warning text-center">
+                  No hay eventos disponibles.
+                </div>
+              </div>
+            }
+          } @else {
+            <div class="col-12 text-center text-muted">Cargando eventos...</div>
+          }
+        </div>
+      
+      </div>
 </div>
-      @if (mostrarModalEliminar) {
-        <div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Confirmar Eliminación</h5>
-                <button type="button" class="btn-close" (click)="cerrarModalEliminar()"></button>
-              </div>
-              <div class="modal-body">
-                <p>¿Estás seguro de eliminar la subscripción al evento "{{ inscripcionEliminar?.evento?.getNombre() }}"?</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" (click)="cerrarModalEliminar()">Cancelar</button>
-                <button type="button" class="btn btn-danger" (click)="eliminarInscripcionConfirmada()">Eliminar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      }
+      @if (mostrarModalEliminar) {
+        <div class="modal fade show d-block" tabindex="-1" style="background: rgba(0,0,0,0.5);">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" (click)="cerrarModalEliminar()"></button>
+              </div>
+              <div class="modal-body">
+                <p>¿Estás seguro de eliminar la subscripción al evento "{{ inscripcionEliminar?.getEvento()?.getNombre() }}"?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" (click)="cerrarModalEliminar()">Cancelar</button>
+                <button type="button" class="btn btn-danger" (click)="eliminarInscripcionConfirmada()">Eliminar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
 
-       @if (mensaje.$showMessage) {
-      <div
-        class="alert position-fixed top-50 end-0 translate-middle-y"
-        [ngClass]="{
-          'alert-success': mensaje.$tipoAlerta === 'success',
-          'alert-danger': mensaje.$tipoAlerta === 'danger'
-        }"
-        role="alert"
-      >
-        {{ mensaje.$message }}
-      </div>
-    }
+       @if (mensaje.$showMessage) {
+      <div
+        class="alert position-fixed top-50 end-0 translate-middle-y"
+        [ngClass]="{
+          'alert-success': mensaje.$tipoAlerta === 'success',
+          'alert-danger': mensaje.$tipoAlerta === 'danger'
+        }"
+        role="alert"
+      >
+        {{ mensaje.$message }}
+      </div>
+    }
 
-    </main>
+    </main>
 
-    <app-footer></app-footer>
-  </div>
+    <app-footer></app-footer>
+  </div>
 </body>
