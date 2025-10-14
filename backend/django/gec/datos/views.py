@@ -8,25 +8,33 @@ from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 from django.http import Http404
 
 
-
 class DatosDetail(APIView):
     permission_classes = (permissions.AllowAny,)
 
     # Metodo aux para obtener el objeto o lanzar 404
-
     def get_object(self, pk):
         try:
             return Datos.objects.get(pk=pk)
         except Datos.DoesNotExist:
             raise Http404
-       
-    def get(self, request, format=None):
-        datos = Datos.objects.all()
-        serializer = DatosSerializer(datos, many=True)
+            
+    def get(self, request, pk=None, format=None):
+        
+        # 1. Caso de DETALLE: Si se proporciona un 'pk' en la URL
+        if pk:
+            # Traer solo un objeto
+            datos = self.get_object(pk)
+            serializer = DatosSerializer(datos)
+        
+        # 2. Caso de LISTA: Si no se proporciona 'pk'
+        else:
+            # Traer todos los objetos
+            datos = Datos.objects.all()
+            serializer = DatosSerializer(datos, many=True)
+            
         return Response(serializer.data)
-    
-    
-    
+        
+      
     def post(self, request):
         serializer = DatosSerializer(data=request.data)
         if serializer.is_valid():
