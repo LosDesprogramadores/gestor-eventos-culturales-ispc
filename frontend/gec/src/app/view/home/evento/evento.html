@@ -18,13 +18,8 @@
               <p class="fecha mb-0">{{ evento.  fechaHoraEvento }} </p>
             </div>
             <div class="botones-card px-3 pb-3 d-flex gap-2">
-<<<<<<< HEAD
               <a class="btn btn-primary btn-sm flex-fill" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
-              <a class="btn btn-success btn-sm flex-fill" (click)="existeUsuario()">Inscribirse</a>
-=======
-              <a class="btn btn-primary btn-sm flex-fill boton btn-ver-mas" [routerLink]="['/home/evento/detalle-evento', $index]" [state]="{ evento: evento }">Ver más</a>
-              <a class="btn btn-success btn-sm flex-fill boton btn-inscribir" (click)="agregar(evento)">Inscribirse</a>
->>>>>>> 2a94c02e3ed44b2ca6c4262e3473fb8c62d70f29
+              <a class="btn btn-success btn-sm flex-fill" (click)="agregar(evento)">Inscribirse</a>
             </div>
           </div>
         </div> 
