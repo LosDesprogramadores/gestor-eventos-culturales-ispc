@@ -51,4 +51,9 @@ export class SAlert {
       return mensaje;     
   }
 
+    mensajeErrorEventoPropio():Mensaje{
+      const mensaje =new Mensaje("No puede Inscribirse a su propio Evento!!!", 2000, "danger",true);
+      this.showAlert(mensaje);
+      return mensaje;     
+  }
 }
