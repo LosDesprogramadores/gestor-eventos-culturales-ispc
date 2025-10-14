@@ -6,6 +6,7 @@ from evento.serializers import EventoSerializer
 from rest_framework import status, permissions
 from rest_framework.permissions import DjangoModelPermissionsOrAnonReadOnly
 from django.http import Http404
+from django.shortcuts import get_object_or_404
 
 
 class EventoList(APIView):
@@ -24,6 +25,7 @@ class EventoList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.data, status=status.HTTP_400_BAD_REQUEST)
+     
 
 
 class EventoDetail(APIView):
@@ -57,3 +59,11 @@ class EventoDetail(APIView):
         evento = self.get_object(pk)
         evento.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+    def patch(self, request, pk, format=None):
+        evento = self.get_object(pk)
+        serializer = EventoSerializer(evento, data=request.data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
