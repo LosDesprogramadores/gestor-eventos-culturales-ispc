@@ -155,7 +155,7 @@ App SPA (frontend dinámico - Angular): Se desarrollaron y dinamizaron las pági
 Diseño de Base de Datos: Se completó el diseño de la base de datos en sus modelos conceptual (DER), lógico (modelo relacional) y físico (definición de tipos de datos), además de generar el script de creación de la base de datos.
 
 ---
-## 🔁 Avance SPRINT 5 (Generalizado)
+## 🔁 Avance SPRINT 5
 
 El Sprint 5 estuvo enfocado en la transición del proyecto hacia una arquitectura fullstack, con un fuerte énfasis en el desarrollo del backend (API Rest con Django) y la preparación para el despliegue, con el fin de cumplir con el objetivo de tener una aplicación SPA conectada a una API real.
 
