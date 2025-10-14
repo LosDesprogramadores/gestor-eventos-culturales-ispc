@@ -15,7 +15,7 @@ import { SAlert } from '../service-alert/s-alert';
 })
 
 export class InscripcionService {
-  private apiUrl = 'http://localhost:3000/inscripciones';
+  private apiUrl = 'http://127.0.0.1:8000/api/';
   inscripcion: Inscripcion | undefined;
   misInscripciones$ !  : Observable<Inscripcion[]>;
   
@@ -28,7 +28,7 @@ export class InscripcionService {
 
   
  getInscripcionesByUsuario(id_usuario: number): Observable<Inscripcion[]> {
-  return this.http.get<any[]>(`${this.apiUrl}?_id_usuario=${id_usuario}`).pipe(
+  return this.http.get<any[]>(`${this.apiUrl}?_id_usuario=${id_usuario}/`).pipe(
     map(inscripciones =>
       inscripciones.map(insc => {
        const dataEvento = insc._evento ?? {};
@@ -80,11 +80,11 @@ export class InscripcionService {
  registrarInscripcion(evento: ClassEvento, uid: number): void {
   this.getInscripcionesByUsuario(uid).subscribe(inscripciones => {
      this.inscripcion = inscripciones.find(ins => {
-    console.log('Comparando:', ins.evento?.id, 'con', evento.id);
-    return ins.evento?.id === evento.id;
+    console.log('Comparando:', ins.getEvento()?.getId(), 'con', evento.getId());
+    return ins.getEvento()?.getId() === evento.getId();
   });
     if (this.inscripcion) {
-      console.log('Inscripción existente:', this.inscripcion.evento.id);
+      console.log('Inscripción existente:', this.inscripcion.getEvento().getId());
       this.mensajesAlert.mensajeExistenciaDeInscripcion();
       return;
     }
