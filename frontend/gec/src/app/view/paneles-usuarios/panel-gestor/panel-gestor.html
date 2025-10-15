@@ -28,14 +28,15 @@
       </thead>
       <tbody>
         @if (eventos$ | async; as eventos) {
-        @for (evento of eventos; track evento.id_evento) {
+        @for (evento of eventos; track evento.getId()) {
         <tr>
           <td class="align-middle text-center">
-            <img src="{{ evento.imagen }}" alt="{{evento.nombre }}" class="evento-img">
+            <img src="{{ evento.getImagen()}}" alt="{{evento.getNombre() }}" class="evento-img">
           </td>
-          <td class="fw-semibold">{{ evento.nombre }}</td>
-          <td>{{ evento.fechaHoraEvento }}</td>
-          <td>{{ evento.ubicacion }}</td>
+          <td class="fw-semibold">{{ evento.getNombre() }}</td>
+          <td>{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH : mm' }} hs</td>
+         <!--  <td>{{ evento.getUbicacion()}}</td> -->
+           <td>Ciudad Córdoba</td> 
  <td class="text-center align-middle">
   <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
     <button class="btn btn-sm btn-warning" (click)="editarEvento(evento)">
@@ -56,7 +57,7 @@
         }
         } @else {
         <tr>
-          <td colspan="5" class="text-center">Cargando eventos...</td>
+          <td colspan="5" class="text-center">Sin eventos creados.</td>
         </tr>
         }
       </tbody>
@@ -74,58 +75,87 @@
 
 
   @if (mostrarFormulario) {
-  <div class="card p-4 mb-4">
-    <form (ngSubmit)="crearEvento()" #formEvento="ngForm">
-
-      <div class="mb-3">
-        <label for="nombre" class="form-label">Nombre del Evento</label>
-        <input id="nombre" class="form-control" [(ngModel)]="nuevoEvento.nombre" name="nombre" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="fechaHoraEvento" class="form-label">Fecha y Hora del Evento</label>
-        <input id="fechaHoraEvento" type="datetime-local" class="form-control"
-          [(ngModel)]="nuevoEvento.fechaHoraEvento" name="fechaHoraEvento" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="capacidad" class="form-label">Capacidad</label>
-        <input id="capacidad" type="number" class="form-control" [(ngModel)]="nuevoEvento.capacidad" name="capacidad"
-          min="1" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="imagen" class="form-label">Imagen (URL)</label>
-        <input id="imagen" type="url" class="form-control" [(ngModel)]="nuevoEvento.imagen" name="imagen" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="fechaInicioInscripcion" class="form-label">Fecha de Inicio de Inscripción</label>
-        <input id="fechaInicioInscripcion" type="date" class="form-control"
-          [(ngModel)]="nuevoEvento.fechaInicioInscripcion" name="fechaInicioInscripcion" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="fechaFinInscripcion" class="form-label">Fecha de Fin de Inscripción</label>
-        <input id="fechaFinInscripcion" type="date" class="form-control" [(ngModel)]="nuevoEvento.fechaFinInscripcion"
-          name="fechaFinInscripcion" required>
-      </div>
-
-      <div class="mb-3">
-        <label for="ubicacion" class="form-label">Ubicación</label>
-        <input id="ubicacion" class="form-control" [(ngModel)]="nuevoEvento.ubicacion" name="ubicacion" required>
-      </div>
-
-      <div class="d-flex justify-content-end">
-        <button type="button" class="btn btn-secondary me-2" (click)="toggleFormulario()">
-          <i class="bi bi-x-circle me-1"></i> Cancelar
-        </button>
-        <button type="submit" class="btn btn-primary" [disabled]="creando">
-          Crear Evento
-        </button>
-      </div>
-    </form>
+  <div class="card p-4 mb-4 shadow-sm">
+  <form (ngSubmit)="crearEvento()" #formEvento="ngForm">
+    
+    <h5 class="mb-3">Información General</h5>
+<div class="row"> <div class="col-md-6 mb-3"> <label for="nombre" class="form-label">Nombre del Evento</label>
+    <input id="nombre" class="form-control" [(ngModel)]="nuevoEvento.nombre" name="nombre" required>
   </div>
+
+  <div class="col-md-6 mb-3"> <label for="tipoEvento" class="form-label">Tipo de Evento</label>
+    <select id="tipoEvento" class="form-select" [(ngModel)]="nuevoEvento.categoria" name="tipoEvento" required>
+      
+      <option value="" disabled selected>Seleccionar Categoría</option> 
+      
+      @for (tipo of tiposDeEventoKeys; track tipo) {
+        <option [ngValue]="tiposDeEvento[tipo]">
+          {{ tipo }}
+        </option>
+      }
+      
+    </select>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6 mb-3">
+    <label for="fechaHoraEvento" class="form-label">Fecha y Hora del Evento</label>
+    <input id="fechaHoraEvento" type="datetime-local" class="form-control"
+           [(ngModel)]="nuevoEvento.fecha_hora_evento" name="fechaHoraEvento" required>
+  </div>
+  <div class="col-md-6 mb-3">
+    <label for="capacidad" class="form-label">Capacidad</label>
+    <input id="capacidad" type="number" class="form-control"
+           [(ngModel)]="nuevoEvento.capacidad" name="capacidad" min="1" required>
+  </div>
+</div>
+    
+    <!-- Imagen -->
+    <h5 class="mb-3 mt-4">Imagen</h5>
+    <div class="mb-3">
+      <label for="imagen" class="form-label">URL de la Imagen</label>
+      <input id="imagen" type="url" class="form-control" [(ngModel)]="nuevoEvento.imagen" name="imagen" required>
+    </div>
+
+    <!-- Fechas de inscripción -->
+    <h5 class="mb-3 mt-4">Fechas de Inscripción</h5>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <label for="fechaInicioInscripcion" class="form-label">Inicio</label>
+        <input id="fechaInicioInscripcion" type="date" class="form-control"
+               [(ngModel)]="nuevoEvento.fecha_inicio_inscripcion" name="fechaInicioInscripcion" required>
+      </div>
+      <div class="col-md-6">
+        <label for="fechaFinInscripcion" class="form-label">Fin</label>
+        <input id="fechaFinInscripcion" type="date" class="form-control"
+               [(ngModel)]="nuevoEvento.fecha_fin_inscripcion" name="fechaFinInscripcion" required>
+      </div>
+    </div>
+
+   <h5 class="mb-3 mt-4">Ubicación</h5>
+<div class="mb-3">
+  <label for="direccion" class="form-label">Dirección</label>
+  <input id="direccion" class="form-control" 
+         [(ngModel)]="ubicacion.direccion" 
+         name="direccion" 
+   
+         required>
+</div>
+
+
+    <!-- Botones -->
+    <div class="d-flex justify-content-end mt-4">
+      <button type="button" class="btn btn-secondary me-2" (click)="toggleFormulario()">
+        <i class="bi bi-x-circle me-1"></i> Cancelar
+      </button>
+      <button type="submit" class="btn btn-primary" [disabled]="creando">
+        Crear Evento
+      </button>
+    </div>
+
+  </form>
+</div>
+
   }
 
 
@@ -148,7 +178,7 @@
           <button type="button" class="btn-close" (click)="cerrarModalEliminar()"></button>
         </div>
         <div class="modal-body">
-          <p>¿Estás seguro de eliminar el evento "{{ eventoAEliminar?.nombre }}"?</p>
+          <p>¿Estás seguro de eliminar el evento "{{ eventoAEliminar?.getNombre()}}"?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" (click)="cerrarModalEliminar()">Cancelar</button>

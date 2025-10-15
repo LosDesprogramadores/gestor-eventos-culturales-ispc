@@ -1,63 +1,140 @@
 export class ClassEvento {
-  id?: string;
-  private _id_evento: string;
-  private _nombre: string;
-  private _ubicacion: string;
-  private _fechaHoraEvento: Date;
-  private _capacidad: number;
-  private _imagen: string;
-  private _fechaInicioInscripcion: Date;
-  private _fechaFinInscripcion: Date;
-  private _estado?: any;
-  private _gestor: number;
-  private _categoria?: any;
+  
+  private id: string | undefined;
+  private nombre: string;
+  /* private ubicacion: string; */
+  private fechaHoraEvento: string;
+  private capacidad: number;
+  private imagen: string;
+  private inscriptos : number;
+  private descripcion : string;
+  private fechaInicioInscripcion: string;
+  private fechaFinInscripcion: string;
+  private estado?: any;
+  private usuario: number;
+  private categoria?: any;
 
   constructor(data: any) {
     this.id = data.id;
-    this._id_evento = data._id_evento;
-    this._nombre = data._nombre;
-    this._ubicacion = data._ubicacion;
-    this._fechaHoraEvento = data._fechaHoraEvento;
-    this._capacidad = data._capacidad;
-    this._imagen = data._imagen;
-    this._fechaInicioInscripcion = data._fechaInicioInscripcion;
-    this._fechaFinInscripcion = data._fechaFinInscripcion;
-    this._estado = data._estado;
-    this._gestor = data._gestor;
-    this._categoria = data._categoria;
+    this.nombre = data.nombre;
+   /*  this.ubicacion = data.ubicacion; */
+    this.fechaHoraEvento = data.fecha_hora_evento;
+    this.capacidad = data.capacidad;
+    this.imagen = data.imagen;
+    this.inscriptos = data.inscriptos;
+    this.descripcion = data.descripcion;
+    this.fechaInicioInscripcion = data.fecha_inicio_inscripcion;
+    this.fechaFinInscripcion = data.fecha_fin_inscripcion;
+    this.estado = data.estado;
+    this.usuario = data.usuario;
+    this.categoria = data.categoria;
   }
 
-  // Getters y Setters
-  public get id_evento(): string { return this._id_evento; }
-  public set id_evento(value: string) { this._id_evento = value; }
+ 
+  getId(): string | undefined{
+    return this.id ;
+  }
 
-  public get nombre(): string { return this._nombre; }
-  public set nombre(value: string) { this._nombre = value; }
+  getNombre(): string {
+    return this.nombre;
+  }
 
-  public get ubicacion(): string { return this._ubicacion; }
-  public set ubicacion(value: string) { this._ubicacion = value; }
+/*   getUbicacion(): string {
+    return this.ubicacion;
+  }
+ */
+  getFechaHoraEvento(): string {
+    return this.fechaHoraEvento;
+  }
 
-  public get fechaHoraEvento(): Date { return this._fechaHoraEvento; }
-  public set fechaHoraEvento(value: Date) { this._fechaHoraEvento = value; }
+  getCapacidad(): number {
+    return this.capacidad;
+  }
 
-  public get capacidad(): number { return this._capacidad; }
-  public set capacidad(value: number) { this._capacidad = value; }
+  getImagen(): string {
+    return this.imagen;
+  }
 
-  public get imagen(): string { return this._imagen; }
-  public set imagen(value: string) { this._imagen = value; }
+  getFechaInicioInscripcion(): string {
+    return this.fechaInicioInscripcion;
+  }
 
-  public get fechaInicioInscripcion(): Date { return this._fechaInicioInscripcion; }
-  public set fechaInicioInscripcion(value: Date) { this._fechaInicioInscripcion = value; }
+  getFechaFinInscripcion(): string {
+    return this.fechaFinInscripcion;
+  }
 
-  public get fechaFinInscripcion(): Date { return this._fechaFinInscripcion; }
-  public set fechaFinInscripcion(value: Date) { this._fechaFinInscripcion = value; }
+  getEstado(): number {
+    return this.estado;
+  }
 
-  public get estado(): any { return this._estado; }
-  public set estado(value: any) { this._estado = value; }
+  getUsuario(): number {
+    return this.usuario;
+  }
 
-  public get gestor(): number { return this._gestor; }
-  public set gestor(value: number) { this._gestor = value; }
+  getCategoria(): number {
+    return this.categoria;
+  }
 
-  public get categoria(): any { return this._categoria; }
-  public set categoria(value: any) { this._categoria = value; }
+  getInscriptos(): number {
+    return this.inscriptos;
+  }
+
+   getDescripcion(): string {
+    return this.descripcion;
+  }
+
+  setId(id: string): void {
+    this.id = id;
+  }
+
+  setNombre(nombre: string): void {
+    this.nombre = nombre;
+  }
+
+  /* setUbicacion(ubicacion: string): void {
+    this.ubicacion = ubicacion;
+  } */
+
+  setFechaHoraEvento(fechaHoraEvento: string): void {
+    this.fechaHoraEvento = fechaHoraEvento;
+  }
+
+  setCapacidad(capacidad: number): void {
+    this.capacidad = capacidad;
+  }
+
+  setImagen(imagen: string): void {
+    this.imagen = imagen;
+  }
+
+   setInscriptos(inscriptos: number): void {
+    this.inscriptos = inscriptos;
+  }
+
+  setFechaInicioInscripcion(fechaInicioInscripcion: string): void {
+    this.fechaInicioInscripcion = fechaInicioInscripcion;
+  }
+
+  setFechaFinInscripcion(fechaFinInscripcion: string): void {
+    this.fechaFinInscripcion = fechaFinInscripcion;
+  }
+
+  setEstado(estado: any): void {
+    this.estado = estado;
+  }
+
+  setUsuario(gestor: number): void {
+    this.usuario= gestor;
+  }
+
+  setCategoria(categoria: any): void {
+    this.categoria = categoria;
+  }
+
+   setDescripcion(descripcion: any): void {
+    this.descripcion = descripcion;
+  }
 }
+
+  
+ 

@@ -3,54 +3,50 @@ import { ClassEvento } from "./evento";
 export class Inscripcion {
 
      id?: string;
-     private _id_usuario: number;
-     private _evento: ClassEvento;
-     private _fecha_inscripcion: string;
-     private _id_estado: number;
+     private idUsuario: number;
+     private evento: ClassEvento;
+     private fechaInscripcion: string;
+     private idEstado: number;
     
 
-     constructor(data : any
-       
-     ) {  this.id = data.id;
-          this._id_usuario = data._id_usuario;
-          this._evento = data._evento;
-          this._fecha_inscripcion = data._fecha_inscripcion;
-          this._id_estado = data._id_estado;
-        
+      constructor(data : any) {  
+          this.id = data.id;
+          this.idUsuario = data.idUsuario || data.usuario; 
+          this.evento = data.evento; 
+          this.fechaInscripcion = data.fechaInscripcion || data.fecha_inscripcion;
+          this.idEstado = data.idEstado || data.estado;
      }
 
-    // Getters
-     public get id_usuario(): number {
-          return this._id_usuario;
-     }
+    public getIdUsuario(): number {
+        return this.idUsuario;
+    }
 
-     public get evento(): ClassEvento {
-          return this._evento;
-     }
+    public setIdUsuario(value: number) {
+        this.idUsuario = value;
+    }
+    
+    public getEvento(): ClassEvento {
+        return this.evento;
+    }
 
-     public get fecha_inscripcion(): string {
-          return this._fecha_inscripcion;
-     }
+    public setEvento(value: ClassEvento) {
+        this.evento = value;
+    }
+    
+    public getFechaInscripcion(): string {
+        return this.fechaInscripcion;
+    }
 
-     public get id_estado(): number {
-          return this._id_estado;
-     }
+    public setFechaInscripcion(value: string) {
+        this.fechaInscripcion = value;
+    }
+    
+    public getIdEstado(): number {
+        return this.idEstado;
+    }
 
-    // Setters
-     public set id_usuario(value: number) {
-          this._id_usuario = value;
-     }
+    public setIdEstado(value: number) {
+        this.idEstado = value;
+    }
 
-     public set evento(value: ClassEvento) {
-          this._evento = value;
-     }
-
-     public set fecha_inscripcion(value: string) {
-          this._fecha_inscripcion = value;
-     }
-
-
-     public set id_estado(value: number) {
-          this._id_estado = value;
-     }
 }
