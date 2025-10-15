@@ -24,7 +24,7 @@ export class ServiceDatos {
       cuil: datos.getCuil(),
       id_usuario: datos.getUsuario().getId()
     };
-
+    console.log("DATOS: "+payload.id_usuario)
     return this.http.post<any>( this.apiUrl, payload ).pipe(
       tap( response => console.log( 'Respuesta del servidor:', response ) ),
       map( data => {

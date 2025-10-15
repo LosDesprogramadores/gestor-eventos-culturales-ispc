@@ -104,7 +104,7 @@ export class EditDatosRol implements OnInit {
 
     // Crear instancia de usuario
     const usuario = classUsuario.fromJson( {
-      id_usuario: userId,
+      id: userId,
       email: '',
       contrasenia: '',
       fechaRegistro: new Date(),
