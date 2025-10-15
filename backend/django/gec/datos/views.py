@@ -17,29 +17,35 @@ class DatosDetail(APIView):
             return Datos.objects.get(pk=pk)
         except Datos.DoesNotExist:
             raise Http404
-            
+
     def get(self, request, pk=None, format=None):
-        
+
         # 1. Caso de DETALLE: Si se proporciona un 'pk' en la URL
         if pk:
             # Traer solo un objeto
             datos = self.get_object(pk)
             serializer = DatosSerializer(datos)
-        
+
         # 2. Caso de LISTA: Si no se proporciona 'pk'
         else:
             # Traer todos los objetos
             datos = Datos.objects.all()
             serializer = DatosSerializer(datos, many=True)
-            
+
         return Response(serializer.data)
-        
-      
+
     def post(self, request):
         serializer = DatosSerializer(data=request.data)
+
         if serializer.is_valid():
-            serializer.save()
-            
+            dato = serializer.save()
+            usuario = dato.id_usuario
+
+            # Asigno id Gestor al usuaria
+            from usuario.models import EnumRol
+            usuario.id_rol = EnumRol.GESTOR
+            usuario.save()
+
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -57,4 +63,3 @@ class DatosDetail(APIView):
         datos = self.get_object(pk)
         datos.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
