@@ -1,71 +1,71 @@
 import { classUsuario } from "./usuario";
 
 export class ClassDatos {
-    private id_datos: number;
-    private nombre: string;
-    private apellido: string;
-    private empresa: string;
-    private cuil: string;
-    private usuario: classUsuario;
+  private id_datos: number;
+  private nombre: string;
+  private apellido: string;
+  private empresa: string;
+  private cuil: string;
+  private id_usuario: classUsuario;
 
-    constructor(
-        id_datos: number,
-        nombre: string,
-        apellido: string,
-        empresa: string,
-        cuil: string,
-        usuario: classUsuario
-        
-    ) {
-        this.id_datos = id_datos;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.empresa = empresa;
-        this.cuil = cuil;
-        this.usuario = usuario;
-    }
+  constructor(
+    id_datos: number,
+    nombre: string,
+    apellido: string,
+    empresa: string,
+    cuil: string,
+    id_usuario: classUsuario
 
-    // Getters
-    public getId_datos(): number {
-        return this.id_datos;
-    }
+  ) {
+    this.id_datos = id_datos;
+    this.nombre = nombre;
+    this.apellido = apellido;
+    this.empresa = empresa;
+    this.cuil = cuil;
+    this.id_usuario = id_usuario;
+  }
 
-    public getNombre(): string {
-        return this.nombre;
-    }
+  // Getters
+  public getId_datos(): number {
+    return this.id_datos;
+  }
 
-    public getApellido(): string {
-        return this.apellido;
-    }
+  public getNombre(): string {
+    return this.nombre;
+  }
 
-    public getEmpresa(): string {
-        return this.empresa;
-    }
+  public getApellido(): string {
+    return this.apellido;
+  }
 
-    public getCuil(): string {
-        return this.cuil;
-    }
-  
-    public getUsuario(): classUsuario {
-        return this.usuario;
-    }
+  public getEmpresa(): string {
+    return this.empresa;
+  }
 
-    // Setters
-    
-    public setNombre(nombre: string): void {
-        this.nombre = nombre;
-    }
+  public getCuil(): string {
+    return this.cuil;
+  }
 
-    public setApellido(apellido: string): void {
-        this.apellido = apellido;
-    }
+  public getUsuario(): classUsuario {
+    return this.id_usuario;
+  }
 
-    public setEmpresa(empresa: string): void {
-        this.empresa = empresa;
-    }
+  // Setters
 
-    public setCuil(cuil: string): void {
-        this.cuil = cuil;
-    }
+  public setNombre( nombre: string ): void {
+    this.nombre = nombre;
+  }
+
+  public setApellido( apellido: string ): void {
+    this.apellido = apellido;
+  }
+
+  public setEmpresa( empresa: string ): void {
+    this.empresa = empresa;
+  }
+
+  public setCuil( cuil: string ): void {
+    this.cuil = cuil;
+  }
 
 }
