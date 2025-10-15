@@ -65,6 +65,7 @@ export class SEvento {
 
   // Crear un nuevo evento
   crearEvento(evento: EventoForm): Observable<ClassEvento> {
+    console.log("El usuario " + evento?.usuario);
     return this.http.post<ClassEvento>(this.URL + "eventos/", evento, { headers: this.headers }).pipe(
       map(data => new ClassEvento(data))
     );

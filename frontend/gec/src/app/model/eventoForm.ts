@@ -1,7 +1,7 @@
 export interface EventoForm {
    id?: number;
   nombre?: string;
-  /* ubicacion?: string; */
+  ubicacion?: string; 
   fecha_hora_evento?: string;
   capacidad?: number;
   imagen?: string;
