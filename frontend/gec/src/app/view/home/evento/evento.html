@@ -1,8 +1,30 @@
 <app-banner></app-banner>
+
+<div class="filter-bar">
+  <div class="filter-group">
+    <span class="filter-label">Categoría</span>
+    <select class="filter-select" (change)="onCategoriaChange($any($event.target).value)">
+      <option value="">TODAS</option>
+      <option value="1">OTROS</option>
+      <option value="2">TEATRO</option>
+      <option value="3">COMEDIA</option>
+      <option value="4">DRAMA</option>
+      <option value="5">MUSICAL</option>
+      <option value="6">ARTES</option>
+      <option value="7">LITERATURA</option>
+      <option value="8">CINE</option>
+      <option value="9">TALLER</option>
+      <option value="10">DANZA</option>
+      <option value="11">ENCUENTRO</option>
+      <option value="12">DIÁLOGO</option>
+    </select>
+  </div>
+</div>
+
 <div class="container my-5 ">
   <div class="row g-2 ">
 
-    @if (eventos$ | async; as eventos) {
+    @if (filteredEventos$ | async; as eventos) {
       @for (evento of eventos; track evento.getId()) {
          <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm">
