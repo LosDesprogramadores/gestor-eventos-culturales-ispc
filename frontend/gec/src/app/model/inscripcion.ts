@@ -9,14 +9,12 @@ export class Inscripcion {
      private idEstado: number;
     
 
-     constructor(data : any
-       
-     ) {  this.id = data.id;
-          this.idUsuario = data._id_usuario;
-          this.evento = data._evento;
-          this.fechaInscripcion = data._fecha_inscripcion;
-          this.idEstado = data._id_estado;
-        
+      constructor(data : any) {  
+          this.id = data.id;
+          this.idUsuario = data.idUsuario || data.usuario; 
+          this.evento = data.evento; 
+          this.fechaInscripcion = data.fechaInscripcion || data.fecha_inscripcion;
+          this.idEstado = data.idEstado || data.estado;
      }
 
     public getIdUsuario(): number {

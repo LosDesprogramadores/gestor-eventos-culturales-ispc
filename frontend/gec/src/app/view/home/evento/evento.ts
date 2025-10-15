@@ -29,8 +29,7 @@ export class Evento implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("que onda")
-     this.mostrarConsola();
+   
   }
 
 
@@ -50,22 +49,10 @@ export class Evento implements OnInit {
       }
       else{
         this.inscripciones.registrarInscripcion(evento, this.uid);
+        
       }
-      
-    
+
+  }
+
   
-
-  }
-
-   mostrarConsola(){
-    console.log("Mostrando eventos")
-    this.eventos$.subscribe({
-      next: (eventos) => {
-        console.log('Eventos recibidos:');
-        eventos.forEach(evento => console.log(evento)); 
-      },
-      error: (err) => console.error('Error al obtener eventos:', err),
-      complete: () => console.log('Suscripción completada')
-    });
-  }
 }
