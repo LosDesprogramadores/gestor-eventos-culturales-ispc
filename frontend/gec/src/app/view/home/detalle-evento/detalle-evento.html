@@ -6,6 +6,7 @@
         <div class="card shadow-sm border-0">
           <div class="imagen-evento">
             <img [src]="evento.getImagen() || '/assets/images/sin.jpg'" 
+                 onerror="this.src='/assets/images/sin.jpg'"
                  alt="Imagen del Evento"
                  class="card-img-top img-fluid rounded-top" 
                  style="max-height: 400px; object-fit: cover;">
@@ -14,17 +15,18 @@
           <div class="card-body p-4">
             <h2 class="card-title text-center mb-3 fw-bold">{{ evento.getNombre() }}</h2>
             <p class="card-text mb-2">{{ evento.getDescripcion() }}</p>
-            <p class="mb-1"><strong>Lugar:</strong> ubicación</p>
-            <p class="mb-1"><strong>Capacidad:</strong> {{ evento.getCapacidad() }} | Inscriptos: {{ evento.getInscriptos() }}</p>
+            <p class="mb-1"><strong>Ubicación:</strong> {{ evento.getUbicacion() }}</p>
+            <p class="mb-1"><strong>Capacidad:</strong> {{ evento.getCapacidad() }}</p>
+            <p class="mb-1"><strong>Inscriptos:</strong> {{ evento.getInscriptos() }}</p>
             <p class="mb-1"><strong>Fecha y Hora:</strong> {{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy, HH:mm' }}</p>
 
             <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+              <button class="btn btn-primary flex-fill" (click)="router.navigate(['/home'])">
+                Volver
+              </button>
               <button class="btn btn-success flex-fill" (click)="inscribirse()"
                       [disabled]="evento.getCapacidad() === evento.getInscriptos()">
                 Inscribirse
-              </button>
-              <button class="btn btn-secondary flex-fill" (click)="router.navigate(['/home'])">
-                Volver
               </button>
             </div>
           </div>

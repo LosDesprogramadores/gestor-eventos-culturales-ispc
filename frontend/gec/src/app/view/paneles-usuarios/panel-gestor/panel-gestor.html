@@ -28,14 +28,14 @@
                 @for (evento of eventos; track evento.getId()) {
                   <tr>
                     <td class="align-middle text-center">
-                      <img src="{{ evento.getImagen() }}" alt="{{ evento.getNombre() }}" class="evento-img">
+                      <img src="{{ evento.getImagen() }}" onerror="this.src='/assets/images/sin.jpg'" alt="{{ evento.getNombre() }}" class="evento-img">
                     </td>
                     <td class="fw-semibold">{{ evento.getNombre() }}</td>
                     <td>{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm' }} hs</td>
-                    <td>Ciudad Córdoba</td>
+                    <td>{{ evento.getUbicacion() }}</td>
                     <td class="text-center align-middle">
                       <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
-                        <button class="btn btn-sm btn-warning" (click)="editarEvento(evento)">
+                        <button class="btn btn-sm btn-warning" disabled (click)="editarEvento(evento)">
                           <i class="bi bi-pencil-square"></i> Editar
                         </button>
                         <button class="btn btn-sm btn-danger" (click)="abrirModalEliminar(evento)">
