@@ -48,8 +48,8 @@
                 <p class="mb-1"><strong>Inscriptos:</strong> {{ evento.getInscriptos() }}</p>
               }
 
-              <p class="lugar mb-1">ubicacion</p>
-              <p class="fecha mb-0">{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm' }} hs</p>
+              <p class="lugar mb-1">uibicacion: {{evento.getUbicacion()}}</p>
+              <p class="fecha mb-0">{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm'}} hs</p>
             </div>
 
             <div class="botones-card px-3 pb-3 d-flex gap-2">
