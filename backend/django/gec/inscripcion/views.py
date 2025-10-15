@@ -1,8 +1,10 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status, permissions
+from django.http import Http404 
 from .models import Inscripcion
 from .serializers import InscripcionSerializer
+
 
 class InscripcionList(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -18,6 +20,18 @@ class InscripcionList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+   
+class InscripcionListByUsuario(APIView):
+
+    permission_classes = (permissions.AllowAny,)
+
+    def get(self, request, uid, format=None):
+        try:
+            inscripciones = Inscripcion.objects.filter(usuario=uid)
+            serializer = InscripcionSerializer(inscripciones, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            return Response({"detail": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 class InscripcionDetail(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -26,7 +40,7 @@ class InscripcionDetail(APIView):
         try:
             return Inscripcion.objects.get(pk=pk)
         except Inscripcion.DoesNotExist:
-            raise Http404
+            raise Http404 
 
     def get(self, request, pk, format=None):
         inscripcion = self.get_object(pk)
@@ -42,6 +56,9 @@ class InscripcionDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk, format=None):
-        inscripcion = self.get_object(pk)
-        inscripcion.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        try:
+            inscripcion = self.get_object(pk)
+            inscripcion.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except Http404:
+            return Response(status=status.HTTP_404_NOT_FOUND)

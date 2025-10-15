@@ -98,7 +98,7 @@ export class Evento implements OnInit {
   }
 
   ngOnInit(): void {
-    this.mostrarConsola();
+   
   }
 
   onCategoriaChange(val: string) {

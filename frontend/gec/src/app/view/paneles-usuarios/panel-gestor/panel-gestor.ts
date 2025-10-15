@@ -26,18 +26,12 @@ import { TipoEvento } from '../../../model/categoria';
 
 export class PanelGestor implements OnInit {
 
-   // 1. Mantén la referencia al Enum
     tiposDeEvento = TipoEvento;
-
-    // 2. Obtén las claves del Enum (para usar como el texto visible)
-    // Esto filtra solo los nombres de las categorías (COMEDIA, DRAMA, etc.)
     tiposDeEventoKeys: Array<keyof typeof TipoEvento> = 
         Object.keys(TipoEvento).filter(k => isNaN(Number(k))) as Array<keyof typeof TipoEvento>;
-    // 3. Inicializa el nuevo campo con valor vacío
-    tipoEvento: any = {
+     tipoEvento: any = {
         nombre: '',
-        // ... otros campos
-        tipo_evento: '', // Valor inicial vacío para que el placeholder esté seleccionado
+         tipo_evento: '', 
     };
     
   eventos$!: Observable<ClassEvento[]>;

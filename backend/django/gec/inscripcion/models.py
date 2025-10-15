@@ -2,7 +2,7 @@ from enum import IntEnum
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
-# Create your models here.
+
 class Estado(IntEnum):
     HABILITADO = 1
     CANCELADO = 2
@@ -11,10 +11,7 @@ class Estado(IntEnum):
     INSCRIPTO = 5
     ELIMINADO = 6
 
-    # id?: string;
-    #  private _id_usuario: number;
-    #  private _evento: ClassEvento;
-     
+       
 class Inscripcion(models.Model):
     fecha_inscripcion = models.DateTimeField()
     fecha_inicio_inscripcion = models.DateField()
@@ -29,9 +26,7 @@ class Inscripcion(models.Model):
     evento = models.ForeignKey(
         "evento.Evento", verbose_name=_(""), on_delete=models.CASCADE)
 
-    #def __str__(self):
-     #   return self.nombre
-
+    
     class Meta:
         verbose_name = 'Inscripcion'
         verbose_name_plural = 'Inscripciones'

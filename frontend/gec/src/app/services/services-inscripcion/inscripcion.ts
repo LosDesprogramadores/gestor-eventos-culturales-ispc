@@ -1,116 +1,141 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, map, Observable, of } from 'rxjs';
+import { catchError, map, Observable, of, switchMap } from 'rxjs';
 import { Auth } from '../service-autenticacion/auth.service';
 import { ClassEvento } from '../../model/evento';
 import { Inscripcion } from '../../model/inscripcion';
-import { Mensaje } from '../../model/mensaje';
+import { IInscripcion } from '../../model/iIncripcion';
+import { SEvento } from '../service-evento/s-evento';
+import { EventoForm } from '../../model/eventoForm';
 import { SAlert } from '../service-alert/s-alert';
 
-
-
-
-@Injectable({
-  providedIn: 'root'
-})
-
+@Injectable({ providedIn: 'root' })
 export class InscripcionService {
   private apiUrl = 'http://127.0.0.1:8000/api/';
-  inscripcion: Inscripcion | undefined;
-  misInscripciones$ !  : Observable<Inscripcion[]>;
-  
-  constructor(private http: HttpClient, private auth: Auth, private mensajesAlert : SAlert) {}
+  inscripcion?: Inscripcion;
 
-  
+  inscripcionInterfaz: IInscripcion = {
+    usuario: 0,
+    evento_id: 0,
+    fecha_inscripcion: '',
+    fecha_inicio_inscripcion: '',
+    fecha_fin_inscripcion: '',
+    estado: 0
+  };
+
+  inscripcionForm: EventoForm = {
+    id: 0,
+    inscriptos: 0
+  };
+
+  constructor(
+    private http: HttpClient,
+    private auth: Auth,
+    private mensajesAlert: SAlert,
+    private serviceEvento: SEvento
+  ) {}
+
   getInscripciones(): Observable<Inscripcion[]> {
-    return this.http.get<Inscripcion[]>(this.apiUrl);
+    return this.http.get<Inscripcion[]>(`${this.apiUrl}inscripciones/`);
   }
 
-  
- getInscripcionesByUsuario(id_usuario: number): Observable<Inscripcion[]> {
-  return this.http.get<any[]>(`${this.apiUrl}?_id_usuario=${id_usuario}/`).pipe(
-    map(inscripciones =>
-      inscripciones.map(insc => {
-       const dataEvento = insc._evento ?? {};
-      const eventoInstancia = new ClassEvento(dataEvento);
+  getInscripcionesByUsuario(id_usuario: number): Observable<Inscripcion[]> {
+    return this.http.get<any>(`${this.apiUrl}inscripciones/usuario/${id_usuario}/`).pipe(
+      map(response => {
+        const data = Array.isArray(response?.results)
+          ? response.results
+          : Array.isArray(response)
+          ? response
+          : response
+          ? [response]
+          : [];
 
-        const inscData = {
-          id: insc.id, 
-          _id_usuario: insc.id_usuario ?? insc.id_usuario ?? 0,
-          _evento: eventoInstancia,
-          _fecha_inscripcion: insc.fecha_inscripcion ?? insc.fecha_inscripcion ?? '',
-          _id_estado: insc.id_estado ?? insc.id_estado ?? 0
-          
-        };
-
-        return new Inscripcion(inscData);
+        return data.map((insc: any) => {
+          const eventoInstancia = new ClassEvento(insc.evento ?? {});
+          return new Inscripcion({
+            id: insc.id,
+            idUsuario: insc.idUsuario ?? 0,
+            evento: eventoInstancia,
+            fechaInscripcion: insc.fechaInscripcion ?? '',
+            idEstado: insc.idEstado ?? 0
+          });
+        });
+      }),
+      catchError(error => {
+        console.error('Error al obtener inscripciones:', error);
+        this.mensajesAlert.mensajeErrorInscripcion();
+        return of([]);
       })
-    ),
-    catchError(error => {
-      console.error('Error al obtener inscripciones:', error);
-      this.mensajesAlert.mensajeErrorInscripcion();
-      return of([]);
-    })
-  );
-}
+    );
+  }
 
-
-
-  
   private addInscripcion(insc: Inscripcion): Observable<Inscripcion> {
-    return this.http.post<Inscripcion>(this.apiUrl, insc);
-  }
-
-  
-  deleteInscripcion(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
-  }
-
- /*  agregar(evento: ClassEvento): void {
-      const uid = this.auth.usuarioLogueadoId();
-      if (!uid) return;
-
-      const nueva= new Inscripcion (uid,evento.$id_evento,new Date().toISOString().split('T')[0],1)
-       console.log(nueva)
-      this.addInscripcion(nueva).subscribe();
-  } */
-  
-  
-
- registrarInscripcion(evento: ClassEvento, uid: number): void {
-  this.getInscripcionesByUsuario(uid).subscribe(inscripciones => {
-     this.inscripcion = inscripciones.find(ins => {
-    console.log('Comparando:', ins.getEvento()?.getId(), 'con', evento.getId());
-    return ins.getEvento()?.getId() === evento.getId();
-  });
-    if (this.inscripcion) {
-      console.log('Inscripción existente:', this.inscripcion.getEvento().getId());
-      this.mensajesAlert.mensajeExistenciaDeInscripcion();
-      return;
-    }
-
-    const inscripcionData = {
-      id: undefined,
-      _id_usuario: this.auth.session.user?.id ?? 0,
-      _evento: evento,
-      _fecha_inscripcion: new Date().toISOString().split('T')[0],
-      _id_estado: 1
+    this.inscripcionInterfaz = {
+      usuario: insc.getIdUsuario(),
+      evento_id: Number(insc.getEvento().getId() ?? 0),
+      fecha_inscripcion: new Date().toISOString().slice(0, 10),
+      fecha_inicio_inscripcion: insc.getEvento().getFechaInicioInscripcion(),
+      fecha_fin_inscripcion: insc.getEvento().getFechaFinInscripcion(),
+      estado: insc.getIdEstado()
     };
 
-    const nuevaInscripcion = new Inscripcion(inscripcionData);
+    console.log('Datos enviados al backend:', this.inscripcionInterfaz);
+    return this.http.post<Inscripcion>(`${this.apiUrl}inscripciones/`, this.inscripcionInterfaz);
+  }
 
-    this.addInscripcion(nuevaInscripcion).subscribe({
-      next: inscCreada => {
-        console.log("Inscripción creada con id:", inscCreada.id);
-        this.mensajesAlert.mensajeInscripcion();
-      },
-      error: err => console.error(err)
-    });
+  deleteInscripcion(id: number): Observable<void> {
+    console.log("!numero: " + id)
+    return this.http.delete<void>(`${this.apiUrl}inscripciones/${id}/`);
+  }
+
+ registrarInscripcion(evento: ClassEvento, uid: number): void {
+  this.getInscripcionesByUsuario(uid).pipe(
+    switchMap(inscripciones => {
+   
+      const yaInscripto = inscripciones.find(
+        ins => Number(ins.getEvento()?.getId()) === Number(evento.getId())
+      );
+
+      if (yaInscripto) {
+        this.mensajesAlert.mensajeExistenciaDeInscripcion();
+        return of(null); 
+      }
+
+      const nuevaInscripcion = new Inscripcion({
+        id: undefined,
+        usuario: this.auth.session.user?.id ?? 0,
+        evento,
+        fecha_inscripcion: new Date().toISOString().split('T')[0],
+        estado: 1
+      });
+
+      return this.addInscripcion(nuevaInscripcion).pipe(
+        switchMap(inscCreada => {
+          console.log('Inscripción creada:', inscCreada);
+          this.mensajesAlert.mensajeInscripcion();
+
+          const idEvento = evento.getId();
+if (idEvento === undefined) {
+  throw new Error('El evento no tiene ID definido');
+}
+
+const eventoActualizar: { id: number; inscriptos: number } = {
+  id: Number(idEvento),  
+  inscriptos: evento.getInscriptos() + 1
+};
+
+          return this.serviceEvento.actualizarEvento(eventoActualizar);
+        })
+      );
+    }),
+    catchError(err => {
+      console.error('Error al registrar inscripción:', err);
+      return of(null);
+    })
+  ).subscribe({
+    next: updated => {
+      if (updated) console.log('Evento actualizado en BD:', updated);
+    }
   });
 }
-
-  
-
 }
-
-

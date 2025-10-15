@@ -40,7 +40,7 @@
             />
             <span class="badge bg-primary position-absolute top-0 start-0 m-2" 
                   style="max-width: 90%; white-space: normal; word-wrap: break-word;">
-              {{ inscripcion.getEvento().getFechaHoraEvento()}}
+              {{ inscripcion.getEvento().getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm' }} hs
             </span>
           </div>
           <div class="card-body d-flex flex-column">
