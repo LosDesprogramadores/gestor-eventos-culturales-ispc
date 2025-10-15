@@ -59,7 +59,7 @@ export class EditDatosRol implements OnInit {
     this.datosService.obtenerDatos().subscribe( {
       next: ( todosDatos ) => {
         const datosUsuario = todosDatos.find(
-          d => d.getUsuario().getId_usuario() === userId
+          d => d.getUsuario().getId() === userId
         );
 
         if ( datosUsuario ) {

@@ -22,19 +22,19 @@ export class ServiceDatos {
       apellido: datos.getApellido(),
       empresa: datos.getEmpresa(),
       cuil: datos.getCuil(),
-      id_usuario: datos.getUsuario().getId_usuario()
+      id_usuario: datos.getUsuario().getId()
     };
 
     return this.http.post<any>( this.apiUrl, payload ).pipe(
       tap( response => console.log( 'Respuesta del servidor:', response ) ),
       map( data => {
         // Construir el objeto usuario desde la respuesta
-        console.log( datos.getUsuario().getId_usuario() );
+        console.log( datos.getUsuario().getId() );
         const usuario = data.id_usuario
           ? ( typeof data.id_usuario === 'object'
             ? classUsuario.fromJson( data.id_usuario )
             : classUsuario.fromJson( { id_usuario: data.id_usuario } ) )
-          : classUsuario.fromJson( { id_usuario: datos.getUsuario().getId_usuario() } );
+          : classUsuario.fromJson( { id_usuario: datos.getUsuario().getId() } );
 
         // Crear y retornar instancia de ClassDatos
         return new ClassDatos(
@@ -81,7 +81,7 @@ export class ServiceDatos {
       apellido: datos.getApellido(),
       empresa: datos.getEmpresa(),
       cuil: datos.getCuil(),
-      id_usuario: datos.getUsuario().getId_usuario()
+      id_usuario: datos.getUsuario().getId()
     };
 
     return this.http.patch<any>( `${ this.apiUrl }${ id }/`, payload ).pipe(
