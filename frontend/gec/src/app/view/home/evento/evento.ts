@@ -21,10 +21,14 @@ export class Evento implements OnInit {
   uid?: number | null;
   mensaje: Mensaje = new Mensaje();
 
+  // Base
   eventos$: Observable<ClassEvento[]>;
 
+  // Filtros
   private categoria$ = new BehaviorSubject<number | null>(null);
+  private search$    = new BehaviorSubject<string>('');   // 🔎 nuevo: texto
 
+  // Resultado
   filteredEventos$: Observable<ClassEvento[]>;
 
   constructor(
@@ -36,40 +40,100 @@ export class Evento implements OnInit {
   ) {
     this.eventos$ = this.serviceEvento.obtenerEventos();
 
-    // Derivamos la lista aplicando el filtro de categoría
-    this.filteredEventos$ = combineLatest([this.eventos$, this.categoria$]).pipe(
-      map(([evs, categoria]) => {
-        const lista = evs ?? [];
-        if (categoria == null) return lista; // sin filtro → todos
+    this.filteredEventos$ = combineLatest([
+      this.eventos$,
+      this.categoria$,
+      this.search$
+    ]).pipe(
+      map(([evs, categoria, q]) => {
+        let lista = evs ?? [];
 
-        return lista.filter(e => {
-          // Tomamos la categoría desde el getter o la prop según exista
-          const raw = (e as any).getCategoria?.() ?? (e as any).categoria;
-          const n = Number(raw);
-          return !Number.isNaN(n) && n === categoria;
+        // "Hoy" al inicio del día (no mostrar pasados)
+        const hoy = new Date();
+        hoy.setHours(0, 0, 0, 0);
+
+        //quitar eventos pasados
+        lista = lista.filter(e => {
+          const d = this.getFecha(e);
+          return d != null && d >= hoy;
         });
+
+        // filtro por categoría 
+        if (categoria != null) {
+          lista = lista.filter(e => {
+            const raw = (e as any).getCategoria?.() ?? (e as any).categoria;
+            const n = Number(raw);
+            return !Number.isNaN(n) && n === categoria;
+          });
+        }
+
+        // filtro por texto (título, lugar, descripción)
+        const needle = this.norm(q);
+        if (needle) {
+          lista = lista.filter(e => {
+            const titulo = this.norm((e as any).getNombre?.() ?? (e as any).nombre ?? '');
+            const lugar  = this.norm((e as any).ubicacion ?? '');
+            const desc   = this.norm((e as any).getDescripcion?.() ?? (e as any).descripcion ?? '');
+            return (
+              titulo.includes(needle) ||
+              lugar.includes(needle)  ||
+              desc.includes(needle)
+            );
+          });
+        }
+
+        // ordenar SIEMPRE por fecha ascendente
+        lista = [...lista].sort((a, b) => {
+          const ad = this.getFecha(a)?.getTime() ?? 0;
+          const bd = this.getFecha(b)?.getTime() ?? 0;
+          if (ad === 0 && bd === 0) return 0;
+          if (ad === 0) return 1;
+          if (bd === 0) return -1;
+          return ad - bd;
+        });
+
+        return lista;
       })
     );
   }
 
   ngOnInit(): void {
-    console.log('que onda');
     this.mostrarConsola();
   }
 
   onCategoriaChange(val: string) {
-    // "" o null => todas
     if (val == null || val === '') {
       this.categoria$.next(null);
       return;
     }
     const n = Number(val);
+    this.categoria$.next([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(n) ? n : null);
+  }
 
-    if ([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].includes(n)) {
-      this.categoria$.next(n);
-    } else {
-      this.categoria$.next(null);
-    }
+  onSearchChange(v: string) {
+    this.search$.next(v ?? '');
+  }
+
+  onClearFilters() {
+    this.categoria$.next(null);
+    this.search$.next('');
+  }
+
+  private getFecha(e: ClassEvento): Date | null {
+    let raw: any;
+    try { raw = (e as any).getFechaHoraEvento?.(); }
+    catch { raw = (e as any).fechaHoraEvento ?? null; }
+    if (!raw) return null;
+    if (raw instanceof Date) return raw;
+    const d = new Date(raw);
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  private norm(s: string): string {
+    return (s || '')
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/\p{Diacritic}/gu, '');
   }
 
   agregar(evento: ClassEvento): void {
