@@ -1,5 +1,5 @@
 <body class="fondo">
-  <div class="page-container">
+ <div class="page-container">
 
 <app-header></app-header>
 <app-nav-home></app-nav-home>
@@ -96,21 +96,20 @@
         </div>
       }
 
-       @if (mensaje.$showMessage) {
-      <div
-        class="alert position-fixed top-50 end-0 translate-middle-y"
-        [ngClass]="{
-          'alert-success': mensaje.$tipoAlerta === 'success',
-          'alert-danger': mensaje.$tipoAlerta === 'danger'
-        }"
-        role="alert"
-      >
-        {{ mensaje.$message }}
-      </div>
-    }
+    @if (mensaje.$showMessage) {
+      <div
+      class="alert position-fixed top-50 end-0 translate-middle-y"
+      [ngClass]="{
+       'alert-success': mensaje.$tipoAlerta === 'success',
+       'alert-danger': mensaje.$tipoAlerta === 'danger'
+      }"
+     role="alert">
+    {{ mensaje.$message }}
+    </div>
+}
 
-    </main>
+</main>
 
-    <app-footer></app-footer>
-  </div>
+<app-footer></app-footer>
+</div>
 </body>
