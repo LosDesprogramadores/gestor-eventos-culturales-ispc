@@ -1,23 +1,20 @@
 <app-banner></app-banner>
+
 <div class="filter-bar">
   <div class="filter-group">
     <select class="filter-select" (change)="onCategoriaChange($any($event.target).value)">
-      <option value="">TODAS LAS CATEGORIAS</option>
-      <option value="1">OTROS</option>
-      <option value="2">TEATRO</option>
-      <option value="3">COMEDIA</option>
-      <option value="4">DRAMA</option>
-      <option value="5">MUSICAL</option>
-      <option value="6">ARTES</option>
-      <option value="7">LITERATURA</option>
-      <option value="8">CINE</option>
-      <option value="9">TALLER</option>
-      <option value="10">DANZA</option>
-      <option value="11">ENCUENTRO</option>
-      <option value="12">DIÁLOGO</option>
+      <option value="">Todas las categorías</option>
+      @if (categorias$ | async; as cats) {
+        @for (cat of cats; track cat.id) {
+          <option [value]="cat.id">{{ cat.name }}</option>
+        }
+      }
     </select>
   </div>
-  <input class="filter-search" type="search" placeholder="Buscar titulo"
+
+  <input class="filter-search"
+         type="search"
+         placeholder="Buscar título"
          (input)="onSearchChange($any($event.target).value)" />
 </div>
 
@@ -27,30 +24,40 @@
       @for (evento of eventos; track evento.getId()) {
         <div class="col-sm-6 col-md-4 col-lg-3">
           <div class="card h-100 shadow-sm">
-            <div class="imagen-evento">
-              <img src="{{ evento.getImagen() }}" alt="Evento" onerror="this.src='/assets/images/sin.jpg'"
+
+            <!-- Imagen + sticker -->
+            <div class="imagen-evento position-relative">
+              <span class="cat-badge"
+                    [ngClass]="'cat-' + getCategoriaId(evento)">
+                {{ categoriaNombreFromEvento(evento) }}
+              </span>
+
+              <img [src]="evento.getImagen()"
+                   alt="Evento"
+                   onerror="this.src='/assets/images/sin.jpg'"
                    class="card-img-top img-hover-scale object-fit-cover">
             </div>
+
             <div class="card-body">
-              <h5 class="card-title titulo">{{ evento.getNombre() }}</h5>
+              <h5 class="card-title titulo text-center">{{ evento.getNombre() }}</h5>
 
               @if (evento.getCapacidad() === evento.getInscriptos()) {
-                <p class="mb-1 text-danger font-weight-bold">🎟️ ¡ENTRADAS AGOTADAS!</p>
+                <p class="mb-1 text-danger fw-bold">🎟️ ¡ENTRADAS AGOTADAS!</p>
               } @else {
-                <p class="capacidad mb-1"><strong>Capacidad: {{ evento.getCapacidad() }}</strong></p>
-                <p class="capacidad mb-1"><strong>Inscriptos: {{ evento.getInscriptos() }}</strong></p>
+                <p class="mb-1"><strong>Capacidad:</strong> {{ evento.getCapacidad() }}</p>
+                <p class="mb-1"><strong>Inscriptos:</strong> {{ evento.getInscriptos() }}</p>
               }
 
-              <p class="lugar mb-1">uibicacion</p>
-              <p class="fecha mb-0">{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm'}} hs</p>
+              <p class="lugar mb-1">ubicacion</p>
+              <p class="fecha mb-0">{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm' }} hs</p>
             </div>
 
             <div class="botones-card px-3 pb-3 d-flex gap-2">
-            <a class="btn btn-primary btn-sm flex-fill boton btn-ver-mas"
-   [routerLink]="['/home/evento/detalle-evento', evento.getId()]">
-   Ver más
-</a>
-              <button class="btn btn-success btn-sm flex-fill boton btn-inscribir"
+              <a class="btn btn-primary btn-sm flex-fill"
+                 [routerLink]="['/home/evento/detalle-evento', evento.getId()]">
+                Ver más
+              </a>
+              <button class="btn btn-success btn-sm flex-fill"
                       (click)="agregar(evento)"
                       [disabled]="evento.getCapacidad() === evento.getInscriptos()">
                 Inscribirse

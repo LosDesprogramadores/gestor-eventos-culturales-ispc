@@ -119,3 +119,40 @@
     text-align: center;
   }
 }
+
+/* CATEGORÍA */
+.cat-badge {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  padding: 0.35rem 1rem;
+  border-radius: 2rem;
+  background: var(--color-terciario-alternativo);
+  color: #fff;
+  border: 0.1rem solid var(--color-secundario);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+  box-shadow: 0 0.4rem 1rem var(--color-secundario);
+  backdrop-filter: blur(4px);
+  user-select: none;
+  z-index: 10;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.cat-badge:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0.6rem 1.4rem var(--color-secundario);
+}
+
+
+@media (max-width: 768px) {
+  .cat-badge {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    top: 0.6rem;
+    left: 0.6rem;
+  }
+}
