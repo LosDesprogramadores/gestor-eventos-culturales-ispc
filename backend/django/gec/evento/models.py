@@ -19,7 +19,6 @@ class CategoriaEvento(IntEnum):
     DIÁLOGO = 12
 
 
-
 class EstadoEvento(IntEnum):
     HABILITADO = 1
     CANCELADO = 2
@@ -34,6 +33,7 @@ class Evento(models.Model):
     categoria = models.IntegerField(_("Categoría"), choices=[(
         c.value, c.name) for c in CategoriaEvento], default=CategoriaEvento.OTROS)
     fecha_hora_evento = models.DateTimeField()
+    ubicacion = models.CharField(max_length=255)
     capacidad = models.IntegerField()
     inscriptos = models.IntegerField()
     descripcion = models.TextField()
