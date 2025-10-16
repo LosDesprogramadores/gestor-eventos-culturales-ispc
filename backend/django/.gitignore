@@ -1,5 +1,3 @@
-#variable de entorno
-.env
 # Entorno virtual
 venv/
 
@@ -19,3 +17,6 @@ db.sqlite3
 *.sqlite3
 **/db.sqlite3
 **/*.sqlite3
+
+# Archivos de variables de entorno específicos para producción o secretos
+.env

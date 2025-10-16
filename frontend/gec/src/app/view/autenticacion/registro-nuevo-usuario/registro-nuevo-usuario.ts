@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ReactiveFormsModule } from '@angular/forms';
 import { SRegistro } from '../../../services/service-registro/s-registro';
 import { classUsuario } from '../../../model/usuario';
@@ -13,7 +13,7 @@ import { Footer } from '../../../shared/footer/footer';
 @Component({
   selector: 'app-registro-nuevo-usuario',
   standalone: true,
-  imports: [ReactiveFormsModule, Header, NavHome, Footer],
+  imports: [ReactiveFormsModule, Header, NavHome, Footer, RouterLink],
   templateUrl: './registro-nuevo-usuario.html',
   styleUrl: './registro-nuevo-usuario.css'
 })
