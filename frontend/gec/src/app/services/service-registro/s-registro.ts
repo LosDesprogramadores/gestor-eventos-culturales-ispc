@@ -1,24 +1,23 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { classUsuario } from '../../model/usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SRegistro {
 
-  private apiUrl = 'http://localhost:8000/api/usuarios/'; // URL de json-server
+  private apiUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) {}
 
-  // Crear nuevo usuario
-  registrarUsuario(usuario: any): Observable<any> { 
-    return this.http.post<any>(this.apiUrl, usuario);
-  }
-  // Obtener todos los usuarios
-  getUsuarios(): Observable<classUsuario[]> {
-    return this.http.get<classUsuario[]>(this.apiUrl);
+  // Registra en "datos"
+  registrarDatos(datos: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/datos`, datos);
   }
 
+  // Registra en "usuarios"
+  registrarUsuario(usuario: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/usuarios`, usuario);
+  }
 }

@@ -1,62 +1,124 @@
-import { EnumRol } from './rol';
+import { ClassDatos } from "./datos";
+import { ClassRol } from "./rol";
 
 export class classUsuario {
-  // Propiedades que coinciden con la API de Django
-  public id: number; 
-  public email: string;
-  public password: string;
-  public fecha_registro: Date;
-  public cuenta_activa: boolean;
-  public id_rol: EnumRol;
-  public is_active: boolean;
-  public is_staff: boolean;
+    id_usuario: number;
+   private email: string;
+   private contrasenia: string;
+   private fechaRegistro: Date;
+   private cuentaActiva: boolean;
+   private datosPersonales: ClassDatos;
+   private rol: ClassRol;
 
-  constructor(
-    id: number,
-    email: string,
-    password: string,
-    fecha_registro: Date,
-    cuenta_activa: boolean,
-    id_rol: EnumRol,
-    is_active: boolean = true,
-    is_staff: boolean = false,
-  ) {
-    this.id = id;
-    this.email = email;
-    this.password = password;
-    this.fecha_registro = fecha_registro;
-    this.cuenta_activa = cuenta_activa;
-    this.id_rol = id_rol;
-    this.is_active = is_active;
-    this.is_staff = is_staff;
-  }
+	constructor($id_usuario: number, $email: string, $contrasenia: string, $fechaRegistro: Date, $cuentaActiva: boolean, $datosPersonales: ClassDatos, $rol: ClassRol) {
+		this.id_usuario = $id_usuario;
+		this.email = $email;
+		this.contrasenia = $contrasenia;
+		this.fechaRegistro = $fechaRegistro;
+		this.cuentaActiva = $cuentaActiva;
+		this.datosPersonales = $datosPersonales;
+		this.rol = $rol;
+	}
 
-  // Método para construir el objeto desde la respuesta JSON de Django
-  static fromJson(json: any): classUsuario {
-    return new classUsuario(
-      json.id ?? 0,
-      json.email ?? '',
-      '', // La contraseña NUNCA se devuelve en un GET
-      json.fecha_registro ? new Date(json.fecha_registro) : new Date(),
-      json.cuenta_activa ?? true,
-      json.id_rol ?? EnumRol.USUARIO,
-      json.is_active ?? true,
-      json.is_staff ?? false,
-    );
-  }
 
-  // Getters y Setters 
-  public getId(): number { return this.id; }
-  public getEmail(): string { return this.email; }
-  public getPassword(): string { return this.password; }
-  public getFechaRegistro(): Date { return this.fecha_registro; }
-  public isCuentaActiva(): boolean { return this.cuenta_activa; }
-  public getIdRol(): EnumRol { return this.id_rol; }
+    /**
+     * Getter $email
+     * @return {string}
+     */
+	public get $email(): string {
+		return this.email;
+	}
 
-  public setId(id: number): void { this.id = id; }
-  public setEmail(email: string): void { this.email = email; }
-  public setPassword(password: string): void { this.password = password; }
-  public setFechaRegistro(fechaRegistro: Date): void { this.fecha_registro = fechaRegistro; }
-  public setCuentaActiva(cuentaActiva: boolean): void { this.cuenta_activa = cuentaActiva; }
-  public setIdRol(id_rol: EnumRol): void { this.id_rol = id_rol; }
+    /**
+     * Getter $contrasenia
+     * @return {string}
+     */
+	public get $contrasenia(): string {
+		return this.contrasenia;
+	}
+
+    /**
+     * Getter $fechaRegistro
+     * @return {Date}
+     */
+	public get $fechaRegistro(): Date {
+		return this.fechaRegistro;
+	}
+
+    /**
+     * Getter $cuentaActiva
+     * @return {boolean}
+     */
+	public get $cuentaActiva(): boolean {
+		return this.cuentaActiva;
+	}
+
+    /**
+     * Getter $datosPersonales
+     * @return {ClassDatos}
+     */
+	public get $datosPersonales(): ClassDatos {
+		return this.datosPersonales;
+	}
+
+    /**
+     * Getter $rol
+     * @return {ClassRol}
+     */
+	public get $rol(): ClassRol {
+		return this.rol;
+	}
+
+    /**
+     * Setter $email
+     * @param {string} value
+     */
+	public set $email(value: string) {
+		this.email = value;
+	}
+
+    /**
+     * Setter $contrasenia
+     * @param {string} value
+     */
+	public set $contrasenia(value: string) {
+		this.contrasenia = value;
+	}
+
+    /**
+     * Setter $fechaRegistro
+     * @param {Date} value
+     */
+	public set $fechaRegistro(value: Date) {
+		this.fechaRegistro = value;
+	}
+
+    /**
+     * Setter $cuentaActiva
+     * @param {boolean} value
+     */
+	public set $cuentaActiva(value: boolean) {
+		this.cuentaActiva = value;
+	}
+
+    /**
+     * Setter $datosPersonales
+     * @param {ClassDatos} value
+     */
+	public set $datosPersonales(value: ClassDatos) {
+		this.datosPersonales = value;
+	}
+
+    /**
+     * Setter $rol
+     * @param {ClassRol} value
+     */
+	public set $rol(value: ClassRol) {
+		this.rol = value;
+	}
+
+	
+
+	
+
 }

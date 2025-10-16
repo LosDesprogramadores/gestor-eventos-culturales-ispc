@@ -8,9 +8,6 @@ import { InicioSesionComponent  } from './view/autenticacion/inicio-sesion/inici
 import { RegistroNuevoUsuario } from './view/autenticacion/registro-nuevo-usuario/registro-nuevo-usuario';
 import { PanelUsuarioComponent } from './view/paneles-usuarios/panel-usuario/panel-usuario';
 import { PanelGestor } from './view/paneles-usuarios/panel-gestor/panel-gestor';
-import { EditDatosRol } from './view/paneles-usuarios/edit-datos-rol/edit-datos-rol';
-
-
 
 export const routes: Routes = [
   {
@@ -26,9 +23,7 @@ export const routes: Routes = [
   { path: "registro-nuevo-usuario", component: RegistroNuevoUsuario },
 
   { path: "panel-usuario", component: PanelUsuarioComponent }, 
-  { path: "panel-gestor", component: PanelGestor },
-  { path: "edit-datos-rol", component: EditDatosRol},
-  
+  { path: "panel-gestor", component: PanelGestor},
 
   { path: "", redirectTo: "/home", pathMatch: "full" }
 ];

@@ -12,7 +12,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
 from django.contrib.auth import authenticate, login
-from drf_spectacular.openapi import AutoSchema
 
 
 def saludo(request):
@@ -40,15 +39,6 @@ class UsuarioView(APIView):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def patch(self, request, pk):
-        usuario = get_object_or_404(Usuario, pk=pk)
-        serializer = UsuarioSerializer(
-            usuario, data=request.data, partial=True)
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
 # desactivando proteccion
 
 
@@ -57,18 +47,15 @@ class LoginView(APIView):
     permission_classes = (permissions.AllowAny,)
 
     def post(self, request):
-
-        print(f"{request.data} ")
-        email = request.data.get("email")
-        password = request.data.get("password")
+        email = request.data.get('email')
+        password = request.data.get('password')
 
         user = authenticate(request, username=email, password=password)
 
         if user is not None:
             # login(request, user)
             return Response(
-                {"message": "Inicio de sesión exitoso",
-                    "user_id": user.id, "id_rol": user.id_rol},
+                {"message": "Inicio de sesión exitoso", "user_id": user.id},
                 status=status.HTTP_200_OK
             )
         else:

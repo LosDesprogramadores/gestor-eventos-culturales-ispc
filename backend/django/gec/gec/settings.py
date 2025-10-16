@@ -11,11 +11,6 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import dj_database_url
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -48,14 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'usuario',
-    'evento',
-    'datos',
-    'corsheaders',
-    'inscripcion'
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -63,12 +53,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-]
-
-CORS_ALLOWED_ORIGINS = [
-    # Si tu frontend está en desarrollo (React, Vue, Angular)
-    "http://localhost:4200",
-    "http://127.0.0.1:8000",
 ]
 
 ROOT_URLCONF = 'gec.urls'
@@ -95,17 +79,12 @@ WSGI_APPLICATION = 'gec.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    # DB SQLITE PARA LOCAL
-
-    #   'default': {
-    #       'ENGINE': 'django.db.backends.sqlite3',
-    #       'NAME': BASE_DIR / 'db.sqlite3',
-    #   }
-
-    # DB RENDER requiere .env
-    'default': dj_database_url.config(default=os.getenv('DATABASE_URL'))
-
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
@@ -153,6 +132,5 @@ REST_FRAMEWORK = {
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ],
-
+    ]
 }

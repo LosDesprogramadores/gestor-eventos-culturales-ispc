@@ -43,6 +43,3 @@ Thumbs.db
 /db.json
 db.json
 .db.json
-
-# Archivos de variables de entorno específicos para producción o secretos
-.env

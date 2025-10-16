@@ -14,6 +14,7 @@ class UsuarioSerializer(serializers.ModelSerializer):
             'fecha_registro',
             'cuenta_activa',
             'id_rol',
+            'id_datos',
             'is_active',
             'is_staff',
             'password'
