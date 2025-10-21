@@ -1,0 +1,24 @@
+.contenedorSecundario {
+  padding: 1rem;
+}
+
+.contenedorSecundario h1 {
+  margin-top: 1rem;
+}
+
+form {
+  padding: 0;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+}
+
+button {
+  margin-right: 1rem;
+}
+
+#alerta {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}

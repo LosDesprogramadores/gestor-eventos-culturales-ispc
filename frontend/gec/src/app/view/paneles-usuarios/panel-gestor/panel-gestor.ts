@@ -9,9 +9,9 @@ import { firstValueFrom, Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { SAlert } from '../../../services/service-alert/s-alert';
-import { EventoForm } from '../../../model/eventoForm';
-import { Ubicacion } from '../../../model/ubicacion';
 import { TipoEvento } from '../../../model/categoria';
+import { EventoForm } from '../../../model/eventoForm';
+
 
 
 @Component({ 
@@ -43,21 +43,15 @@ export class PanelGestor implements OnInit {
   hoverVisible = false;
   hoverImg = '';
    
-   ubicacion : Ubicacion = {
-    direccion : '',
-    latitud : 0,
-    longitud : 0
-   }
-
-
+  
    nuevoEvento: EventoForm = {
     nombre: '',
-    /* ubicacion: '', */
+    ubicacion: '', 
     categoria: 1,
     fecha_hora_evento:'',
     capacidad: 0,
     inscriptos : 0,
-    descripcion : 'HOÑA',
+    descripcion : '',
     imagen: '',
     fecha_inicio_inscripcion: '',
     fecha_fin_inscripcion:'',
@@ -99,8 +93,8 @@ export class PanelGestor implements OnInit {
 
   async crearEvento(): Promise<void> {
     if (!this.nuevoEvento.nombre || !this.nuevoEvento.fecha_hora_evento|| !this.nuevoEvento.capacidad ||
-        !this.nuevoEvento.imagen|| !this.nuevoEvento.fecha_fin_inscripcion|| !this.nuevoEvento.fecha_inicio_inscripcion/* ||
-        !this.nuevoEvento.ubicacion */) {
+        !this.nuevoEvento.imagen|| !this.nuevoEvento.fecha_fin_inscripcion|| !this.nuevoEvento.fecha_inicio_inscripcion ||
+        !this.nuevoEvento.ubicacion || !this.nuevoEvento.descripcion ) {
       this.tipoMensaje = 'danger';
       this.mensaje = 'Error: Por favor completa todos los campos del formulario.';
       this.mostrarMensaje = true;
@@ -124,7 +118,7 @@ export class PanelGestor implements OnInit {
 
       this.nuevoEvento ={
       nombre: '',
-    /* ubicacion: '', */
+    ubicacion: '',
     categoria: 1,
     fecha_hora_evento:'',
     capacidad: 0,

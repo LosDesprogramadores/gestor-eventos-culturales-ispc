@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ReactiveFormsModule } from '@angular/forms';
 import { SRegistro } from '../../../services/service-registro/s-registro';
 import { classUsuario } from '../../../model/usuario';
@@ -13,7 +13,7 @@ import { Footer } from '../../../shared/footer/footer';
 @Component({
   selector: 'app-registro-nuevo-usuario',
   standalone: true,
-  imports: [ReactiveFormsModule, Header, NavHome, Footer],
+  imports: [ReactiveFormsModule, Header, NavHome, Footer, RouterLink],
   templateUrl: './registro-nuevo-usuario.html',
   styleUrl: './registro-nuevo-usuario.css'
 })
@@ -30,12 +30,11 @@ export class RegistroNuevoUsuario {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required]],
-      rol: [1, [Validators.required]] // por defecto USUARIO
+      rol: [EnumRol.USUARIO, [Validators.required]] 
     }, {
       validator: this.passwordMatchValidator
     });
   }
-
   get email() { return this.form.get('email'); }
   get password() { return this.form.get('password'); }
   get confirmPassword() { return this.form.get('confirmPassword'); }
@@ -65,21 +64,19 @@ export class RegistroNuevoUsuario {
 
     const formValues = this.form.value;
 
-    // 🔸 Crear usuario (datos mínimos, los demás por defecto)
-    const nuevoUsuario = new classUsuario(
-      0, // json-server genera el id
-      formValues.email,
-      formValues.password,
-      new Date(),
-      true, // cuenta activa por defecto
-      EnumRol.USUARIO
-    );
+    // envia solo la estructura esperada por django
+    const datosFinales = {
+        email: formValues.email,
+        password: formValues.password,
+        id_rol: formValues.rol 
+    };
 
-    // 🔸 Guardar en "db.json"
-    this.registroService.registrarUsuario(nuevoUsuario).subscribe({
+
+    
+    this.registroService.registrarUsuario(datosFinales).subscribe({
       next: () => {
         alert('Usuario registrado con éxito');
-        this.router.navigate(['/inicio-sesion']); // redirige al login
+        this.router.navigate(['/inicio-sesion']);
       },
       error: (err) => {
         console.error('Error al registrar usuario', err);

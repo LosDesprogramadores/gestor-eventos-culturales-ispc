@@ -1,5 +1,5 @@
 <body class="fondo">
-  <div class="page-container">
+ <div class="page-container">
 
 <app-header></app-header>
 <app-nav-home></app-nav-home>
@@ -48,7 +48,7 @@
               {{ inscripcion.getEvento().getNombre()}}
             </h5>
             <p class="card-text text-muted mb-3" style="font-size: 0.875rem; word-wrap: break-word; overflow-wrap: break-word;">
-              <i class="bi bi-geo-alt me-1"></i>Nueva Cordoba
+              <i class="bi bi-geo-alt me-1"></i>{{ inscripcion.getEvento().getUbicacion() }}
             </p>
             <div class="mt-auto text-end">
               <button
@@ -96,21 +96,20 @@
         </div>
       }
 
-       @if (mensaje.$showMessage) {
+    @if (mensaje.$showMessage) {
       <div
-        class="alert position-fixed top-50 end-0 translate-middle-y"
-        [ngClass]="{
-          'alert-success': mensaje.$tipoAlerta === 'success',
-          'alert-danger': mensaje.$tipoAlerta === 'danger'
-        }"
-        role="alert"
-      >
-        {{ mensaje.$message }}
-      </div>
-    }
+      class="alert position-fixed top-50 end-0 translate-middle-y"
+      [ngClass]="{
+       'alert-success': mensaje.$tipoAlerta === 'success',
+       'alert-danger': mensaje.$tipoAlerta === 'danger'
+      }"
+     role="alert">
+    {{ mensaje.$message }}
+    </div>
+}
 
-    </main>
+</main>
 
-    <app-footer></app-footer>
-  </div>
+<app-footer></app-footer>
+</div>
 </body>

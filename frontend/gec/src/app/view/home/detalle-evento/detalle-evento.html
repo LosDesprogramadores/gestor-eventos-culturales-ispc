@@ -1,62 +1,45 @@
-<div class="detalle-evento container pt-5">
-  <article class="tarjeta-evento mb-0 pb-1">
-    <h1 id="titulo-evento" class="text-center mb-5"></h1>
+<div class="detalle-evento container my-5">
 
-    <div class="row align-items-center">
-      <div class="col-md-6 mb-4 mb-md-0 img-evento">
-        <img
-          src=""
-          alt="Imagen del evento"
-          id="imagen-evento"
-          class="img-fluid rounded shadow efecto-profesional"
-        />
+  @if (evento) {
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+        <div class="card shadow-sm border-0">
+          <div class="imagen-evento">
+            <img [src]="evento.getImagen() || '/assets/images/sin.jpg'" 
+                 onerror="this.src='/assets/images/sin.jpg'"
+                 alt="Imagen del Evento"
+                 class="card-img-top img-fluid rounded-top" 
+                 style="max-height: 400px; object-fit: cover;">
+          </div>
+
+          <div class="card-body p-4">
+            <h2 class="card-title text-center mb-3 fw-bold">{{ evento.getNombre() }}</h2>
+            <p class="card-text mb-2"><strong>Descripción: </strong>{{ evento.getDescripcion() }}</p>
+            <p class="mb-1"><strong>Ubicación:</strong> {{ evento.getUbicacion() }}</p>
+            <p class="mb-1"><strong>Capacidad:</strong> {{ evento.getCapacidad() }}</p>
+            <p class="mb-1"><strong>Inscriptos:</strong> {{ evento.getInscriptos() }}</p>
+            <p class="mb-1"><strong>Fecha y Hora:</strong> {{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy, HH:mm' }}</p>
+
+            <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+              <button class="btn btn-primary flex-fill" (click)="router.navigate(['/home'])">
+                Volver
+              </button>
+              <button class="btn btn-success flex-fill" (click)="inscribirse()"
+                      [disabled]="evento.getCapacidad() === evento.getInscriptos()">
+                Inscribirse
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-
-      <div class="col-md-6 text-center">
-        <section class="mb-4">
-          <h2>Descripción</h2>
-          <p id="descripcion-evento">Aquí irá la descripción del evento.</p>
-        </section>
-
-        <section class="mb-4">
-          <h2>Ubicación</h2>
-          <p id="ubicacion-evento"></p>
-        </section>
-
-        <section class="mb-4">
-          <h2>Capacidad</h2>
-          <p id="capacidad-evento"></p>
-        </section>
-
-        <section class="mb-4">
-          <h2>Fecha y Hora</h2>
-          <p id="fecha-hora-evento"></p>
-        </section>
+    </div>
+  } @else {
+    <div class="row justify-content-center text-center my-5">
+      <div class="col-10 col-md-6 col-lg-4">
+        <img src="/assets/images/no-hay-eventos.png" alt="No hay evento" class="img-fluid mb-3 rounded">
+        <p class="fw-bold">No se pudo cargar el evento.</p>
+        <button class="btn btn-secondary mt-2" (click)="router.navigate(['/home'])">Volver</button>
       </div>
     </div>
-
-    <!-- 🔵 Botón de inscripción: justo debajo de la imagen/datos y antes de los iconos -->
-    <div class="text-center my-4 ">
-      <button
-        class="btn btn-success px-4 boton btn-inscribir"
-        
-      >
-        Inscribirme
-      </button>
-    </div>
-
-    <section class="compartir d-flex justify-content-center gap-3 flex-wrap mt-4">
-      <a href="#"><i class="fas fa-calendar-alt"></i></a>
-      <a href="#"><i class="fab fa-facebook-f"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
-      <a href="#"><i class="fas fa-share-alt"></i></a>
-    </section>
-
-    <div class="text-center">
-      <a [routerLink]="['/home']" class="btn-volver-evento mt-4">
-        ← Volver al Inicio
-      </a>
-    </div>
-  </article>
+  }
 </div>

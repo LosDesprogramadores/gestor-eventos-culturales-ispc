@@ -1,58 +1,150 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
-import { Banner } from '../banner/banner';
 import { SEvento } from '../../../services/service-evento/s-evento';
-import { Observable } from 'rxjs';
-import { CommonModule } from '@angular/common';
 import { ClassEvento } from '../../../model/evento';
 import { Auth } from '../../../services/service-autenticacion/auth.service';
 import { InscripcionService } from '../../../services/services-inscripcion/inscripcion';
 import { SAlert } from '../../../services/service-alert/s-alert';
-import { Mensaje } from '../../../model/mensaje';
-
+import { Observable, BehaviorSubject, combineLatest, map } from 'rxjs';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { Banner } from '../banner/banner';
 
 @Component({
   selector: 'app-evento',
-  imports: [RouterModule, Banner, CommonModule],
+  standalone: true,
+  imports: [CommonModule, RouterModule, AsyncPipe, Banner],
   templateUrl: './evento.html',
-  styleUrl: './evento.css'
+  styleUrls: ['./evento.css']
 })
-
 export class Evento implements OnInit {
-  
+
   uid?: number | null;
-  mensaje : Mensaje = new Mensaje();
+
   eventos$: Observable<ClassEvento[]>;
+  private categoria$ = new BehaviorSubject<number | null>(null);
+  private search$ = new BehaviorSubject<string>('');
 
-  constructor(private serviceEvento: SEvento, private auth: Auth, private router: Router, private inscripciones: InscripcionService, private alertas: SAlert) {
-    this.eventos$ =  this.serviceEvento.obtenerEventos();
+  filteredEventos$: Observable<ClassEvento[]>;
+
+  private catMap: Record<number, string> = {
+    1: 'Otros',
+    2: 'Teatro',
+    3: 'Comedia',
+    4: 'Drama',
+    5: 'Musical',
+    6: 'Artes',
+    7: 'Literatura',
+    8: 'Cine',
+    9: 'Taller',
+    10: 'Danza',
+    11: 'Encuentro',
+    12: 'Diálogo',
+  };
+
+  categorias$: Observable<{ id: number; name: string }[]>;
+
+  constructor(
+    private serviceEvento: SEvento,
+    private auth: Auth,
+    private router: Router,
+    private inscripciones: InscripcionService,
+    private alertas: SAlert
+  ) {
+    this.eventos$ = this.serviceEvento.obtenerEventos();
+
+    this.categorias$ = this.eventos$.pipe(
+      map(evs => {
+        const ids = Array.from(
+          new Set((evs ?? []).map(e => this.getCategoriaId(e)))
+        ).filter(n => n !== null) as number[];
+
+        return ids
+          .map(id => ({ id, name: this.catMap[id] ?? `Categoría ${id}` }))
+          .sort((a, b) => a.name.localeCompare(b.name, 'es', { sensitivity: 'base' }));
+      })
+    );
+
+    this.filteredEventos$ = combineLatest([this.eventos$, this.categoria$, this.search$]).pipe(
+      map(([evs, cat, q]) => {
+        let lista = evs ?? [];
+
+        const hoy = new Date(); 
+        hoy.setHours(0, 0, 0, 0);
+
+        // excluir eventos pasados
+        lista = lista.filter(e => {
+          const d = this.getFecha(e);
+          return d != null && d >= hoy;
+        });
+
+        // filtro por categoría
+        if (cat != null) lista = lista.filter(e => this.getCategoriaId(e) === cat);
+
+        // búsqueda simple por nombre
+        const needle = (q ?? '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+        if (needle) {
+          lista = lista.filter(e => {
+            const nombre = (e.getNombre?.() ?? (e as any).nombre ?? '')
+              .toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+            return nombre.includes(needle);
+          });
+        }
+
+        // orden por fecha ascendente
+        return [...lista].sort((a, b) => (this.getFecha(a)?.getTime() ?? 0) - (this.getFecha(b)?.getTime() ?? 0));
+      })
+    );
   }
 
-  ngOnInit(): void {
-   
+  ngOnInit(): void {}
+
+  // ===== Helpers =====
+
+  onCategoriaChange(val: string) { this.categoria$.next(val ? Number(val) : null); }
+  onSearchChange(v: string) { this.search$.next(v ?? ''); }
+
+  getCategoriaId(e: ClassEvento): number | null {
+    const raw = e.getCategoria?.() ?? (e as any).categoria ?? null;
+    const n = Number(raw);
+    return isNaN(n) ? null : n;
   }
 
+  categoriaNombre(id?: number | null): string {
+    if (!id) return 'Categoría';
+    return this.catMap[id] ?? 'Categoría';
+  }
 
-  agregar(evento: ClassEvento): void {
-   
-  
+  categoriaNombreFromEvento(e: ClassEvento): string {
+    return this.categoriaNombre(this.getCategoriaId(e));
+  }
+
+  private getFecha(e: ClassEvento): Date | null {
+    const raw: any = e.getFechaHoraEvento?.() ?? (e as any).fechaHoraEvento ?? null;
+    if (!raw) return null;
+    const d: Date = raw instanceof Date ? raw : new Date(raw);
+    return isNaN(d.getTime()) ? null : d;
+  }
+
+  // ===== Acciones =====
+
+  agregar(evento: ClassEvento) {
     if (this.auth.role === 'ANON') {
-        this.alertas.mensajeUsuario(this.auth.usuarioLogueadoId() ?? 0);
-  
+      this.alertas.mensajeUsuario(this.auth.usuarioLogueadoId() ?? 0);
+      return;
     }
+
     this.uid = this.auth.usuarioLogueadoId();
     if (!this.uid) return;
-     console.log( this.uid + " logueado: " +evento.getUsuario())
-      if(this.uid == evento.getUsuario()){
-        this.alertas.mensajeErrorEventoPropio();
-        
-      }
-      else{
-        this.inscripciones.registrarInscripcion(evento, this.uid);
-        
-      }
 
+    if (this.uid === evento.getUsuario()) {
+      this.alertas.mensajeErrorEventoPropio();
+      return;
+    }
+
+    this.inscripciones.registrarInscripcion(evento, this.uid);
   }
 
-  
+  verDetalle(evento: ClassEvento) {
+    this.router.navigate(['/home/evento/detalle-evento'], { state: { evento } });
+  }
 }

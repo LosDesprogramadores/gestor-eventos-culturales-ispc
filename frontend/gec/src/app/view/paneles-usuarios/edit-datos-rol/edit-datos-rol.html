@@ -1,47 +1,119 @@
 <body class="fondo">
-    <div class="page-container">
-        <app-header></app-header>
-        <app-nav-home></app-nav-home>
-        <main class="container my-5 flex-grow-1">
-            <div class="contenedorPrincipal">
-                
-            <div class="contenedorSecundario">
-                <h1 class="text-center mb-4 titulo">Mis Datos</h1>
-                <h2 class="fw-bold text-center mb-4 titulo-h2">Actualizar datos y rol</h2>
+  <div class="page-container">
+    <app-header></app-header>
+    <app-nav-home></app-nav-home>
+    <main class="container my-5 flex-grow-1">
+      <div class="contenedorPrincipal">
+
+        <div class="contenedorSecundario">
+          <h1 class="text-center mb-4 titulo">Mis Datos</h1>
+          <h2 class="fw-bold text-center mb-4 titulo-h2">
+            {{ modoEdicion ? 'Actualizar datos y rol' : 'Crear datos y ser gestor' }}
+          </h2>
+
+          <!-- Badge indicador de modo -->
+          @if (!cargandoDatos) {
+          <div class="text-center mb-3">
+            @if (modoEdicion) {
+            <span class="badge bg-info">
+              <i class="fas fa-edit me-1"></i> Modo Edición
+            </span>
+            } @else {
+            <span class="badge bg-success">
+              <i class="fas fa-plus me-1"></i> Modo Creación
+            </span>
+            }
+          </div>
+          }
+        </div>
+
+        <!-- Spinner de carga -->
+        @if (cargandoDatos) {
+        <div class="text-center my-5">
+          <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div>
+          <p class="mt-3 text-muted">Cargando datos...</p>
+        </div>
+        } @else {
+        <div>
+          <form id="datos-form" #datosForm="ngForm" (ngSubmit)="onSubmit(datosForm)">
+            <div class="input-group mb-3">
+              <span class="input-group-text">Nombre</span>
+              <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="datos.nombre" required
+                #nombreInput="ngModel" [class.is-invalid]="nombreInput.invalid && nombreInput.touched">
+              @if (nombreInput.invalid && nombreInput.touched) {
+              <div class="invalid-feedback">
+                El nombre es requerido
+              </div>
+              }
             </div>
-                <div>
-                    <form id="datos-form">
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Nombre</span>
-                            <input type="text" class="form-control" placeholder="Ingrese el nombre" aria-label="Nombre" id="inputNombre"
-                                required>
-                        </div>
-                    
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Apellido</span>
-                            <input type="text" class="form-control" placeholder="Ingrese el apellido" aria-label="Apellido"
-                                id="inputApellido" required>
-                        </div>
-                    
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">Empresa</span>
-                            <input type="text" class="form-control" placeholder="Nombre de la empresa" aria-label="Empresa"
-                                id="inputEmpresa">
-                        </div>
-                    
-                        <div class="input-group mb-3">
-                            <span class="input-group-text">CUIL</span>
-                            <input type="text" class="form-control" placeholder="Ej: 20-XXXXXXXX-X" aria-label="CUIL" id="inputCuil">
-                        </div>
-                        
-                    
-                        <button type="submit" class="text-end btn btn-primary">
-                            Guardar Datos
-                        </button>
-                    </form>
-                </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Apellido</span>
+              <input type="text" class="form-control" id="apellido" name="apellido" [(ngModel)]="datos.apellido"
+                required #apellidoInput="ngModel" [class.is-invalid]="apellidoInput.invalid && apellidoInput.touched">
+              @if (apellidoInput.invalid && apellidoInput.touched) {
+              <div class="invalid-feedback">
+                El apellido es requerido
+              </div>
+              }
             </div>
-        </main>
-        <app-footer></app-footer>
-    </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">Empresa</span>
+              <input type="text" class="form-control" id="empresa" name="empresa" [(ngModel)]="datos.empresa" required
+                #empresaInput="ngModel" [class.is-invalid]="empresaInput.invalid && empresaInput.touched">
+              @if (empresaInput.invalid && empresaInput.touched) {
+              <div class="invalid-feedback">
+                La empresa es requerida
+              </div>
+              }
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text">CUIL</span>
+              <input type="text" class="form-control" id="cuil" name="cuil" [(ngModel)]="datos.cuil" required
+                pattern="[0-9]{2}-[0-9]{8}-[0-9]{1}" placeholder="20-12345678-9" #cuilInput="ngModel"
+                [class.is-invalid]="cuilInput.invalid && cuilInput.touched">
+              @if (cuilInput.invalid && cuilInput.touched) {
+              <div class="invalid-feedback">
+                @if (cuilInput.errors?.['required']) {
+                <span>El CUIL es requerido</span>
+                }
+                @if (cuilInput.errors?.['pattern']) {
+                <span>Formato inválido (ej: 20-12345678-9)</span>
+                }
+              </div>
+              }
+            </div>
+
+            <div class="d-flex gap-2">
+              <button type="submit" class="btn btn-primary" [disabled]="datosForm.invalid || enviando">
+                <i class="fas fa-save me-2"></i>
+                {{ enviando ? 'Guardando...' : (modoEdicion ? 'Actualizar Datos' : 'Guardar Datos') }}
+              </button>
+
+              <button type="button" class="btn btn-secondary" (click)="limpiarFormulario(datosForm)"
+                [disabled]="enviando">
+                <i class="fas fa-times me-2"></i>
+                {{ modoEdicion ? 'Recargar' : 'Limpiar' }}
+              </button>
+            </div>
+          </form>
+
+          @if (mensajeVisible) {
+          <div class="alert mt-3" [ngClass]="{
+                'alert-success': tipoMensaje === 'success',
+                'alert-danger': tipoMensaje === 'error'
+              }" role="alert" id="alerta">
+            {{ mensaje }}
+          </div>
+          }
+        </div>
+        }
+      </div>
+    </main>
+    <app-footer></app-footer>
+  </div>
 </body>

@@ -2,7 +2,7 @@ export class ClassEvento {
   
   private id: string | undefined;
   private nombre: string;
-  /* private ubicacion: string; */
+  private ubicacion: string; 
   private fechaHoraEvento: string;
   private capacidad: number;
   private imagen: string;
@@ -17,7 +17,7 @@ export class ClassEvento {
   constructor(data: any) {
     this.id = data.id;
     this.nombre = data.nombre;
-   /*  this.ubicacion = data.ubicacion; */
+    this.ubicacion = data.ubicacion; 
     this.fechaHoraEvento = data.fecha_hora_evento;
     this.capacidad = data.capacidad;
     this.imagen = data.imagen;
@@ -39,10 +39,10 @@ export class ClassEvento {
     return this.nombre;
   }
 
-/*   getUbicacion(): string {
+  getUbicacion(): string {
     return this.ubicacion;
   }
- */
+
   getFechaHoraEvento(): string {
     return this.fechaHoraEvento;
   }
@@ -91,9 +91,9 @@ export class ClassEvento {
     this.nombre = nombre;
   }
 
-  /* setUbicacion(ubicacion: string): void {
+   setUbicacion(ubicacion: string): void {
     this.ubicacion = ubicacion;
-  } */
+  } 
 
   setFechaHoraEvento(fechaHoraEvento: string): void {
     this.fechaHoraEvento = fechaHoraEvento;

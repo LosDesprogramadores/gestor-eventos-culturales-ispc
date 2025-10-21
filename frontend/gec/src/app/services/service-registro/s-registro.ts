@@ -8,22 +8,17 @@ import { classUsuario } from '../../model/usuario';
 })
 export class SRegistro {
 
-  private apiUrl = 'http://localhost:3000/usuarios'; // URL de json-server
+  private apiUrl = 'http://localhost:8000/api/usuarios/'; // URL de json-server
 
   constructor(private http: HttpClient) {}
 
   // Crear nuevo usuario
-  registrarUsuario(usuario: classUsuario): Observable<classUsuario> {
-    return this.http.post<classUsuario>(this.apiUrl, usuario);
+  registrarUsuario(usuario: any): Observable<any> { 
+    return this.http.post<any>(this.apiUrl, usuario);
   }
-
   // Obtener todos los usuarios
   getUsuarios(): Observable<classUsuario[]> {
     return this.http.get<classUsuario[]>(this.apiUrl);
   }
 
-  // Buscar por email (validación de duplicados)
-  getUsuarioPorEmail(email: string): Observable<classUsuario[]> {
-    return this.http.get<classUsuario[]>(`${this.apiUrl}?email=${email}`);
-  }
 }

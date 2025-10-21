@@ -5,10 +5,18 @@ from usuario.models import Usuario
 
 
 class CategoriaEvento(IntEnum):
-    NINGUNA = 1
-    COMEDIA = 2
-    DRAMA = 3
-    MUSICAL = 4
+    OTROS = 1
+    TEATRO = 2
+    COMEDIA = 3
+    DRAMA = 4
+    MUSICAL = 5
+    ARTES = 6
+    LITERATURA = 7
+    CINE = 8
+    TALLER = 9
+    DANZA = 10
+    ENCUENTRO = 11
+    DIÁLOGO = 12
 
 
 class EstadoEvento(IntEnum):
@@ -23,8 +31,9 @@ class EstadoEvento(IntEnum):
 class Evento(models.Model):
     nombre = models.CharField(_(""), max_length=50)
     categoria = models.IntegerField(_("Categoría"), choices=[(
-        c.value, c.name) for c in CategoriaEvento], default=CategoriaEvento.NINGUNA)
+        c.value, c.name) for c in CategoriaEvento], default=CategoriaEvento.OTROS)
     fecha_hora_evento = models.DateTimeField()
+    ubicacion = models.CharField(max_length=255)
     capacidad = models.IntegerField()
     inscriptos = models.IntegerField()
     descripcion = models.TextField()
