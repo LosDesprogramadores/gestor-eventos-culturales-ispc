@@ -8,6 +8,7 @@ import { SAlert } from '../../../services/service-alert/s-alert';
 import { Observable, BehaviorSubject, combineLatest, map } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { Banner } from '../banner/banner';
+// Eliminado el import no usado SelectMultipleControlValueAccessor
 
 @Component({
   selector: 'app-evento',
@@ -18,7 +19,11 @@ import { Banner } from '../banner/banner';
 })
 export class Evento implements OnInit {
 
-  uid?: number | null;
+  // Cambiamos a 'number' ya que -1 es el código de fallo
+  private uid?: number; 
+  
+  // PROPIEDAD CLAVE para el Modal: Almacena el evento y controla la visibilidad
+  public eventoAConfirmar: ClassEvento | null = null; 
 
   eventos$: Observable<ClassEvento[]>;
   private categoria$ = new BehaviorSubject<number | null>(null);
@@ -98,7 +103,6 @@ export class Evento implements OnInit {
 
   ngOnInit(): void {}
 
-  // ===== Helpers =====
 
   onCategoriaChange(val: string) { this.categoria$.next(val ? Number(val) : null); }
   onSearchChange(v: string) { this.search$.next(v ?? ''); }
@@ -125,23 +129,27 @@ export class Evento implements OnInit {
     return isNaN(d.getTime()) ? null : d;
   }
 
-  // ===== Acciones =====
-
-  agregar(evento: ClassEvento) {
-    if (this.auth.role === 'ANON') {
-      this.alertas.mensajeUsuario(this.auth.usuarioLogueadoId() ?? 0);
-      return;
+   confirmarInscripcion(evento: ClassEvento) {
+       const validationResult = this.serviceEvento.validacionEvento(evento);
+   
+    if (validationResult !== -1 && validationResult !== null) {
+        this.eventoAConfirmar = evento;
     }
+  }
 
-    this.uid = this.auth.usuarioLogueadoId();
-    if (!this.uid) return;
+  async ejecutarInscripcion() {
+    const evento = this.eventoAConfirmar;
+    this.eventoAConfirmar = null; 
+    
+    if (!evento) return;
 
-    if (this.uid === evento.getUsuario()) {
-      this.alertas.mensajeErrorEventoPropio();
-      return;
-    }
-
-    this.inscripciones.registrarInscripcion(evento, this.uid);
+    this.uid = this.serviceEvento.validacionEvento(evento);
+   
+      if(this.uid != -1 && this.uid != null){
+       this.inscripciones.registrarInscripcion(evento, this.uid);
+        this.eventos$ = this.serviceEvento.obtenerEventos();
+      }
+        
   }
 
   verDetalle(evento: ClassEvento) {

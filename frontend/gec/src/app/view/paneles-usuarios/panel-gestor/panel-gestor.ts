@@ -117,7 +117,7 @@ export class PanelGestor implements OnInit {
 
 
       this.nuevoEvento ={
-      nombre: '',
+    nombre: '',
     ubicacion: '',
     categoria: 1,
     fecha_hora_evento:'',

@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable, map, switchMap, of } from 'rxjs';
 import { ClassEvento } from '../../model/evento';
 import { EventoForm } from '../../model/eventoForm';
+import { Evento } from '../../view/home/evento/evento';
+import { Auth } from '../service-autenticacion/auth.service';
+import { SAlert } from '../service-alert/s-alert';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +13,11 @@ import { EventoForm } from '../../model/eventoForm';
 export class SEvento {
   private URL: string = 'http://127.0.0.1:8000/api/';
   private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-
-  constructor(private http: HttpClient) {}
+  uid?: number | null;
+  constructor(private http: HttpClient,
+    private auth: Auth,
+    private alertas: SAlert
+  ) {}
 
   // Obtener todos los eventos que aún no finalizaron
   obtenerEventos(): Observable<ClassEvento[]> {
@@ -93,4 +99,26 @@ export class SEvento {
       map(data => new ClassEvento(data))
     );
   }
+
+   validacionEvento(evento: ClassEvento): number {
+     if (this.auth.role === 'ANON') {
+          this.alertas.mensajeUsuario(this.auth.usuarioLogueadoId() ?? 0); 
+      return -1;
+    }
+    
+    const currentUid = this.auth.usuarioLogueadoId();
+    
+    if (!currentUid) {
+      this.alertas.mensajeUsuario(currentUid!);
+      return -1;
+    }
+    this.uid = currentUid; 
+      if (this.uid === evento.getUsuario()) {
+      this.alertas.mensajeErrorEventoPropio();
+      return -1;
+    }
+    return this.uid; 
+}
+
+
 }

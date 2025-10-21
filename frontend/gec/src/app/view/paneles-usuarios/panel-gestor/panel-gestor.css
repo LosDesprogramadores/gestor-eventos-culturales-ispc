@@ -5,3 +5,40 @@
 .table-hover tbody tr:hover {
   background-color: rgba(10, 46, 77, 0.05);
 }
+/* Para un efecto de sombra sutil en el título superpuesto */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Puedes usar Font Awesome o Bootstrap Icons para los íconos */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* Asegura que el contenedor de la imagen no fuerce un desplazamiento si el título es largo */
+.event-detail-card .position-relative {
+    position: relative;
+}
+
+/* Estilo para la imagen para asegurar una mejor calidad visual */
+.event-image-header {
+    /* Transición suave para cualquier cambio futuro (ej. hover) */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Asegura que el contenedor de la imagen tenga la misma altura que el contenido de texto. */
+/* Esto a menudo se resuelve simplemente usando h-100 en el wrapper y la imagen. */
+.image-wrapper {
+    /* Define una altura mínima en pantallas medianas si el contenido de texto es muy corto */
+    min-height: 550px; /* Ajusta este valor según la necesidad */
+}
+
+/* Opcional: limita la altura de la descripción para evitar que sea demasiado larga */
+.description-text {
+    /* Muestra hasta 5 líneas y luego corta, si fuera necesario */
+    max-height: 7.5em; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Ajuste de línea */
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+}
