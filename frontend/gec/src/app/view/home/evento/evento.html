@@ -58,7 +58,7 @@
                 Ver más
               </a>
               <button class="btn btn-success btn-sm flex-fill"
-                      (click)="agregar(evento)"
+                      (click)="confirmarInscripcion(evento)" 
                       [disabled]="evento.getCapacidad() === evento.getInscriptos()">
                 Inscribirse
               </button>
@@ -82,3 +82,62 @@
     }
   </div>
 </div>
+
+<div class="modal fade" 
+     [ngClass]="{'show d-block': eventoAConfirmar}" 
+     tabindex="-1" 
+     aria-labelledby="confirmModalLabel" 
+     [attr.aria-hidden]="!eventoAConfirmar">
+
+  <div class="modal-dialog modal-dialog-centered">
+    @if (eventoAConfirmar) {
+      <div class="modal-content">
+        
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="confirmModalLabel">Confirmación de Inscripción</h5>
+          <button type="button" 
+                  class="btn-close btn-close-white" 
+                  (click)="eventoAConfirmar = null" 
+                  aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+          <p class="fw-bold">¿Realmente deseas inscribirte en el siguiente evento?</p>
+          
+          <div class="p-3 border rounded">
+            <h6 class="mb-1 text-primary">{{ eventoAConfirmar.getNombre() }}</h6>
+            <small class="text-muted d-block">
+              <i class="bi bi-geo-alt-fill me-1"></i> {{ eventoAConfirmar.getUbicacion() }}
+            </small>
+            <small class="text-muted d-block">
+              <i class="bi bi-calendar-event me-1"></i> 
+              {{ eventoAConfirmar.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm'}} hs
+            </small>
+          </div>
+          
+          <p class="mt-3 mb-0 text-danger small">
+            Una vez inscrito, el cupo quedará reservado a tu nombre.
+          </p>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" 
+                  class="btn btn-secondary" 
+                  (click)="eventoAConfirmar = null">
+            Cancelar
+          </button>
+        
+          <button type="button" 
+                  class="btn btn-success" 
+                  (click)="ejecutarInscripcion()">
+            <i class="bi bi-check-circle-fill me-1"></i> ¡Confirmar Inscripción!
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+@if (eventoAConfirmar) {
+  <div class="modal-backdrop fade show"></div>
+}

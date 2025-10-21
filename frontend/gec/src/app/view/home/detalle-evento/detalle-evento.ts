@@ -14,6 +14,7 @@ import { Auth } from '../../../services/service-autenticacion/auth.service';
   styleUrls: ['./detalle-evento.css']
 })
 export class DetalleEvento implements OnInit {
+  private uid?: number | null;
 
   evento!: ClassEvento;
 
@@ -50,14 +51,10 @@ export class DetalleEvento implements OnInit {
   }
 
   inscribirse() {
-  const userId = this.serviceLogin.usuarioLogueadoId();
+   this.uid = this.serviceEvento.validacionEvento(this.evento);
+   
+      if(this.uid != -1 && this.uid != null)
+         this.serviceInscripcion.registrarInscripcion(this.evento, this.uid);
 
-  if (userId == null) {
-    console.warn('No hay usuario logueado. No se puede inscribir.');
-    return;
-  }
-
-  this.serviceInscripcion.registrarInscripcion(this.evento, userId);
-  console.log('Inscribiendo al usuario en el evento:', this.evento);
 }
 }
