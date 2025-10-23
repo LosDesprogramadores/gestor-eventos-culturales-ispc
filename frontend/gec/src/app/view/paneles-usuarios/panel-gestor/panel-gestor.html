@@ -16,10 +16,11 @@
           <table class="table table-hover align-middle mb-0">
             <thead class="table-dark">
               <tr>
-                <th>Imagen</th>
-                <th>Título</th>
-                <th>Fecha</th>
-                <th>Ubicación</th>
+                <th class="text-center">Imagen</th>
+                <th class="text-center">Título</th>
+                <th class="text-center">Fecha</th>
+                <th class="text-center">Ubicación</th>
+                <th class="text-center">Inscriptos</th>
                 <th class="text-center">Acciones</th>
               </tr>
             </thead>
@@ -30,9 +31,10 @@
                     <td class="align-middle text-center">
                       <img src="{{ evento.getImagen() }}" onerror="this.src='/assets/images/sin.jpg'" alt="{{ evento.getNombre() }}" class="evento-img">
                     </td>
-                    <td class="fw-semibold">{{ evento.getNombre() }}</td>
-                    <td>{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm' }} hs</td>
-                    <td>{{ evento.getUbicacion() }}</td>
+                    <td class="fw-semibold text-center">{{ evento.getNombre() }}</td>
+                    <td class="text-center">{{ evento.getFechaHoraEvento() | date:'dd/MM/yyyy , HH:mm' }} hs</td>
+                    <td class="text-center">{{ evento.getUbicacion() }}</td>
+                    <td class="text-center">{{ evento.getInscriptos() }}</td>
                     <td class="text-center align-middle">
                       <div class="d-flex flex-column flex-md-row justify-content-center gap-2">
                         <button class="btn btn-sm btn-warning" disabled (click)="editarEvento(evento)">
