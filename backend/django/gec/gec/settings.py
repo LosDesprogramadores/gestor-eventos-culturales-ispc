@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-z=cv%xru88-r(@_=skx(v8!!0ino0rvy3+@2_qnkf#m*x2dvt!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.onrender.com', '.netlify.app', 'localhost', '127.0.0.1']
 
 
 # Harcodeo de User por Usuario
@@ -69,6 +69,7 @@ CORS_ALLOWED_ORIGINS = [
     # Si tu frontend está en desarrollo (React, Vue, Angular)
     "http://localhost:4200",
     "http://127.0.0.1:8000",
+    "https://gec-ispc.netlify.app"
 ]
 
 ROOT_URLCONF = 'gec.urls'
