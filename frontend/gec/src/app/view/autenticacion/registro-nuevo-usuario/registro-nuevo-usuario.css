@@ -105,3 +105,22 @@
     gap: 0.5rem;
   }
 }
+
+.alert {
+  font-size: 0.95rem;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.3rem 0.8rem rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.alert-success {
+  background-color: #d1e7dd;
+  color: #0f5132;
+  border: 1px solid #badbcc;
+}
+
+.alert-danger {
+  background-color: #f8d7da;
+  color: #842029;
+  border: 1px solid #f5c2c7;
+}

@@ -2,10 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators, ValidationErrors, ReactiveFormsModule } from '@angular/forms';
 import { SRegistro } from '../../../services/service-registro/s-registro';
-import { classUsuario } from '../../../model/usuario';
-import { ClassDatos } from '../../../model/datos';
 import { EnumRol } from '../../../model/rol';
-import { HttpClientModule } from '@angular/common/http';
 import { Header } from '../../../shared/header/header';
 import { NavHome } from '../../home/nav-home/nav-home';
 import { Footer } from '../../../shared/footer/footer';
@@ -20,6 +17,8 @@ import { Footer } from '../../../shared/footer/footer';
 export class RegistroNuevoUsuario {
 
   form: FormGroup;
+  registroExitoso = false;
+  mensajeError: string | null = null;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,11 +29,12 @@ export class RegistroNuevoUsuario {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', [Validators.required]],
-      rol: [EnumRol.USUARIO, [Validators.required]] 
+      rol: [EnumRol.USUARIO, [Validators.required]]
     }, {
       validator: this.passwordMatchValidator
     });
   }
+
   get email() { return this.form.get('email'); }
   get password() { return this.form.get('password'); }
   get confirmPassword() { return this.form.get('confirmPassword'); }
@@ -57,6 +57,9 @@ export class RegistroNuevoUsuario {
 
   // 🔹 Lógica de registro
   onSubmit(): void {
+    this.mensajeError = null;
+    this.registroExitoso = false;
+
     if (this.form.invalid) {
       this.form.markAllAsTouched();
       return;
@@ -64,23 +67,32 @@ export class RegistroNuevoUsuario {
 
     const formValues = this.form.value;
 
-    // envia solo la estructura esperada por django
     const datosFinales = {
-        email: formValues.email,
-        password: formValues.password,
-        id_rol: formValues.rol 
+      email: formValues.email,
+      password: formValues.password,
+      id_rol: formValues.rol
     };
 
-
-    
     this.registroService.registrarUsuario(datosFinales).subscribe({
       next: () => {
-        alert('Usuario registrado con éxito');
-        this.router.navigate(['/inicio-sesion']);
+        this.registroExitoso = true;
+        this.form.reset();
+
+        // Redirige automáticamente tras éxito
+        setTimeout(() => {
+          this.router.navigate(['/inicio-sesion']);
+        }, 2500);
       },
       error: (err) => {
         console.error('Error al registrar usuario', err);
-        alert('Hubo un error al registrar el usuario.');
+
+        if (err.status === 400) {
+          this.mensajeError = 'El correo ya está registrado. Intenta con otro.';
+        } else if (err.status === 0) {
+          this.mensajeError = 'Error de conexión con el servidor.';
+        } else {
+          this.mensajeError = 'No se pudo registrar el usuario. Intenta más tarde.';
+        }
       }
     });
   }
