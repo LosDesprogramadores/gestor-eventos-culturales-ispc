@@ -7,118 +7,120 @@ import { Evento } from '../../view/home/evento/evento';
 import { Auth } from '../service-autenticacion/auth.service';
 import { SAlert } from '../service-alert/s-alert';
 
-@Injectable({
+@Injectable( {
   providedIn: 'root'
-})
+} )
 export class SEvento {
-  private URL: string = 'http://127.0.0.1:8000/api/';
-  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  //private URL: string = 'http://127.0.0.1:8000/api/';
+  private URL: string = 'https://gestor-eventos-culturales-ispc.onrender.com/api/';
+
+  private headers = new HttpHeaders( { 'Content-Type': 'application/json' } );
   uid?: number | null;
-  constructor(private http: HttpClient,
+  constructor( private http: HttpClient,
     private auth: Auth,
     private alertas: SAlert
-  ) {}
+  ) { }
 
   // Obtener todos los eventos que aún no finalizaron
   obtenerEventos(): Observable<ClassEvento[]> {
     const hoy = new Date();
-    const hoySoloFecha = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+    const hoySoloFecha = new Date( hoy.getFullYear(), hoy.getMonth(), hoy.getDate() );
 
-    return this.http.get<ClassEvento[]>(this.URL + "eventos/").pipe(
-      map(data =>
+    return this.http.get<ClassEvento[]>( this.URL + "eventos/" ).pipe(
+      map( data =>
         data
-          .map(item => new ClassEvento(item))
-          .filter(evento => {
-            const fechaFin = new Date(evento.getFechaFinInscripcion());
-            const fechaFinSoloFecha = new Date(fechaFin.getFullYear(), fechaFin.getMonth(), fechaFin.getDate());
+          .map( item => new ClassEvento( item ) )
+          .filter( evento => {
+            const fechaFin = new Date( evento.getFechaFinInscripcion() );
+            const fechaFinSoloFecha = new Date( fechaFin.getFullYear(), fechaFin.getMonth(), fechaFin.getDate() );
             return fechaFinSoloFecha >= hoySoloFecha;
-          })
+          } )
       )
     );
   }
 
   // Obtener eventos distintos de un gestor específico
-  obtenerEventosDistintosDelGestor(gestorId: number): Observable<ClassEvento[]> {
+  obtenerEventosDistintosDelGestor( gestorId: number ): Observable<ClassEvento[]> {
     const hoy = new Date();
-    const hoySoloFecha = new Date(hoy.getFullYear(), hoy.getMonth(), hoy.getDate());
+    const hoySoloFecha = new Date( hoy.getFullYear(), hoy.getMonth(), hoy.getDate() );
 
-    return this.http.get<ClassEvento[]>(this.URL + "eventos/").pipe(
-      map(data =>
+    return this.http.get<ClassEvento[]>( this.URL + "eventos/" ).pipe(
+      map( data =>
         data
-          .map(item => new ClassEvento(item))
-          .filter(evento => {
-            const fechaFin = new Date(evento.getFechaFinInscripcion());
-            const fechaFinSoloFecha = new Date(fechaFin.getFullYear(), fechaFin.getMonth(), fechaFin.getDate());
+          .map( item => new ClassEvento( item ) )
+          .filter( evento => {
+            const fechaFin = new Date( evento.getFechaFinInscripcion() );
+            const fechaFinSoloFecha = new Date( fechaFin.getFullYear(), fechaFin.getMonth(), fechaFin.getDate() );
             return fechaFinSoloFecha >= hoySoloFecha && evento.getUsuario() !== gestorId;
-          })
+          } )
       )
     );
   }
 
   // Obtener todos los eventos (sin filtro de fecha)
   obtenerEventosMisEventos(): Observable<ClassEvento[]> {
-    return this.http.get<ClassEvento[]>(this.URL + "eventos/").pipe(
-      map(data => data.map(item => new ClassEvento(item)))
+    return this.http.get<ClassEvento[]>( this.URL + "eventos/" ).pipe(
+      map( data => data.map( item => new ClassEvento( item ) ) )
     );
   }
 
   // Obtener eventos de un gestor
-  obtenerEventosDelGestor(gestorId: number): Observable<ClassEvento[]> {
+  obtenerEventosDelGestor( gestorId: number ): Observable<ClassEvento[]> {
     return this.obtenerEventos().pipe(
-      map(eventos => eventos.filter(ev => Number(ev.getUsuario()) === gestorId))
+      map( eventos => eventos.filter( ev => Number( ev.getUsuario() ) === gestorId ) )
     );
   }
 
   // Crear un nuevo evento
-  crearEvento(evento: EventoForm): Observable<ClassEvento> {
-    console.log("El usuario " + evento?.usuario);
-    return this.http.post<ClassEvento>(this.URL + "eventos/", evento, { headers: this.headers }).pipe(
-      map(data => new ClassEvento(data))
+  crearEvento( evento: EventoForm ): Observable<ClassEvento> {
+    console.log( "El usuario " + evento?.usuario );
+    return this.http.post<ClassEvento>( this.URL + "eventos/", evento, { headers: this.headers } ).pipe(
+      map( data => new ClassEvento( data ) )
     );
   }
 
   // Eliminar un evento por su id
-  eliminarEventoPorIdEvento(id_evento: string): Observable<void> {
-    const url = `${this.URL}eventos/${id_evento}/`;
-    return this.http.delete<void>(url);
+  eliminarEventoPorIdEvento( id_evento: string ): Observable<void> {
+    const url = `${ this.URL }eventos/${ id_evento }/`;
+    return this.http.delete<void>( url );
   }
 
   // Actualizar evento (PATCH)
-  actualizarEvento(evento: { id: number, inscriptos: number }): Observable<ClassEvento> {
-    const url = `${this.URL}eventos/${evento.id}/`;
-    console.log("Datos a actualizar:", evento);
-    return this.http.patch<ClassEvento>(url, evento, { headers: this.headers }).pipe(
-      map(data => new ClassEvento(data))
+  actualizarEvento( evento: { id: number, inscriptos: number; } ): Observable<ClassEvento> {
+    const url = `${ this.URL }eventos/${ evento.id }/`;
+    console.log( "Datos a actualizar:", evento );
+    return this.http.patch<ClassEvento>( url, evento, { headers: this.headers } ).pipe(
+      map( data => new ClassEvento( data ) )
     );
   }
 
   // Obtener un evento específico
-  obtenerUnEvento(id_evento: number): Observable<ClassEvento> {
-    const url = `${this.URL}eventos/${id_evento}/`;
-    return this.http.get<ClassEvento>(url).pipe(
-      map(data => new ClassEvento(data))
+  obtenerUnEvento( id_evento: number ): Observable<ClassEvento> {
+    const url = `${ this.URL }eventos/${ id_evento }/`;
+    return this.http.get<ClassEvento>( url ).pipe(
+      map( data => new ClassEvento( data ) )
     );
   }
 
-   validacionEvento(evento: ClassEvento): number {
-     if (this.auth.role === 'ANON') {
-          this.alertas.mensajeUsuario(this.auth.usuarioLogueadoId() ?? 0); 
+  validacionEvento( evento: ClassEvento ): number {
+    if ( this.auth.role === 'ANON' ) {
+      this.alertas.mensajeUsuario( this.auth.usuarioLogueadoId() ?? 0 );
       return -1;
     }
-    
+
     const currentUid = this.auth.usuarioLogueadoId();
-    
-    if (!currentUid) {
-      this.alertas.mensajeUsuario(currentUid!);
+
+    if ( !currentUid ) {
+      this.alertas.mensajeUsuario( currentUid! );
       return -1;
     }
-    this.uid = currentUid; 
-      if (this.uid === evento.getUsuario()) {
+    this.uid = currentUid;
+    if ( this.uid === evento.getUsuario() ) {
       this.alertas.mensajeErrorEventoPropio();
       return -1;
     }
-    return this.uid; 
-}
+    return this.uid;
+  }
 
 
 }

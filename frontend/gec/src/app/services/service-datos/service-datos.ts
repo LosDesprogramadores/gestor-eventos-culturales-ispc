@@ -9,7 +9,8 @@ import { classUsuario } from '../../model/usuario';
   providedIn: 'root'
 } )
 export class ServiceDatos {
-  private apiUrl = 'http://127.0.0.1:8000/api/datos/';
+  //private apiUrl = 'http://127.0.0.1:8000/api/datos/';
+  private apiUrl = 'https://gestor-eventos-culturales-ispc.onrender.com/api/datos/';
 
   constructor( private http: HttpClient ) { }
 
@@ -24,7 +25,7 @@ export class ServiceDatos {
       cuil: datos.getCuil(),
       id_usuario: datos.getUsuario().getId()
     };
-    console.log("DATOS: "+payload.id_usuario)
+    console.log( "DATOS: " + payload.id_usuario );
     return this.http.post<any>( this.apiUrl, payload ).pipe(
       tap( response => console.log( 'Respuesta del servidor:', response ) ),
       map( data => {
