@@ -1,3 +1,5 @@
+/* Puedes usar Font Awesome o Bootstrap Icons para los íconos */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 .table thead {
   background-color: var(--color-primario);
@@ -10,8 +12,6 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Puedes usar Font Awesome o Bootstrap Icons para los íconos */
-@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 /* Asegura que el contenedor de la imagen no fuerce un desplazamiento si el título es largo */
 .event-detail-card .position-relative {
